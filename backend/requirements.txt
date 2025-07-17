@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+requests
+selenium
+undetected-chromedriver
+pandas
+openpyxl
+aiofiles
