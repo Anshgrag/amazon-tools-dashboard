@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Review daily work sessions
+# Usage: git review [date] (if no date, shows today)
+
+DATE=${1:-$(date +"%Y-%m-%d")}
+LOG_FILE=".git/daily-logs/$DATE.md"
+
+if [ ! -f "$LOG_FILE" ]; then
+    echo "No work log found for $DATE"
+    echo "Available dates:"
+    ls -1 .git/daily-logs/*.md 2>/dev/null | sed 's/.*\///' | sed 's/\.md$//' | sort -r
+    exit 1
+fi
+
+echo "📅 Work Log for $DATE"
+echo "======================"
+cat "$LOG_FILE"

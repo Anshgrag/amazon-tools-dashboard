@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# Fully automatic daily work commit
+# Usage: git auto (no arguments needed)
+
+# Get current date and time
+DATE=$(date +"%Y-%m-%d")
+TIME=$(date +"%H:%M:%S")
+TIMESTAMP="$DATE $TIME"
+
+# Create daily work log directory
+mkdir -p .git/daily-logs
+
+# Analyze what changed
+CHANGES=$(git status --porcelain)
+if [ -z "$CHANGES" ]; then
+    echo "✅ No changes to commit - everything is up to date!"
+    exit 0
+fi
+
+# Auto-generate description based on changes
+DESCRIPTION="Auto-commit"
+
+# Count different types of changes
+MODIFIED=$(echo "$CHANGES" | grep "^ M " | wc -l)
+ADDED=$(echo "$CHANGES" | grep "^?? " | wc -l)
+DELETED=$(echo "$CHANGES" | grep "^ D " | wc -l)
+RENAMED=$(echo "$CHANGES" | grep "^R " | wc -l)
+
+# Build smart description
+if [ $MODIFIED -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION - updated $MODIFIED file(s)"
+fi
+if [ $ADDED -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION - added $ADDED file(s)"
+fi
+if [ $DELETED -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION - deleted $DELETED file(s)"
+fi
+if [ $RENAMED -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION - renamed $RENAMED file(s)"
+fi
+
+# Add file types to description
+PYTHON_FILES=$(echo "$CHANGES" | grep -E "\.py$" | wc -l)
+JS_FILES=$(echo "$CHANGES" | grep -E "\.(js|jsx|ts|tsx)$" | wc -l)
+HTML_FILES=$(echo "$CHANGES" | grep -E "\.(html|htm)$" | wc -l)
+CSS_FILES=$(echo "$CHANGES" | grep -E "\.(css|scss|sass)$" | wc -l)
+MD_FILES=$(echo "$CHANGES" | grep -E "\.md$" | wc -l)
+
+if [ $PYTHON_FILES -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION (Python: $PYTHON_FILES)"
+fi
+if [ $JS_FILES -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION (JS/TS: $JS_FILES)"
+fi
+if [ $HTML_FILES -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION (HTML: $HTML_FILES)"
+fi
+if [ $CSS_FILES -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION (CSS: $CSS_FILES)"
+fi
+if [ $MD_FILES -gt 0 ]; then
+    DESCRIPTION="$DESCRIPTION (Docs: $MD_FILES)"
+fi
+
+# Create today's work log entry
+LOG_FILE=".git/daily-logs/$DATE.md"
+
+cat >> "$LOG_FILE" << EOF
+
+## Auto-Commit Session - $TIME
+**Description**: $DESCRIPTION
+**Files Changed**:
+$(echo "$CHANGES" | sed 's/^/ - /')
+
+**Summary**: Total files changed: $(echo "$CHANGES" | wc -l)
+
+---
+
+EOF
+
+# Add only files from current directory (no parent directories)
+git add --all . 2>/dev/null || true
+
+# Commit with auto-generated message
+COMMIT_MSG="[$DATE] $DESCRIPTION"
+
+git commit -m "$COMMIT_MSG"
+
+# Push if remote exists
+if git remote get-url origin &>/dev/null; then
+    git push origin $(git rev-parse --abbrev-ref HEAD)
+    echo "✅ Auto-commit completed and pushed to remote!"
+else
+    echo "✅ Auto-commit completed locally!"
+fi
+
+# Show summary
+echo ""
+echo "🤖 Auto-Commit Summary:"
+echo "📅 Date: $DATE"
+echo "⏰ Time: $TIME"
+echo "📝 Auto-generated: $DESCRIPTION"
+echo "📁 Log file: $LOG_FILE"
+echo "📊 Files changed: $(echo "$CHANGES" | wc -l)"

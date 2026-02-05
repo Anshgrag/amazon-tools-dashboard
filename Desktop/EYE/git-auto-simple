@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Simple auto-commit for current directory only
+# Usage: git auto
+
+# Get current date and time
+DATE=$(date +"%Y-%m-%d")
+TIME=$(date +"%H:%M:%S")
+
+# Check if there are changes in current directory
+CHANGES=$(git status --porcelain . | head -20)
+if [ -z "$CHANGES" ]; then
+    echo "✅ No changes to commit in current directory!"
+    exit 0
+fi
+
+# Count files
+FILE_COUNT=$(echo "$CHANGES" | wc -l)
+
+# Simple description
+DESCRIPTION="Auto-commit ($FILE_COUNT files)"
+
+# Create daily work log directory
+mkdir -p .git/daily-logs
+
+# Create log entry
+LOG_FILE=".git/daily-logs/$DATE.md"
+cat >> "$LOG_FILE" << EOF
+
+## Auto-Commit - $TIME
+**Description**: $DESCRIPTION
+**Files Changed**: $FILE_COUNT
+
+---
+
+EOF
+
+# Add only files from current directory
+git add .
+
+# Commit
+git commit -m "[$DATE] $DESCRIPTION"
+
+# Push if remote exists
+if git remote get-url origin &>/dev/null; then
+    git push origin $(git rev-parse --abbrev-ref HEAD) 2>/dev/null || echo "⚠️ Push failed (no remote or network issue)"
+    echo "✅ Auto-commit completed and pushed!"
+else
+    echo "✅ Auto-commit completed locally!"
+fi
+
+echo "📊 Files committed: $FILE_COUNT"

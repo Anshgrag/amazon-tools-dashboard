@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Smart daily work session manager
+# Usage: git done "description of today's work"
+
+if [ $# -eq 0 ]; then
+    echo "Error: Please provide a description of today's work"
+    echo "Usage: git done \"fixed login bug and added user profile\""
+    exit 1
+fi
+
+# Get current date and time
+DATE=$(date +"%Y-%m-%d")
+TIME=$(date +"%H:%M:%S")
+TIMESTAMP="$DATE $TIME"
+
+# Create daily work log directory
+mkdir -p .git/daily-logs
+
+# Create today's work log entry
+LOG_FILE=".git/daily-logs/$DATE.md"
+
+# Add entry to today's log
+cat >> "$LOG_FILE" << EOF
+
+## Work Session - $TIME
+**Description**: $1
+**Files Changed**:
+$(git status --porcelain | sed 's/^/ - /')
+
+**Git Status**: $(git status --porcelain | wc -l) files modified
+
+---
+
+EOF
+
+# Add all changes
+git add .
+
+# Commit with detailed message
+COMMIT_MSG="[$DATE] $1"
+
+git commit -m "$COMMIT_MSG"
+
+# Push if remote exists
+if git remote get-url origin &>/dev/null; then
+    git push origin $(git rev-parse --abbrev-ref HEAD)
+    echo "✓ Work session saved and pushed to remote repository!"
+else
+    echo "✓ Work session saved locally!"
+    echo "ℹ No remote repository found. Set up with: git remote add origin <url>"
+fi
+
+# Show summary
+echo ""
+echo "📊 Today's Work Summary:"
+echo "📅 Date: $DATE"
+echo "⏰ Time: $TIME"
+echo "📝 Description: $1"
+echo "📁 Log file: $LOG_FILE"
+echo ""
+echo "💡 View full daily log with: cat $LOG_FILE"
