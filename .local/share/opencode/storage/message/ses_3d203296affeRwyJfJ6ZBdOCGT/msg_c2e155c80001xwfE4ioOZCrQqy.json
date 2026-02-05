@@ -1,0 +1,17 @@
+{
+  "id": "msg_c2e155c80001xwfE4ioOZCrQqy",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "role": "user",
+  "time": {
+    "created": 1770299677844
+  },
+  "summary": {
+    "title": "Slash command usage question",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

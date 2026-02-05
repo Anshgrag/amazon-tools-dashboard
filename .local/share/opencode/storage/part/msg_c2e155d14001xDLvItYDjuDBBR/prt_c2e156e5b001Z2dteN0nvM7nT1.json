@@ -1,0 +1,11 @@
+{
+  "id": "prt_c2e156e5b001Z2dteN0nvM7nT1",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e155d14001xDLvItYDjuDBBR",
+  "type": "text",
+  "text": "\n\nNo, it's a **git command**, not a slash command.\n\nYou type it like this:\n```bash\ngit day\n```\n\nor\n```bash\ngit done \"your description\"\n```\n\nThese are **git aliases** - custom git commands that work anywhere you can use git. They're not slash commands like `/day` or `/done`.\n\nJust type `git day` in any git repository and it will work! 🎯",
+  "time": {
+    "start": 1770299682909,
+    "end": 1770299682909
+  }
+}

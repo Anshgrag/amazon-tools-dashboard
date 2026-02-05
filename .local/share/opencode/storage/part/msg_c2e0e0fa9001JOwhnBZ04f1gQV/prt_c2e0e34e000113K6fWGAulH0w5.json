@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e0e34e000113K6fWGAulH0w5",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e0e0fa9001JOwhnBZ04f1gQV",
+  "type": "tool",
+  "callID": "chatcmpl-tool-649e850a934f462fb449f66ea40486da",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "#!/bin/bash\n\n# Review daily work sessions\n# Usage: git review [date] (if no date, shows today)\n\nDATE=${1:-$(date +\"%Y-%m-%d\")}\nLOG_FILE=\".git/daily-logs/$DATE.md\"\n\nif [ ! -f \"$LOG_FILE\" ]; then\n    echo \"No work log found for $DATE\"\n    echo \"Available dates:\"\n    ls -1 .git/daily-logs/*.md 2>/dev/null | sed 's/.*\\///' | sed 's/\\.md$//' | sort -r\n    exit 1\nfi\n\necho \"📅 Work Log for $DATE\"\necho \"======================\"\ncat \"$LOG_FILE\"",
+      "filePath": "/home/bot4u/Desktop/EYE/git-review"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/EYE/git-review",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/bot4u/Desktop/EYE/git-review",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1770299208935,
+      "end": 1770299208962
+    }
+  }
+}

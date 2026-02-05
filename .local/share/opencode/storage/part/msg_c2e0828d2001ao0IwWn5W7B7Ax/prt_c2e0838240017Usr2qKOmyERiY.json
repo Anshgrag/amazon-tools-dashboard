@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e0838240017Usr2qKOmyERiY",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e0828d2001ao0IwWn5W7B7Ax",
+  "type": "tool",
+  "callID": "chatcmpl-tool-82eb7f569deb45aaba36f709d2ecb5bc",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "git reset HEAD .",
+      "description": "Reset staged files"
+    },
+    "output": "Unstaged changes after reset:\nM\t.cache/tracker3/files/last-crawl.txt\nM\t.local/share/opencode/storage/message/ses_3d203296affeRwyJfJ6ZBdOCGT/msg_c2e01afe6001QY3EVJO7iiytfA.json\nM\t.local/share/opencode/storage/message/ses_3d203296affeRwyJfJ6ZBdOCGT/msg_c2e05d60a001eGWZc3hPcrZdRd.json\nM\t.local/share/opencode/storage/part/msg_c2e05d60a001eGWZc3hPcrZdRd/prt_c2e05e0f2001Yl2vJJnLgZZYbV.json\nM\t.local/share/opencode/storage/session/global/ses_3d203296affeRwyJfJ6ZBdOCGT.json\nM\t.local/share/opencode/storage/session_diff/ses_3d203296affeRwyJfJ6ZBdOCGT.json\n",
+    "title": "Reset staged files",
+    "metadata": {
+      "output": "Unstaged changes after reset:\nM\t.cache/tracker3/files/last-crawl.txt\nM\t.local/share/opencode/storage/message/ses_3d203296affeRwyJfJ6ZBdOCGT/msg_c2e01afe6001QY3EVJO7iiytfA.json\nM\t.local/share/opencode/storage/message/ses_3d203296affeRwyJfJ6ZBdOCGT/msg_c2e05d60a001eGWZc3hPcrZdRd.json\nM\t.local/share/opencode/storage/part/msg_c2e05d60a001eGWZc3hPcrZdRd/prt_c2e05e0f2001Yl2vJJnLgZZYbV.json\nM\t.local/share/opencode/storage/session/global/ses_3d203296affeRwyJfJ6ZBdOCGT.json\nM\t.local/share/opencode/storage/session_diff/ses_3d203296affeRwyJfJ6ZBdOCGT.json\n",
+      "exit": 0,
+      "description": "Reset staged files",
+      "truncated": false
+    },
+    "time": {
+      "start": 1770298816569,
+      "end": 1770298817507
+    }
+  }
+}

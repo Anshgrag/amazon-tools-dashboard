@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e07d3b5001e1sebwptj6M27Q",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e07b696001aoSazwVyxZVwrv",
+  "type": "tool",
+  "callID": "chatcmpl-tool-c9fec855e6d74a08817fe5faa5cd5e84",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "git status --porcelain | head -20",
+      "description": "Check what files are being staged"
+    },
+    "output": " M .local/share/opencode/storage/message/ses_3d203296affeRwyJfJ6ZBdOCGT/msg_c2e05d60a001eGWZc3hPcrZdRd.json\n M .local/share/opencode/storage/part/msg_c2e05d60a001eGWZc3hPcrZdRd/prt_c2e05e0f2001Yl2vJJnLgZZYbV.json\n M .local/share/opencode/storage/session/global/ses_3d203296affeRwyJfJ6ZBdOCGT.json\n?? .aider.input.history\n?? .aider.tags.cache.v4/\n?? .aider/caches/versioncheck\n?? .antigravity/extensions/.obsolete\n?? .antigravity/extensions/devsense.composer-php-vscode-1.66.18408-universal/.vsixmanifest\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/.vsixmanifest\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/icons/icon-2.svg\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/intelliphp.ls\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/libblingfiretokdll.so\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/libonnxruntime.so\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/models/intelliphp_v3/model.onnx\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/models/intelliphp_v3/tokenizer.bin\n?? .antigravity/extensions/devsense.phptools-vscode-1.66.18408-linux-x64/.vsixmanifest\n?? .antigravity/extensions/devsense.phptools-vscode-1.66.18408-linux-x64/out/server/devsense.php.ls\n?? .antigravity/extensions/devsense.phptools-vscode-1.66.18408-linux-x64/out/src/TerminalHelper.scpt\n?? .antigravity/extensions/devsense.profiler-php-vscode-1.66.18408-universal/.vsixmanifest\n?? .antigravity/extensions/devsense.profiler-php-vscode-1.66.18408-universal/webviews/codicon.ttf\n",
+    "title": "Check what files are being staged",
+    "metadata": {
+      "output": " M .local/share/opencode/storage/message/ses_3d203296affeRwyJfJ6ZBdOCGT/msg_c2e05d60a001eGWZc3hPcrZdRd.json\n M .local/share/opencode/storage/part/msg_c2e05d60a001eGWZc3hPcrZdRd/prt_c2e05e0f2001Yl2vJJnLgZZYbV.json\n M .local/share/opencode/storage/session/global/ses_3d203296affeRwyJfJ6ZBdOCGT.json\n?? .aider.input.history\n?? .aider.tags.cache.v4/\n?? .aider/caches/versioncheck\n?? .antigravity/extensions/.obsolete\n?? .antigravity/extensions/devsense.composer-php-vscode-1.66.18408-universal/.vsixmanifest\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/.vsixmanifest\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/icons/icon-2.svg\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/intelliphp.ls\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/libblingfiretokdll.so\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/libonnxruntime.so\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/models/intelliphp_v3/model.onnx\n?? .antigravity/extensions/devsense.intelli-php-vscode-0.12.17700-linux-x64/out/server/models/intelliphp_v3/tokenizer.bin\n?? .antigravity/extensions/devsense.phptools-vscode-1.66.18408-linux-x64/.vsixmanifest\n?? .antigravity/extensions/devsense.phptools-vscode-1.66.18408-linux-x64/out/server/devsense.php.ls\n?? .antigravity/extensions/devsense.phptools-vscode-1.66.18408-linux-x64/out/src/TerminalHelper.scpt\n?? .antigravity/extensions/devsense.profiler-php-vscode-1.66.18408-universal/.vsixmanifest\n?? .antigravity/extensions/devsense.profiler-php-vscode-1.66.18408-universal/webviews/codicon.ttf\n",
+      "exit": 0,
+      "description": "Check what files are being staged",
+      "truncated": false
+    },
+    "time": {
+      "start": 1770298790887,
+      "end": 1770298796705
+    }
+  }
+}

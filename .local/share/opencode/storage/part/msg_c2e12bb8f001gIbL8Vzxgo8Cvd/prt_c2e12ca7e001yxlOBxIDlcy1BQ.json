@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e12ca7e001yxlOBxIDlcy1BQ",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e12bb8f001gIbL8Vzxgo8Cvd",
+  "type": "tool",
+  "callID": "chatcmpl-tool-281f30e1f3404243b1d416f4c1077426",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /tmp/test-repo && git review",
+      "description": "Test global git review command"
+    },
+    "output": "📅 Work Log for 2026-02-05\n======================\n\n## Work Session - 19:21:45\n**Description**: testing global git done command\n**Files Changed**:\n - ?? test.txt\n\n**Git Status**: 1 files modified\n\n---\n\n",
+    "title": "Test global git review command",
+    "metadata": {
+      "output": "📅 Work Log for 2026-02-05\n======================\n\n## Work Session - 19:21:45\n**Description**: testing global git done command\n**Files Changed**:\n - ?? test.txt\n\n**Git Status**: 1 files modified\n\n---\n\n",
+      "exit": 0,
+      "description": "Test global git review command",
+      "truncated": false
+    },
+    "time": {
+      "start": 1770299509382,
+      "end": 1770299513460
+    }
+  }
+}

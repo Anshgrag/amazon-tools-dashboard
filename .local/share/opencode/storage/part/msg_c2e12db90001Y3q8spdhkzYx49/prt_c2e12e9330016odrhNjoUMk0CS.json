@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e12e9330016odrhNjoUMk0CS",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e12db90001Y3q8spdhkzYx49",
+  "type": "tool",
+  "callID": "chatcmpl-tool-a80c470529124cb0a511eaf83d0cb6ce",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "git config --global alias.day '!git done \"done for today\"'",
+      "description": "Set up simple day alias"
+    },
+    "output": "",
+    "title": "Set up simple day alias",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Set up simple day alias",
+      "truncated": false
+    },
+    "time": {
+      "start": 1770299517244,
+      "end": 1770299517262
+    }
+  }
+}

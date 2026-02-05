@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    ports:
+      - 8080:8080
+    volumes:
+      - ./config/qbittorrent:/config
+      - ./downloads:/downloads
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - WEBUI_PORT=8080
+    restart: "no"
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr
+    container_name: sonarr
+    ports:
+      - 8989:8989
+    volumes:
+      - ./config/sonarr:/config
+      - ./downloads:/downloads
+      - ./media/tv:/tv
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: "no"
+
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    ports:
+      - 7878:7878
+    volumes:
+      - ./config/radarr:/config
+      - ./downloads:/downloads
+      - ./media/movies:/movies
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: "no"

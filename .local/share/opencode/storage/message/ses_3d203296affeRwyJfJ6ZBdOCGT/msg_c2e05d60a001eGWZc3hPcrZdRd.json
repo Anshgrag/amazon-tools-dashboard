@@ -3,7 +3,8 @@
   "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
   "role": "assistant",
   "time": {
-    "created": 1770298660362
+    "created": 1770298660362,
+    "completed": 1770298783306
   },
   "parentID": "msg_c2e01afe6001QY3EVJO7iiytfA",
   "modelID": "big-pickle",
@@ -16,12 +17,13 @@
   },
   "cost": 0,
   "tokens": {
-    "input": 0,
-    "output": 0,
+    "input": 1976,
+    "output": 42,
     "reasoning": 0,
     "cache": {
-      "read": 0,
+      "read": 12096,
       "write": 0
     }
-  }
+  },
+  "finish": "tool-calls"
 }

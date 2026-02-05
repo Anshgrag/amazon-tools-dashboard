@@ -6,17 +6,22 @@
   "callID": "chatcmpl-tool-a78a2cc171664d9f9e6b31e6f40d1c9f",
   "tool": "bash",
   "state": {
-    "status": "running",
+    "status": "completed",
     "input": {
       "command": "git quickpush \"eye project initiation\"",
       "description": "Run improved git quickpush command"
     },
+    "output": "warning: in the working copy of '.bun/install/cache/fast-json-stringify@6.2.0@@@1/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of '.cache/opencode/node_modules/fast-json-stringify/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nAuto packing the repository in background for optimum performance.\nSee \"git help gc\" for manual housekeeping.\n\n\n<bash_metadata>\nbash tool terminated command after exceeding timeout 120000 ms\n</bash_metadata>",
+    "title": "Run improved git quickpush command",
     "metadata": {
-      "output": "warning: in the working copy of '.bun/install/cache/fast-json-stringify@6.2.0@@@1/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of '.cache/opencode/node_modules/fast-json-stringify/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\n",
-      "description": "Run improved git quickpush command"
+      "output": "warning: in the working copy of '.bun/install/cache/fast-json-stringify@6.2.0@@@1/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of '.cache/opencode/node_modules/fast-json-stringify/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nAuto packing the repository in background for optimum performance.\nSee \"git help gc\" for manual housekeeping.\n\n\n<bash_metadata>\nbash tool terminated command after exceeding timeout 120000 ms\n</bash_metadata>",
+      "exit": null,
+      "description": "Run improved git quickpush command",
+      "truncated": false
     },
     "time": {
-      "start": 1770298670778
+      "start": 1770298663156,
+      "end": 1770298783156
     }
   }
 }

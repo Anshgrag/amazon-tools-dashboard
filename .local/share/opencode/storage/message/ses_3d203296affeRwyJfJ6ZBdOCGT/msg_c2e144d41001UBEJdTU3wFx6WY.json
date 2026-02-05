@@ -1,0 +1,17 @@
+{
+  "id": "msg_c2e144d41001UBEJdTU3wFx6WY",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "role": "user",
+  "time": {
+    "created": 1770299608403
+  },
+  "summary": {
+    "title": "What all things will this do?",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

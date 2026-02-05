@@ -1,0 +1,34 @@
+{
+  "id": "prt_c2e0804e4001djcQznmoRXMzOX",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e07edef001EpAyOUCbx21l4k",
+  "type": "tool",
+  "callID": "chatcmpl-tool-5ab2b3499194420b80ca02e87f05be45",
+  "tool": "edit",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/EYE/git-quickpush",
+      "oldString": "# Add only relevant project files (exclude cache, node_modules, etc.)\ngit add *.md *.txt *.py *.js *.html *.css *.json *.sh *.png *.jpg *.gif\ngit add backend/ frontend/ training/ uploads/ 2>/dev/null || true",
+      "newString": "# Add only project files from current directory\ngit add --all ."
+    },
+    "output": "Edit applied successfully.",
+    "title": "Desktop/EYE/git-quickpush",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/bot4u/Desktop/EYE/git-quickpush\n===================================================================\n--- /home/bot4u/Desktop/EYE/git-quickpush\n+++ /home/bot4u/Desktop/EYE/git-quickpush\n@@ -8,11 +8,10 @@\n     echo \"Usage: git quickpush \\\"your commit message\\\"\"\n     exit 1\n fi\n \n-# Add only relevant project files (exclude cache, node_modules, etc.)\n-git add *.md *.txt *.py *.js *.html *.css *.json *.sh *.png *.jpg *.gif\n-git add backend/ frontend/ training/ uploads/ 2>/dev/null || true\n+# Add only project files from current directory\n+git add --all .\n \n # Commit with the provided message\n git commit -m \"$1\"\n \n",
+      "filediff": {
+        "file": "/home/bot4u/Desktop/EYE/git-quickpush",
+        "before": "#!/bin/bash\n\n# Custom git command to add, commit, and push all changes\n# Usage: git quickpush \"commit message\"\n\nif [ $# -eq 0 ]; then\n    echo \"Error: Please provide a commit message\"\n    echo \"Usage: git quickpush \\\"your commit message\\\"\"\n    exit 1\nfi\n\n# Add only relevant project files (exclude cache, node_modules, etc.)\ngit add *.md *.txt *.py *.js *.html *.css *.json *.sh *.png *.jpg *.gif\ngit add backend/ frontend/ training/ uploads/ 2>/dev/null || true\n\n# Commit with the provided message\ngit commit -m \"$1\"\n\n# Push to remote (if remote exists)\nif git remote get-url origin &>/dev/null; then\n    git push origin $(git rev-parse --abbrev-ref HEAD)\n    echo \"✓ Changes added, committed, and pushed successfully!\"\nelse\n    echo \"✓ Changes added and committed successfully!\"\n    echo \"ℹ No remote repository found. Set up a remote with: git remote add origin <repository-url>\"\nfi",
+        "after": "#!/bin/bash\n\n# Custom git command to add, commit, and push all changes\n# Usage: git quickpush \"commit message\"\n\nif [ $# -eq 0 ]; then\n    echo \"Error: Please provide a commit message\"\n    echo \"Usage: git quickpush \\\"your commit message\\\"\"\n    exit 1\nfi\n\n# Add only project files from current directory\ngit add --all .\n\n# Commit with the provided message\ngit commit -m \"$1\"\n\n# Push to remote (if remote exists)\nif git remote get-url origin &>/dev/null; then\n    git push origin $(git rev-parse --abbrev-ref HEAD)\n    echo \"✓ Changes added, committed, and pushed successfully!\"\nelse\n    echo \"✓ Changes added and committed successfully!\"\n    echo \"ℹ No remote repository found. Set up a remote with: git remote add origin <repository-url>\"\nfi",
+        "additions": 2,
+        "deletions": 3
+      },
+      "truncated": false
+    },
+    "time": {
+      "start": 1770298803442,
+      "end": 1770298803546
+    }
+  }
+}
