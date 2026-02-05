@@ -79,3 +79,23 @@ logs/
 checkpoints/
 saved_models/
 training_runs/
+
+# System files and directories (parent directories)
+.cache/
+.local/
+.config/
+.antigravity/
+.bun/
+.npm/
+.nvm/
+.ollama/
+.opencode/
+.ssh/
+.themes/
+.gitconfig
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.sudo_as_admin_successful
+.wget-hsts
