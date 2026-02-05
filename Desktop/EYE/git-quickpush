@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Custom git command to add, commit, and push all changes
+# Usage: git quickpush "commit message"
+
+if [ $# -eq 0 ]; then
+    echo "Error: Please provide a commit message"
+    echo "Usage: git quickpush \"your commit message\""
+    exit 1
+fi
+
+# Add only project files from current directory
+git add --all .
+
+# Commit with the provided message
+git commit -m "$1"
+
+# Push to remote (if remote exists)
+if git remote get-url origin &>/dev/null; then
+    git push origin $(git rev-parse --abbrev-ref HEAD)
+    echo "✓ Changes added, committed, and pushed successfully!"
+else
+    echo "✓ Changes added and committed successfully!"
+    echo "ℹ No remote repository found. Set up a remote with: git remote add origin <repository-url>"
+fi
