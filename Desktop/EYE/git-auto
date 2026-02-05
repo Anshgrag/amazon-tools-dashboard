@@ -88,9 +88,28 @@ COMMIT_MSG="[$DATE] $DESCRIPTION"
 
 git commit -m "$COMMIT_MSG"
 
-# Push if remote exists
+# Push if remote exists - with interactive authentication
 if git remote get-url origin &>/dev/null; then
-    git push origin $(git rev-parse --abbrev-ref HEAD)
+    echo "🔗 Pushing to remote..."
+    git push origin $(git rev-parse --abbrev-ref HEAD) || {
+        echo "⚠️  Authentication failed. Please enter your GitHub credentials:"
+        read -p "GitHub username: " GIT_USERNAME
+        read -s -p "GitHub personal access token (PAT): " GIT_TOKEN
+        echo ""
+        
+        # Update remote URL temporarily with credentials
+        git remote set-url origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/Anshgrag/Eye-disease-Detection.git
+        
+        # Try push again
+        git push origin $(git rev-parse --abbrev-ref HEAD)
+        
+        # Clear credentials from memory
+        unset GIT_USERNAME
+        unset GIT_TOKEN
+        
+        # Reset remote URL to original
+        git remote set-url origin git@github.com:Anshgrag/Eye-disease-Detection.git
+    }
     echo "✅ Auto-commit completed and pushed to remote!"
 else
     echo "✅ Auto-commit completed locally!"
