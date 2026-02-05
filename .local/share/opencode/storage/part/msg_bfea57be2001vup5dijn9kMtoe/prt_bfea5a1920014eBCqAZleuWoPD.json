@@ -1,0 +1,27 @@
+{
+  "id": "prt_bfea5a1920014eBCqAZleuWoPD",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "messageID": "msg_bfea57be2001vup5dijn9kMtoe",
+  "type": "tool",
+  "callID": "chatcmpl-tool-9ca1859e383047c1838908563361f50b",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "source venv/bin/activate && python3 -c \"\nimport sqlite3\nfrom datetime import datetime, timedelta\n\n# Create test data\nconn = sqlite3.connect('ecotrack.db')\ncursor = conn.cursor()\n\n# Insert device profiles\ndevices = [\n    ('TV', 'entertainment', 120, 15),\n    ('Computer', 'electronics', 200, 25),\n    ('Router', 'network', 15, 5)\n]\n\ncursor.executemany('INSERT OR REPLACE INTO device_profiles (device_name, device_type, rated_power, sleep_threshold, created_at) VALUES (?, ?, ?, ?, datetime(\\\"now\\\"))', devices)\n\n# Insert 24 hours of TV data\nbase_time = datetime.now() - timedelta(hours=24)\n\nfor i in range(24):\n    timestamp = base_time + timedelta(hours=i)\n    \n    if 18 <= i <= 23:  # Active evening usage\n        power_watts = 120\n        auto_controlled = 0\n        mode = 'active'\n    elif 0 <= i <= 5:  # Sleep mode - auto-controlled off\n        power_watts = 8\n        auto_controlled = 1\n        mode = 'sleep'\n    else:  # Standby during day\n        power_watts = 12\n        auto_controlled = 0\n        mode = 'standby'\n    \n    cursor.execute('''\n        INSERT INTO electricity_data \n        (device_name, mode, voltage, power_watts, timestamp, auto_controlled, manual_override, device_type, rated_power)\n        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)\n    ''', ('TV', mode, 220, power_watts, timestamp.isoformat(), auto_controlled, 0, 'entertainment', 120))\n\nconn.commit()\nconn.close()\nprint('Test data inserted successfully')\n\"",
+      "description": "Insert test data with new schema"
+    },
+    "output": "Test data inserted successfully\n",
+    "title": "Insert test data with new schema",
+    "metadata": {
+      "output": "Test data inserted successfully\n",
+      "exit": 0,
+      "description": "Insert test data with new schema",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769503826331,
+      "end": 1769503826388
+    }
+  }
+}

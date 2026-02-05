@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaab29b5001bb5lK8H1CNRa3P",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaab1d64001J3Jd5p555SMeUF",
+  "type": "text",
+  "text": "Port 5000 is in use—stop any existing backend process first.\n\nTo test:\n1. Start backend: `cd backend && source venv/bin/activate && python app.py`\n2. In another terminal: `cd backend && source venv/bin/activate && timeout 10 python tuya_integration.py`\n\nCheck voltage/current in backend logs or API: `curl http://localhost:5000/api/electricity/history?limit=5`\n\nIt should show ~240V voltage and 0 power/current since no load.",
+  "time": {
+    "start": 1769168645565,
+    "end": 1769168645565
+  }
+}

@@ -1,0 +1,673 @@
+{
+  "id": "prt_c0a61f76c001ktdJbQ56p1zlP2",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a6073a40021ieQ8lZC7Ib7bq",
+  "type": "tool",
+  "callID": "call_84bc9d04e4de4b53b8933c79",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "import torch\nimport torch.nn as nn\nimport torch.optim as optim\nfrom torch.utils.data import DataLoader, Dataset\nfrom torchvision import transforms\nimport pandas as pd\nfrom PIL import Image\nimport os\nimport json\nimport numpy as np\nfrom sklearn.metrics import classification_report, confusion_matrix, roc_auc_score\nfrom sklearn.model_selection import train_test_split\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom datetime import datetime\nimport logging\nfrom typing import Dict, List, Tuple, Optional\nimport albumentations as A\nfrom albumentations.pytorch import ToTensorV2\n\nfrom .cnn_vit_hybrid import EyeDiseaseClassifier\n\nlogger = logging.getLogger(__name__)\n\n\nclass EyeDataset(Dataset):\n    \"\"\"Custom dataset for eye disease classification\"\"\"\n    \n    def __init__(\n        self,\n        image_paths: List[str],\n        labels: List[int],\n        transforms: Optional[A.Compose] = None,\n        multi_label: bool = False,\n        multi_hot_labels: Optional[List[np.ndarray]] = None\n    ):\n        self.image_paths = image_paths\n        self.labels = labels\n        self.transforms = transforms\n        self.multi_label = multi_label\n        self.multi_hot_labels = multi_hot_labels\n    \n    def __len__(self) -> int:\n        return len(self.image_paths)\n    \n    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:\n        # Load image\n        image = Image.open(self.image_paths[idx]).convert('RGB')\n        image = np.array(image)\n        \n        # Apply transforms\n        if self.transforms:\n            augmented = self.transforms(image=image)\n            image = augmented['image']\n        \n        # Get labels\n        if self.multi_label and self.multi_hot_labels:\n            label = torch.FloatTensor(self.multi_hot_labels[idx])\n        else:\n            label = torch.LongTensor([self.labels[idx]])\n        \n        return image, label\n\n\nclass EyeDiseaseTrainer:\n    \"\"\"Trainer class for eye disease classification model\"\"\"\n    \n    def __init__(\n        self,\n        num_classes: int = 8,\n        device: Optional[str] = None,\n        save_dir: str = \"ml/models/checkpoints\"\n    ):\n        self.num_classes = num_classes\n        self.device = device or ('cuda' if torch.cuda.is_available() else 'cpu')\n        self.save_dir = save_dir\n        self.model = None\n        self.train_loader = None\n        self.val_loader = None\n        self.test_loader = None\n        \n        # Create save directory\n        os.makedirs(save_dir, exist_ok=True)\n        \n        # Setup logging\n        self.setup_logging()\n    \n    def setup_logging(self):\n        \"\"\"Setup logging configuration\"\"\"\n        logging.basicConfig(\n            level=logging.INFO,\n            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',\n            handlers=[\n                logging.FileHandler(os.path.join(self.save_dir, 'training.log')),\n                logging.StreamHandler()\n            ]\n        )\n    \n    def setup_data(\n        self,\n        data_dir: str,\n        batch_size: int = 32,\n        test_size: float = 0.2,\n        val_size: float = 0.1,\n        random_state: int = 42\n    ):\n        \"\"\"Setup data loaders\"\"\"\n        \n        # Training transforms with augmentation\n        train_transforms = A.Compose([\n            A.Resize(384, 384),\n            A.HorizontalFlip(p=0.5),\n            A.RandomRotate90(p=0.5),\n            A.RandomBrightnessContrast(\n                brightness_limit=0.2,\n                contrast_limit=0.2,\n                p=0.5\n            ),\n            A.ShiftScaleRotate(\n                shift_limit=0.1,\n                scale_limit=0.1,\n                rotate_limit=15,\n                p=0.5\n            ),\n            A.GaussNoise(var_limit=(10.0, 50.0), p=0.3),\n            A.Normalize(\n                mean=[0.485, 0.456, 0.406],\n                std=[0.229, 0.224, 0.225]\n            ),\n            ToTensorV2()\n        ])\n        \n        # Validation/test transforms (no augmentation)\n        val_transforms = A.Compose([\n            A.Resize(384, 384),\n            A.Normalize(\n                mean=[0.485, 0.456, 0.406],\n                std=[0.229, 0.224, 0.225]\n            ),\n            ToTensorV2()\n        ])\n        \n        # Load data (assuming CSV file with image paths and labels)\n        csv_path = os.path.join(data_dir, 'labels.csv')\n        if os.path.exists(csv_path):\n            df = pd.read_csv(csv_path)\n            image_paths = [os.path.join(data_dir, path) for path in df['image_path']]\n            labels = df['label'].tolist()\n        else:\n            # Fallback to directory structure\n            image_paths, labels = self._load_from_directories(data_dir)\n        \n        # Split data\n        train_paths, test_paths, train_labels, test_labels = train_test_split(\n            image_paths, labels, test_size=test_size, random_state=random_state, stratify=labels\n        )\n        \n        train_paths, val_paths, train_labels, val_labels = train_test_split(\n            train_paths, train_labels, test_size=val_size, random_state=random_state, stratify=train_labels\n        )\n        \n        # Create datasets\n        train_dataset = EyeDataset(train_paths, train_labels, train_transforms)\n        val_dataset = EyeDataset(val_paths, val_labels, val_transforms)\n        test_dataset = EyeDataset(test_paths, test_labels, val_transforms)\n        \n        # Create data loaders\n        self.train_loader = DataLoader(\n            train_dataset, batch_size=batch_size, shuffle=True, num_workers=4\n        )\n        self.val_loader = DataLoader(\n            val_dataset, batch_size=batch_size, shuffle=False, num_workers=4\n        )\n        self.test_loader = DataLoader(\n            test_dataset, batch_size=batch_size, shuffle=False, num_workers=4\n        )\n        \n        logger.info(f\"Data loaded: {len(train_dataset)} train, {len(val_dataset)} val, {len(test_dataset)} test\")\n    \n    def _load_from_directories(self, data_dir: str) -> Tuple[List[str], List[int]]:\n        \"\"\"Load data from directory structure\"\"\"\n        image_paths = []\n        labels = []\n        class_names = sorted([d for d in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, d))])\n        \n        for class_idx, class_name in enumerate(class_names):\n            class_dir = os.path.join(data_dir, class_name)\n            for image_name in os.listdir(class_dir):\n                if image_name.lower().endswith(('.png', '.jpg', '.jpeg')):\n                    image_paths.append(os.path.join(class_dir, image_name))\n                    labels.append(class_idx)\n        \n        return image_paths, labels\n    \n    def setup_model(self, learning_rate: float = 1e-4):\n        \"\"\"Setup model and optimizer\"\"\"\n        self.model = EyeDiseaseClassifier(num_classes=self.num_classes)\n        self.model.to(self.device)\n        \n        # Loss function\n        self.criterion = nn.CrossEntropyLoss()\n        \n        # Optimizer\n        self.optimizer = optim.AdamW(\n            self.model.parameters(),\n            lr=learning_rate,\n            weight_decay=1e-4\n        )\n        \n        # Learning rate scheduler\n        self.scheduler = optim.lr_scheduler.CosineAnnealingLR(\n            self.optimizer, T_max=50, eta_min=1e-6\n        )\n        \n        logger.info(f\"Model setup complete. Parameters: {sum(p.numel() for p in self.model.parameters()):,}\")\n    \n    def train_epoch(self) -> Dict[str, float]:\n        \"\"\"Train for one epoch\"\"\"\n        self.model.train()\n        total_loss = 0\n        correct = 0\n        total = 0\n        \n        for batch_idx, (images, labels) in enumerate(self.train_loader):\n            images, labels = images.to(self.device), labels.to(self.device).squeeze()\n            \n            # Zero gradients\n            self.optimizer.zero_grad()\n            \n            # Forward pass\n            outputs = self.model(images)\n            loss = self.criterion(outputs['disease_logits'], labels)\n            \n            # Backward pass\n            loss.backward()\n            self.optimizer.step()\n            \n            # Statistics\n            total_loss += loss.item()\n            _, predicted = outputs['disease_logits'].max(1)\n            total += labels.size(0)\n            correct += predicted.eq(labels).sum().item()\n            \n            # Log progress\n            if batch_idx % 100 == 0:\n                logger.info(f'Batch {batch_idx}/{len(self.train_loader)}, Loss: {loss.item():.4f}')\n        \n        avg_loss = total_loss / len(self.train_loader)\n        accuracy = 100. * correct / total\n        \n        return {'loss': avg_loss, 'accuracy': accuracy}\n    \n    def validate_epoch(self) -> Dict[str, float]:\n        \"\"\"Validate for one epoch\"\"\"\n        self.model.eval()\n        total_loss = 0\n        correct = 0\n        total = 0\n        all_predictions = []\n        all_labels = []\n        \n        with torch.no_grad():\n            for images, labels in self.val_loader:\n                images, labels = images.to(self.device), labels.to(self.device).squeeze()\n                \n                outputs = self.model(images)\n                loss = self.criterion(outputs['disease_logits'], labels)\n                \n                total_loss += loss.item()\n                _, predicted = outputs['disease_logits'].max(1)\n                total += labels.size(0)\n                correct += predicted.eq(labels).sum().item()\n                \n                all_predictions.extend(predicted.cpu().numpy())\n                all_labels.extend(labels.cpu().numpy())\n        \n        avg_loss = total_loss / len(self.val_loader)\n        accuracy = 100. * correct / total\n        \n        # Calculate additional metrics\n        report = classification_report(\n            all_labels, all_predictions,\n            output_dict=True, zero_division=0\n        )\n        \n        return {\n            'loss': avg_loss,\n            'accuracy': accuracy,\n            'precision': report['macro avg']['precision'],\n            'recall': report['macro avg']['recall'],\n            'f1': report['macro avg']['f1-score']\n        }\n    \n    def train(\n        self,\n        num_epochs: int = 100,\n        early_stopping_patience: int = 15,\n        save_best: bool = True\n    ):\n        \"\"\"Train the model\"\"\"\n        best_val_f1 = 0\n        patience_counter = 0\n        history = {\n            'train_loss': [], 'train_acc': [],\n            'val_loss': [], 'val_acc': [],\n            'val_f1': []\n        }\n        \n        for epoch in range(num_epochs):\n            logger.info(f'Epoch {epoch + 1}/{num_epochs}')\n            \n            # Train\n            train_metrics = self.train_epoch()\n            \n            # Validate\n            val_metrics = self.validate_epoch()\n            \n            # Learning rate step\n            self.scheduler.step()\n            \n            # Log metrics\n            history['train_loss'].append(train_metrics['loss'])\n            history['train_acc'].append(train_metrics['accuracy'])\n            history['val_loss'].append(val_metrics['loss'])\n            history['val_acc'].append(val_metrics['accuracy'])\n            history['val_f1'].append(val_metrics['f1'])\n            \n            logger.info(f\"Train Loss: {train_metrics['loss']:.4f}, Train Acc: {train_metrics['accuracy']:.2f}%\")\n            logger.info(f\"Val Loss: {val_metrics['loss']:.4f}, Val Acc: {val_metrics['accuracy']:.2f}%, Val F1: {val_metrics['f1']:.4f}\")\n            \n            # Save best model\n            if save_best and val_metrics['f1'] > best_val_f1:\n                best_val_f1 = val_metrics['f1']\n                self.save_checkpoint(f'best_model_epoch_{epoch + 1}.pth', val_metrics)\n                patience_counter = 0\n            else:\n                patience_counter += 1\n            \n            # Early stopping\n            if patience_counter >= early_stopping_patience:\n                logger.info(f\"Early stopping triggered after {epoch + 1} epochs\")\n                break\n        \n        # Save training history\n        with open(os.path.join(self.save_dir, 'training_history.json'), 'w') as f:\n            json.dump(history, f, indent=2)\n        \n        # Plot training curves\n        self.plot_training_curves(history)\n        \n        return history\n    \n    def save_checkpoint(self, filename: str, metrics: Dict[str, float]):\n        \"\"\"Save model checkpoint\"\"\"\n        checkpoint = {\n            'epoch': len(history.get('train_loss', [])),\n            'model_state_dict': self.model.state_dict(),\n            'optimizer_state_dict': self.optimizer.state_dict(),\n            'scheduler_state_dict': self.scheduler.state_dict(),\n            'metrics': metrics,\n            'num_classes': self.num_classes\n        }\n        \n        filepath = os.path.join(self.save_dir, filename)\n        torch.save(checkpoint, filepath)\n        logger.info(f\"Checkpoint saved: {filepath}\")\n    \n    def plot_training_curves(self, history: Dict[str, List[float]]):\n        \"\"\"Plot training curves\"\"\"\n        fig, axes = plt.subplots(2, 2, figsize=(15, 10))\n        \n        # Loss\n        axes[0, 0].plot(history['train_loss'], label='Train Loss')\n        axes[0, 0].plot(history['val_loss'], label='Val Loss')\n        axes[0, 0].set_title('Loss')\n        axes[0, 0].legend()\n        \n        # Accuracy\n        axes[0, 1].plot(history['train_acc'], label='Train Acc')\n        axes[0, 1].plot(history['val_acc'], label='Val Acc')\n        axes[0, 1].set_title('Accuracy')\n        axes[0, 1].legend()\n        \n        # F1 Score\n        axes[1, 0].plot(history['val_f1'], label='Val F1')\n        axes[1, 0].set_title('F1 Score')\n        axes[1, 0].legend()\n        \n        plt.tight_layout()\n        plt.savefig(os.path.join(self.save_dir, 'training_curves.png'))\n        plt.close()\n    \n    def evaluate_model(self):\n        \"\"\"Evaluate model on test set\"\"\"\n        self.model.eval()\n        all_predictions = []\n        all_labels = []\n        \n        with torch.no_grad():\n            for images, labels in self.test_loader:\n                images, labels = images.to(self.device), labels.to(self.device).squeeze()\n                outputs = self.model(images)\n                _, predicted = outputs['disease_logits'].max(1)\n                \n                all_predictions.extend(predicted.cpu().numpy())\n                all_labels.extend(labels.cpu().numpy())\n        \n        # Generate classification report\n        report = classification_report(all_labels, all_predictions, output_dict=True)\n        cm = confusion_matrix(all_labels, all_predictions)\n        \n        # Plot confusion matrix\n        plt.figure(figsize=(10, 8))\n        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')\n        plt.title('Confusion Matrix')\n        plt.ylabel('True Label')\n        plt.xlabel('Predicted Label')\n        plt.savefig(os.path.join(self.save_dir, 'confusion_matrix.png'))\n        plt.close()\n        \n        # Save results\n        results = {\n            'classification_report': report,\n            'confusion_matrix': cm.tolist()\n        }\n        \n        with open(os.path.join(self.save_dir, 'evaluation_results.json'), 'w') as f:\n            json.dump(results, f, indent=2)\n        \n        logger.info(\"Evaluation complete. Results saved.\")\n        return results\n\n\ndef main():\n    \"\"\"Main training function\"\"\"\n    # Configuration\n    config = {\n        'data_dir': 'ml/data/processed',\n        'num_classes': 8,\n        'batch_size': 32,\n        'num_epochs': 100,\n        'learning_rate': 1e-4,\n        'early_stopping_patience': 15\n    }\n    \n    # Initialize trainer\n    trainer = EyeDiseaseTrainer(\n        num_classes=config['num_classes'],\n        save_dir='ml/models/checkpoints'\n    )\n    \n    # Setup data\n    trainer.setup_data(\n        data_dir=config['data_dir'],\n        batch_size=config['batch_size']\n    )\n    \n    # Setup model\n    trainer.setup_model(learning_rate=config['learning_rate'])\n    \n    # Train\n    history = trainer.train(\n        num_epochs=config['num_epochs'],\n        early_stopping_patience=config['early_stopping_patience']\n    )\n    \n    # Evaluate\n    results = trainer.evaluate_model()\n    \n    logger.info(\"Training completed successfully!\")\n\n\nif __name__ == \"__main__\":\n    main()",
+      "filePath": "/home/bot4u/Desktop/eye project/ml/training/train.py"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/config.py\">\nERROR [1:6] Import \"pydantic_settings\" could not be resolved\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/database.py\">\nERROR [1:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [2:6] Import \"sqlalchemy.ext.declarative\" could not be resolved\nERROR [3:6] Import \"sqlalchemy\" could not be resolved\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/security.py\">\nERROR [37:22] Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\nERROR [38:20] Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"\nERROR [39:33] Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/api/auth.py\">\nERROR [3:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [9:6] Import \"app.schemas.auth\" could not be resolved\nERROR [10:6] Import \"app.models.auth\" could not be resolved\nERROR [91:34] \"get_current_user\" is not defined\nERROR [102:25] Cannot access attribute \"credentials\" for class \"str\"\n  Attribute \"credentials\" is unknown\nERROR [90:11] Function declaration \"get_current_user\" is obscured by a declaration of the same name\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/api/analysis.py\">\nERROR [2:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [10:6] Import \"app.schemas.analysis\" could not be resolved\nERROR [11:6] Import \"app.models.auth\" could not be resolved\nERROR [12:6] Import \"app.models.analysis\" could not be resolved\nERROR [14:6] Import \"app.services.ml_service\" could not be resolved\nERROR [15:6] Import \"app.services.image_service\" could not be resolved\nERROR [8:31] \"get_current_user\" is unknown import symbol\nERROR [190:19] \"scan\" is possibly unbound\n</diagnostics>",
+    "title": "Desktop/eye project/ml/training/train.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/eye project/backend/app/main.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/config.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 22
+              }
+            },
+            "message": "Import \"pydantic_settings\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/database.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 31
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.declarative\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 15
+              }
+            },
+            "message": "Import \"sqlalchemy\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/security.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 9
+              }
+            },
+            "message": "Import \"jose\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 27
+              },
+              "end": {
+                "line": 2,
+                "character": 30
+              }
+            },
+            "message": "Import \"jose.jwt\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 5
+              },
+              "end": {
+                "line": 3,
+                "character": 20
+              }
+            },
+            "message": "Import \"passlib.context\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 36,
+                "character": 21
+              },
+              "end": {
+                "line": 36,
+                "character": 39
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 37,
+                "character": 19
+              },
+              "end": {
+                "line": 37,
+                "character": 37
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 38,
+                "character": 32
+              },
+              "end": {
+                "line": 38,
+                "character": 51
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/exceptions.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/api/auth.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 8,
+                "character": 5
+              },
+              "end": {
+                "line": 8,
+                "character": 21
+              }
+            },
+            "message": "Import \"app.schemas.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 5
+              },
+              "end": {
+                "line": 9,
+                "character": 20
+              }
+            },
+            "message": "Import \"app.models.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 90,
+                "character": 33
+              },
+              "end": {
+                "line": 90,
+                "character": 49
+              }
+            },
+            "message": "\"get_current_user\" is not defined",
+            "severity": 1,
+            "code": "reportUndefinedVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportUndefinedVariable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 101,
+                "character": 24
+              },
+              "end": {
+                "line": 101,
+                "character": 35
+              }
+            },
+            "message": "Cannot access attribute \"credentials\" for class \"str\"\n  Attribute \"credentials\" is unknown",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 89,
+                "character": 10
+              },
+              "end": {
+                "line": 89,
+                "character": 26
+              }
+            },
+            "message": "Function declaration \"get_current_user\" is obscured by a declaration of the same name",
+            "severity": 1,
+            "code": "reportRedeclaration",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportRedeclaration"
+            },
+            "relatedInformation": [
+              {
+                "location": {
+                  "uri": "file:///home/bot4u/Desktop/eye%20project/backend/app/api/auth.py",
+                  "range": {
+                    "start": {
+                      "line": 96,
+                      "character": 10
+                    },
+                    "end": {
+                      "line": 96,
+                      "character": 26
+                    }
+                  }
+                },
+                "message": "See function declaration"
+              }
+            ]
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/analysis.py": [
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 5
+              },
+              "end": {
+                "line": 9,
+                "character": 25
+              }
+            },
+            "message": "Import \"app.schemas.analysis\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 10,
+                "character": 5
+              },
+              "end": {
+                "line": 10,
+                "character": 20
+              }
+            },
+            "message": "Import \"app.models.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 11,
+                "character": 5
+              },
+              "end": {
+                "line": 11,
+                "character": 24
+              }
+            },
+            "message": "Import \"app.models.analysis\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 5
+              },
+              "end": {
+                "line": 13,
+                "character": 28
+              }
+            },
+            "message": "Import \"app.services.ml_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 14,
+                "character": 5
+              },
+              "end": {
+                "line": 14,
+                "character": 31
+              }
+            },
+            "message": "Import \"app.services.image_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 7,
+                "character": 30
+              },
+              "end": {
+                "line": 7,
+                "character": 46
+              }
+            },
+            "message": "\"get_current_user\" is unknown import symbol",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 189,
+                "character": 18
+              },
+              "end": {
+                "line": 189,
+                "character": 22
+              }
+            },
+            "message": "\"scan\" is possibly unbound",
+            "severity": 1,
+            "code": "reportPossiblyUnboundVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportPossiblyUnboundVariable"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/health.py": [
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 7
+              },
+              "end": {
+                "line": 3,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 7,
+                "character": 5
+              },
+              "end": {
+                "line": 7,
+                "character": 28
+              }
+            },
+            "message": "Import \"app.services.ml_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/ml/models/cnn_vit_hybrid.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 7
+              },
+              "end": {
+                "line": 0,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 7
+              },
+              "end": {
+                "line": 1,
+                "character": 15
+              }
+            },
+            "message": "Import \"torch.nn\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 7
+              },
+              "end": {
+                "line": 2,
+                "character": 29
+              }
+            },
+            "message": "Import \"torchvision.transforms\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 7
+              },
+              "end": {
+                "line": 3,
+                "character": 25
+              }
+            },
+            "message": "Import \"torchvision.models\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 5
+              },
+              "end": {
+                "line": 4,
+                "character": 17
+              }
+            },
+            "message": "Import \"transformers\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 208,
+                "character": 15
+              },
+              "end": {
+                "line": 208,
+                "character": 36
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          }
+        ]
+      },
+      "filepath": "/home/bot4u/Desktop/eye project/ml/training/train.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769700718458,
+      "end": 1769700721478
+    }
+  }
+}

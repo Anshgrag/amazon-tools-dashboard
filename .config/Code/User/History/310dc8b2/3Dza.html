@@ -1,0 +1,114 @@
+
+***
+
+## 🎨 FRONTEND IMPLEMENTATION
+
+### **index.html**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Environmental Monitoring Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js library for creating graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header>
+            <h1>🌍 EcoTrack Dashboard</h1>
+            <p>Electricity and Air Quality Monitoring System</p>
+            <div class="last-updated">
+                Last Updated: <span id="lastUpdated">Loading...</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            
+            <!-- AIR QUALITY SECTION -->
+            <section class="card aqi-section">
+                <h2>🌫️ Air Quality Index (AQI)</h2>
+                
+                <!-- Indoor AQI -->
+                <div class="aqi-card">
+                    <div class="aqi-label">Indoor AQI</div>
+                    <div class="aqi-value" id="indoorAQI">--</div>
+                    <div class="aqi-category" id="indoorCategory">Loading...</div>
+                </div>
+                
+                <!-- Outdoor AQI -->
+                <div class="aqi-card">
+                    <div class="aqi-label">Outdoor AQI</div>
+                    <div class="aqi-value" id="outdoorAQI">--</div>
+                    <div class="aqi-category" id="outdoorCategory">Loading...</div>
+                </div>
+            </section>
+
+            <!-- ELECTRICITY MONITORING SECTION -->
+            <section class="card electricity-section">
+                <h2>⚡ Electricity Monitoring</h2>
+                <div class="device-grid" id="deviceGrid">
+                    <!-- Devices will be dynamically added here -->
+                    <div class="loading">Loading device data...</div>
+                </div>
+            </section>
+
+            <!-- AQI CHART -->
+            <section class="card chart-section">
+                <h2>📈 AQI Trend (Last 24 Hours)</h2>
+                <canvas id="aqiChart"></canvas>
+            </section>
+
+            <!-- ELECTRICITY CHART -->
+            <section class="card chart-section">
+                <h2>📊 Power Consumption by Device</h2>
+                <canvas id="electricityChart"></canvas>
+            </section>
+
+            <!-- ENERGY SAVING TIPS -->
+            <section class="card tips-section">
+                <h2>💡 Energy Saving Tips</h2>
+                <ul class="tips-list">
+                    <li>Turn off devices when not in use - even standby mode consumes power</li>
+                    <li>Unplug chargers after devices are fully charged</li>
+                    <li>Use natural ventilation when air quality is good</li>
+                    <li>Replace old appliances with energy-efficient models</li>
+                    <li>Monitor AQI before opening windows for ventilation</li>
+                </ul>
+            </section>
+
+            <!-- SYSTEM STATISTICS -->
+            <section class="card stats-section">
+                <h2>📊 System Statistics</h2>
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalDevices">0</div>
+                        <div class="stat-label">Monitored Devices</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalRecords">0</div>
+                        <div class="stat-label">Total Records</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>EcoTrack v1.0 | BE Mini Project 2026 | Data refreshes every 30 seconds</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

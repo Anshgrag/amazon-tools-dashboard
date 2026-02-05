@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead55615001MgK2PlxWhJD8Al",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead5195d0016iUwXMxCAQe7np",
+  "type": "tool",
+  "callID": "call_422c723e070a4541b444f94b",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:5000/api/devices/1/toggle -H \"Content-Type: application/json\" -d '{\"state\": \"off\"}'",
+      "description": "Test device toggle command"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 5000 after 0 ms: Couldn't connect to server\n",
+    "title": "Test device toggle command",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 5000 after 0 ms: Couldn't connect to server\n",
+      "exit": 7,
+      "description": "Test device toggle command",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171408412,
+      "end": 1769171408427
+    }
+  }
+}

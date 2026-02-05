@@ -1,0 +1,27 @@
+{
+  "id": "prt_be6f1f078001e37mzBNEhc4ASc",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f1dfd5002CVqjnbhkRab6GS",
+  "type": "tool",
+  "callID": "call_function_g9ax0kmnpvu5_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/ 2>&1 | head -20",
+      "description": "Check frontend response"
+    },
+    "output": "",
+    "title": "Check frontend response",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Check frontend response",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106174135,
+      "end": 1769106174163
+    }
+  }
+}

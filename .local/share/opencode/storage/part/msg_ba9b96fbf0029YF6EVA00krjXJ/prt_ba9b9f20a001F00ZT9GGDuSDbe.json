@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9b9f20a001F00ZT9GGDuSDbe",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b96fbf0029YF6EVA00krjXJ",
+  "type": "tool",
+  "callID": "call_5f16b5c8342c43eba2941745",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s http://localhost:8000/script.js | head -5",
+      "description": "Check if script is accessible now"
+    },
+    "output": "// ==================== CONFIGURATION ====================\n\nconst API_BASE_URL = 'http://localhost:5000';\nconst REFRESH_INTERVAL = 30000;\n\n",
+    "title": "Check if script is accessible now",
+    "metadata": {
+      "output": "// ==================== CONFIGURATION ====================\n\nconst API_BASE_URL = 'http://localhost:5000';\nconst REFRESH_INTERVAL = 30000;\n\n",
+      "exit": 0,
+      "description": "Check if script is accessible now",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079094292,
+      "end": 1768079096326
+    }
+  }
+}

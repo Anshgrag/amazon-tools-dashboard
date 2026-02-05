@@ -1,0 +1,27 @@
+{
+  "id": "prt_beaad567c001HFn8NvAKfuLoH9",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaad50f00011ie7SoXdIPL8pD",
+  "type": "tool",
+  "callID": "call_44882633",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd backend && source venv/bin/activate && timeout 10 python tuya_integration.py",
+      "description": "Run Tuya integration again now that backend is running"
+    },
+    "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\n✅ Sent data for Smart Switch: 0.0W\n⏳ Waiting 60 seconds before next update...\n\n",
+    "title": "Run Tuya integration again now that backend is running",
+    "metadata": {
+      "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\n✅ Sent data for Smart Switch: 0.0W\n⏳ Waiting 60 seconds before next update...\n\n",
+      "exit": 124,
+      "description": "Run Tuya integration again now that backend is running",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168787074,
+      "end": 1769168797102
+    }
+  }
+}

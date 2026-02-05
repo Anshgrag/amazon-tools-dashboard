@@ -1,0 +1,27 @@
+{
+  "id": "prt_be70cb921001C0PZy0wl5MhBzp",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70ca542002nptjnd9G80hXM4",
+  "type": "tool",
+  "callID": "call_function_s5iycrp19s4k_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test/backend && source venv/bin/activate && nohup python app.py > /tmp/backend.log 2>&1 &",
+      "description": "Start backend"
+    },
+    "output": "",
+    "title": "Start backend",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start backend",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107929992,
+      "end": 1769107930005
+    }
+  }
+}

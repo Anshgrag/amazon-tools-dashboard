@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6f2308e001CjLGDxH7Wka57A",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f219d5002OOu1dbLrM5hS3Y",
+  "type": "reasoning",
+  "text": "Let me wait a moment and then check if the server is running.",
+  "metadata": {
+    "anthropic": {
+      "signature": "0d0f608876405c0de199a0307e5015b449b2931eb98a601f7db6bb2dadfdff8b"
+    }
+  },
+  "time": {
+    "start": 1769106190478,
+    "end": 1769106190768
+  }
+}

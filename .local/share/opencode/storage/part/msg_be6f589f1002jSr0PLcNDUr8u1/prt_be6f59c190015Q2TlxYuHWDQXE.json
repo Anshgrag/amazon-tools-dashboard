@@ -1,0 +1,27 @@
+{
+  "id": "prt_be6f59c190015Q2TlxYuHWDQXE",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f589f1002jSr0PLcNDUr8u1",
+  "type": "tool",
+  "callID": "call_function_e0zmozmzzzq7_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "fuser -k 8000/tcp 2>/dev/null; sleep 1; cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 &",
+      "description": "Restart frontend server"
+    },
+    "output": " 71051",
+    "title": "Restart frontend server",
+    "metadata": {
+      "output": " 71051",
+      "exit": 0,
+      "description": "Restart frontend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106415033,
+      "end": 1769106416251
+    }
+  }
+}

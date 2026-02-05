@@ -1,0 +1,8 @@
+[
+  {
+    "content": "Test the Tuya integration to ensure it connects and fetches data properly",
+    "status": "completed",
+    "priority": "medium",
+    "id": "test_connection"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "id": "prt_be7082b27001EfzG24rixM6fmf",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70809db00226OB2TxatDtXEl",
+  "type": "reasoning",
+  "text": "Now let me restart the servers and test the changes.",
+  "metadata": {
+    "anthropic": {
+      "signature": "56b3fd741ca1f22b82dbbae03df81ce05d1a14188b159d4ea9515a9a7b8a68a6"
+    }
+  },
+  "time": {
+    "start": 1769107630887,
+    "end": 1769107631268
+  }
+}

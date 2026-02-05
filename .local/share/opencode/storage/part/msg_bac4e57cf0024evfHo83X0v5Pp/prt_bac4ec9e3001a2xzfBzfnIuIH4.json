@@ -1,0 +1,25 @@
+{
+  "id": "prt_bac4ec9e3001a2xzfBzfnIuIH4",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac4e57cf0024evfHo83X0v5Pp",
+  "type": "tool",
+  "callID": "call_4ea9d9de062d468795f7ab78",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/index.html",
+      "limit": 30
+    },
+    "output": "<file>\n00001| <!DOCTYPE html>\n00002| <html lang=\"en\">\n00003| <head>\n00004|     <meta charset=\"UTF-8\">\n00005|     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n00006|     <title>EcoTrack - Energy Dashboard</title>\n00007|     <link rel=\"stylesheet\" href=\"style.css\">\n00008|     <!-- Chart.js library -->\n00009|     <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n00010| </head>\n00011| <body>\n00012|     <div class=\"app-container\">\n00013|         \n00014|         <!-- SIDEBAR -->\n00015|         <aside class=\"sidebar\">\n00016|             <div class=\"logo\">\n00017|                 <h1>ECOTRACK</h1>\n00018|                 <span class=\"beta-badge\">BETA</span>\n00019|             </div>\n00020|             \n00021|             <nav class=\"nav-menu\">\n00022|                 <a href=\"#\" class=\"nav-item active\">\n00023|                     <span class=\"icon\">📊</span>\n00024|                     <span>Dashboard</span>\n00025|                 </a>\n00026|                 <a href=\"#\" class=\"nav-item\">\n00027|                     <span class=\"icon\">💰</span>\n00028|                     <span>Cost</span>\n00029|                 </a>\n00030|                 <a href=\"#\" class=\"nav-item\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 30)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/index.html",
+    "metadata": {
+      "preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>EcoTrack - Energy Dashboard</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Chart.js library -->\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n</head>\n<body>\n    <div class=\"app-container\">\n        \n        <!-- SIDEBAR -->\n        <aside class=\"sidebar\">\n            <div class=\"logo\">\n                <h1>ECOTRACK</h1>\n                <span class=\"beta-badge\">BETA</span>\n            </div>\n            ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768122403304,
+      "end": 1768122403314
+    }
+  }
+}

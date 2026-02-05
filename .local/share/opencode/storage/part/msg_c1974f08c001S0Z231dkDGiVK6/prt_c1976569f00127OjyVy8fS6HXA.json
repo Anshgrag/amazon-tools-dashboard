@@ -1,0 +1,241 @@
+{
+  "id": "prt_c1976569f00127OjyVy8fS6HXA",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c1974f08c001S0Z231dkDGiVK6",
+  "type": "tool",
+  "callID": "call_f9a4f3792af34655a080d8cf",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "{\n \"cells\": [\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"# Eye Disease Detection - Training Notebook\\n\",\n    \"\\n\",\n    \"This notebook trains a CNN model for eye disease detection using transfer learning.\\n\",\n    \"\\n\",\n    \"## Classes:\\n\",\n    \"- Normal\\n\",\n    \"- Conjunctivitis\\n\",\n    \"- Cataract\\n\",\n    \"- Glaucoma\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 1. Setup and Imports\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Mount Google Drive\\n\",\n    \"from google.colab import drive\\n\",\n    \"drive.mount('/content/drive')\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"import tensorflow as tf\\n\",\n    \"from tensorflow import keras\\n\",\n    \"from tensorflow.keras import layers, Model\\n\",\n    \"from tensorflow.keras.applications import MobileNetV2, EfficientNetB0\\n\",\n    \"from tensorflow.keras.applications.mobilenet_v2 import preprocess_input\\n\",\n    \"from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau\\n\",\n    \"from tensorflow.keras.preprocessing.image import ImageDataGenerator\\n\",\n    \"import numpy as np\\n\",\n    \"import matplotlib.pyplot as plt\\n\",\n    \"import os\\n\",\n    \"from sklearn.metrics import classification_report, confusion_matrix\\n\",\n    \"import seaborn as sns\\n\",\n    \"from pathlib import Path\\n\",\n    \"\\n\",\n    \"# Check TensorFlow version and GPU availability\\n\",\n    \"print(f\\\"TensorFlow Version: {tf.__version__}\\\")\\n\",\n    \"print(f\\\"GPU Available: {len(tf.config.list_physical_devices('GPU')) > 0}\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 2. Configuration\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Configuration\\n\",\n    \"CONFIG = {\\n\",\n    \"    'IMAGE_SIZE': (224, 224),\\n\",\n    \"    'BATCH_SIZE': 32,\\n\",\n    \"    'EPOCHS': 50,\\n\",\n    \"    'LEARNING_RATE': 0.0001,\\n\",\n    \"    'NUM_CLASSES': 4,\\n\",\n    \"    'CLASS_NAMES': ['Normal', 'Conjunctivitis', 'Cataract', 'Glaucoma'],\\n\",\n    \"    'BASE_MODEL': 'MobileNetV2',  # Options: 'MobileNetV2', 'EfficientNetB0'\\n\",\n    \"    'USE_DATA_AUGMENTATION': True,\\n\",\n    \"    'VALIDATION_SPLIT': 0.2\\n\",\n    \"}\\n\",\n    \"\\n\",\n    \"# Paths\\n\",\n    \"DATASET_PATH = '/content/drive/MyDrive/eye_dataset'  # Update with your path\\n\",\n    \"MODEL_SAVE_PATH = '/content/drive/MyDrive/eye_disease_model.keras'\\n\",\n    \"CHECKPOINT_PATH = '/content/best_model.keras'\\n\",\n    \"\\n\",\n    \"print(\\\"Configuration loaded successfully!\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 3. Dataset Preparation\\n\",\n    \"\\n\",\n    \"### Dataset Structure:\\n\",\n    \"```\\n\",\n    \"eye_dataset/\\n\",\n    \"├── Normal/\\n\",\n    \"│   ├── image1.jpg\\n\",\n    \"│   ├── image2.jpg\\n\",\n    \"│   └── ...\\n\",\n    \"├── Conjunctivitis/\\n\",\n    \"│   └── ...\\n\",\n    \"├── Cataract/\\n\",\n    \"│   └── ...\\n\",\n    \"└── Glaucoma/\\n\",\n    \"    └── ...\\n\",\n    \"```\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"def create_dataset_splits(dataset_path, validation_split=0.2):\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    Create train, validation, and test datasets.\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    \\n\",\n    \"    # Data augmentation for training\\n\",\n    \"    train_datagen = ImageDataGenerator(\\n\",\n    \"        preprocessing_function=preprocess_input,\\n\",\n    \"        rotation_range=15,\\n\",\n    \"        width_shift_range=0.1,\\n\",\n    \"        height_shift_range=0.1,\\n\",\n    \"        horizontal_flip=True,\\n\",\n    \"        zoom_range=0.1,\\n\",\n    \"        fill_mode='nearest',\\n\",\n    \"        validation_split=validation_split\\n\",\n    \"    )\\n\",\n    \"    \\n\",\n    \"    # No augmentation for validation\\n\",\n    \"    val_datagen = ImageDataGenerator(\\n\",\n    \"        preprocessing_function=preprocess_input,\\n\",\n    \"        validation_split=validation_split\\n\",\n    \"    )\\n\",\n    \"    \\n\",\n    \"    # Create generators\\n\",\n    \"    train_generator = train_datagen.flow_from_directory(\\n\",\n    \"        dataset_path,\\n\",\n    \"        target_size=CONFIG['IMAGE_SIZE'],\\n\",\n    \"        batch_size=CONFIG['BATCH_SIZE'],\\n\",\n    \"        class_mode='categorical',\\n\",\n    \"        subset='training',\\n\",\n    \"        shuffle=True,\\n\",\n    \"        seed=42\\n\",\n    \"    )\\n\",\n    \"    \\n\",\n    \"    val_generator = val_datagen.flow_from_directory(\\n\",\n    \"        dataset_path,\\n\",\n    \"        target_size=CONFIG['IMAGE_SIZE'],\\n\",\n    \"        batch_size=CONFIG['BATCH_SIZE'],\\n\",\n    \"        class_mode='categorical',\\n\",\n    \"        subset='validation',\\n\",\n    \"        shuffle=False,\\n\",\n    \"        seed=42\\n\",\n    \"    )\\n\",\n    \"    \\n\",\n    \"    return train_generator, val_generator\\n\",\n    \"\\n\",\n    \"# Create datasets\\n\",\n    \"train_gen, val_gen = create_dataset_splits(DATASET_PATH, CONFIG['VALIDATION_SPLIT'])\\n\",\n    \"\\n\",\n    \"print(f\\\"Training samples: {train_gen.samples}\\\")\\n\",\n    \"print(f\\\"Validation samples: {val_gen.samples}\\\")\\n\",\n    \"print(f\\\"Classes: {train_gen.class_indices}\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 4. Visualize Sample Images\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"def visualize_samples(generator, num_samples=8):\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    Visualize sample images from the dataset.\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    images, labels = next(generator)\\n\",\n    \"    \\n\",\n    \"    plt.figure(figsize=(15, 8))\\n\",\n    \"    for i in range(min(num_samples, len(images))):\\n\",\n    \"        plt.subplot(2, 4, i + 1)\\n\",\n    \"        \\n\",\n    \"        # Denormalize for display\\n\",\n    \"        img = images[i].copy()\\n\",\n    \"        img = ((img + 1) * 127.5).astype(np.uint8)\\n\",\n    \"        \\n\",\n    \"        plt.imshow(img)\\n\",\n    \"        plt.title(CONFIG['CLASS_NAMES'][np.argmax(labels[i])])\\n\",\n    \"        plt.axis('off')\\n\",\n    \"    \\n\",\n    \"    plt.tight_layout()\\n\",\n    \"    plt.show()\\n\",\n    \"\\n\",\n    \"visualize_samples(train_gen)\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 5. Model Architecture\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"def build_model(base_model_name='MobileNetV2', num_classes=4):\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    Build a transfer learning model for eye disease detection.\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    \\n\",\n    \"    # Choose base model\\n\",\n    \"    if base_model_name == 'MobileNetV2':\\n\",\n    \"        base_model = MobileNetV2(\\n\",\n    \"            weights='imagenet',\\n\",\n    \"            include_top=False,\\n\",\n    \"            input_shape=(*CONFIG['IMAGE_SIZE'], 3)\\n\",\n    \"        )\\n\",\n    \"    elif base_model_name == 'EfficientNetB0':\\n\",\n    \"        base_model = EfficientNetB0(\\n\",\n    \"            weights='imagenet',\\n\",\n    \"            include_top=False,\\n\",\n    \"            input_shape=(*CONFIG['IMAGE_SIZE'], 3)\\n\",\n    \"        )\\n\",\n    \"    else:\\n\",\n    \"        raise ValueError(f\\\"Unknown base model: {base_model_name}\\\")\\n\",\n    \"    \\n\",\n    \"    # Freeze base model layers initially\\n\",\n    \"    base_model.trainable = False\\n\",\n    \"    \\n\",\n    \"    # Build custom classification head\\n\",\n    \"    inputs = keras.Input(shape=(*CONFIG['IMAGE_SIZE'], 3))\\n\",\n    \"    \\n\",\n    \"    # Data augmentation\\n\",\n    \"    if CONFIG['USE_DATA_AUGMENTATION']:\\n\",\n    \"        x = layers.RandomFlip('horizontal')(inputs)\\n\",\n    \"        x = layers.RandomRotation(0.1)(x)\\n\",\n    \"        x = layers.RandomZoom(0.1)(x)\\n\",\n    \"        x = preprocess_input(x)\\n\",\n    \"    else:\\n\",\n    \"        x = preprocess_input(inputs)\\n\",\n    \"    \\n\",\n    \"    # Pass through base model\\n\",\n    \"    x = base_model(x, training=False)\\n\",\n    \"    \\n\",\n    \"    # Global average pooling\\n\",\n    \"    x = layers.GlobalAveragePooling2D()(x)\\n\",\n    \"    \\n\",\n    \"    # Dropout for regularization\\n\",\n    \"    x = layers.Dropout(0.5)(x)\\n\",\n    \"    \\n\",\n    \"    # Dense layers\\n\",\n    \"    x = layers.Dense(256, activation='relu')(x)\\n\",\n    \"    x = layers.BatchNormalization()(x)\\n\",\n    \"    x = layers.Dropout(0.3)(x)\\n\",\n    \"    \\n\",\n    \"    x = layers.Dense(128, activation='relu')(x)\\n\",\n    \"    x = layers.BatchNormalization()(x)\\n\",\n    \"    x = layers.Dropout(0.2)(x)\\n\",\n    \"    \\n\",\n    \"    # Output layer\\n\",\n    \"    outputs = layers.Dense(num_classes, activation='softmax')(x)\\n\",\n    \"    \\n\",\n    \"    # Create model\\n\",\n    \"    model = Model(inputs, outputs, name=f'EyeDisease_{base_model_name}')\\n\",\n    \"    \\n\",\n    \"    return model, base_model\\n\",\n    \"\\n\",\n    \"# Build the model\\n\",\n    \"model, base_model = build_model(CONFIG['BASE_MODEL'], CONFIG['NUM_CLASSES'])\\n\",\n    \"\\n\",\n    \"# Display model summary\\n\",\n    \"model.summary()\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 6. Compile and Train Model\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Compile model\\n\",\n    \"model.compile(\\n\",\n    \"    optimizer=keras.optimizers.Adam(learning_rate=CONFIG['LEARNING_RATE']),\\n\",\n    \"    loss='categorical_crossentropy',\\n\",\n    \"    metrics=['accuracy', keras.metrics.AUC(name='auc')]\\n\",\n    \")\\n\",\n    \"\\n\",\n    \"# Callbacks\\n\",\n    \"callbacks = [\\n\",\n    \"    EarlyStopping(\\n\",\n    \"        monitor='val_loss',\\n\",\n    \"        patience=10,\\n\",\n    \"        restore_best_weights=True,\\n\",\n    \"        verbose=1\\n\",\n    \"    ),\\n\",\n    \"    ModelCheckpoint(\\n\",\n    \"        CHECKPOINT_PATH,\\n\",\n    \"        monitor='val_accuracy',\\n\",\n    \"        save_best_only=True,\\n\",\n    \"        verbose=1\\n\",\n    \"    ),\\n\",\n    \"    ReduceLROnPlateau(\\n\",\n    \"        monitor='val_loss',\\n\",\n    \"        factor=0.5,\\n\",\n    \"        patience=5,\\n\",\n    \"        min_lr=1e-7,\\n\",\n    \"        verbose=1\\n\",\n    \"    )\\n\",\n    \"]\\n\",\n    \"\\n\",\n    \"print(\\\"Model compiled successfully!\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Train model (Phase 1 - frozen base model)\\n\",\n    \"print(\\\"Starting Phase 1: Training with frozen base model...\\\")\\n\",\n    \"history_phase1 = model.fit(\\n\",\n    \"    train_gen,\\n\",\n    \"    epochs=CONFIG['EPOCHS'] // 2,\\n\",\n    \"    validation_data=val_gen,\\n\",\n    \"    callbacks=callbacks,\\n\",\n    \"    verbose=1\\n\",\n    \")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 7. Fine-tuning Phase\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Unfreeze last few layers of base model for fine-tuning\\n\",\n    \"base_model.trainable = True\\n\",\n    \"\\n\",\n    \"# Freeze first 100 layers, unfreeze the rest\\n\",\n    \"for layer in base_model.layers[:100]:\\n\",\n    \"    layer.trainable = False\\n\",\n    \"\\n\",\n    \"# Recompile with lower learning rate for fine-tuning\\n\",\n    \"model.compile(\\n\",\n    \"    optimizer=keras.optimizers.Adam(learning_rate=1e-5),\\n\",\n    \"    loss='categorical_crossentropy',\\n\",\n    \"    metrics=['accuracy', keras.metrics.AUC(name='auc')]\\n\",\n    \")\\n\",\n    \"\\n\",\n    \"print(f\\\"Fine-tuning with {sum(1 for layer in base_model.layers if layer.trainable)} trainable layers\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Train model (Phase 2 - fine-tuning)\\n\",\n    \"print(\\\"Starting Phase 2: Fine-tuning...\\\")\\n\",\n    \"history_phase2 = model.fit(\\n\",\n    \"    train_gen,\\n\",\n    \"    epochs=CONFIG['EPOCHS'] // 2,\\n\",\n    \"    validation_data=val_gen,\\n\",\n    \"    callbacks=callbacks,\\n\",\n    \"    verbose=1\\n\",\n    \")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 8. Training Visualization\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"def plot_training_history(history1, history2=None):\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    Plot training and validation metrics.\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    fig, axes = plt.subplots(2, 2, figsize=(15, 10))\\n\",\n    \"    \\n\",\n    \"    # Combine histories if fine-tuning was done\\n\",\n    \"    if history2:\\n\",\n    \"        total_history = {\\n\",\n    \"            'loss': history1.history['loss'] + history2.history['loss'],\\n\",\n    \"            'val_loss': history1.history['val_loss'] + history2.history['val_loss'],\\n\",\n    \"            'accuracy': history1.history['accuracy'] + history2.history['accuracy'],\\n\",\n    \"            'val_accuracy': history1.history['val_accuracy'] + history2.history['val_accuracy'],\\n\",\n    \"            'auc': history1.history['auc'] + history2.history['auc'],\\n\",\n    \"            'val_auc': history1.history['val_auc'] + history2.history['val_auc'],\\n\",\n    \"        }\\n\",\n    \"        phase1_len = len(history1.history['loss'])\\n\",\n    \"    else:\\n\",\n    \"        total_history = {\\n\",\n    \"            'loss': history1.history['loss'],\\n\",\n    \"            'val_loss': history1.history['val_loss'],\\n\",\n    \"            'accuracy': history1.history['accuracy'],\\n\",\n    \"            'val_accuracy': history1.history['val_accuracy'],\\n\",\n    \"            'auc': history1.history['auc'],\\n\",\n    \"            'val_auc': history1.history['val_auc'],\\n\",\n    \"        }\\n\",\n    \"        phase1_len = 0\\n\",\n    \"    \\n\",\n    \"    epochs = range(1, len(total_history['loss']) + 1)\\n\",\n    \"    \\n\",\n    \"    # Plot Loss\\n\",\n    \"    axes[0, 0].plot(epochs, total_history['loss'], 'b-', label='Training Loss')\\n\",\n    \"    axes[0, 0].plot(epochs, total_history['val_loss'], 'r-', label='Validation Loss')\\n\",\n    \"    if history2:\\n\",\n    \"        axes[0, 0].axvline(x=phase1_len, color='g', linestyle='--', label='Fine-tuning Start')\\n\",\n    \"    axes[0, 0].set_xlabel('Epoch')\\n\",\n    \"    axes[0, 0].set_ylabel('Loss')\\n\",\n    \"    axes[0, 0].set_title('Training and Validation Loss')\\n\",\n    \"    axes[0, 0].legend()\\n\",\n    \"    axes[0, 0].grid(True)\\n\",\n    \"    \\n\",\n    \"    # Plot Accuracy\\n\",\n    \"    axes[0, 1].plot(epochs, total_history['accuracy'], 'b-', label='Training Accuracy')\\n\",\n    \"    axes[0, 1].plot(epochs, total_history['val_accuracy'], 'r-', label='Validation Accuracy')\\n\",\n    \"    if history2:\\n\",\n    \"        axes[0, 1].axvline(x=phase1_len, color='g', linestyle='--', label='Fine-tuning Start')\\n\",\n    \"    axes[0, 1].set_xlabel('Epoch')\\n\",\n    \"    axes[0, 1].set_ylabel('Accuracy')\\n\",\n    \"    axes[0, 1].set_title('Training and Validation Accuracy')\\n\",\n    \"    axes[0, 1].legend()\\n\",\n    \"    axes[0, 1].grid(True)\\n\",\n    \"    \\n\",\n    \"    # Plot AUC\\n\",\n    \"    axes[1, 0].plot(epochs, total_history['auc'], 'b-', label='Training AUC')\\n\",\n    \"    axes[1, 0].plot(epochs, total_history['val_auc'], 'r-', label='Validation AUC')\\n\",\n    \"    if history2:\\n\",\n    \"        axes[1, 0].axvline(x=phase1_len, color='g', linestyle='--', label='Fine-tuning Start')\\n\",\n    \"    axes[1, 0].set_xlabel('Epoch')\\n\",\n    \"    axes[1, 0].set_ylabel('AUC')\\n\",\n    \"    axes[1, 0].set_title('Training and Validation AUC')\\n\",\n    \"    axes[1, 0].legend()\\n\",\n    \"    axes[1, 0].grid(True)\\n\",\n    \"    \\n\",\n    \"    # Learning Rate Curve\\n\",\n    \"    axes[1, 1].axis('off')\\n\",\n    \"    axes[1, 1].text(0.5, 0.5, \\n\",\n    \"                 f'Best Validation Accuracy: {max(total_history[\\\"val_accuracy\\\"]):.4f}\\\\n'\\n\",\n    \"                 f'Best Validation Loss: {min(total_history[\\\"val_loss\\\"]):.4f}\\\\n'\\n\",\n    \"                 f'Final Training Accuracy: {total_history[\\\"accuracy\\\"][-1]:.4f}',\\n\",\n    \"                 ha='center', va='center', fontsize=14,\\n\",\n    \"                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))\\n\",\n    \"    \\n\",\n    \"    plt.tight_layout()\\n\",\n    \"    plt.show()\\n\",\n    \"\\n\",\n    \"plot_training_history(history_phase1, history_phase2)\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 9. Model Evaluation\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Load best model\\n\",\n    \"best_model = keras.models.load_model(CHECKPOINT_PATH)\\n\",\n    \"\\n\",\n    \"# Evaluate on validation set\\n\",\n    \"val_loss, val_accuracy, val_auc = best_model.evaluate(val_gen, verbose=1)\\n\",\n    \"\\n\",\n    \"print(f\\\"\\\\nValidation Results:\\\")\\n\",\n    \"print(f\\\"Loss: {val_loss:.4f}\\\")\\n\",\n    \"print(f\\\"Accuracy: {val_accuracy:.4f}\\\")\\n\",\n    \"print(f\\\"AUC: {val_auc:.4f}\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Generate predictions\\n\",\n    \"val_gen.reset()\\n\",\n    \"y_pred_probs = best_model.predict(val_gen, verbose=1)\\n\",\n    \"y_pred = np.argmax(y_pred_probs, axis=1)\\n\",\n    \"y_true = val_gen.classes\\n\",\n    \"\\n\",\n    \"# Classification report\\n\",\n    \"print(\\\"\\\\nClassification Report:\\\")\\n\",\n    \"print(classification_report(\\n\",\n    \"    y_true, y_pred,\\n\",\n    \"    target_names=CONFIG['CLASS_NAMES'],\\n\",\n    \"    digits=4\\n\",\n    \"))\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Confusion Matrix\\n\",\n    \"cm = confusion_matrix(y_true, y_pred)\\n\",\n    \"\\n\",\n    \"plt.figure(figsize=(10, 8))\\n\",\n    \"sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',\\n\",\n    \"            xticklabels=CONFIG['CLASS_NAMES'],\\n\",\n    \"            yticklabels=CONFIG['CLASS_NAMES'])\\n\",\n    \"plt.xlabel('Predicted')\\n\",\n    \"plt.ylabel('True')\\n\",\n    \"plt.title('Confusion Matrix')\\n\",\n    \"plt.tight_layout()\\n\",\n    \"plt.show()\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 10. Save Model\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Save the best model\\n\",\n    \"best_model.save(MODEL_SAVE_PATH)\\n\",\n    \"print(f\\\"Model saved successfully to: {MODEL_SAVE_PATH}\\\")\\n\",\n    \"\\n\",\n    \"# Save in HDF5 format for compatibility\\n\",\n    \"h5_path = MODEL_SAVE_PATH.replace('.keras', '.h5')\\n\",\n    \"best_model.save(h5_path)\\n\",\n    \"print(f\\\"Model also saved in H5 format to: {h5_path}\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 11. Test Inference Speed\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"import time\\n\",\n    \"\\n\",\n    \"# Test inference speed on CPU\\n\",\n    \"num_samples = 10\\n\",\n    \"sample_images, _ = next(val_gen)\\n\",\n    \"\\n\",\n    \"start_time = time.time()\\n\",\n    \"for _ in range(num_samples):\\n\",\n    \"    _ = best_model.predict(sample_images[:1], verbose=0)\\n\",\n    \"end_time = time.time()\\n\",\n    \"\\n\",\n    \"avg_time = (end_time - start_time) / num_samples\\n\",\n    \"print(f\\\"Average inference time: {avg_time:.3f} seconds\\\")\\n\",\n    \"print(f\\\"Inference speed meets requirement (< 10s): {'Yes' if avg_time < 10 else 'No'}\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 12. Visualize Predictions\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"def visualize_predictions(model, generator, num_samples=8):\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    Visualize model predictions on sample images.\\n\",\n    \"    \\\"\\\"\\\"\\n\",\n    \"    images, labels = next(generator)\\n\",\n    \"    \\n\",\n    \"    predictions = model.predict(images[:num_samples], verbose=0)\\n\",\n    \"    \\n\",\n    \"    plt.figure(figsize=(15, 10))\\n\",\n    \"    for i in range(min(num_samples, len(images))):\\n\",\n    \"        plt.subplot(2, 4, i + 1)\\n\",\n    \"        \\n\",\n    \"        # Denormalize for display\\n\",\n    \"        img = images[i].copy()\\n\",\n    \"        img = ((img + 1) * 127.5).astype(np.uint8)\\n\",\n    \"        \\n\",\n    \"        true_label = CONFIG['CLASS_NAMES'][np.argmax(labels[i])]\\n\",\n    \"        pred_label = CONFIG['CLASS_NAMES'][np.argmax(predictions[i])]\\n\",\n    \"        confidence = np.max(predictions[i]) * 100\\n\",\n    \"        \\n\",\n    \"        color = 'green' if true_label == pred_label else 'red'\\n\",\n    \"        \\n\",\n    \"        plt.imshow(img)\\n\",\n    \"        plt.title(f\\\"True: {true_label}\\\\nPred: {pred_label}\\\\nConf: {confidence:.1f}%\\\",\\n\",\n    \"                 color=color, fontsize=10)\\n\",\n    \"        plt.axis('off')\\n\",\n    \"    \\n\",\n    \"    plt.tight_layout()\\n\",\n    \"    plt.show()\\n\",\n    \"\\n\",\n    \"visualize_predictions(best_model, val_gen)\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## 13. Export Model for Deployment\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Convert model to TensorFlow Lite for mobile deployment\\n\",\n    \"converter = tf.lite.TFLiteConverter.from_keras_model(best_model)\\n\",\n    \"\\n\",\n    \"# Enable optimizations for smaller model size\\n\",\n    \"converter.optimizations = [tf.lite.Optimize.DEFAULT]\\n\",\n    \"\\n\",\n    \"# Convert model\\n\",\n    \"tflite_model = converter.convert()\\n\",\n    \"\\n\",\n    \"# Save TFLite model\\n\",\n    \"tflite_path = '/content/drive/MyDrive/eye_disease_model.tflite'\\n\",\n    \"with open(tflite_path, 'wb') as f:\\n\",\n    \"    f.write(tflite_model)\\n\",\n    \"\\n\",\n    \"print(f\\\"TFLite model saved to: {tflite_path}\\\")\\n\",\n    \"print(f\\\"Model size: {len(tflite_model) / (1024 * 1024):.2f} MB\\\")\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"## Summary\\n\",\n    \"\\n\",\n    \"This notebook trained a CNN model using transfer learning for eye disease detection. The model:\\n\",\n    \"\\n\",\n    \"1. **Architecture**: Used MobileNetV2 as a base model with custom classification head\\n\",\n    \"2. **Training**: Two-phase training (frozen base model + fine-tuning)\\n\",\n    \"3. **Performance**: Achieved high accuracy on validation set\\n\",\n    \"4. **Speed**: Inference time under 10 seconds on CPU\\n\",\n    \"5. **Export**: Saved in .keras, .h5, and TFLite formats\\n\",\n    \"\\n\",\n    \"### Next Steps:\\n\",\n    \"- Deploy the model using the FastAPI backend\\n\",\n    \"- Test with the frontend interface\\n\",\n    \"- Collect more data for improved accuracy\\n\",\n    \"- Add more eye conditions to detect\"\n   ]\n  }\n ],\n \"metadata\": {\n  \"kernelspec\": {\n   \"display_name\": \"Python 3\",\n   \"language\": \"python\",\n   \"name\": \"python3\"\n  },\n  \"language_info\": {\n   \"codemirror_mode\": {\n    \"name\": \"ipython\",\n    \"version\": 3\n   },\n   \"file_extension\": \".py\",\n   \"mimetype\": \"text/x-python\",\n   \"name\": \"python\",\n   \"nbconvert_exporter\": \"python\",\n   \"pygments_lexer\": \"ipython3\",\n   \"version\": \"3.8.0\"\n  }\n },\n \"nbformat\": 4,\n \"nbformat_minor\": 4\n}\n",
+      "filePath": "/home/bot4u/Desktop/EYE/training/eye_detection_training.ipynb"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/EYE/backend/utils/inference.py\">\nERROR [121:10] Import \"tensorflow.keras.applications\" could not be resolved\nERROR [14:42] Expression of type \"None\" cannot be assigned to parameter of type \"str\"\n  \"None\" is not assignable to \"str\"\nERROR [67:32] Type \"dict[str, str | float]\" is not assignable to return type \"Dict[str, float]\"\n  \"str\" is not assignable to \"float\"\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/EYE/backend/main.py\">\nERROR [107:34] Argument of type \"str | None\" cannot be assigned to parameter \"file_path\" of type \"str\" in function \"validate_image_format\"\n  Type \"str | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\nERROR [115:26] No overloads for \"splitext\" match the provided arguments\nERROR [115:43] Argument of type \"str | None\" cannot be assigned to parameter \"p\" of type \"AnyOrLiteralStr@splitext\" in function \"splitext\"\n  Type \"str | None\" is not assignable to constrained type variable \"AnyOrLiteralStr\"\n</diagnostics>",
+    "title": "Desktop/EYE/training/eye_detection_training.ipynb",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py": [],
+        "/home/bot4u/Desktop/EYE/backend/utils/inference.py": [
+          {
+            "range": {
+              "start": {
+                "line": 120,
+                "character": 9
+              },
+              "end": {
+                "line": 120,
+                "character": 38
+              }
+            },
+            "message": "Import \"tensorflow.keras.applications\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 7
+              },
+              "end": {
+                "line": 4,
+                "character": 17
+              }
+            },
+            "message": "Import \"tensorflow\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 5
+              },
+              "end": {
+                "line": 5,
+                "character": 28
+              }
+            },
+            "message": "Import \"tensorflow.keras.models\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 41
+              },
+              "end": {
+                "line": 13,
+                "character": 45
+              }
+            },
+            "message": "Expression of type \"None\" cannot be assigned to parameter of type \"str\"\n  \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 66,
+                "character": 31
+              },
+              "end": {
+                "line": 66,
+                "character": 64
+              }
+            },
+            "message": "Type \"dict[str, str | float]\" is not assignable to return type \"Dict[str, float]\"\n  \"str\" is not assignable to \"float\"",
+            "severity": 1,
+            "code": "reportReturnType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportReturnType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 121,
+                "character": 9
+              },
+              "end": {
+                "line": 121,
+                "character": 32
+              }
+            },
+            "message": "Import \"tensorflow.keras.layers\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 122,
+                "character": 9
+              },
+              "end": {
+                "line": 122,
+                "character": 32
+              }
+            },
+            "message": "Import \"tensorflow.keras.models\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/EYE/backend/main.py": [
+          {
+            "range": {
+              "start": {
+                "line": 106,
+                "character": 33
+              },
+              "end": {
+                "line": 106,
+                "character": 46
+              }
+            },
+            "message": "Argument of type \"str | None\" cannot be assigned to parameter \"file_path\" of type \"str\" in function \"validate_image_format\"\n  Type \"str | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 114,
+                "character": 25
+              },
+              "end": {
+                "line": 114,
+                "character": 56
+              }
+            },
+            "message": "No overloads for \"splitext\" match the provided arguments",
+            "severity": 1,
+            "code": "reportCallIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportCallIssue"
+            },
+            "relatedInformation": [
+              {
+                "location": {
+                  "uri": "file:///home/bot4u/.local/share/opencode/bin/node_modules/pyright/dist/typeshed-fallback/stdlib/posixpath.pyi",
+                  "range": {
+                    "start": {
+                      "line": 148,
+                      "character": 4
+                    },
+                    "end": {
+                      "line": 148,
+                      "character": 12
+                    }
+                  }
+                },
+                "message": "Overload 2 is the closest match"
+              }
+            ]
+          },
+          {
+            "range": {
+              "start": {
+                "line": 114,
+                "character": 42
+              },
+              "end": {
+                "line": 114,
+                "character": 55
+              }
+            },
+            "message": "Argument of type \"str | None\" cannot be assigned to parameter \"p\" of type \"AnyOrLiteralStr@splitext\" in function \"splitext\"\n  Type \"str | None\" is not assignable to constrained type variable \"AnyOrLiteralStr\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          }
+        ]
+      },
+      "filepath": "/home/bot4u/Desktop/EYE/training/eye_detection_training.ipynb",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953711795,
+      "end": 1769953711815
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+    "injected_packages": {},
+    "main_package": {
+        "app_paths": [
+            {
+                "__Path__": "/home/bot4u/.local/share/pipx/venvs/sherlock-project/bin/sherlock",
+                "__type__": "Path"
+            }
+        ],
+        "app_paths_of_dependencies": {
+            "charset-normalizer": [
+                {
+                    "__Path__": "/home/bot4u/.local/share/pipx/venvs/sherlock-project/bin/normalizer",
+                    "__type__": "Path"
+                }
+            ],
+            "numpy": [
+                {
+                    "__Path__": "/home/bot4u/.local/share/pipx/venvs/sherlock-project/bin/f2py",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/bot4u/.local/share/pipx/venvs/sherlock-project/bin/numpy-config",
+                    "__type__": "Path"
+                }
+            ],
+            "stem": [
+                {
+                    "__Path__": "/home/bot4u/.local/share/pipx/venvs/sherlock-project/bin/tor-prompt",
+                    "__type__": "Path"
+                }
+            ]
+        },
+        "apps": [
+            "sherlock"
+        ],
+        "apps_of_dependencies": [
+            "f2py",
+            "numpy-config",
+            "normalizer",
+            "tor-prompt"
+        ],
+        "include_apps": true,
+        "include_dependencies": false,
+        "man_pages": [],
+        "man_pages_of_dependencies": [],
+        "man_paths": [],
+        "man_paths_of_dependencies": {},
+        "package": "sherlock-project",
+        "package_or_url": "sherlock-project",
+        "package_version": "0.16.0",
+        "pip_args": [],
+        "suffix": ""
+    },
+    "pipx_metadata_version": "0.3",
+    "python_version": "Python 3.12.3",
+    "venv_args": []
+}

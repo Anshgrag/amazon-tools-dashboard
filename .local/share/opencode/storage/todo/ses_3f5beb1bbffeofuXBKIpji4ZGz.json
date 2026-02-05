@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "content": "Create project directory structure",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "id": "2",
+    "content": "Create context.md with comprehensive project documentation",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "id": "3",
+    "content": "Set up backend with FastAPI structure",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "id": "4",
+    "content": "Set up frontend webdev structure",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "id": "5",
+    "content": "Create ML pipeline code (training + inference)",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "id": "6",
+    "content": "Add configuration files (requirements.txt, package.json, etc)",
+    "status": "completed",
+    "priority": "medium"
+  },
+  {
+    "id": "7",
+    "content": "Create Docker and deployment configuration",
+    "status": "completed",
+    "priority": "medium"
+  },
+  {
+    "id": "8",
+    "content": "Add API documentation and UI/UX flow",
+    "status": "completed",
+    "priority": "medium"
+  }
+]

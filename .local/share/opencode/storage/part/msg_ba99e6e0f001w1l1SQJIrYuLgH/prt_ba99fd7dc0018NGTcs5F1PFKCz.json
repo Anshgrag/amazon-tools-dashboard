@@ -1,0 +1,25 @@
+{
+  "id": "prt_ba99fd7dc0018NGTcs5F1PFKCz",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba99e6e0f001w1l1SQJIrYuLgH",
+  "type": "tool",
+  "callID": "call_9115dcfae3f2460c865f5ac8",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/test_data.py",
+      "limit": 50
+    },
+    "output": "<file>\n00001| \"\"\"\n00002| Advanced Test Data Generator for EcoTrack\n00003| Generates realistic electricity and AQI data based on:\n00004| - Real household power consumption patterns\n00005| - Daily usage cycles (morning, afternoon, evening, night)\n00006| - Indian AQI pollution levels\n00007| - Device-specific behavior patterns\n00008| \n00009| Data Sources:\n00010| - US EIA Average Household Consumption Data\n00011| - Indian AQI Real-time Pollution Levels\n00012| - Appliance Power Consumption Standards\n00013| \"\"\"\n00014| \n00015| import requests\n00016| import random\n00017| import time\n00018| from datetime import datetime, timedelta\n00019| import math\n00020| \n00021| API_URL = \"http://localhost:5000\"\n00022| \n00023| # ==================== REALISTIC DEVICE CONFIGURATIONS ====================\n00024| \n00025| # Based on US Energy Information Administration data\n00026| DEVICES_CONFIG = {\n00027|     \"TV\": {\n00028|         \"power_on\": (85, 150),          # 40-55 inch LED TV (watts)\n00029|         \"power_standby\": (2, 5),        # Standby consumption\n00030|         \"power_idle\": (0.5, 1),         # Off but plugged in\n00031|         \"voltage\": (220, 240),          # Voltage range in India\n00032|         \"typical_hours\": {\n00033|             \"morning\": 0.3,   # 30% chance ON in morning\n00034|             \"afternoon\": 0.2, # 20% chance ON in afternoon\n00035|             \"evening\": 0.9,   # 90% chance ON in evening\n00036|             \"night\": 0.1      # 10% chance ON at night\n00037|         },\n00038|         \"color\": \"#ff6b9d\"\n00039|     },\n00040|     \"Refrigerator\": {\n00041|         \"power_on\": (150, 250),         # Running (compressor active)\n00042|         \"power_standby\": (40, 60),      # Idle (compressor off)\n00043|         \"power_idle\": (40, 60),         # Always on minimum\n00044|         \"voltage\": (220, 240),\n00045|         \"typical_hours\": {\n00046|             \"morning\": 0.8,   # 80% running (door opened frequently)\n00047|             \"afternoon\": 0.6, # 60% running\n00048|             \"evening\": 0.7,   # 70% running (dinner prep)\n00049|             \"night\": 0.4      # 40% running (low activity)\n00050|         },\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/backend/test_data.py",
+    "metadata": {
+      "preview": "\"\"\"\nAdvanced Test Data Generator for EcoTrack\nGenerates realistic electricity and AQI data based on:\n- Real household power consumption patterns\n- Daily usage cycles (morning, afternoon, evening, night)\n- Indian AQI pollution levels\n- Device-specific behavior patterns\n\nData Sources:\n- US EIA Average Household Consumption Data\n- Indian AQI Real-time Pollution Levels\n- Appliance Power Consumption Standards\n\"\"\"\n\nimport requests\nimport random\nimport time\nfrom datetime import datetime, timedelta\nimport math\n",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768077383652,
+      "end": 1768077383658
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_babc8b1da0018eJiUIsaQ5kc7a",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_babc78b950029RlhOCGh9EGwJv",
+  "type": "tool",
+  "callID": "call_f7e668906ab44a96a3e39a94",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s \"http://localhost:5000/api/savings?period=today\" | jq '.status'",
+      "description": "Test period filtering"
+    },
+    "output": "\"success\"\n",
+    "title": "Test period filtering",
+    "metadata": {
+      "output": "\"success\"\n",
+      "exit": 0,
+      "description": "Test period filtering",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768113615342,
+      "end": 1768113617390
+    }
+  }
+}

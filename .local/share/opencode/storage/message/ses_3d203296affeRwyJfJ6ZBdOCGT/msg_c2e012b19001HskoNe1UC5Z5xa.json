@@ -1,0 +1,17 @@
+{
+  "id": "msg_c2e012b19001HskoNe1UC5Z5xa",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "role": "user",
+  "time": {
+    "created": 1770298354466
+  },
+  "summary": {
+    "title": "How to use this?",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

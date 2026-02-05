@@ -1,0 +1,25 @@
+{
+  "id": "prt_be704697e001jMcakhSj0BVVR7",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be704435300272B5gskrmvwaJG",
+  "type": "tool",
+  "callID": "call_function_hkaiu6lyl3pv_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/index.html",
+      "limit": 50
+    },
+    "output": "<file>\n00001| <!DOCTYPE html>\n00002| <html lang=\"en\">\n00003| <head>\n00004|     <meta charset=\"UTF-8\">\n00005|     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n00006|     <title>EcoTrack - Energy Dashboard</title>\n00007|     <link rel=\"stylesheet\" href=\"style.css\">\n00008|     <!-- Chart.js library -->\n00009|     <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n00010| </head>\n00011| <body>\n00012|     <div class=\"app-container\">\n00013|         \n00014|         <!-- SIDEBAR -->\n00015|         <aside class=\"sidebar\">\n00016|             <div class=\"logo\">\n00017|                 <h1>ECOTRACK</h1>\n00018|                 <span class=\"beta-badge\">BETA</span>\n00019|             </div>\n00020|             \n00021|             <nav class=\"nav-menu\">\n00022|                 <a href=\"#\" class=\"nav-item active\" data-tab=\"dashboard\">\n00023|                     <span class=\"icon\">📊</span>\n00024|                     <span>Dashboard</span>\n00025|                 </a>\n00026|                 <a href=\"#\" class=\"nav-item\" data-tab=\"cost\">\n00027|                     <span class=\"icon\">💰</span>\n00028|                     <span>Cost</span>\n00029|                 </a>\n00030|                 <a href=\"#\" class=\"nav-item\" data-tab=\"appliances\">\n00031|                     <span class=\"icon\">💡</span>\n00032|                     <span>Appliances</span>\n00033|                 </a>\n00034|                 <a href=\"#\" class=\"nav-item\" data-tab=\"rooms\">\n00035|                     <span class=\"icon\">🏠</span>\n00036|                     <span>Usage by Rooms</span>\n00037|                 </a>\n00038|                 <a href=\"#\" class=\"nav-item\" data-tab=\"devices\">\n00039|                     <span class=\"icon\">🔌</span>\n00040|                     <span>Devices</span>\n00041|                 </a>\n00042|             </nav>\n00043|             \n00044|             <div class=\"theme-section\">\n00045|                 <div class=\"theme-label\">THEME</div>\n00046|                 <div class=\"theme-options\">\n00047|                     <button class=\"theme-btn active\" data-theme=\"dark\" title=\"Dark\">\n00048|                         <span class=\"theme-color\" style=\"background: linear-gradient(135deg, #1a2332 50%, #2a3f5f 50%);\"></span>\n00049|                     </button>\n00050|                     <button class=\"theme-btn\" data-theme=\"ocean\" title=\"Ocean\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/index.html",
+    "metadata": {
+      "preview": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>EcoTrack - Energy Dashboard</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Chart.js library -->\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n</head>\n<body>\n    <div class=\"app-container\">\n        \n        <!-- SIDEBAR -->\n        <aside class=\"sidebar\">\n            <div class=\"logo\">\n                <h1>ECOTRACK</h1>\n                <span class=\"beta-badge\">BETA</span>\n            </div>\n            ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769107384994,
+      "end": 1769107385000
+    }
+  }
+}

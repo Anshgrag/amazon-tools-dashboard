@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead8e7ac001U03CQ826u6dwt9",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead8afc8001VZseumdQ8prCZi",
+  "type": "tool",
+  "callID": "call_9a6039b61e2c4accb68f4589",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd frontend && python3 -c \"\nimport subprocess\nimport time\ntry:\n    result = subprocess.run(['curl', '-s', 'http://localhost:8000'], capture_output=True, text=True)\n    if 'EcoTrack' in result.stdout:\n        print('✅ Frontend HTML serving correctly')\n    else:\n        print('❌ Frontend HTML issue')\nexcept Exception as e:\n    print(f'❌ Frontend error: {e}')\n\"",
+      "description": "Test frontend HTML serving"
+    },
+    "output": "✅ Frontend HTML serving correctly\n",
+    "title": "Test frontend HTML serving",
+    "metadata": {
+      "output": "✅ Frontend HTML serving correctly\n",
+      "exit": 0,
+      "description": "Test frontend HTML serving",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171642293,
+      "end": 1769171642485
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_beab462c90013wkSn7WrU6d4g0",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab45ea7001nwOvkHrRluqQ3j",
+  "type": "reasoning",
+  "text": "The function displays appliances, and it has colors for TV, Router, etc., but for Smart Switch, it uses default '#4ecdc4'",
+  "time": {
+    "start": 1769169248969,
+    "end": 1769169253318
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0ef76fe0001B86Ny2OwbvMVqQ",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "role": "user",
+  "time": {
+    "created": 1769777623025
+  },
+  "summary": {
+    "title": "Similar projects for literature survey edits",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "prt_c0fa0744f001YlV6YD9buF0wht",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa060cd002xPwqLiQmmViF2b",
+  "type": "tool",
+  "callID": "call_fcf8ed70501540fc851e364d",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "oldString": "const colors = {\n        'TV': '#ff6b9d',\n        'Router': '#c77dff',\n        'Charger': '#4ecdc4',\n        'Refrigerator': '#ffd166'\n    };",
+      "newString": "const colors = {\n        'default': '#4ecdc4'\n    };"
+    },
+    "error": "Error: Found multiple matches for oldString. Provide more surrounding lines in oldString to identify the correct match.",
+    "time": {
+      "start": 1769788699729,
+      "end": 1769788699758
+    }
+  }
+}

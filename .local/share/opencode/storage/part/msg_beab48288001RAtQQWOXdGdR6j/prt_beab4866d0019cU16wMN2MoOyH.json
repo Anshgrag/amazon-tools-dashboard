@@ -1,0 +1,11 @@
+{
+  "id": "prt_beab4866d0019cU16wMN2MoOyH",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab48288001RAtQQWOXdGdR6j",
+  "type": "reasoning",
+  "text": "Good, now listening.\n\nPerhaps the issue was the server was not running from frontend dir.",
+  "time": {
+    "start": 1769169258093,
+    "end": 1769169259814
+  }
+}

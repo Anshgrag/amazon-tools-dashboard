@@ -1,0 +1,56 @@
+{
+  "id": "prt_ba9b33c0a001iZJf0x7ORe5j9b",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b3209d002ztHcM5JYluaT2O",
+  "type": "tool",
+  "callID": "call_659fbe95dddc45699dff2fcf",
+  "tool": "question",
+  "state": {
+    "status": "error",
+    "input": {
+      "questions": [
+        {
+          "question": "I can see the issues - the formatCurrency function is removing decimal places (showing $0 instead of $0.00), the styling isn't matching the existing cards, and the layout needs adjustment. What would you prefer for the currency display format?",
+          "header": "Currency Format",
+          "options": [
+            {
+              "label": "$0.00 (show cents)",
+              "description": "Traditional format like $30.68"
+            },
+            {
+              "label": "$0 (whole dollars only)",
+              "description": "Simplified format like $31"
+            },
+            {
+              "label": "€0.00 (European style)",
+              "description": "Use euro symbol instead of dollar"
+            }
+          ]
+        },
+        {
+          "question": "The Smart Savings Monitor needs to match the dark theme and card layout of existing components. What visual style would you prefer?",
+          "header": "Visual Design",
+          "options": [
+            {
+              "label": "Match existing card style exactly",
+              "description": "Use same borders, shadows, and colors as other cards"
+            },
+            {
+              "label": "Emphasize with accent colors",
+              "description": "Make savings card stand out with green/red highlights"
+            },
+            {
+              "label": "Minimal design",
+              "description": "Clean, subtle styling with minimal decoration"
+            }
+          ]
+        }
+      ]
+    },
+    "error": "Error: The question tool was called with invalid arguments: [\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 12,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      0,\n      \"header\"\n    ],\n    \"message\": \"Too big: expected string to have <=12 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 12,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      1,\n      \"header\"\n    ],\n    \"message\": \"Too big: expected string to have <=12 characters\"\n  }\n].\nPlease rewrite the input so it satisfies the expected schema.",
+    "time": {
+      "start": 1768078654498,
+      "end": 1768078654502
+    }
+  }
+}

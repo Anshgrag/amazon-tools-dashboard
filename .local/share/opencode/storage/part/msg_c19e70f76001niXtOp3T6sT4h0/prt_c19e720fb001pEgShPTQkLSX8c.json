@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e720fb001pEgShPTQkLSX8c",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e70f76001niXtOp3T6sT4h0",
+  "type": "tool",
+  "callID": "call_8cbd82c7f10643138c6fc0b7",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -I http://localhost:8001/ 2>/dev/null | head -5",
+      "description": "Test frontend server"
+    },
+    "output": "HTTP/1.0 200 OK\r\nServer: SimpleHTTP/0.6 Python/3.12.3\r\nDate: Sun, 01 Feb 2026 15:51:43 GMT\r\nContent-type: text/html\r\nContent-Length: 5494\r\n",
+    "title": "Test frontend server",
+    "metadata": {
+      "output": "HTTP/1.0 200 OK\r\nServer: SimpleHTTP/0.6 Python/3.12.3\r\nDate: Sun, 01 Feb 2026 15:51:43 GMT\r\nContent-type: text/html\r\nContent-Length: 5494\r\n",
+      "exit": 0,
+      "description": "Test frontend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961103620,
+      "end": 1769961103689
+    }
+  }
+}

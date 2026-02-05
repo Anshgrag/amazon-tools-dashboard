@@ -1,0 +1,28 @@
+{
+  "id": "prt_c0a813efb001Hep2m27tiIjy9P",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a812178002emjJGVD9qpZqia",
+  "type": "tool",
+  "callID": "call_0e2b587aea354d2ba8a62834",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd \"/home/bot4u/Desktop/eye project/docker\" && docker compose up --build",
+      "description": "Run Docker compose without detach",
+      "timeout": 120000
+    },
+    "output": "time=\"2026-01-29T21:36:08+05:30\" level=warning msg=\"/home/bot4u/Desktop/eye project/docker/docker-compose.yml: `version` is obsolete\"\nunable to prepare context: path \"/home/bot4u/Desktop/eye project/docker/backend\" not found\n",
+    "title": "Run Docker compose without detach",
+    "metadata": {
+      "output": "time=\"2026-01-29T21:36:08+05:30\" level=warning msg=\"/home/bot4u/Desktop/eye project/docker/docker-compose.yml: `version` is obsolete\"\nunable to prepare context: path \"/home/bot4u/Desktop/eye project/docker/backend\" not found\n",
+      "exit": 17,
+      "description": "Run Docker compose without detach",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702768386,
+      "end": 1769702768693
+    }
+  }
+}

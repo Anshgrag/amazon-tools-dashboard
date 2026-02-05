@@ -1,0 +1,21 @@
+{
+  "id": "prt_c0fa27acf001dlL5qbJRBYY6vW",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa2643e002fGyVkxQMGwIDZj",
+  "type": "tool",
+  "callID": "call_ae2de04d56244930b5b5bfcd",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "oldString": "const roomNames = {\n        'living-room': 'Living Room',\n        'kitchen': 'Kitchen',\n        'bedroom': 'Bedroom',\n        'office': 'Office'\n    };",
+      "newString": "const roomNames = {\n        'living-room': 'Living Room',\n        'kitchen': 'Kitchen', \n        'bedroom': 'Bedroom',\n        'office': 'Office'\n    };"
+    },
+    "error": "Error: File /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js has been modified since it was last read.\nLast modification: 2026-01-30T16:00:00.109Z\nLast read: 2026-01-30T15:58:14.075Z\n\nPlease read the file again before modifying it.",
+    "time": {
+      "start": 1769788832467,
+      "end": 1769788832495
+    }
+  }
+}

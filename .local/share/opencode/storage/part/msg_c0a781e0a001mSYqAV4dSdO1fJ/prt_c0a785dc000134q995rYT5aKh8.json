@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a785dc000134q995rYT5aKh8",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a781e0a001mSYqAV4dSdO1fJ",
+  "type": "tool",
+  "callID": "call_288cbeefe4554091bdfe68f4",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -fsSL https://get.docker.com -o get-docker.sh",
+      "description": "Download Docker installation script"
+    },
+    "output": "",
+    "title": "Download Docker installation script",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Download Docker installation script",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702186446,
+      "end": 1769702186756
+    }
+  }
+}

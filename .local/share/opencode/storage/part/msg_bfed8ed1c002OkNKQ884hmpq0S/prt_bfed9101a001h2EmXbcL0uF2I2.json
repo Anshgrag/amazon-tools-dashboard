@@ -1,0 +1,24 @@
+{
+  "id": "prt_bfed9101a001h2EmXbcL0uF2I2",
+  "sessionID": "ses_401271315ffezF15p2W1dB1lv5",
+  "messageID": "msg_bfed8ed1c002OkNKQ884hmpq0S",
+  "type": "tool",
+  "callID": "call_d88e2b36fed9423a8e2673b0",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/final_card.pdf"
+    },
+    "output": "No files found",
+    "title": "Documents",
+    "metadata": {
+      "count": 0,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769507196956,
+      "end": 1769507196962
+    }
+  }
+}

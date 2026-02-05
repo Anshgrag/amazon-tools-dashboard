@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fabdd83001vX5orgUuWDqHcB",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fabcf0e002zxdBLgVu29aUi5",
+  "type": "tool",
+  "callID": "call_765c46a95ba4496bb6881a46",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "chmod +x /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/test_system.sh && /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/test_system.sh",
+      "description": "Run comprehensive system test"
+    },
+    "output": "=== COMPREHENSIVE ECO TRACK TEST ===\n1. Testing Backend APIs...\n   Devices API: ✅\n   Savings API: ✅\n   Electricity API: ✅\n   Rooms API: ✅\n\n2. Testing Frontend...\n   Frontend Server: ✅\n\n3. Checking Processes...\n   Backend Process: ❌ Stopped\n   Frontend Process: ❌ Stopped\n\n4. Testing Data Flow...\n   Available Devices: 8\n   Data Status: ✅ Has device data\n\n5. Instructions for Manual Testing:\n   1. Open browser and go to: http://localhost:8000\n   2. Open browser console (F12) to see debug messages\n   3. Click on each tab: Dashboard, Cost, Appliances, Usage by Rooms\n   4. Click on time filters: Today, Month, Year\n   5. Check console for any JavaScript errors\n\n=== END TEST ===\n",
+    "title": "Run comprehensive system test",
+    "metadata": {
+      "output": "=== COMPREHENSIVE ECO TRACK TEST ===\n1. Testing Backend APIs...\n   Devices API: ✅\n   Savings API: ✅\n   Electricity API: ✅\n   Rooms API: ✅\n\n2. Testing Frontend...\n   Frontend Server: ✅\n\n3. Checking Processes...\n   Backend Process: ❌ Stopped\n   Frontend Process: ❌ Stopped\n\n4. Testing Data Flow...\n   Available Devices: 8\n   Data Status: ✅ Has device data\n\n5. Instructions for Manual Testing:\n   1. Open browser and go to: http://localhost:8000\n   2. Open browser console (F12) to see debug messages\n   3. Click on each tab: Dashboard, Cost, Appliances, Usage by Rooms\n   4. Click on time filters: Today, Month, Year\n   5. Check console for any JavaScript errors\n\n=== END TEST ===\n",
+      "exit": 0,
+      "description": "Run comprehensive system test",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789447557,
+      "end": 1769789448108
+    }
+  }
+}

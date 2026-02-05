@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e5db6d001Jzu93rFYDjgIjc",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e59db0001PP5rTdUXz1EZlN",
+  "type": "tool",
+  "callID": "call_8b28b6eb345b4e09afcb7bb6",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && tail -20 backend.log",
+      "description": "Check recent backend logs"
+    },
+    "output": "To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.\n2026-02-01 21:20:04.157999: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT\n/home/bot4u/Desktop/EYE/backend/main.py:46: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Will watch for changes in these directories: ['/home/bot4u/Desktop/EYE']\nINFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)\nINFO:     Started reloader process [55457] using WatchFiles\n2026-02-01 21:20:06.251948: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.\n2026-02-01 21:20:06.257214: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.\n2026-02-01 21:20:06.329851: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.\nTo enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.\n2026-02-01 21:20:07.599320: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT\nINFO:     Started server process [55576]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\n",
+    "title": "Check recent backend logs",
+    "metadata": {
+      "output": "To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.\n2026-02-01 21:20:04.157999: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT\n/home/bot4u/Desktop/EYE/backend/main.py:46: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Will watch for changes in these directories: ['/home/bot4u/Desktop/EYE']\nINFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)\nINFO:     Started reloader process [55457] using WatchFiles\n2026-02-01 21:20:06.251948: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.\n2026-02-01 21:20:06.257214: I external/local_tsl/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.\n2026-02-01 21:20:06.329851: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.\nTo enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.\n2026-02-01 21:20:07.599320: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT\nINFO:     Started server process [55576]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\n",
+      "exit": 0,
+      "description": "Check recent backend logs",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961020281,
+      "end": 1769961023305
+    }
+  }
+}

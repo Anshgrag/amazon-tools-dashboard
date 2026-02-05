@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analyze current database schema and identify what changes are needed for sleep mode detection",
+    "id": "1",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Update database schema to add device type and rated power fields",
+    "id": "2",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Implement sleep mode detection logic based on power consumption thresholds",
+    "id": "3",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Update savings calculation to compare actual usage vs rated power consumption",
+    "id": "4",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Test the new logic with sample data",
+    "id": "5",
+    "priority": "medium",
+    "status": "completed"
+  }
+]

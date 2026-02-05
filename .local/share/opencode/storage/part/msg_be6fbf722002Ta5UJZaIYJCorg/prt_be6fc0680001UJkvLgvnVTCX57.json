@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6fc0680001UJkvLgvnVTCX57",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fbf722002Ta5UJZaIYJCorg",
+  "type": "tool",
+  "callID": "call_function_lzpe1tap0stz_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/backend/app.py",
+      "limit": 30,
+      "offset": 380
+    },
+    "output": "<file>\n00381|                 if device_name in devices:\n00382|                     room_usage[room] += total_power\n00383|         \n00384|         room_details = []\n00385|         for room, usage in room_usage.items():\n00386|             room_details.append({\n00387|                 'room': room,\n00388|                 'room_name': room.replace('-', ' ').title(),\n00389|                 'usage_kwh': round(usage / 1000, 2)\n00390|             })\n00391|         \n00392|         return jsonify({\n00393|             'status': 'success',\n00394|             'period': period,\n00395|             'data': {\n00396|                 'rooms': room_usage,\n00397|                 'details': room_details\n00398|             }\n00399|         }), 200\n00400|         \n00401|     except Exception as e:\n00402|         print(f\"Error in rooms usage: {e}\")\n00403|         return jsonify({'status': 'error', 'message': str(e)}), 500\n00404| \n00405| if __name__ == '__main__':\n00406|     init_database()\n00407|     print(\"🚀 Starting EcoTrack Backend Server...\")\n00408|     print(\"📡 Server running on: http://localhost:5000\")\n00409|     app.run(host='0.0.0.0', port=5000, debug=True)\n00410| \n\n(End of file - total 410 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/backend/app.py",
+    "metadata": {
+      "preview": "                if device_name in devices:\n                    room_usage[room] += total_power\n        \n        room_details = []\n        for room, usage in room_usage.items():\n            room_details.append({\n                'room': room,\n                'room_name': room.replace('-', ' ').title(),\n                'usage_kwh': round(usage / 1000, 2)\n            })\n        \n        return jsonify({\n            'status': 'success',\n            'period': period,\n            'data': {\n                'rooms': room_usage,\n                'details': room_details\n            }\n        }), 200\n        ",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106835593,
+      "end": 1769106835599
+    }
+  }
+}

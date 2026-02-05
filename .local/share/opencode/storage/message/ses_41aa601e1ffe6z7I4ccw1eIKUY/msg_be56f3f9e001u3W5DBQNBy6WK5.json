@@ -1,0 +1,17 @@
+{
+  "id": "msg_be56f3f9e001u3W5DBQNBy6WK5",
+  "sessionID": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "role": "user",
+  "time": {
+    "created": 1769080831911
+  },
+  "summary": {
+    "title": "Changing work directory without exiting opencode",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "glm-4.7-free"
+  }
+}

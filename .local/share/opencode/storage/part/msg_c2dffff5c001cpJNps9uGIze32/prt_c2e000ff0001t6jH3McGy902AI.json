@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e000ff0001t6jH3McGy902AI",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2dffff5c001cpJNps9uGIze32",
+  "type": "tool",
+  "callID": "chatcmpl-tool-61a5a46633194a3cb085f1448cb0829a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "git config --list | grep -E \"(user\\.|remote\\.)\"",
+      "description": "Check git user and remote configuration"
+    },
+    "output": "user.name=Ansh\nuser.email=ansh20071807@gmail.com\n",
+    "title": "Check git user and remote configuration",
+    "metadata": {
+      "output": "user.name=Ansh\nuser.email=ansh20071807@gmail.com\n",
+      "exit": 0,
+      "description": "Check git user and remote configuration",
+      "truncated": false
+    },
+    "time": {
+      "start": 1770298281980,
+      "end": 1770298282200
+    }
+  }
+}

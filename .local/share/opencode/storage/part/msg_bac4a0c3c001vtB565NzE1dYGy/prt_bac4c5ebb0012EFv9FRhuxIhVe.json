@@ -1,0 +1,26 @@
+{
+  "id": "prt_bac4c5ebb0012EFv9FRhuxIhVe",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac4a0c3c001vtB565NzE1dYGy",
+  "type": "tool",
+  "callID": "call_aeeec320b485447f9067ec7e",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/app.py",
+      "limit": 30,
+      "offset": 150
+    },
+    "output": "<file>\n00151|         print(f\"Error in electricity history: {e}\")\n00152|         return jsonify({'status': 'error', 'message': str(e)}), 500\n00153| \n00154| @app.route('/', methods=['GET'])\n00155| def home():\n00156|     return jsonify({\n00157|         'message': 'EcoTrack API is running!',\n00158|         'version': '1.0',\n00159|         'endpoints': {\n00160|             'Electricity': [\n00161|                 'POST /api/electricity/add',\n00162|                 'GET /api/electricity/history'\n00163|             ],\n00164|             'Savings': [\n00165|                 'GET /api/savings',\n00166|                 'POST /api/device-event'\n00167|             ]\n00168|         }\n00169|     }), 200\n00170| \n00171| @app.route('/api/stats', methods=['GET'])\n00172| def get_stats():\n00173|     try:\n00174|         conn = get_db_connection()\n00175|         cursor = conn.cursor()\n00176|         \n00177|         cursor.execute('SELECT COUNT(*) as count FROM electricity_data')\n00178|         electricity_count = cursor.fetchone()['count']\n00179|         \n00180|         cursor.execute('SELECT DISTINCT device_name FROM electricity_data')\n\n(File has more lines. Use 'offset' parameter to read beyond line 180)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/backend/app.py",
+    "metadata": {
+      "preview": "        print(f\"Error in electricity history: {e}\")\n        return jsonify({'status': 'error', 'message': str(e)}), 500\n\n@app.route('/', methods=['GET'])\ndef home():\n    return jsonify({\n        'message': 'EcoTrack API is running!',\n        'version': '1.0',\n        'endpoints': {\n            'Electricity': [\n                'POST /api/electricity/add',\n                'GET /api/electricity/history'\n            ],\n            'Savings': [\n                'GET /api/savings',\n                'POST /api/device-event'\n            ]\n        }\n    }), 200\n",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768122244799,
+      "end": 1768122244805
+    }
+  }
+}

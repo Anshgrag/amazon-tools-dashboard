@@ -1,0 +1,27 @@
+{
+  "id": "prt_be6f18add001UQvIYlGkyhNeqf",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f17a0d002W0tk1RkY33Fy4x",
+  "type": "tool",
+  "callID": "call_function_0lsra5pxhdiw_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"http.server\" 2>/dev/null; sleep 1; cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 &",
+      "description": "Restart frontend server"
+    },
+    "output": "",
+    "title": "Restart frontend server",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart frontend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106148692,
+      "end": 1769106148809
+    }
+  }
+}

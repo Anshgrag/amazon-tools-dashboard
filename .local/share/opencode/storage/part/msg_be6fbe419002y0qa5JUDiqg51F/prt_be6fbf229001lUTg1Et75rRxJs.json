@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6fbf229001lUTg1Et75rRxJs",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fbe419002y0qa5JUDiqg51F",
+  "type": "reasoning",
+  "text": "Let me read more of the file to find where it ends.",
+  "metadata": {
+    "anthropic": {
+      "signature": "67702681a3b262435df54637aae9142c424a925651456406c782fd1f81fcc5b4"
+    }
+  },
+  "time": {
+    "start": 1769106829865,
+    "end": 1769106830162
+  }
+}

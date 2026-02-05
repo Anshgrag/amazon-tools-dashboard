@@ -1,0 +1,111 @@
+{
+    "result": [
+        {
+            "active_time": 1767973349,
+            "biz_type": 18,
+            "category": "cz",
+            "create_time": 1664196592,
+            "icon": "smart/icon/ay1545304748499XogPc/6b6830578c3a10367f3ebd8032a6dcea.png",
+            "id": "d78fcea6e6c3b03d40zcwp",
+            "ip": "103.59.75.171",
+            "lat": "26.89",
+            "local_key": "^w2=bi}(Bh2H't/V",
+            "lon": "75.74",
+            "model": "DSP1160",
+            "name": "16Amp Smart Plug ",
+            "online": true,
+            "owner_id": "162379360",
+            "product_id": "rhvvzh71kuirphg2",
+            "product_name": "16Amp Smart Plug ",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": true
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                },
+                {
+                    "code": "add_ele",
+                    "value": 32
+                },
+                {
+                    "code": "cur_current",
+                    "value": 0
+                },
+                {
+                    "code": "cur_power",
+                    "value": 0
+                },
+                {
+                    "code": "cur_voltage",
+                    "value": 2334
+                },
+                {
+                    "code": "voltage_coe",
+                    "value": 573
+                },
+                {
+                    "code": "electric_coe",
+                    "value": 24095
+                },
+                {
+                    "code": "power_coe",
+                    "value": 13130
+                },
+                {
+                    "code": "electricity_coe",
+                    "value": 3170
+                },
+                {
+                    "code": "fault",
+                    "value": 0
+                },
+                {
+                    "code": "relay_status",
+                    "value": "last"
+                },
+                {
+                    "code": "overcharge_switch",
+                    "value": false
+                },
+                {
+                    "code": "light_mode",
+                    "value": "relay"
+                },
+                {
+                    "code": "child_lock",
+                    "value": false
+                },
+                {
+                    "code": "cycle_time",
+                    "value": ""
+                },
+                {
+                    "code": "random_time",
+                    "value": ""
+                },
+                {
+                    "code": "switch_inching",
+                    "value": ""
+                }
+            ],
+            "sub": false,
+            "time_zone": "+05:30",
+            "uid": "in1767501399114AyrtL",
+            "update_time": 1768284750,
+            "uuid": "57ea895fd2bd3c4f"
+        }
+    ],
+    "success": true,
+    "t": 1768285413658,
+    "tid": "62e5546bf04811f0ad9086d263559264",
+    "file": {
+        "name": "tuya-raw.json",
+        "description": "Full raw list of Tuya devices.",
+        "account": "m3negp3fvw7ugp7cqae8",
+        "date": "2026-01-13T11:53:33.705348",
+        "tinytuya": "1.17.4"
+    }
+}

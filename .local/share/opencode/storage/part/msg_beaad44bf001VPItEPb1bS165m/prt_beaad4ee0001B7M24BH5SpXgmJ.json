@@ -1,0 +1,27 @@
+{
+  "id": "prt_beaad4ee0001B7M24BH5SpXgmJ",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaad44bf001VPItEPb1bS165m",
+  "type": "tool",
+  "callID": "call_27125477",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "netstat -tlnp | grep :5000",
+      "description": "Check if port 5000 is listening"
+    },
+    "output": "(Not all processes could be identified, non-owned process info\n will not be shown, you would have to be root to see it all.)\ntcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      20826/python        \n",
+    "title": "Check if port 5000 is listening",
+    "metadata": {
+      "output": "(Not all processes could be identified, non-owned process info\n will not be shown, you would have to be root to see it all.)\ntcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      20826/python        \n",
+      "exit": 0,
+      "description": "Check if port 5000 is listening",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168785130,
+      "end": 1769168785230
+    }
+  }
+}

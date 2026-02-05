@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6ed62bf00185Hh7SMViYGWmw",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6ed569b001wcNAidCErR0GA6",
+  "type": "reasoning",
+  "text": "Now let me restart the backend and frontend servers to test. First, let me kill the existing processes and restart them.",
+  "metadata": {
+    "anthropic": {
+      "signature": "a75a8324e0f2f64955d42a19e708b1990fe9ae4d5e854ce5faf3743dc7a7909e"
+    }
+  },
+  "time": {
+    "start": 1769105875647,
+    "end": 1769105875865
+  }
+}

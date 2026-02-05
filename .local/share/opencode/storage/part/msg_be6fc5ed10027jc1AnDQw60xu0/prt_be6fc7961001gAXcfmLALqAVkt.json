@@ -1,0 +1,27 @@
+{
+  "id": "prt_be6fc7961001gAXcfmLALqAVkt",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fc5ed10027jc1AnDQw60xu0",
+  "type": "tool",
+  "callID": "call_function_szfshsw6t92l_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "fuser -k 8000/tcp 2>/dev/null; fuser -k 5000/tcp 2>/dev/null; sleep 1; echo \"Servers stopped\"",
+      "description": "Stop all servers"
+    },
+    "output": " 72701 68885 75990Servers stopped\n",
+    "title": "Stop all servers",
+    "metadata": {
+      "output": " 72701 68885 75990Servers stopped\n",
+      "exit": 0,
+      "description": "Stop all servers",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106865182,
+      "end": 1769106866506
+    }
+  }
+}

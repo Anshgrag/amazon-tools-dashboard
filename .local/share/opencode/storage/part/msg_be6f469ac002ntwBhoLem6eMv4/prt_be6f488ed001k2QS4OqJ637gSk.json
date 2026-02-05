@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6f488ed001k2QS4OqJ637gSk",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f469ac002ntwBhoLem6eMv4",
+  "type": "tool",
+  "callID": "call_function_35dext5z53kn_2",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/style.css",
+      "limit": 30,
+      "offset": 190
+    },
+    "output": "<file>\n00191| \n00192| /* ==================== DASHBOARD GRID ==================== */\n00193| \n00194| .dashboard-grid {\n00195|     display: grid;\n00196|     grid-template-columns: repeat(2, 1fr);\n00197|     gap: 25px;\n00198| }\n00199| \n00200| /* ==================== CARD STYLES ==================== */\n00201| \n00202| .card {\n00203|     background: var(--bg-card);\n00204|     border-radius: 15px;\n00205|     padding: 25px;\n00206|     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);\n00207|     transition: transform 0.3s ease;\n00208| }\n00209| \n00210| .card:hover {\n00211|     transform: translateY(-5px);\n00212| }\n00213| \n00214| .card-title {\n00215|     font-size: 0.85em;\n00216|     font-weight: 600;\n00217|     color: var(--text-secondary);\n00218|     letter-spacing: 1px;\n00219|     margin-bottom: 20px;\n00220|     text-transform: uppercase;\n\n(File has more lines. Use 'offset' parameter to read beyond line 220)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/style.css",
+    "metadata": {
+      "preview": "\n/* ==================== DASHBOARD GRID ==================== */\n\n.dashboard-grid {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 25px;\n}\n\n/* ==================== CARD STYLES ==================== */\n\n.card {\n    background: var(--bg-card);\n    border-radius: 15px;\n    padding: 25px;\n    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);\n    transition: transform 0.3s ease;\n}\n\n.card:hover {",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769106344583,
+      "end": 1769106344598
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_c0faa4a41001K5uGA6DfGnIorb",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0faa3d59001n7Yt9AvalKdkzq",
+  "type": "text",
+  "text": "\nNow let me check if there are any JavaScript errors in the main app by looking at browser console. But first, let me make sure the issue is not with the time filters. Let me check the `setupTimeFilters` function:",
+  "time": {
+    "start": 1769789347495,
+    "end": 1769789347495
+  }
+}

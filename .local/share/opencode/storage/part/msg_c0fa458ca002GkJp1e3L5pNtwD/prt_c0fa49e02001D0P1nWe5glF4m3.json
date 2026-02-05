@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fa49e02001D0P1nWe5glF4m3",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa458ca002GkJp1e3L5pNtwD",
+  "type": "tool",
+  "callID": "call_2454db6fa2fb414c89845ad8",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test_copy && echo \"=== CLEANUP SUMMARY ===\" && echo \"1. Removed hardcoded devices from backend API endpoints\" && echo \"2. Cleaned frontend device color mappings\" && echo \"3. Fixed database connection issues\" && echo \"4. Removed hardcoded room mappings for non-existent devices\" && echo \"5. System now only shows actual devices from database\"",
+      "description": "Show cleanup summary"
+    },
+    "output": "=== CLEANUP SUMMARY ===\n1. Removed hardcoded devices from backend API endpoints\n2. Cleaned frontend device color mappings\n3. Fixed database connection issues\n4. Removed hardcoded room mappings for non-existent devices\n5. System now only shows actual devices from database\n",
+    "title": "Show cleanup summary",
+    "metadata": {
+      "output": "=== CLEANUP SUMMARY ===\n1. Removed hardcoded devices from backend API endpoints\n2. Cleaned frontend device color mappings\n3. Fixed database connection issues\n4. Removed hardcoded room mappings for non-existent devices\n5. System now only shows actual devices from database\n",
+      "exit": 0,
+      "description": "Show cleanup summary",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769788972553,
+      "end": 1769788972590
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_be70e832a001cgMNf425OMphN2",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70e63cd002Z1sBpiZEDUqTn2",
+  "type": "tool",
+  "callID": "call_function_81qwfqm6h92u_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "fuser -k 8000/tcp 2>/dev/null; fuser -k 5000/tcp 2>/dev/null; sleep 1 && echo \"Frontend (8000) and Backend (5000) servers stopped\"",
+      "description": "Stop frontend and backend servers"
+    },
+    "output": " 84927 84829 84887Frontend (8000) and Backend (5000) servers stopped\n",
+    "title": "Stop frontend and backend servers",
+    "metadata": {
+      "output": " 84927 84829 84887Frontend (8000) and Backend (5000) servers stopped\n",
+      "exit": 0,
+      "description": "Stop frontend and backend servers",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769108047574,
+      "end": 1769108048916
+    }
+  }
+}

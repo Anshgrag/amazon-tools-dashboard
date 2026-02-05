@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0a83bd630017fPn8TKA14bWny",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a826c8a002BRM7768vD60aEt",
+  "type": "tool",
+  "callID": "call_de33515f5d424d0d8a5233a2",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/eye project/docker/docker-compose.yml",
+      "limit": 20,
+      "offset": 80
+    },
+    "output": "<file>\n00081|     container_name: eye_disease_celery\n00082|     command: celery -A app.main worker --loglevel=info\n00083|     environment:\n00084|       - DATABASE_URL=postgresql://postgres:postgres123@postgres:5432/eyedisease\n00085|       - REDIS_URL=redis://redis:6379\n00086|       - CELERY_BROKER_URL=redis://redis:6379/0\n00087|       - CELERY_RESULT_BACKEND=redis://redis:6379/0\n00088|     volumes:\n00089|       - ./backend:/app\n00090|       - ./ml/models:/app/ml/models\n00091|       - uploads_data:/app/uploads\n00092|     depends_on:\n00093|       - postgres\n00094|       - redis\n00095|       - backend\n00096|     networks:\n00097|       - eye_disease_network\n00098|     restart: unless-stopped\n00099| \n00100|   # Frontend\n\n(File has more lines. Use 'offset' parameter to read beyond line 100)\n</file>",
+    "title": "Desktop/eye project/docker/docker-compose.yml",
+    "metadata": {
+      "preview": "    container_name: eye_disease_celery\n    command: celery -A app.main worker --loglevel=info\n    environment:\n      - DATABASE_URL=postgresql://postgres:postgres123@postgres:5432/eyedisease\n      - REDIS_URL=redis://redis:6379\n      - CELERY_BROKER_URL=redis://redis:6379/0\n      - CELERY_RESULT_BACKEND=redis://redis:6379/0\n    volumes:\n      - ./backend:/app\n      - ./ml/models:/app/ml/models\n      - uploads_data:/app/uploads\n    depends_on:\n      - postgres\n      - redis\n      - backend\n    networks:\n      - eye_disease_network\n    restart: unless-stopped\n\n  # Frontend",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769702931815,
+      "end": 1769702931820
+    }
+  }
+}

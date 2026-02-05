@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a368e1001rxhliIJrnjcvlo",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a35e49001J6306T4R2VtiGM",
+  "type": "tool",
+  "callID": "call_b82646f16dd1416c9c3ce98b",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project/backend && python3 savings_test_data.py",
+      "description": "Generate smart savings test data with python3"
+    },
+    "output": "🚀 EcoTrack Smart Savings Test Data Generator\n==================================================\n🔄 Generating 24 hours of realistic device data...\nTraceback (most recent call last):\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 217, in <module>\n    main()\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 207, in main\n    generate_historical_data(24)\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 157, in generate_historical_data\n    data = generate_device_data(device_name, config, hours_ago)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 84, in generate_device_data\n    power_watts = config[\"power_standby\"] if not is_auto_controlled else config[\"power_idle\"]\n                                                                         ~~~~~~^^^^^^^^^^^^^^\nKeyError: 'power_idle'\n",
+    "title": "Generate smart savings test data with python3",
+    "metadata": {
+      "output": "🚀 EcoTrack Smart Savings Test Data Generator\n==================================================\n🔄 Generating 24 hours of realistic device data...\nTraceback (most recent call last):\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 217, in <module>\n    main()\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 207, in main\n    generate_historical_data(24)\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 157, in generate_historical_data\n    data = generate_device_data(device_name, config, hours_ago)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\", line 84, in generate_device_data\n    power_watts = config[\"power_standby\"] if not is_auto_controlled else config[\"power_idle\"]\n                                                                         ~~~~~~^^^^^^^^^^^^^^\nKeyError: 'power_idle'\n",
+      "exit": 1,
+      "description": "Generate smart savings test data with python3",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077617386,
+      "end": 1768077618889
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba988a3e0001nCwGg7XBPYFCt4",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768075863021
+  },
+  "summary": {
+    "title": "Remove aqi section and propose replacement options per project understanding",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

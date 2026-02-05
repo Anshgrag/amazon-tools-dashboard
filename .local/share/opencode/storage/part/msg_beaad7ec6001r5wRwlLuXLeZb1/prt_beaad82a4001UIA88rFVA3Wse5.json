@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaad82a4001UIA88rFVA3Wse5",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaad7ec6001r5wRwlLuXLeZb1",
+  "type": "reasoning",
+  "text": "Great! It sent data: 0.0W for Smart Switch.",
+  "time": {
+    "start": 1769168798372,
+    "end": 1769168798778
+  }
+}

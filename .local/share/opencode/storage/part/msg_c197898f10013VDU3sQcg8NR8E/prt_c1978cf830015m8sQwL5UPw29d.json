@@ -1,0 +1,27 @@
+{
+  "id": "prt_c1978cf830015m8sQwL5UPw29d",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c197898f10013VDU3sQcg8NR8E",
+  "type": "tool",
+  "callID": "call_d77a81f7beb44b11b4c7ceff",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "tree /home/bot4u/Desktop/EYE -I '__pycache__|venv' -L 3 || find /home/bot4u/Desktop/EYE -type f | head -20",
+      "description": "Show project directory structure"
+    },
+    "output": "/home/bot4u/Desktop/EYE\n├── backend\n│   ├── main.py\n│   ├── model\n│   ├── test_api.py\n│   └── utils\n│       ├── inference.py\n│       └── preprocessing.py\n├── frontend\n│   ├── index.html\n│   ├── script.js\n│   └── style.css\n├── README.md\n├── requirements.txt\n└── training\n    └── eye_detection_training.ipynb\n\n6 directories, 10 files\n",
+    "title": "Show project directory structure",
+    "metadata": {
+      "output": "/home/bot4u/Desktop/EYE\n├── backend\n│   ├── main.py\n│   ├── model\n│   ├── test_api.py\n│   └── utils\n│       ├── inference.py\n│       └── preprocessing.py\n├── frontend\n│   ├── index.html\n│   ├── script.js\n│   └── style.css\n├── README.md\n├── requirements.txt\n└── training\n    └── eye_detection_training.ipynb\n\n6 directories, 10 files\n",
+      "exit": 0,
+      "description": "Show project directory structure",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953873799,
+      "end": 1769953873803
+    }
+  }
+}

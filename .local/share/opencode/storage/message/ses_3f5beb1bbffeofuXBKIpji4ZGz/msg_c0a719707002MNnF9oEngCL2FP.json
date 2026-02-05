@@ -1,0 +1,29 @@
+{
+  "id": "msg_c0a719707002MNnF9oEngCL2FP",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "role": "assistant",
+  "time": {
+    "created": 1769701742343,
+    "completed": 1769701872442
+  },
+  "parentID": "msg_c0a6e9419001PBEQYsGC9RDj5T",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/eye project",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 57885,
+    "output": 2026,
+    "reasoning": 0,
+    "cache": {
+      "read": 448,
+      "write": 0
+    }
+  },
+  "finish": "tool-calls"
+}

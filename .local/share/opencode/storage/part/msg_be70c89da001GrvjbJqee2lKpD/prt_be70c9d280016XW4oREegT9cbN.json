@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70c9d280016XW4oREegT9cbN",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70c89da001GrvjbJqee2lKpD",
+  "type": "reasoning",
+  "text": "Now let me start the servers again.",
+  "metadata": {
+    "anthropic": {
+      "signature": "64c23689cc4e37b1b6e2dee1f0c952dba8a0502334f24c56c191228efb638398"
+    }
+  },
+  "time": {
+    "start": 1769107922216,
+    "end": 1769107922617
+  }
+}

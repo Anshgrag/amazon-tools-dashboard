@@ -1,0 +1,24 @@
+{
+  "id": "prt_c0ef362cf001CnTxkVwm14M5fd",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0ef34ddf001CjzfTX46EFyoRy",
+  "type": "tool",
+  "callID": "call_b40dcf1c74f442a688629d38",
+  "tool": "invalid",
+  "state": {
+    "status": "completed",
+    "input": {
+      "tool": "ls",
+      "error": "Model tried to call unavailable tool 'ls'. Available tools: invalid, question, bash, read, glob, grep, edit, write, task, webfetch, todowrite, todoread, websearch, codesearch, skill."
+    },
+    "output": "The arguments provided to the tool are invalid: Model tried to call unavailable tool 'ls'. Available tools: invalid, question, bash, read, glob, grep, edit, write, task, webfetch, todowrite, todoread, websearch, codesearch, skill.",
+    "title": "Invalid Tool",
+    "metadata": {
+      "truncated": false
+    },
+    "time": {
+      "start": 1769777357533,
+      "end": 1769777357542
+    }
+  }
+}

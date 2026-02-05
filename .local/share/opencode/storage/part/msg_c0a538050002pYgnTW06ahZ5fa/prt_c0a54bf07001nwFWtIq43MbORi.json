@@ -1,0 +1,10 @@
+{
+  "id": "prt_c0a54bf07001nwFWtIq43MbORi",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a538050002pYgnTW06ahZ5fa",
+  "type": "patch",
+  "hash": "0b521268d4ee60adc70647db7a696e4555480bb1",
+  "files": [
+    "/home/bot4u/Desktop/eye project/backend/app/core/exceptions.py"
+  ]
+}

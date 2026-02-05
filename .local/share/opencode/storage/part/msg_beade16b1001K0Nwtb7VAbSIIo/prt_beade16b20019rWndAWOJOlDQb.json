@@ -1,0 +1,7 @@
+{
+  "id": "prt_beade16b20019rWndAWOJOlDQb",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beade16b1001K0Nwtb7VAbSIIo",
+  "type": "text",
+  "text": "Uncaught SyntaxError: Unexpected token '}'\n:8000/favicon.ico:1  Failed to load resource: the server responded with a status of 404 (File not found)"
+}

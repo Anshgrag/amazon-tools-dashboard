@@ -1,0 +1,27 @@
+{
+  "id": "prt_bac41932f001AegH8pQD7LloDf",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac417663002sSzU9yeiuhOEx7",
+  "type": "tool",
+  "callID": "call_1220319f6a614ecab553e149",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "lsof -ti:5000",
+      "description": "Check if port 5000 is in use"
+    },
+    "output": "",
+    "title": "Check if port 5000 is in use",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Check if port 5000 is in use",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768121537336,
+      "end": 1768121537395
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_be96749a4001QHMEve9qGrDLP2",
+  "sessionID": "ses_416996d61ffedu4VFZ7oNy48Pm",
+  "role": "user",
+  "time": {
+    "created": 1769147419073
+  },
+  "summary": {
+    "title": "Codebase locations: backend and frontend folders",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "minimax-m2.1-free"
+  }
+}

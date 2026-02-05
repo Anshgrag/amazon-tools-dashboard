@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead4e688001z94HouEDmhtG1x",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead4d151001snIoc21Gv3BlnX",
+  "type": "tool",
+  "callID": "call_9f047a34076b4791871f96dc",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"python app.py\" && cd backend && source venv/bin/activate && python app.py &",
+      "description": "Restart the backend with debug logging"
+    },
+    "output": "",
+    "title": "Restart the backend with debug logging",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart the backend with debug logging",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171379861,
+      "end": 1769171379880
+    }
+  }
+}

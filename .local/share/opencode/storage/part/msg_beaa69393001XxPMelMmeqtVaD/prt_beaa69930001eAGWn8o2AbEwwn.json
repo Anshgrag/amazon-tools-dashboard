@@ -1,0 +1,38 @@
+{
+  "id": "prt_beaa69930001eAGWn8o2AbEwwn",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa69393001XxPMelMmeqtVaD",
+  "type": "tool",
+  "callID": "call_99071607",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Empty the database by deleting ecotrack.db and letting the app recreate it",
+          "status": "completed",
+          "priority": "high",
+          "id": "empty_db"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Empty the database by deleting ecotrack.db and letting the app recreate it\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"empty_db\"\n  }\n]",
+    "title": "0 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Empty the database by deleting ecotrack.db and letting the app recreate it",
+          "status": "completed",
+          "priority": "high",
+          "id": "empty_db"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168345398,
+      "end": 1769168345404
+    }
+  }
+}

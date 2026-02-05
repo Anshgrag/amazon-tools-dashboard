@@ -1,0 +1,18 @@
+{
+  "id": "prt_c11c48bcc001Pti7GMC0KPOBoe",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c11c421480020th05SM2UBbmHG",
+  "type": "step-finish",
+  "reason": "stop",
+  "snapshot": "6fc73c5b7954119493b10e378e284632414d3c5c",
+  "cost": 0,
+  "tokens": {
+    "input": 79,
+    "output": 366,
+    "reasoning": 1,
+    "cache": {
+      "read": 107921,
+      "write": 0
+    }
+  }
+}

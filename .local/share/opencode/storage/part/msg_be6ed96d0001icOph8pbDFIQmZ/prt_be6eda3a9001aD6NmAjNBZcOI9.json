@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6eda3a9001aD6NmAjNBZcOI9",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6ed96d0001icOph8pbDFIQmZ",
+  "type": "reasoning",
+  "text": "Both servers are running. Let me verify the API endpoints are working.",
+  "metadata": {
+    "anthropic": {
+      "signature": "7d76ddaa4097a92c329e0ed01861adf036e302dda4898fa509e03031ee7f125e"
+    }
+  },
+  "time": {
+    "start": 1769105892265,
+    "end": 1769105892638
+  }
+}

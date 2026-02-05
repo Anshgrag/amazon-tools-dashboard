@@ -1,0 +1,19 @@
+{
+  "id": "prt_bfee32c94001LqZSv2H54n55Fu",
+  "sessionID": "ses_4011d17dfffernUMy6l8w6GL7V",
+  "messageID": "msg_bfee2e83e002YAk6UYfZjIcO5z",
+  "type": "tool",
+  "callID": "call_b9514bcd68b34ee49206a2e4",
+  "tool": "read",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Documents/Final_card.pdf"
+    },
+    "error": "Error: File not found: /home/bot4u/Documents/Final_card.pdf\n\nDid you mean one of these?\n/home/bot4u/Documents/FInal_card.pdf",
+    "time": {
+      "start": 1769507859627,
+      "end": 1769507859635
+    }
+  }
+}

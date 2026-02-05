@@ -1,0 +1,11 @@
+{
+  "id": "prt_beacf9b35001jS9XymaFy2ngxb",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beacf8ffa001cK2MP0ZsqwY2is",
+  "type": "text",
+  "text": "\nPerfect! I've added all the requested features to the Appliances tab:\n\n## New Features Added:\n\n### 1. **Device Details Panel**\n- Click on any device card in \"ALL APPLIANCES\" to see detailed information:\n  - Device name, status, power, voltage, mode\n  - Real-time data from the backend\n\n### 2. **Instant Control**\n- Direct ON/OFF buttons for immediate device control\n- Visual feedback with button animation\n- Uses the existing toggle API\n\n### 3. **Time Scheduler**\n- Set start/end times for automated device control\n- Choose action (Turn ON or Turn OFF)\n- Add multiple schedules with delete option\n- Checks schedules every minute automatically\n\n## How to Use:\n\n1. **Device Details**: Click the Smart Switch card in the appliances grid\n2. **Instant Control**: Use the green ON/red OFF buttons\n3. **Scheduler**: Set times like \"08:00 to 18:00\" with \"Turn ON\" action\n\nThe interface is fully functional with all features working through the existing backend API. Test by clicking the Smart Switch card to see details, and use the instant control buttons to turn the plug on/off immediately.",
+  "time": {
+    "start": 1769171036737,
+    "end": 1769171036737
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_c19eaad72001pAmtu7BdKpGNzM",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19ea8b86001A98dguUDtv1fu3",
+  "type": "tool",
+  "callID": "call_f491bf2be538458f96bb72e1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/EYE/training/eye_detection_training.ipynb",
+      "limit": 100
+    },
+    "output": "<file>\n00001| {\n00002|  \"cells\": [\n00003|   {\n00004|    \"cell_type\": \"markdown\",\n00005|    \"metadata\": {},\n00006|    \"source\": [\n00007|     \"# Eye Disease Detection - Training Notebook\\n\",\n00008|     \"\\n\",\n00009|     \"This notebook trains a CNN model for eye disease detection using transfer learning.\\n\",\n00010|     \"\\n\",\n00011|     \"## Classes:\\n\",\n00012|     \"- Normal\\n\",\n00013|     \"- Conjunctivitis\\n\",\n00014|     \"- Cataract\\n\",\n00015|     \"- Glaucoma\"\n00016|    ]\n00017|   },\n00018|   {\n00019|    \"cell_type\": \"markdown\",\n00020|    \"metadata\": {},\n00021|    \"source\": [\n00022|     \"## 1. Setup and Imports\"\n00023|    ]\n00024|   },\n00025|   {\n00026|    \"cell_type\": \"code\",\n00027|    \"execution_count\": null,\n00028|    \"metadata\": {},\n00029|    \"outputs\": [],\n00030|    \"source\": [\n00031|     \"# Mount Google Drive\\n\",\n00032|     \"from google.colab import drive\\n\",\n00033|     \"drive.mount('/content/drive')\"\n00034|    ]\n00035|   },\n00036|   {\n00037|    \"cell_type\": \"code\",\n00038|    \"execution_count\": null,\n00039|    \"metadata\": {},\n00040|    \"outputs\": [],\n00041|    \"source\": [\n00042|     \"import tensorflow as tf\\n\",\n00043|     \"from tensorflow import keras\\n\",\n00044|     \"from tensorflow.keras import layers, Model\\n\",\n00045|     \"from tensorflow.keras.applications import MobileNetV2, EfficientNetB0\\n\",\n00046|     \"from tensorflow.keras.applications.mobilenet_v2 import preprocess_input\\n\",\n00047|     \"from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau\\n\",\n00048|     \"from tensorflow.keras.preprocessing.image import ImageDataGenerator\\n\",\n00049|     \"import numpy as np\\n\",\n00050|     \"import matplotlib.pyplot as plt\\n\",\n00051|     \"import os\\n\",\n00052|     \"from sklearn.metrics import classification_report, confusion_matrix\\n\",\n00053|     \"import seaborn as sns\\n\",\n00054|     \"from pathlib import Path\\n\",\n00055|     \"\\n\",\n00056|     \"# Check TensorFlow version and GPU availability\\n\",\n00057|     \"print(f\\\"TensorFlow Version: {tf.__version__}\\\")\\n\",\n00058|     \"print(f\\\"GPU Available: {len(tf.config.list_physical_devices('GPU')) > 0}\\\")\"\n00059|    ]\n00060|   },\n00061|   {\n00062|    \"cell_type\": \"markdown\",\n00063|    \"metadata\": {},\n00064|    \"source\": [\n00065|     \"## 2. Configuration\"\n00066|    ]\n00067|   },\n00068|   {\n00069|    \"cell_type\": \"code\",\n00070|    \"execution_count\": null,\n00071|    \"metadata\": {},\n00072|    \"outputs\": [],\n00073|    \"source\": [\n00074|     \"# Configuration\\n\",\n00075|     \"CONFIG = {\\n\",\n00076|     \"    'IMAGE_SIZE': (224, 224),\\n\",\n00077|     \"    'BATCH_SIZE': 32,\\n\",\n00078|     \"    'EPOCHS': 50,\\n\",\n00079|     \"    'LEARNING_RATE': 0.0001,\\n\",\n00080|     \"    'NUM_CLASSES': 4,\\n\",\n00081|     \"    'CLASS_NAMES': ['Normal', 'Conjunctivitis', 'Cataract', 'Glaucoma'],\\n\",\n00082|     \"    'BASE_MODEL': 'MobileNetV2',  # Options: 'MobileNetV2', 'EfficientNetB0'\\n\",\n00083|     \"    'USE_DATA_AUGMENTATION': True,\\n\",\n00084|     \"    'VALIDATION_SPLIT': 0.2\\n\",\n00085|     \"}\\n\",\n00086|     \"\\n\",\n00087|     \"# Paths\\n\",\n00088|     \"DATASET_PATH = '/content/drive/MyDrive/eye_dataset'  # Update with your path\\n\",\n00089|     \"MODEL_SAVE_PATH = '/content/drive/MyDrive/eye_disease_model.keras'\\n\",\n00090|     \"CHECKPOINT_PATH = '/content/best_model.keras'\\n\",\n00091|     \"\\n\",\n00092|     \"print(\\\"Configuration loaded successfully!\\\")\"\n00093|    ]\n00094|   },\n00095|   {\n00096|    \"cell_type\": \"markdown\",\n00097|    \"metadata\": {},\n00098|    \"source\": [\n00099|     \"## 3. Dataset Preparation\\n\",\n00100|     \"\\n\",\n\n(File has more lines. Use 'offset' parameter to read beyond line 100)\n</file>",
+    "title": "Desktop/EYE/training/eye_detection_training.ipynb",
+    "metadata": {
+      "preview": "{\n \"cells\": [\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"# Eye Disease Detection - Training Notebook\\n\",\n    \"\\n\",\n    \"This notebook trains a CNN model for eye disease detection using transfer learning.\\n\",\n    \"\\n\",\n    \"## Classes:\\n\",\n    \"- Normal\\n\",\n    \"- Conjunctivitis\\n\",\n    \"- Cataract\\n\",\n    \"- Glaucoma\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769961336184,
+      "end": 1769961336200
+    }
+  }
+}

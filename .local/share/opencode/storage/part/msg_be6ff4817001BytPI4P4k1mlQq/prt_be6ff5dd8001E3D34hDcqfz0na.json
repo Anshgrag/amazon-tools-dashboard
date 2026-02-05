@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6ff5dd8001E3D34hDcqfz0na",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6ff4817001BytPI4P4k1mlQq",
+  "type": "tool",
+  "callID": "call_function_7ejkq1ng1z4s_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 50,
+      "offset": 1175
+    },
+    "output": "<file>\n01176| }\n01177| \n01178| function hideLoadingStates() {\n01179|     document.querySelectorAll('.filter-btn').forEach(btn => {\n01180|         btn.classList.remove('loading');\n01181|     });\n01182| }\n01183| \n01184| window.addEventListener('DOMContentLoaded', () => {\n01185|     console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n01186|     \n01187|     setupTabSwitching();\n01188|     setupTimeFilters();\n01189|     \n01190|     refreshDashboard();\n01191|     \n01192|     setInterval(refreshDashboard, REFRESH_INTERVAL);\n01193|     \n01194|     window.debugSavings = () => {\n01195|         console.log('=== MANUAL SAVINGS UPDATE ===');\n01196|         fetchSavingsData();\n01197|     };\n01198|     \n01199|     console.log('Debug function available: window.debugSavings()');\n01200|     console.log('=== INITIALIZATION COMPLETE ===');\n01201| });\n01202| \n\n(End of file - total 1202 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "}\n\nfunction hideLoadingStates() {\n    document.querySelectorAll('.filter-btn').forEach(btn => {\n        btn.classList.remove('loading');\n    });\n}\n\nwindow.addEventListener('DOMContentLoaded', () => {\n    console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n    \n    setupTabSwitching();\n    setupTimeFilters();\n    \n    refreshDashboard();\n    \n    setInterval(refreshDashboard, REFRESH_INTERVAL);\n    \n    window.debugSavings = () => {\n        console.log('=== MANUAL SAVINGS UPDATE ===');",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107055374,
+      "end": 1769107055383
+    }
+  }
+}

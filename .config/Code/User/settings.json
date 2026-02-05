@@ -1,0 +1,5 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "debug.onTaskErrors": "abort",
+    "explorer.confirmDelete": false
+}

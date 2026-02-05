@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e67c93001ZM7wMavbE0SdKy",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e5e8ab001YSIFLWOVnBfMHA",
+  "type": "tool",
+  "callID": "call_739f48566185447b9bc254b5",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/health | python -m json.tool",
+      "description": "Test API health endpoint"
+    },
+    "output": "/bin/bash: line 1: python: command not found\n",
+    "title": "Test API health endpoint",
+    "metadata": {
+      "output": "/bin/bash: line 1: python: command not found\n",
+      "exit": 127,
+      "description": "Test API health endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961061531,
+      "end": 1769961061575
+    }
+  }
+}

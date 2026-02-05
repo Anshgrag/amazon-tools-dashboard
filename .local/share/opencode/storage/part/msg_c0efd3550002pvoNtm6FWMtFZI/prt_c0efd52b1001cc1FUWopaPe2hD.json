@@ -1,0 +1,11 @@
+{
+  "id": "prt_c0efd52b1001cc1FUWopaPe2hD",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0efd3550002pvoNtm6FWMtFZI",
+  "type": "text",
+  "text": "\nHome Assistant offers advanced energy monitoring through its open-source Energy Dashboard, supporting real-time tracking of electricity, gas, and water consumption with hardware-agnostic integration. Unlike proprietary systems, it enables non-invasive monitoring using CT sensors and supports multiple tariffs, solar integration, and battery storage analysis. Their 2025 updates emphasize collective intelligence through device contextualization, mirroring EcoTrack's custom approach while providing enterprise-level analytics, predictive capabilities, and extensive integration options that demonstrate the evolution of open-source energy management solutions beyond basic dashboard visualization.",
+  "time": {
+    "start": 1769778011893,
+    "end": 1769778011893
+  }
+}

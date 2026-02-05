@@ -1,0 +1,16 @@
+{
+  "id": "prt_be708fd87001OSXPU6z0ThMZwl",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be708eb5a002KzA4TtccUWWRre",
+  "type": "reasoning",
+  "text": "Good, now let me verify everything is working.",
+  "metadata": {
+    "anthropic": {
+      "signature": "9daf3104f9a6a5e3b2c42866a03814db544468df618670b985559a0eddbb8a26"
+    }
+  },
+  "time": {
+    "start": 1769107684743,
+    "end": 1769107685207
+  }
+}

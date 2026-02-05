@@ -1,0 +1,29 @@
+{
+  "id": "prt_c19709944001ZNPWsKyQTG1OaO",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c197023ae0012iWzO7yxfM7Dh4",
+  "type": "tool",
+  "callID": "call_c189125071a04a6c8829124e",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "\"\"\"\nFastAPI backend for eye infection detection API\n\"\"\"\nfrom fastapi import FastAPI, File, UploadFile, HTTPException\nfrom fastapi.responses import JSONResponse\nfrom fastapi.middleware.cors import CORSMiddleware\nimport uvicorn\nimport aiofiles\nimport os\nfrom typing import Optional\nimport sys\n\n# Add parent directory to path for imports\nsys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\n\nfrom utils.preprocessing import preprocess_image, validate_image_format\nfrom utils.inference import EyeDiseaseModel\n\n# Initialize FastAPI app\napp = FastAPI(\n    title=\"Eye Infection Detection API\",\n    description=\"API for preliminary eye infection detection using non-microscopic eye photographs\",\n    version=\"1.0.0\"\n)\n\n# Configure CORS for frontend access\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\n\n# Global model instance\nmodel: Optional[EyeDiseaseModel] = None\n\n# Constants\nUPLOAD_DIR = \"uploads\"\nMODEL_PATH = \"backend/model/eye_disease_model.keras\"\n\n# Ensure upload directory exists\nos.makedirs(UPLOAD_DIR, exist_ok=True)\n\n\n@app.on_event(\"startup\")\nasync def startup_event():\n    \"\"\"Load model on application startup.\"\"\"\n    global model\n    \n    print(\"Starting up Eye Infection Detection API...\")\n    \n    # Check if model file exists\n    if os.path.exists(MODEL_PATH):\n        print(f\"Loading model from {MODEL_PATH}...\")\n        model = EyeDiseaseModel(MODEL_PATH)\n    else:\n        print(f\"Warning: Model file not found at {MODEL_PATH}\")\n        print(\"API will return error messages. Please train and save the model first.\")\n        print(\"Use the training notebook in /training/ directory.\")\n        model = None\n    \n    print(\"API startup complete!\")\n\n\n@app.get(\"/\")\nasync def root():\n    \"\"\"Root endpoint with API information.\"\"\"\n    return {\n        \"message\": \"Eye Infection Detection API\",\n        \"version\": \"1.0.0\",\n        \"status\": \"ready\" if model else \"model_not_loaded\",\n        \"endpoints\": {\n            \"predict\": \"/predict\",\n            \"health\": \"/health\"\n        }\n    }\n\n\n@app.get(\"/health\")\nasync def health_check():\n    \"\"\"Health check endpoint.\"\"\"\n    return {\n        \"status\": \"healthy\",\n        \"model_loaded\": model is not None\n    }\n\n\n@app.post(\"/predict\")\nasync def predict(file: UploadFile = File(...)):\n    \"\"\"\n    Predict eye disease from uploaded image.\n    \n    Args:\n        file: Uploaded image file (JPEG/PNG)\n    \n    Returns:\n        JSON response with predicted class and confidence score\n    \"\"\"\n    if model is None:\n        raise HTTPException(\n            status_code=503,\n            detail=\"Model not loaded. Please train and save the model first.\"\n        )\n    \n    # Validate file type\n    if not validate_image_format(file.filename):\n        raise HTTPException(\n            status_code=400,\n            detail=\"Invalid file format. Only JPEG and PNG images are supported.\"\n        )\n    \n    try:\n        # Generate unique filename\n        file_extension = os.path.splitext(file.filename)[1]\n        temp_filename = f\"{file.filename}\"\n        temp_path = os.path.join(UPLOAD_DIR, temp_filename)\n        \n        # Save uploaded file\n        async with aiofiles.open(temp_path, 'wb') as f:\n            content = await file.read()\n            await f.write(content)\n        \n        # Preprocess image\n        preprocessed_image = preprocess_image(temp_path, target_size=(224, 224))\n        \n        # Run prediction\n        result = model.predict(preprocessed_image)\n        \n        # Clean up temporary file\n        try:\n            os.remove(temp_path)\n        except:\n            pass\n        \n        return JSONResponse(\n            content={\n                \"success\": True,\n                \"predicted_class\": result['predicted_class'],\n                \"confidence_score\": round(result['confidence_score'], 4)\n            }\n        )\n    \n    except ValueError as e:\n        raise HTTPException(status_code=400, detail=str(e))\n    except Exception as e:\n        raise HTTPException(status_code=500, detail=f\"Prediction error: {str(e)}\")\n\n\n@app.get(\"/classes\")\nasync def get_classes():\n    \"\"\"Get list of supported disease classes.\"\"\"\n    return {\n        \"classes\": model.class_names if model else [\n            'Normal',\n            'Conjunctivitis',\n            'Cataract',\n            'Glaucoma'\n        ]\n    }\n\n\nif __name__ == \"__main__\":\n    uvicorn.run(\n        \"main:app\",\n        host=\"0.0.0.0\",\n        port=8000,\n        reload=True\n    )\n",
+      "filePath": "/home/bot4u/Desktop/EYE/backend/main.py"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/EYE/backend/main.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py": []
+      },
+      "filepath": "/home/bot4u/Desktop/EYE/backend/main.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953335622,
+      "end": 1769953338630
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_be6f0b6c1001mOy6dGRS2iKGPR",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "role": "user",
+  "time": {
+    "created": 1769106093778
+  },
+  "summary": {
+    "title": "Tabs not working after emission removal",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "minimax-m2.1-free"
+  }
+}

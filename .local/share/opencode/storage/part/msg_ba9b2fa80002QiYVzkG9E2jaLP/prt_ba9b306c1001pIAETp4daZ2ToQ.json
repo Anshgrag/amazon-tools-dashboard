@@ -1,0 +1,26 @@
+{
+  "id": "prt_ba9b306c1001pIAETp4daZ2ToQ",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b2fa80002QiYVzkG9E2jaLP",
+  "type": "tool",
+  "callID": "call_a35cd162caaa4a4397c596ee",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/style.css",
+      "limit": 50,
+      "offset": 530
+    },
+    "output": "<file>\n00531| \n00532| .saved-power {\n00533|     color: var(--accent-green);\n00534| }\n00535| \n00536| .device-savings {\n00537|     font-size: 0.95em;\n00538|     font-weight: bold;\n00539|     min-width: 60px;\n00540|     text-align: right;\n00541| }\n00542| \n00543| .device-savings.positive {\n00544|     color: var(--accent-green);\n00545| }\n00546| \n00547| .device-savings.negative {\n00548|     color: var(--accent-red);\n00549| }\n00550| \n00551| .no-devices {\n00552|     text-align: center;\n00553|     color: var(--text-secondary);\n00554|     font-size: 0.85em;\n00555|     padding: 20px;\n00556| }\n00557| \n00558| /* ==================== CARBON FOOTPRINT ==================== */\n00559| \n00560| .emission-data {\n00561|     margin-bottom: 25px;\n00562| }\n00563| \n00564| .emission-row {\n00565|     display: flex;\n00566|     justify-content: space-between;\n00567|     padding: 10px 0;\n00568|     font-size: 0.9em;\n00569| }\n00570| \n00571| .emission-label {\n00572|     color: var(--text-secondary);\n00573|     font-weight: 600;\n00574| }\n00575| \n00576| .emission-value {\n00577|     color: var(--text-primary);\n00578| }\n00579| \n00580| .emission-value.predicted {\n\n(File has more lines. Use 'offset' parameter to read beyond line 580)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/style.css",
+    "metadata": {
+      "preview": "\n.saved-power {\n    color: var(--accent-green);\n}\n\n.device-savings {\n    font-size: 0.95em;\n    font-weight: bold;\n    min-width: 60px;\n    text-align: right;\n}\n\n.device-savings.positive {\n    color: var(--accent-green);\n}\n\n.device-savings.negative {\n    color: var(--accent-red);\n}\n",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768078640835,
+      "end": 1768078640837
+    }
+  }
+}

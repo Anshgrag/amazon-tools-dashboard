@@ -1,0 +1,50 @@
+{
+  "id": "msg_beabadef9001PNJweBVWoJuswp",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "role": "assistant",
+  "time": {
+    "created": 1769169673977,
+    "completed": 1769169675311
+  },
+  "error": {
+    "name": "APIError",
+    "data": {
+      "message": "Model glm-4.7-free not supported",
+      "statusCode": 401,
+      "isRetryable": false,
+      "responseHeaders": {
+        "cf-placement": "local-IAD",
+        "cf-ray": "9c2722a33ff486a6-IAD",
+        "connection": "keep-alive",
+        "content-length": "91",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Fri, 23 Jan 2026 12:01:15 GMT",
+        "server": "cloudflare",
+        "vary": "accept-encoding"
+      },
+      "responseBody": "{\"type\":\"error\",\"error\":{\"type\":\"ModelError\",\"message\":\"Model glm-4.7-free not supported\"}}",
+      "metadata": {
+        "url": "https://opencode.ai/zen/v1/chat/completions"
+      }
+    }
+  },
+  "parentID": "msg_beabaddda001LrcEWXGsqS8qlt",
+  "modelID": "glm-4.7-free",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

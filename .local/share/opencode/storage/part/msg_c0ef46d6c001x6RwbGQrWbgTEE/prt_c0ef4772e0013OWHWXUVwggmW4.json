@@ -1,0 +1,17 @@
+{
+  "id": "prt_c0ef4772e0013OWHWXUVwggmW4",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0ef46d6c001x6RwbGQrWbgTEE",
+  "type": "patch",
+  "hash": "07d20b617b096a11035ac36c932ffac7383e0a8b",
+  "files": [
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/backend/app.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/backend/aqi_integration.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/backend/ecotrack.db",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/backend/test_data.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/backend/tuya_integration.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/frontend/index.html",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/frontend/script.js",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/mini project/frontend/style.css"
+  ]
+}

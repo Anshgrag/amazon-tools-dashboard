@@ -1,0 +1,130 @@
+✅ UNIVERSAL NANO BANANA PROMPT
+(DUAL GEMSTONE REPLACEMENT • SHAPE-LOCKED • DESIGN-LOCKED • ULTRA-REALISTIC)
+🔑 IMAGE INPUT ORDER (MANDATORY — DO NOT CHANGE)
+
+Image 1 — Stone Reference
+• Reference ONLY for gemstone material
+• Source for gemstone color, texture, depth, surface behavior
+
+Image 2 — Jewelry Model (BASE IMAGE)
+• Contains TWO gemstones
+• Must remain 100% unchanged except gemstone material replacement
+
+🎯 OBJECTIVE
+
+Replace BOTH gemstones present in Image 2 (Base Jewelry Image) using the same gemstone material from Image 1 (Stone Reference).
+
+⚠️ This is a material transfer only, not a shape or design transfer.
+
+🟢 GEMSTONE TRANSFER RULES (FROM IMAGE 1 ONLY)
+
+From Image 1, take ONLY:
+
+Gemstone color
+
+Gemstone material texture
+
+Gemstone optical behavior
+
+Gemstone surface characteristics
+
+Gemstone depth appearance
+
+Apply the same gemstone material to BOTH gemstones in Image 2.
+
+🔒 GEMSTONE SHAPE & POSITION LOCK (IMAGE 2)
+
+For BOTH gemstones in Image 2:
+
+✔ Preserve original gemstone shape
+✔ Preserve original gemstone size
+✔ Preserve original gemstone orientation
+✔ Preserve original gemstone position
+✔ Preserve original gemstone setting & bezel geometry
+
+🚫 Do NOT reshape gemstones
+🚫 Do NOT resize gemstones
+🚫 Do NOT move gemstones
+🚫 Do NOT merge gemstones
+🚫 Do NOT change number of stones
+
+Each gemstone must remain independent and identical in geometry to Image 2.
+
+🔒 BASE IMAGE LOCK (IMAGE 2 — ABSOLUTE)
+
+Do NOT change:
+
+Jewelry design
+
+Metal type, color, polish, thickness
+
+Jewelry proportions
+
+Angle or perspective
+
+Camera position
+
+Background
+
+Props or surface
+
+Scene composition
+
+Lighting direction
+
+Everything except gemstone material must remain pixel-consistent.
+
+💡 LIGHTING & REALISM (CRITICAL)
+
+Match exact ambient lighting of Image 2
+
+Natural photographic light only
+
+Correct highlights on each gemstone
+
+Proper contact shadows between gemstones and metal
+
+Stones must look physically set, not pasted
+
+🚫 No HDR
+🚫 No CGI shine
+🚫 No artificial glow
+🚫 No mockup appearance
+
+⚠️ EDITING CONSTRAINT (VERY STRICT)
+
+✅ ONLY allowed edit:
+Replace gemstone material of BOTH gemstones using Image 1.
+
+🚫 No other edits allowed.
+
+🚫 STRICT NEGATIVE PROMPT
+
+No shape change
+No depth modification
+No stone count change
+No ring redesign
+No angle change
+No background change
+No lighting style change
+No AI stylization
+
+📸 OUTPUT REQUIREMENTS
+
+Generate ONE ultra-realistic image
+
+Jewelry + background = 100% Image 2
+
+Both gemstones = material from Image 1
+
+Shapes = 100% Image 2
+
+Lighting = scene-matched and natural
+
+Aspect Ratio: 1:1 (perfect square)
+No cropping, padding, stretching, or reframing.
+
+🔴 IMPORTANT FAIL-SAFE LINE (KEEP THIS)
+
+“Gemstone material flows ONLY from Image 1 → Image 2.
+Gemstone shape, size, count, and placement flow ONLY from Image 2.”

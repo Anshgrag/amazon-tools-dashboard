@@ -1,0 +1,26 @@
+{
+  "id": "prt_be70772b5001sKMHAa4rjkniN1",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70760570023P0eANbL1D7Bx7",
+  "type": "tool",
+  "callID": "call_function_rtk1i6b0fnt1_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/style.css",
+      "limit": 50,
+      "offset": 1400
+    },
+    "output": "<file>\n01401|     text-shadow: 0 0 10px var(--accent-teal);\n01402| }\n01403| \n01404| body[data-theme=\"cyber\"] .total-value {\n01405|     text-shadow: 0 0 15px var(--accent-teal);\n01406| }\n01407| \n01408| body[data-theme=\"cyber\"] .net-amount {\n01409|     text-shadow: 0 0 10px var(--accent-green);\n01410| }\n01411| \n01412| /* ==================== NEON GLOW ANIMATIONS ==================== */\n01413| \n01414| @keyframes neonPulse {\n01415|     0%, 100% {\n01416|         opacity: 1;\n01417|     }\n01418|     50% {\n01419|         opacity: 0.7;\n01420|     }\n01421| }\n01422| \n01423| @keyframes glow {\n01424|     0%, 100% {\n01425|         box-shadow: 0 0 5px currentColor;\n01426|     }\n01427|     50% {\n01428|         box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;\n01429|     }\n01430| }\n01431| \n01432| body[data-theme=\"cyber\"] .logo h1 {\n01433|     animation: neonPulse 2s ease-in-out infinite;\n01434| }\n01435| \n01436| body[data-theme=\"cyber\"] .device-card.active {\n01437|     box-shadow: 0 0 20px rgba(6, 255, 165, 0.4);\n01438|     animation: glow 2s ease-in-out infinite;\n01439| }\n01440| \n01441| body[data-theme=\"cyber\"] .card:hover {\n01442|     box-shadow: 0 8px 30px rgba(0, 255, 136, 0.2);\n01443| }\n01444| \n\n(End of file - total 1444 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/style.css",
+    "metadata": {
+      "preview": "    text-shadow: 0 0 10px var(--accent-teal);\n}\n\nbody[data-theme=\"cyber\"] .total-value {\n    text-shadow: 0 0 15px var(--accent-teal);\n}\n\nbody[data-theme=\"cyber\"] .net-amount {\n    text-shadow: 0 0 10px var(--accent-green);\n}\n\n/* ==================== NEON GLOW ANIMATIONS ==================== */\n\n@keyframes neonPulse {\n    0%, 100% {\n        opacity: 1;\n    }\n    50% {\n        opacity: 0.7;\n    }",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107584060,
+      "end": 1769107584065
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70ce53100183ZW09t9gs1vfx",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70cd41f001p5PNQim5Wyfuom",
+  "type": "reasoning",
+  "text": "Let me verify the servers are running.",
+  "metadata": {
+    "anthropic": {
+      "signature": "39719ac39f783ce7f2462978d2463d80a276e0c7a511bcdea6e1ed105087963d"
+    }
+  },
+  "time": {
+    "start": 1769107940657,
+    "end": 1769107940950
+  }
+}

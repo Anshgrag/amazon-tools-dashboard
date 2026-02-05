@@ -1,0 +1,12 @@
+{
+  "environment": {
+    "executable": "/usr/local/bin/python3.15",
+    "prefix": "/usr/local",
+    "version": "3.15.0.alpha.3",
+    "is64Bit": true,
+    "symlinks": [
+      "/usr/local/bin/python3.15"
+    ]
+  },
+  "symlinks": []
+}

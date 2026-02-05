@@ -1,0 +1,11 @@
+{
+  "id": "prt_beab4895f001H5jx7DgCRZHR7t",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab48288001RAtQQWOXdGdR6j",
+  "type": "text",
+  "text": "The frontend server was not running from the correct directory. I've restarted it from `frontend/`.\n\nNow:\n- Backend: `http://localhost:5000` (data API)\n- Frontend: `http://localhost:8000` (dashboard)\n\nOpen `http://localhost:8000` in your browser. The dashboard should now display the \"Smart Switch\" device with its readings (voltage ~240V, power 0W in standby).\n\nIf still not showing:\n- Refresh the page\n- Check browser console (F12) for fetch errors\n- Ensure no CORS issues\n\nThe data is flowing correctly—refresh or wait 30s for auto-update.",
+  "time": {
+    "start": 1769169259814,
+    "end": 1769169259814
+  }
+}

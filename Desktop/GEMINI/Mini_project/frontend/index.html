@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Energy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>ECOTRACK</h1>
+                <span class="beta-badge">BETA</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">💰</span>
+                    <span>Cost</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">💡</span>
+                    <span>Appliances</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🏠</span>
+                    <span>Usage by Rooms</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🌱</span>
+                    <span>Emissions</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- HEADER -->
+            <header class="header">
+                <h2>Energy Dashboard</h2>
+                <div class="header-right">
+                    <div class="time-filter">
+                        <button class="filter-btn">TODAY</button>
+                        <button class="filter-btn active">MONTH</button>
+                        <button class="filter-btn">YEAR</button>
+                    </div>
+                    <div class="date-display" id="currentDate">January 2026</div>
+                </div>
+            </header>
+
+            <!-- DASHBOARD GRID -->
+            <div class="dashboard-grid">
+                
+                <!-- COST PREDICTED -->
+                <div class="card">
+                    <h3 class="card-title">COST PREDICTED</h3>
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                        <div class="chart-center-text">
+                            <div class="total-label">Total</div>
+                            <div class="total-value" id="totalCost">$0</div>
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot electricity"></span>
+                            <span>Electricity</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot gas"></span>
+                            <span>Gas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHANGE IN COST -->
+                <div class="card">
+                    <h3 class="card-title">CHANGE IN COST</h3>
+                    <div class="cost-comparison">
+                        <div class="cost-bar-container">
+                            <div class="cost-bar" id="lastMonthBar">
+                                <div class="bar-value" id="lastMonthValue">$0</div>
+                                <div class="bar-label">Last Month</div>
+                            </div>
+                            <div class="cost-bar" id="currentMonthBar">
+                                <div class="bar-value" id="currentMonthValue">$0</div>
+                                <div class="bar-label">This Month</div>
+                            </div>
+                        </div>
+                        <div class="cost-change">
+                            <div class="change-icon">▲</div>
+                            <div class="change-percentage" id="changePercentage">0%</div>
+                            <div class="change-label">INCREASE IN COST</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USAGE ESTIMATE -->
+                <div class="card">
+                    <h3 class="card-title">USAGE ESTIMATE</h3>
+                    <div class="usage-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Till Now:</span>
+                            <span class="stat-value" id="usageTillNow">0 kWh</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Predicted:</span>
+                            <span class="stat-value" id="usagePredicted">0 kWh</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="usageChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- ACTIVE APPLIANCES -->
+                <div class="card">
+                    <h3 class="card-title">ACTIVE APPLIANCES</h3>
+                    <div class="appliances-list" id="appliancesList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- SMART SAVINGS MONITOR -->
+                <div class="card">
+                    <h3 class="card-title">SMART SAVINGS MONITOR</h3>
+                    <div class="savings-summary">
+                        <div class="savings-row">
+                            <div class="savings-item waste">
+                                <div class="savings-label">Wasted Today</div>
+                                <div class="savings-amount" id="wastedAmount">$0.00</div>
+                                <div class="savings-desc">Without automation</div>
+                            </div>
+                            <div class="savings-divider"></div>
+                            <div class="savings-item saved">
+                                <div class="savings-label">Saved Today</div>
+                                <div class="savings-amount" id="savedAmount">$0.00</div>
+                                <div class="savings-desc">With automation</div>
+                            </div>
+                        </div>
+                        <div class="net-savings">
+                            <div class="net-label">Net Savings</div>
+                            <div class="net-amount" id="netSavings">$0.00</div>
+                            <div class="net-percentage" id="savingsPercentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="savingsChart"></canvas>
+                    </div>
+                    <div class="device-savings-list" id="deviceSavingsList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- CARBON FOOTPRINT -->
+                <div class="card">
+                    <h3 class="card-title">CARBON FOOTPRINT</h3>
+                    <div class="emission-data">
+                        <div class="emission-row">
+                            <span class="emission-label">Emission</span>
+                        </div>
+                        <div class="emission-row">
+                            <span class="emission-value">Till Date</span>
+                            <span class="emission-value predicted">Predicted</span>
+                        </div>
+                        <div class="emission-row highlight">
+                            <span class="emission-value" id="emissionTillDate">0 Kg of CO2</span>
+                            <span class="emission-value predicted" id="emissionPredicted">0 Kg of CO2</span>
+                        </div>
+                    </div>
+                    <div class="green-energy">
+                        <div class="green-label">Green Energy Generated</div>
+                        <div class="green-bar">
+                            <div class="green-progress" id="greenProgress"></div>
+                        </div>
+                        <div class="green-stats">
+                            <span>Current: <strong id="greenCurrent">0 kWh</strong></span>
+                            <span class="goal-text">Goal: <strong>500 kWh</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

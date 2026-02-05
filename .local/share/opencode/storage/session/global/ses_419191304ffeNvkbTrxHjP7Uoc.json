@@ -1,0 +1,17 @@
+{
+  "id": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "slug": "cosmic-lagoon",
+  "version": "1.1.31",
+  "projectID": "global",
+  "directory": "/home/bot4u/Desktop/GEMINI/Mini_project_test",
+  "title": "Frontend and backend running but site not visible",
+  "time": {
+    "created": 1769105452284,
+    "updated": 1769108055801
+  },
+  "summary": {
+    "additions": 2943,
+    "deletions": 209,
+    "files": 4
+  }
+}

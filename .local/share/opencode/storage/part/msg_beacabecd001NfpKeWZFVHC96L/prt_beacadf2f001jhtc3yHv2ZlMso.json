@@ -1,0 +1,32 @@
+{
+  "id": "prt_beacadf2f001jhtc3yHv2ZlMso",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beacabecd001NfpKeWZFVHC96L",
+  "type": "tool",
+  "callID": "chatcmpl-tool-47ec2a0f4c554602addf67a4bc38d14f",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "# EcoTrack API Code\n\nThis folder contains the complete EcoTrack energy monitoring system with Tuya smart plug integration.\n\n## Structure\n\n- `backend/` - Flask API server with Tuya integration\n- `frontend/` - Web dashboard for energy monitoring\n- `tinytuya.json` - Tuya API credentials\n- `tuya.py` - Simple Tuya device control script\n- `requirements.txt` - Python dependencies\n\n## Setup Instructions\n\n### 1. Backend Setup\n```bash\ncd backend\nsource venv/bin/activate\npip install -r ../requirements.txt\npython app.py\n```\n\n### 2. Frontend Setup\n```bash\ncd frontend\npython3 -m http.server 8000\n```\n\n### 3. Tuya Integration\n```bash\ncd backend\nsource venv/bin/activate\npython tuya_integration.py\n```\n\n## Features\n\n- Real-time power monitoring from Tuya smart plugs\n- Energy consumption tracking and cost analysis\n- Device control (on/off toggle)\n- Dashboard with charts and statistics\n- Room-based usage analysis\n- Savings calculations\n\n## API Endpoints\n\n- `GET /api/electricity/history` - Get electricity data\n- `POST /api/electricity/add` - Add electricity reading\n- `GET /api/savings` - Get savings data\n- `POST /api/devices/{id}/toggle` - Control device\n- `GET /api/devices` - Get device list\n- `GET /api/stats` - Get system statistics\n\n## Access\n\n- Frontend Dashboard: http://localhost:8000\n- Backend API: http://localhost:5000\n\n## Notes\n\n- Ensure `tinytuya.json` contains valid Tuya API credentials\n- The system automatically creates `ecotrack.db` database on first run\n- Data refreshes every 30 seconds on the frontend\n- Tuya integration fetches data every 60 seconds",
+      "filePath": "API_CODE/README.md"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/API_CODE/README.md",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/tuya_integration.py": [],
+        "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/tuya.py": [],
+        "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/app.py": [],
+        "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/diagnose.sh": []
+      },
+      "filepath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/API_CODE/README.md",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769170722621,
+      "end": 1769170722644
+    }
+  }
+}

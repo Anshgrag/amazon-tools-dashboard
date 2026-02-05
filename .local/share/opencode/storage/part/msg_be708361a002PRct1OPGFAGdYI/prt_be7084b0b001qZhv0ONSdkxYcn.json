@@ -1,0 +1,16 @@
+{
+  "id": "prt_be7084b0b001qZhv0ONSdkxYcn",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be708361a002PRct1OPGFAGdYI",
+  "type": "reasoning",
+  "text": "Good, servers are stopped. Let me restart them.",
+  "metadata": {
+    "anthropic": {
+      "signature": "5c4b28b4ced7f17947d66d80d4396520834d8c7fdbd13967b495fc5bdcd9bc70"
+    }
+  },
+  "time": {
+    "start": 1769107639051,
+    "end": 1769107639460
+  }
+}

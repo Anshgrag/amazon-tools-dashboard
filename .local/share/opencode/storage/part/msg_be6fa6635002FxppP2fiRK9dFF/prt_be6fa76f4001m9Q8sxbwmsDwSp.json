@@ -1,0 +1,25 @@
+{
+  "id": "prt_be6fa76f4001m9Q8sxbwmsDwSp",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fa6635002FxppP2fiRK9dFF",
+  "type": "tool",
+  "callID": "call_function_9ha0cdgv3s48_1",
+  "tool": "grep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "path": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "pattern": "async function fetchRoomsData"
+    },
+    "output": "Found 1 matches\n/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js:\n  Line 180: async function fetchRoomsData() {",
+    "title": "async function fetchRoomsData",
+    "metadata": {
+      "matches": 1,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106733095,
+      "end": 1769106733103
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "prt_be92e440d001FrA0B4dQNooiLT",
+  "sessionID": "ses_416d273d9ffem3yZ94auXXOCRu",
+  "messageID": "msg_be92e38b6001aPphZ4bEGstXF1",
+  "type": "reasoning",
+  "text": "Good. Now let me remove the entire devices tab content.",
+  "metadata": {
+    "anthropic": {
+      "signature": "d2a0ed5b254c8018b4e1d0ece16178bb3a0575765760ebf08c83d96bf5090fef"
+    }
+  },
+  "time": {
+    "start": 1769143682062,
+    "end": 1769143682453
+  }
+}

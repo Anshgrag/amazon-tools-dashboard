@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a832ab0012qY0hd44FrJUW5",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a806fa001sA6fdiwJVFaMLU",
+  "type": "tool",
+  "callID": "call_fda6ba350ed540f5ab93c122",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project/frontend && python3 -m http.server 8000 &",
+      "description": "Start frontend server"
+    },
+    "output": "",
+    "title": "Start frontend server",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start frontend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077931186,
+      "end": 1768077931197
+    }
+  }
+}

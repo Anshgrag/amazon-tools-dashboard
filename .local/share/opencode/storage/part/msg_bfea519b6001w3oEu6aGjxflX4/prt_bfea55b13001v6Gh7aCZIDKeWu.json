@@ -1,0 +1,27 @@
+{
+  "id": "prt_bfea55b13001v6Gh7aCZIDKeWu",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "messageID": "msg_bfea519b6001w3oEu6aGjxflX4",
+  "type": "tool",
+  "callID": "chatcmpl-tool-8a5ba7e0b5e54a50b4db0a9d9c8ee54d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "rm ecotrack.db",
+      "description": "Remove old database to recreate with new schema"
+    },
+    "output": "",
+    "title": "Remove old database to recreate with new schema",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove old database to recreate with new schema",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769503808279,
+      "end": 1769503808283
+    }
+  }
+}

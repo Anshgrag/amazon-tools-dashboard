@@ -1,0 +1,17 @@
+{
+  "id": "msg_c11f5061b001vQqvVpbBpT7Wbs",
+  "sessionID": "ses_3ee0af9f7ffeE9V7H3oKopazGS",
+  "role": "user",
+  "time": {
+    "created": 1769827796549
+  },
+  "summary": {
+    "title": "Project workflow full detail inquiry",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaad8ce1001mgoEs16OnQ6W6b",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaad85fc0012f6DYAdqX2RwiB",
+  "type": "text",
+  "text": "The data is now visible! Your smart plug is working correctly:\n\n- **Device**: Smart Switch\n- **Mode**: Standby (no load)\n- **Power**: 0.0W\n- **Voltage**: 238.7V\n\nThe plug detects ~240V voltage even without a device connected. To see more data, run the integration longer or check the dashboard at `http://localhost:8000`.",
+  "time": {
+    "start": 1769168801487,
+    "end": 1769168801487
+  }
+}

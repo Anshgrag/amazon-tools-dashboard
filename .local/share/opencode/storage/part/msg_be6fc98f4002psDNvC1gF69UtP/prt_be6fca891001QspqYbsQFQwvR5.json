@@ -1,0 +1,27 @@
+{
+  "id": "prt_be6fca891001QspqYbsQFQwvR5",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fc98f4002psDNvC1gF69UtP",
+  "type": "tool",
+  "callID": "call_function_u1dhd01bdhu6_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s http://localhost:5000/api/devices | head -20",
+      "description": "Test devices API"
+    },
+    "output": "{\n  \"data\": {\n    \"devices\": [\n      {\n        \"id\": 1,\n        \"name\": \"TV\",\n        \"power\": 120,\n        \"room\": \"living-room\",\n        \"scheduled\": false,\n        \"status\": \"on\",\n        \"type\": \"entertainment\"\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Router\",\n        \"power\": 15,\n        \"room\": \"living-room\",\n        \"scheduled\": true,\n        \"status\": \"on\",\n        \"type\": \"network\"\n",
+    "title": "Test devices API",
+    "metadata": {
+      "output": "{\n  \"data\": {\n    \"devices\": [\n      {\n        \"id\": 1,\n        \"name\": \"TV\",\n        \"power\": 120,\n        \"room\": \"living-room\",\n        \"scheduled\": false,\n        \"status\": \"on\",\n        \"type\": \"entertainment\"\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Router\",\n        \"power\": 15,\n        \"room\": \"living-room\",\n        \"scheduled\": true,\n        \"status\": \"on\",\n        \"type\": \"network\"\n",
+      "exit": 0,
+      "description": "Test devices API",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106876573,
+      "end": 1769106878612
+    }
+  }
+}

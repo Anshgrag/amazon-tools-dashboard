@@ -1,0 +1,26 @@
+{
+  "id": "prt_be70aac45001uSXoF3xlyDV9s2",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70a96c1002dhOHYYpH1Sg2WN",
+  "type": "tool",
+  "callID": "call_function_fdu09nu2g4rf_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 50,
+      "offset": 1440
+    },
+    "output": "<file>\n\n\n(End of file - total 1412 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107795322,
+      "end": 1769107795328
+    }
+  }
+}

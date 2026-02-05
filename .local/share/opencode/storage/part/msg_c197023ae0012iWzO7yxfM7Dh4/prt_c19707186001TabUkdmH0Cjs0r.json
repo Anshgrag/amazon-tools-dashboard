@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19707186001TabUkdmH0Cjs0r",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c197023ae0012iWzO7yxfM7Dh4",
+  "type": "tool",
+  "callID": "call_5d0f2a18365a4639a7cbc41e",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "\"\"\"\nImage preprocessing utilities for eye infection detection\n\"\"\"\nimport numpy as np\nfrom PIL import Image\nfrom typing import Union\n\n\ndef preprocess_image(\n    image_path: str,\n    target_size: tuple = (224, 224)\n) -> np.ndarray:\n    \"\"\"\n    Load and preprocess an eye image for model inference.\n    \n    Args:\n        image_path: Path to the uploaded image file\n        target_size: Target dimensions for resizing (default: 224x224)\n    \n    Returns:\n        Preprocessed numpy array ready for model prediction\n    \"\"\"\n    try:\n        # Load image with PIL\n        img = Image.open(image_path)\n        \n        # Convert RGB if necessary (handles RGBA, grayscale, etc.)\n        if img.mode != 'RGB':\n            img = img.convert('RGB')\n        \n        # Resize to target dimensions\n        img = img.resize(target_size, Image.Resampling.LANCZOS)\n        \n        # Convert to numpy array and normalize to [0, 1]\n        img_array = np.array(img, dtype=np.float32) / 255.0\n        \n        # Add batch dimension for model input\n        img_array = np.expand_dims(img_array, axis=0)\n        \n        return img_array\n    \n    except Exception as e:\n        raise ValueError(f\"Error preprocessing image: {str(e)}\")\n\n\ndef normalize_image(image: np.ndarray) -> np.ndarray:\n    \"\"\"\n    Normalize image using ImageNet statistics for transfer learning.\n    \n    Args:\n        image: Input image array (H, W, C)\n    \n    Returns:\n        Normalized image array\n    \"\"\"\n    # ImageNet mean and std\n    mean = [0.485, 0.456, 0.406]\n    std = [0.229, 0.224, 0.225]\n    \n    normalized = image.copy()\n    for i in range(3):\n        normalized[:, :, i] = (image[:, :, i] - mean[i]) / std[i]\n    \n    return normalized\n\n\ndef validate_image_format(file_path: str) -> bool:\n    \"\"\"\n    Validate that the file is a supported image format.\n    \n    Args:\n        file_path: Path to the image file\n    \n    Returns:\n        True if valid format, False otherwise\n    \"\"\"\n    valid_extensions = {'.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'}\n    return any(file_path.endswith(ext) for ext in valid_extensions)\n",
+      "filePath": "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/EYE/backend/utils/preprocessing.py",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953325455,
+      "end": 1769953328850
+    }
+  }
+}

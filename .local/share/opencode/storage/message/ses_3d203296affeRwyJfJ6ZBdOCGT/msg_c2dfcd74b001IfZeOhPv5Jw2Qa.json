@@ -1,0 +1,34 @@
+{
+  "id": "msg_c2dfcd74b001IfZeOhPv5Jw2Qa",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "role": "assistant",
+  "time": {
+    "created": 1770298070859,
+    "completed": 1770298168274
+  },
+  "error": {
+    "name": "MessageAbortedError",
+    "data": {
+      "message": "The operation was aborted."
+    }
+  },
+  "parentID": "msg_c2dfcd6ad001iWC9SmxwaA3NDR",
+  "modelID": "glm-4.7-free",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/EYE",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

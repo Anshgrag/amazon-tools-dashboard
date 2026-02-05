@@ -1,0 +1,22 @@
+{
+  "id": "prt_c0a4bddb0001XydeIAHJ73UzUr",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a4ba635002Jh3teT3r6svnRf",
+  "type": "tool",
+  "callID": "call_7d81584744f04815b3a42410",
+  "tool": "todoread",
+  "state": {
+    "status": "completed",
+    "input": {},
+    "output": "[]",
+    "title": "0 todos",
+    "metadata": {
+      "todos": [],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769699270071,
+      "end": 1769699270096
+    }
+  }
+}

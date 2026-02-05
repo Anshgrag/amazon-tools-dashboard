@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba98c67bf001lP0MMmv9MNGYHj",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768076109782
+  },
+  "summary": {
+    "title": "User flow: add \"if user did\" condition",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

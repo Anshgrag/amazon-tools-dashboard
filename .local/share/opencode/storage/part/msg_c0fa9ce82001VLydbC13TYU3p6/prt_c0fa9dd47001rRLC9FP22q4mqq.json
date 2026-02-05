@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fa9dd47001rRLC9FP22q4mqq",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa9ce82001VLydbC13TYU3p6",
+  "type": "tool",
+  "callID": "call_ab94e16b229648b88afc2f19",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/style.css",
+      "limit": 20,
+      "offset": 975
+    },
+    "output": "<file>\n00976| \n00977| /* ==================== TAB PANES ==================== */\n00978| \n00979| .tab-pane {\n00980|     display: none !important;\n00981| }\n00982| \n00983| .tab-pane.active {\n00984|     display: grid !important;\n00985| }\n00986| \n00987| .main-content > .tab-pane {\n00988|     display: none !important;\n00989| }\n00990| \n00991| .main-content > .tab-pane.active {\n00992|     display: grid !important;\n00993| }\n00994| \n00995| .card.full-width {\n\n(File has more lines. Use 'offset' parameter to read beyond line 995)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/style.css",
+    "metadata": {
+      "preview": "\n/* ==================== TAB PANES ==================== */\n\n.tab-pane {\n    display: none !important;\n}\n\n.tab-pane.active {\n    display: grid !important;\n}\n\n.main-content > .tab-pane {\n    display: none !important;\n}\n\n.main-content > .tab-pane.active {\n    display: grid !important;\n}\n\n.card.full-width {",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769789316426,
+      "end": 1769789316460
+    }
+  }
+}

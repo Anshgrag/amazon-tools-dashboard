@@ -1,0 +1,27 @@
+{
+  "id": "prt_beae016dc0016wepidv1T8iGtl",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beadfc4eb0017w3cnrINs1UuzR",
+  "type": "tool",
+  "callID": "call_dec317aab8d94f35916e0541",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "netstat -tlnp | grep :8000",
+      "description": "Check if frontend is running"
+    },
+    "output": "(Not all processes could be identified, non-owned process info\n will not be shown, you would have to be root to see it all.)\n",
+    "title": "Check if frontend is running",
+    "metadata": {
+      "output": "(Not all processes could be identified, non-owned process info\n will not be shown, you would have to be root to see it all.)\n",
+      "exit": 1,
+      "description": "Check if frontend is running",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769172113124,
+      "end": 1769172113199
+    }
+  }
+}

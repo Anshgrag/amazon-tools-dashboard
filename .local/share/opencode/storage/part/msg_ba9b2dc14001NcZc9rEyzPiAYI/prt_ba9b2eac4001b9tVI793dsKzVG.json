@@ -1,0 +1,26 @@
+{
+  "id": "prt_ba9b2eac4001b9tVI793dsKzVG",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b2dc14001NcZc9rEyzPiAYI",
+  "type": "tool",
+  "callID": "call_5b9126cb3ec2477a942639b4",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+      "limit": 20,
+      "offset": 325
+    },
+    "output": "<file>\n00326| function updateSavingsDisplay(data) {\n00327|     try {\n00328|         console.log('Updating savings display with data:', data);\n00329|         \n00330|         // Safely get elements\n00331|         const wastedAmount = document.getElementById('wastedAmount');\n00332|         const savedAmount = document.getElementById('savedAmount');\n00333|         const netSavings = document.getElementById('netSavings');\n00334|         const savingsPercentage = document.getElementById('savingsPercentage');\n00335|         \n00336|         if (!wastedAmount || !savedAmount || !netSavings || !savingsPercentage) {\n00337|             console.error('Savings display elements not found');\n00338|             return;\n00339|         }\n00340|         \n00341|         // Update main savings amounts\n00342|         wastedAmount.textContent = formatCurrency(data.total_waste_cost || 0);\n00343|         savedAmount.textContent = formatCurrency(data.total_saved_cost || 0);\n00344|         netSavings.textContent = formatCurrency(data.net_savings || 0);\n00345|         \n\n(File has more lines. Use 'offset' parameter to read beyond line 345)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+    "metadata": {
+      "preview": "function updateSavingsDisplay(data) {\n    try {\n        console.log('Updating savings display with data:', data);\n        \n        // Safely get elements\n        const wastedAmount = document.getElementById('wastedAmount');\n        const savedAmount = document.getElementById('savedAmount');\n        const netSavings = document.getElementById('netSavings');\n        const savingsPercentage = document.getElementById('savingsPercentage');\n        \n        if (!wastedAmount || !savedAmount || !netSavings || !savingsPercentage) {\n            console.error('Savings display elements not found');\n            return;\n        }\n        \n        // Update main savings amounts\n        wastedAmount.textContent = formatCurrency(data.total_waste_cost || 0);\n        savedAmount.textContent = formatCurrency(data.total_saved_cost || 0);\n        netSavings.textContent = formatCurrency(data.net_savings || 0);\n        ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768078633673,
+      "end": 1768078633678
+    }
+  }
+}

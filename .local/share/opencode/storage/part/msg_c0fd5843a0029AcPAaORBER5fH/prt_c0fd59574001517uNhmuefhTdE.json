@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fd59574001517uNhmuefhTdE",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fd5843a0029AcPAaORBER5fH",
+  "type": "tool",
+  "callID": "call_1bea088d99774dd787f1d223",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend && python3 -m http.server 8000 > /dev/null 2>&1 &",
+      "description": "Start frontend server for testing"
+    },
+    "output": "",
+    "title": "Start frontend server for testing",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start frontend server for testing",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769792181631,
+      "end": 1769792181686
+    }
+  }
+}

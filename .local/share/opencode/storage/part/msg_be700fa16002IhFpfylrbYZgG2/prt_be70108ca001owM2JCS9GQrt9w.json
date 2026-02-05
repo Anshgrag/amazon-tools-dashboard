@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70108ca001owM2JCS9GQrt9w",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be700fa16002IhFpfylrbYZgG2",
+  "type": "reasoning",
+  "text": "Let me fix the command",
+  "metadata": {
+    "anthropic": {
+      "signature": "7f344b97adec8403f0c9352540ad33624ffed44134b70c079fa35465465ceeb6"
+    }
+  },
+  "time": {
+    "start": 1769107163338,
+    "end": 1769107163641
+  }
+}

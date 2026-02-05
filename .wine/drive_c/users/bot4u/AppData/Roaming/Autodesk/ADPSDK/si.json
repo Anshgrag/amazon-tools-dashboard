@@ -1,0 +1,19 @@
+{
+    "browser_platform": "Win32",
+    "device_desc": "",
+    "device_hw_display": "error",
+    "device_hw_form": "Slate",
+    "device_hw_model": "20U1S08F00",
+    "device_hw_proc": "Intel64 Family 6 Model 142 Stepping 12 Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz",
+    "device_hw_ram": "7 GB",
+    "device_hw_storage": "465 GB",
+    "device_hw_vendor": "LENOVO",
+    "device_hw_video": "llvmpipe (LLVM 20.1.2, 256 bits), PCI\\VEN_0005&DEV_0000&SUBSYS_00000000&REV_00,Intel(R) UHD Graphics (CML GT2), PCI\\VEN_8086&DEV_9B41&SUBSYS_00000000&REV_00",
+    "device_name": "BOT4U",
+    "device_os_locale": "English - United States",
+    "device_os_name": "Microsoft Windows 10 Pro",
+    "device_os_type": "X64",
+    "device_os_vendor": "Microsoft Inc",
+    "device_os_version": "10.0.19043  Build19043",
+    "device_os_video": "wine.dll:35.0.10.1000,igdudim32.dll:35.0.101.6314"
+}

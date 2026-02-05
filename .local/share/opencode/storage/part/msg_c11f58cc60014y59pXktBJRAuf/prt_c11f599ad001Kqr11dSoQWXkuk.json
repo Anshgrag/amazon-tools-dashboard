@@ -1,0 +1,24 @@
+{
+  "id": "prt_c11f599ad001Kqr11dSoQWXkuk",
+  "sessionID": "ses_3ee0af9f7ffeE9V7H3oKopazGS",
+  "messageID": "msg_c11f58cc60014y59pXktBJRAuf",
+  "type": "tool",
+  "callID": "call_c5add935bf804366ac00f4fc",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/tinytuya.json"
+    },
+    "output": "<file>\n00001| {\n00002|     \"apiKey\": \"m3negp3fvw7ugp7cqae8\",\n00003|     \"apiSecret\": \"45b5bc2934f7437bb52739090eb96c5c\",\n00004|     \"apiRegion\": \"in\",\n00005|     \"apiDeviceID\": \"d78fcea6e6c3b03d40zcwp\"\n00006| }\n\n(End of file - total 6 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/tinytuya.json",
+    "metadata": {
+      "preview": "{\n    \"apiKey\": \"m3negp3fvw7ugp7cqae8\",\n    \"apiSecret\": \"45b5bc2934f7437bb52739090eb96c5c\",\n    \"apiRegion\": \"in\",\n    \"apiDeviceID\": \"d78fcea6e6c3b03d40zcwp\"\n}",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769827834289,
+      "end": 1769827834303
+    }
+  }
+}

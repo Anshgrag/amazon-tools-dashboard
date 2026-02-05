@@ -1,0 +1,29 @@
+{
+  "id": "msg_c19eaf7b6001huqOO8uc5IHsiF",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "role": "assistant",
+  "time": {
+    "created": 1769961355190,
+    "completed": 1769961428880
+  },
+  "parentID": "msg_c19ea8aed001rZv9De7rlGn3ET",
+  "modelID": "glm-4.7-free",
+  "providerID": "opencode",
+  "mode": "plan",
+  "agent": "plan",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/EYE",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  },
+  "finish": "unknown"
+}

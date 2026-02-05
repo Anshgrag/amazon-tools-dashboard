@@ -1,0 +1,24 @@
+{
+  "id": "prt_beaa6425d0017Ww9hvMJ7obT0Y",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa63b0d001kQdLkhCxiuAAcW",
+  "type": "tool",
+  "callID": "call_94027309",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "tuya.py"
+    },
+    "output": "<file>\n00001| from tuya_connector import TuyaOpenAPI\n00002| import time\n00003| import sys\n00004| \n00005| ACCESS_ID = \"m3negp3fvw7ugp7cqae8\"\n00006| ACCESS_SECRET = \"45b5bc2934f7437bb52739090eb96c5c\"\n00007| DEVICE_ID = \"d78fcea6e6c3b03d40zcwp\"\n00008| \n00009| ENDPOINT = \"https://openapi.tuya.in\"  # global (most stable)\n00010| \n00011| def connect():\n00012|     try:\n00013|         api = TuyaOpenAPI(ENDPOINT, ACCESS_ID, ACCESS_SECRET)\n00014|         api.connect()\n00015|         print(\"✅ Connected to Tuya Cloud\")\n00016|         return api\n00017|     except Exception as e:\n00018|         print(\"❌ Failed to connect to Tuya Cloud\")\n00019|         print(e)\n00020|         sys.exit(1)\n00021| \n00022| def send(api, value):\n00023|     res = api.post(\n00024|         f\"/v1.0/iot-03/devices/{DEVICE_ID}/commands\",\n00025|         {\"commands\": [{\"code\": \"switch_1\", \"value\": value}]}\n00026|     )\n00027| \n00028|     if not res or not res.get(\"success\"):\n00029|         print(\"❌ Command failed:\", res)\n00030|     else:\n00031|         print(\"✅ Plug\", \"ON\" if value else \"OFF\")\n00032| \n00033| def main():\n00034|     api = connect()\n00035| \n00036|     while True:\n00037|         print(\"\\n1. Turn ON\")\n00038|         print(\"2. Turn OFF\")\n00039|         print(\"3. Exit\")\n00040| \n00041|         ch = input(\"Choice: \")\n00042| \n00043|         if ch == \"1\":\n00044|             send(api, True)\n00045|         elif ch == \"2\":\n00046|             send(api, False)\n00047|         elif ch == \"3\":\n00048|             break\n00049|         else:\n00050|             print(\"Invalid choice\")\n00051| \n00052|         time.sleep(1)\n00053| \n00054| if __name__ == \"__main__\":\n00055|     main()\n00056| \n\n(End of file - total 56 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/tuya.py",
+    "metadata": {
+      "preview": "from tuya_connector import TuyaOpenAPI\nimport time\nimport sys\n\nACCESS_ID = \"m3negp3fvw7ugp7cqae8\"\nACCESS_SECRET = \"45b5bc2934f7437bb52739090eb96c5c\"\nDEVICE_ID = \"d78fcea6e6c3b03d40zcwp\"\n\nENDPOINT = \"https://openapi.tuya.in\"  # global (most stable)\n\ndef connect():\n    try:\n        api = TuyaOpenAPI(ENDPOINT, ACCESS_ID, ACCESS_SECRET)\n        api.connect()\n        print(\"✅ Connected to Tuya Cloud\")\n        return api\n    except Exception as e:\n        print(\"❌ Failed to connect to Tuya Cloud\")\n        print(e)\n        sys.exit(1)",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168323167,
+      "end": 1769168323170
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fb06443001Cd5qtRmTVWldFC",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fb05821001GmpiN6eUnCOS44",
+  "type": "tool",
+  "callID": "call_72f4a09d8d2744dd935b371f",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "limit": 20,
+      "offset": 1160
+    },
+    "output": "<file>\n01161|     updateDeviceStatus('on'); // Default to on\n01162|     \n01163|     // Initialize schedule checker (every minute)\n01164|     setInterval(checkSchedules, 60000);\n01165|     \n01166|     // Initialize schedule list\n01167|     updateScheduleList();\n01168| });\n01169| \n01170| // ==================== LIGHT/DARK THEME TOGGLE ====================\n01171| \n01172| function setupThemeToggle() {\n01173|     const themeToggle = document.getElementById('themeToggle');\n01174|     if (!themeToggle) return;\n01175|     \n01176|     const isDark = localStorage.getItem('theme') !== 'light';\n01177|     updateTheme(isDark);\n01178|     \n01179|     themeToggle.addEventListener('click', function() {\n01180|         const isCurrentlyDark = document.body.getAttribute('data-theme') === 'dark';\n\n(File has more lines. Use 'offset' parameter to read beyond line 1180)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)\n    setInterval(checkSchedules, 60000);\n    \n    // Initialize schedule list\n    updateScheduleList();\n});\n\n// ==================== LIGHT/DARK THEME TOGGLE ====================\n\nfunction setupThemeToggle() {\n    const themeToggle = document.getElementById('themeToggle');\n    if (!themeToggle) return;\n    \n    const isDark = localStorage.getItem('theme') !== 'light';\n    updateTheme(isDark);\n    \n    themeToggle.addEventListener('click', function() {\n        const isCurrentlyDark = document.body.getAttribute('data-theme') === 'dark';",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769789744197,
+      "end": 1769789744202
+    }
+  }
+}

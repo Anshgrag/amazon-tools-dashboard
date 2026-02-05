@@ -1,0 +1,86 @@
+{
+  "id": "prt_c0fdcd6f00019eYjAIm394H4hn",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fdc8a58002wOVyU32ePrneZj",
+  "type": "tool",
+  "callID": "call_f55cf92b96324d169d993e6a",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Improve scheduler UI design to match overall theme",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Add device type/appliance mapping for smart plugs",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Enhance visual consistency with existing tabs",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add smart plug device identification logic",
+          "id": "4",
+          "priority": "medium",
+          "status": "pending"
+        },
+        {
+          "content": "Improve responsive design for mobile",
+          "id": "5",
+          "priority": "medium",
+          "status": "pending"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Improve scheduler UI design to match overall theme\",\n    \"id\": \"1\",\n    \"priority\": \"high\",\n    \"status\": \"in_progress\"\n  },\n  {\n    \"content\": \"Add device type/appliance mapping for smart plugs\",\n    \"id\": \"2\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Enhance visual consistency with existing tabs\",\n    \"id\": \"3\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Add smart plug device identification logic\",\n    \"id\": \"4\",\n    \"priority\": \"medium\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Improve responsive design for mobile\",\n    \"id\": \"5\",\n    \"priority\": \"medium\",\n    \"status\": \"pending\"\n  }\n]",
+    "title": "5 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Improve scheduler UI design to match overall theme",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Add device type/appliance mapping for smart plugs",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Enhance visual consistency with existing tabs",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add smart plug device identification logic",
+          "id": "4",
+          "priority": "medium",
+          "status": "pending"
+        },
+        {
+          "content": "Improve responsive design for mobile",
+          "id": "5",
+          "priority": "medium",
+          "status": "pending"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769792657143,
+      "end": 1769792657147
+    }
+  }
+}

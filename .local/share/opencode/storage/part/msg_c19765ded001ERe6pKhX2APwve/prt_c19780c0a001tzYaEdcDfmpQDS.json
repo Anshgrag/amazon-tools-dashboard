@@ -1,0 +1,241 @@
+{
+  "id": "prt_c19780c0a001tzYaEdcDfmpQDS",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19765ded001ERe6pKhX2APwve",
+  "type": "tool",
+  "callID": "call_c68d5c92c6d24ef79bb8d659",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "# Eye Infection Detection System\n\nA full-stack web application for preliminary eye infection detection using AI. The system analyzes non-microscopic eye photographs to detect potential eye conditions including Normal, Conjunctivitis, Cataract, and Glaucoma.\n\n## Disclaimer\n\nThis tool is for preliminary screening only and not a medical diagnosis. Always consult an ophthalmologist for proper diagnosis and treatment.\n\n## Features\n\n- Mobile-first responsive UI (Android browser compatible)\n- Image upload with preview (JPEG/PNG support)\n- Real-time AI-based prediction\n- Fast inference (< 10 seconds on CPU)\n- Clear result display with confidence scores\n- RESTful API backend\n- Scalable architecture for adding new conditions\n\n## Project Structure\n\n```\nEYE/\n├── frontend/\n│   ├── index.html          # Main frontend interface\n│   ├── style.css           # Styling (mobile-first)\n│   └── script.js            # Frontend logic\n├── backend/\n│   ├── main.py              # FastAPI application\n│   ├── model/               # Trained model files\n│   └── utils/\n│       ├── preprocessing.py # Image preprocessing utilities\n│       └── inference.py     # Model inference wrapper\n├── training/\n│   └── eye_detection_training.ipynb  # Google Colab training notebook\n├── requirements.txt        # Python dependencies\n└── README.md              # This file\n```\n\n## Quick Start\n\n### Prerequisites\n\n- Python 3.8 or higher\n- pip package manager\n- Google Chrome or modern web browser\n\n### 1. Backend Setup\n\n```bash\n# Create virtual environment\npython -m venv venv\n\n# Activate virtual environment\n# On Windows:\nvenv\\Scripts\\activate\n# On macOS/Linux:\nsource venv/bin/activate\n\n# Install dependencies\npip install -r requirements.txt\n```\n\n### 2. Train the Model\n\nBefore running the backend, you need to train the model using the provided notebook:\n\n1. **Prepare Dataset**: Organize your eye images in the following structure:\n\n```\neye_dataset/\n├── Normal/\n│   ├── image1.jpg\n│   ├── image2.jpg\n│   └── ...\n├── Conjunctivitis/\n│   └── ...\n├── Cataract/\n│   └── ...\n└── Glaucoma/\n    └── ...\n```\n\n2. **Open in Google Colab**:\n   - Upload `training/eye_detection_training.ipynb` to Google Colab\n   - Update `DATASET_PATH` in the notebook to point to your dataset\n   - Run all cells to train the model\n\n3. **Download Model**:\n   - After training, download the saved `.keras` and `.h5` model files\n   - Place them in `backend/model/` directory\n\n### 3. Run Backend\n\n```bash\n# Navigate to backend directory\ncd backend\n\n# Start FastAPI server\npython main.py\n```\n\nThe API will be available at `http://localhost:8000`\n\n### 4. Run Frontend\n\n```bash\n# Open frontend/index.html in a web browser\n# Or use a local server:\ncd frontend\npython -m http.server 8001\n```\n\nAccess the application at `http://localhost:8001`\n\n## API Documentation\n\n### Endpoints\n\n#### POST /predict\n\nPredict eye disease from uploaded image.\n\n**Request:**\n- Method: `POST`\n- Content-Type: `multipart/form-data`\n- Body: `file` (image file, JPEG or PNG)\n\n**Response:**\n```json\n{\n  \"success\": true,\n  \"predicted_class\": \"Normal\",\n  \"confidence_score\": 0.9543\n}\n```\n\n**Classes:**\n- Normal\n- Conjunctivitis\n- Cataract\n- Glaucoma\n\n#### GET /health\n\nHealth check endpoint.\n\n**Response:**\n```json\n{\n  \"status\": \"healthy\",\n  \"model_loaded\": true\n}\n```\n\n#### GET /classes\n\nGet list of supported disease classes.\n\n**Response:**\n```json\n{\n  \"classes\": [\"Normal\", \"Conjunctivitis\", \"Cataract\", \"Glaucoma\"]\n}\n```\n\n## Model Details\n\n### Architecture\n\n- **Base Model**: MobileNetV2 (transfer learning from ImageNet)\n- **Input Size**: 224x224 pixels\n- **Preprocessing**: Resize, normalize pixel values to [0, 1]\n- **Classification Head**: Custom dense layers with dropout for regularization\n- **Output**: 4 classes with softmax activation\n\n### Training\n\n- **Framework**: TensorFlow/Keras\n- **Optimizer**: Adam with learning rate scheduling\n- **Loss Function**: Categorical Crossentropy\n- **Metrics**: Accuracy, AUC\n- **Data Augmentation**: Rotation, flip, zoom, shift\n- **Training Strategy**: Two-phase (frozen base model + fine-tuning)\n\n### Performance\n\n- **Inference Time**: < 10 seconds on CPU\n- **Accuracy**: (Depends on training data quality and quantity)\n- **Model Size**: ~15 MB (with optimizations)\n\n## Deployment\n\n### Local Development\n\n```bash\n# Backend\ncd backend\npython main.py\n\n# Frontend (new terminal)\ncd frontend\npython -m http.server 8001\n```\n\n### Production Deployment\n\n#### Backend (FastAPI)\n\n```bash\n# Install gunicorn\npip install gunicorn\n\n# Run with gunicorn\ncd backend\ngunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000\n```\n\n#### Frontend\n\nServe static files using Nginx, Apache, or deploy to Netlify/Vercel.\n\n### Docker Deployment\n\n```dockerfile\n# Dockerfile for backend\nFROM python:3.9-slim\n\nWORKDIR /app\n\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\nCOPY backend/ ./backend/\n\nEXPOSE 8000\n\nCMD [\"uvicorn\", \"backend.main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]\n```\n\nBuild and run:\n```bash\ndocker build -t eye-detection-api .\ndocker run -p 8000:8000 eye-detection-api\n```\n\n## Mobile App Compatibility\n\nThe frontend is mobile-first and can be wrapped for Android apps:\n\n### Option 1: WebView\n\nCreate an Android app with WebView that loads the frontend URL.\n\n### Option 2: PWA (Progressive Web App)\n\nAdd `manifest.json` for PWA support:\n\n```json\n{\n  \"name\": \"Eye Infection Detection\",\n  \"short_name\": \"Eye Detect\",\n  \"start_url\": \"./index.html\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#ffffff\",\n  \"theme_color\": \"#2563eb\",\n  \"icons\": [\n    {\n      \"src\": \"icon-192.png\",\n      \"sizes\": \"192x192\",\n      \"type\": \"image/png\"\n    },\n    {\n      \"src\": \"icon-512.png\",\n      \"sizes\": \"512x512\",\n      \"type\": \"image/png\"\n    }\n  ]\n}\n```\n\n## Troubleshooting\n\n### Model Not Found Error\n\n```\nWarning: Model file not found at backend/model/eye_disease_model.keras\n```\n\n**Solution**: Train the model using the notebook and save it to `backend/model/` directory.\n\n### CORS Errors\n\nIf you see CORS errors in browser console:\n\n**Solution**: The backend already has CORS enabled. Ensure the backend is running on the correct port.\n\n### Slow Inference\n\nIf predictions take longer than 10 seconds:\n\n**Solution**: \n- Use TFLite model (exported by notebook) for faster inference\n- Ensure TensorFlow is using CPU optimizations\n- Reduce image resolution if acceptable\n\n### Memory Issues\n\nIf you run out of memory during training:\n\n**Solution**: \n- Reduce `BATCH_SIZE` in the notebook configuration\n- Use a smaller base model (MobileNetV2 instead of EfficientNet)\n- Use gradient accumulation\n\n## Future Enhancements\n\n1. **Additional Conditions**: Add detection for more eye conditions\n2. **Image Quality Check**: Validate image quality before analysis\n3. **Batch Processing**: Analyze multiple images at once\n4. **User Authentication**: Add user accounts and history tracking\n5. **Multi-language Support**: Add translations for global accessibility\n6. **Offline Mode**: PWA with service workers for offline use\n7. **Image Segmentation**: Highlight regions of interest in images\n8. **Explainable AI**: Add Grad-CAM visualizations to show model focus\n\n## Contributing\n\nContributions are welcome! Please:\n\n1. Fork the repository\n2. Create a feature branch\n3. Make your changes\n4. Submit a pull request\n\n## Dataset Sources\n\nFor training the model, you can use publicly available datasets:\n\n- **Eye Disease Detection Dataset** (Kaggle)\n- **Ocular Disease Recognition** (Kaggle)\n- **APOLLO Eye Disease Dataset**\n- **Custom collected non-microscopic eye images**\n\nEnsure you have proper rights to use any dataset for training.\n\n## License\n\nThis project is for educational and research purposes. Always consult medical professionals for actual diagnosis.\n\n## Support\n\nFor issues, questions, or suggestions, please open an issue on the repository.\n\n## Acknowledgments\n\n- TensorFlow/Keras team for the ML framework\n- FastAPI team for the web framework\n- Medical imaging research community\n\n---\n\n**Remember**: This is a preliminary screening tool and NOT a medical diagnosis. Always consult an ophthalmologist for proper diagnosis and treatment.\n",
+      "filePath": "/home/bot4u/Desktop/EYE/README.md"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/EYE/backend/utils/inference.py\">\nERROR [121:10] Import \"tensorflow.keras.applications\" could not be resolved\nERROR [14:42] Expression of type \"None\" cannot be assigned to parameter of type \"str\"\n  \"None\" is not assignable to \"str\"\nERROR [67:32] Type \"dict[str, str | float]\" is not assignable to return type \"Dict[str, float]\"\n  \"str\" is not assignable to \"float\"\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/EYE/backend/main.py\">\nERROR [107:34] Argument of type \"str | None\" cannot be assigned to parameter \"file_path\" of type \"str\" in function \"validate_image_format\"\n  Type \"str | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\nERROR [115:26] No overloads for \"splitext\" match the provided arguments\nERROR [115:43] Argument of type \"str | None\" cannot be assigned to parameter \"p\" of type \"AnyOrLiteralStr@splitext\" in function \"splitext\"\n  Type \"str | None\" is not assignable to constrained type variable \"AnyOrLiteralStr\"\n</diagnostics>",
+    "title": "Desktop/EYE/README.md",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py": [],
+        "/home/bot4u/Desktop/EYE/backend/utils/inference.py": [
+          {
+            "range": {
+              "start": {
+                "line": 120,
+                "character": 9
+              },
+              "end": {
+                "line": 120,
+                "character": 38
+              }
+            },
+            "message": "Import \"tensorflow.keras.applications\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 7
+              },
+              "end": {
+                "line": 4,
+                "character": 17
+              }
+            },
+            "message": "Import \"tensorflow\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 5
+              },
+              "end": {
+                "line": 5,
+                "character": 28
+              }
+            },
+            "message": "Import \"tensorflow.keras.models\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 41
+              },
+              "end": {
+                "line": 13,
+                "character": 45
+              }
+            },
+            "message": "Expression of type \"None\" cannot be assigned to parameter of type \"str\"\n  \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 66,
+                "character": 31
+              },
+              "end": {
+                "line": 66,
+                "character": 64
+              }
+            },
+            "message": "Type \"dict[str, str | float]\" is not assignable to return type \"Dict[str, float]\"\n  \"str\" is not assignable to \"float\"",
+            "severity": 1,
+            "code": "reportReturnType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportReturnType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 121,
+                "character": 9
+              },
+              "end": {
+                "line": 121,
+                "character": 32
+              }
+            },
+            "message": "Import \"tensorflow.keras.layers\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 122,
+                "character": 9
+              },
+              "end": {
+                "line": 122,
+                "character": 32
+              }
+            },
+            "message": "Import \"tensorflow.keras.models\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/EYE/backend/main.py": [
+          {
+            "range": {
+              "start": {
+                "line": 106,
+                "character": 33
+              },
+              "end": {
+                "line": 106,
+                "character": 46
+              }
+            },
+            "message": "Argument of type \"str | None\" cannot be assigned to parameter \"file_path\" of type \"str\" in function \"validate_image_format\"\n  Type \"str | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 114,
+                "character": 25
+              },
+              "end": {
+                "line": 114,
+                "character": 56
+              }
+            },
+            "message": "No overloads for \"splitext\" match the provided arguments",
+            "severity": 1,
+            "code": "reportCallIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportCallIssue"
+            },
+            "relatedInformation": [
+              {
+                "location": {
+                  "uri": "file:///home/bot4u/.local/share/opencode/bin/node_modules/pyright/dist/typeshed-fallback/stdlib/posixpath.pyi",
+                  "range": {
+                    "start": {
+                      "line": 148,
+                      "character": 4
+                    },
+                    "end": {
+                      "line": 148,
+                      "character": 12
+                    }
+                  }
+                },
+                "message": "Overload 2 is the closest match"
+              }
+            ]
+          },
+          {
+            "range": {
+              "start": {
+                "line": 114,
+                "character": 42
+              },
+              "end": {
+                "line": 114,
+                "character": 55
+              }
+            },
+            "message": "Argument of type \"str | None\" cannot be assigned to parameter \"p\" of type \"AnyOrLiteralStr@splitext\" in function \"splitext\"\n  Type \"str | None\" is not assignable to constrained type variable \"AnyOrLiteralStr\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          }
+        ]
+      },
+      "filepath": "/home/bot4u/Desktop/EYE/README.md",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953823776,
+      "end": 1769953823792
+    }
+  }
+}

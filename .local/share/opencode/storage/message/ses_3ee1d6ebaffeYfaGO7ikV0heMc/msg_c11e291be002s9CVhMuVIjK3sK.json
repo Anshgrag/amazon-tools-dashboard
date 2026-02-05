@@ -1,0 +1,29 @@
+{
+  "id": "msg_c11e291be002s9CVhMuVIjK3sK",
+  "sessionID": "ses_3ee1d6ebaffeYfaGO7ikV0heMc",
+  "role": "assistant",
+  "time": {
+    "created": 1769826587070,
+    "completed": 1769826596490
+  },
+  "parentID": "msg_c11e29157001gq2WPyYCRxbQF7",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "plan",
+  "agent": "plan",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/GEMINI",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 11169,
+    "output": 179,
+    "reasoning": 125,
+    "cache": {
+      "read": 478,
+      "write": 0
+    }
+  },
+  "finish": "tool-calls"
+}

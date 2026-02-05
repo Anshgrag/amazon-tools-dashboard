@@ -1,0 +1,26 @@
+{
+  "id": "prt_bead25f39001FYOvZClceqHrYX",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead25285001dc1qhhKQ9UOmmj",
+  "type": "tool",
+  "callID": "call_a9dac88f5d7a49d5986fa3f5",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "backend/app.py",
+      "offset": 437,
+      "limit": 25
+    },
+    "output": "<file>\n00438|         \n00439|         return jsonify({\n00440|             'status': 'success',\n00441|             'data': {\n00442|                 'devices': devices,\n00443|                 'schedules': schedules\n00444|             }\n00445|         }), 200\n00446|         \n00447|     except Exception as e:\n00448|         print(f\"Error in devices: {e}\")\n00449|         return jsonify({'status': 'error', 'message': str(e)}), 500\n00450| \n00451| @app.route('/api/devices/<int:device_id>/toggle', methods=['POST'])\n00452| def toggle_device(device_id):\n00453|     try:\n00454|         print(f\"=== TOGGLE DEVICE {device_id} ===\")\n00455|         data = request.get_json()\n00456|         state = data.get('state', 'on')  # 'on' or 'off'\n00457| \n00458|         if not TUYA_API_KEY:\n00459|             return jsonify({'status': 'error', 'message': 'Tuya credentials not loaded'}), 500\n00460| \n00461|         # Connect to Tuya Cloud\n00462|         cloud = tinytuya.Cloud(apiRegion=TUYA_API_REGION, apiKey=TUYA_API_KEY, apiSecret=TUYA_API_SECRET)\n\n(File has more lines. Use 'offset' parameter to read beyond line 462)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/backend/app.py",
+    "metadata": {
+      "preview": "        \n        return jsonify({\n            'status': 'success',\n            'data': {\n                'devices': devices,\n                'schedules': schedules\n            }\n        }), 200\n        \n    except Exception as e:\n        print(f\"Error in devices: {e}\")\n        return jsonify({'status': 'error', 'message': str(e)}), 500\n\n@app.route('/api/devices/<int:device_id>/toggle', methods=['POST'])\ndef toggle_device(device_id):\n    try:\n        print(f\"=== TOGGLE DEVICE {device_id} ===\")\n        data = request.get_json()\n        state = data.get('state', 'on')  # 'on' or 'off'\n",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769171214141,
+      "end": 1769171214153
+    }
+  }
+}

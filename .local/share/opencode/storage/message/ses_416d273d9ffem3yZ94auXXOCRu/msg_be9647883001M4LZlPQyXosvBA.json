@@ -1,0 +1,17 @@
+{
+  "id": "msg_be9647883001M4LZlPQyXosvBA",
+  "sessionID": "ses_416d273d9ffem3yZ94auXXOCRu",
+  "role": "user",
+  "time": {
+    "created": 1769147234449
+  },
+  "summary": {
+    "title": "Working directory inquiry prompt",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "minimax-m2.1-free"
+  }
+}

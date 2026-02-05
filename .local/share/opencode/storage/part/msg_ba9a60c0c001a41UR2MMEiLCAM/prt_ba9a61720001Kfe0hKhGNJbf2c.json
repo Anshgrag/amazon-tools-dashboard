@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a61720001Kfe0hKhGNJbf2c",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a60c0c001a41UR2MMEiLCAM",
+  "type": "tool",
+  "callID": "call_1c93ac37bf2942e28bf9ffa2",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl http://localhost:5000/api/savings",
+      "description": "Test savings API endpoint"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    72  100    72    0     0  10543      0 --:--:-- --:--:-- --:--:-- 12000\n{\n  \"message\": \"no such column: auto_controlled\",\n  \"status\": \"error\"\n}\n",
+    "title": "Test savings API endpoint",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    72  100    72    0     0  10543      0 --:--:-- --:--:-- --:--:-- 12000\n{\n  \"message\": \"no such column: auto_controlled\",\n  \"status\": \"error\"\n}\n",
+      "exit": 0,
+      "description": "Test savings API endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077793068,
+      "end": 1768077793114
+    }
+  }
+}

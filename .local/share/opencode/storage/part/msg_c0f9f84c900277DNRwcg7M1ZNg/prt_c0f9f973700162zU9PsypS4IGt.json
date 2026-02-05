@@ -1,0 +1,11 @@
+{
+  "id": "prt_c0f9f973700162zU9PsypS4IGt",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0f9f84c900277DNRwcg7M1ZNg",
+  "type": "text",
+  "text": "\nI found the garbage data! Looking at the code, I can see several hardcoded appliances that are not actually configured or present. Let me identify and remove them:\n\n1. **Hardcoded devices in `/api/devices` endpoint** (lines 520-527 in app.py)\n2. **Hardcoded room mappings** (lines 472-477 in app.py) \n3. **Hardcoded device references in frontend** (various places in script.js)\n\nLet me clean these up:",
+  "time": {
+    "start": 1769788662825,
+    "end": 1769788662825
+  }
+}

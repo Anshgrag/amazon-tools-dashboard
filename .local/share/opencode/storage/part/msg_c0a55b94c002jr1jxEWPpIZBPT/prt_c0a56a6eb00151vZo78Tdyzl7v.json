@@ -1,0 +1,10 @@
+{
+  "id": "prt_c0a56a6eb00151vZo78Tdyzl7v",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a55b94c002jr1jxEWPpIZBPT",
+  "type": "patch",
+  "hash": "d9730b9c882575beb1160c7058b48934e70a9fa3",
+  "files": [
+    "/home/bot4u/Desktop/eye project/backend/app/api/auth.py"
+  ]
+}

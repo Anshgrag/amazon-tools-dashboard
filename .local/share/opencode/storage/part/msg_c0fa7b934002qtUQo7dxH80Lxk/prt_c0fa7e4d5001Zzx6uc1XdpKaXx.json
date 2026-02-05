@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fa7e4d5001Zzx6uc1XdpKaXx",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa7b934002qtUQo7dxH80Lxk",
+  "type": "tool",
+  "callID": "call_e8547cf7aaf4439d832a1baf",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"python3 app.py\"",
+      "description": "Stop any running backend processes"
+    },
+    "output": "",
+    "title": "Stop any running backend processes",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Stop any running backend processes",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789187295,
+      "end": 1769789187455
+    }
+  }
+}

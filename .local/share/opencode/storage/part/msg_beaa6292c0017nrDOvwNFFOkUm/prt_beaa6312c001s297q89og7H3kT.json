@@ -1,0 +1,24 @@
+{
+  "id": "prt_beaa6312c001s297q89og7H3kT",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa6292c0017nrDOvwNFFOkUm",
+  "type": "tool",
+  "callID": "call_89167833",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "backend/*"
+    },
+    "output": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/test_data.py\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/multi_period_data.py\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/ecotrack.db\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/aqi_integration.py\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/app.py\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/tuya_integration.py\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/savings_test_data.py",
+    "title": "Desktop/GEMINI/Mini_project_test_copy",
+    "metadata": {
+      "count": 7,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168318771,
+      "end": 1769168318869
+    }
+  }
+}

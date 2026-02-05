@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a30570001ODtftyNsZP4iRl",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a234b5001bNJ7AO4NddWuV2",
+  "type": "tool",
+  "callID": "call_4a1b3cd6cad24db9a1cc1e7e",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project/backend && python app.py &",
+      "description": "Start Flask backend server"
+    },
+    "output": "",
+    "title": "Start Flask backend server",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start Flask backend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077591929,
+      "end": 1768077591946
+    }
+  }
+}

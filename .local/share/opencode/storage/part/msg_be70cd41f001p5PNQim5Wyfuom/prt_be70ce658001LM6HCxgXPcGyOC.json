@@ -1,0 +1,27 @@
+{
+  "id": "prt_be70ce658001LM6HCxgXPcGyOC",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70cd41f001p5PNQim5Wyfuom",
+  "type": "tool",
+  "callID": "call_function_473bxh5vdbjz_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s http://localhost:5000/api/devices | head -3",
+      "description": "Test backend"
+    },
+    "output": "{\n  \"data\": {\n    \"devices\": [\n",
+    "title": "Test backend",
+    "metadata": {
+      "output": "{\n  \"data\": {\n    \"devices\": [\n",
+      "exit": 0,
+      "description": "Test backend",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107941159,
+      "end": 1769107943197
+    }
+  }
+}

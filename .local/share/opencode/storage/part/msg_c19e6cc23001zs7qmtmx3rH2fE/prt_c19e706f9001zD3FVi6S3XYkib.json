@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e706f9001zD3FVi6S3XYkib",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e6cc23001zs7qmtmx3rH2fE",
+  "type": "tool",
+  "callID": "call_709c85b4705e422089deec17",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && cat frontend.log",
+      "description": "Check frontend startup logs"
+    },
+    "output": "",
+    "title": "Check frontend startup logs",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Check frontend startup logs",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961096959,
+      "end": 1769961098978
+    }
+  }
+}

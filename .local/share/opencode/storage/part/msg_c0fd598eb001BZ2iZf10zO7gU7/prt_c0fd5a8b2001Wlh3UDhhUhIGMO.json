@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fd5a8b2001Wlh3UDhhUhIGMO",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fd598eb001BZ2iZf10zO7gU7",
+  "type": "tool",
+  "callID": "call_657f485bbcaf4446aba4b670",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && echo \"=== Testing Scheduler Tab ===\" && curl -s http://localhost:8000 > /dev/null && echo \"Frontend accessible: ✅\"",
+      "description": "Test frontend is running"
+    },
+    "output": "=== Testing Scheduler Tab ===\nFrontend accessible: ✅\n",
+    "title": "Test frontend is running",
+    "metadata": {
+      "output": "=== Testing Scheduler Tab ===\nFrontend accessible: ✅\n",
+      "exit": 0,
+      "description": "Test frontend is running",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769792186564,
+      "end": 1769792188629
+    }
+  }
+}

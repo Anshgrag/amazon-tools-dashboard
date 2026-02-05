@@ -1,0 +1,34 @@
+{
+  "id": "msg_bac511d7c002hZvBCHTsnbHO3x",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "assistant",
+  "time": {
+    "created": 1768122555772,
+    "completed": 1768122671054
+  },
+  "error": {
+    "name": "MessageAbortedError",
+    "data": {
+      "message": "The operation was aborted."
+    }
+  },
+  "parentID": "msg_bac41e6a1001R65oUKzGEdjh6x",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/GEMINI/Mini_project",
+    "root": "/"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

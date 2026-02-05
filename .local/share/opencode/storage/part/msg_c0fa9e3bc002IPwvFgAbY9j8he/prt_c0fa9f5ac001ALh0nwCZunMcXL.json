@@ -1,0 +1,25 @@
+{
+  "id": "prt_c0fa9f5ac001ALh0nwCZunMcXL",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa9e3bc002IPwvFgAbY9j8he",
+  "type": "tool",
+  "callID": "call_da2d952be1f84d499eb44b20",
+  "tool": "grep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "path": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend",
+      "pattern": "tab-pane"
+    },
+    "output": "Found 9 matches\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js:\n  Line 54:             document.querySelectorAll('.tab-pane').forEach(pane => {\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/style.css:\n  Line 979: .tab-pane {\n  Line 983: .tab-pane.active {\n  Line 987: .main-content > .tab-pane {\n  Line 991: .main-content > .tab-pane.active {\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/index.html:\n  Line 64:             <div class=\"dashboard-grid tab-pane active\" id=\"tab-dashboard\">\n  Line 189:             <div class=\"dashboard-grid tab-pane\" id=\"tab-cost\">\n  Line 230:             <div class=\"dashboard-grid tab-pane\" id=\"tab-appliances\">\n  Line 322:             <div class=\"dashboard-grid tab-pane\" id=\"tab-rooms\">",
+    "title": "tab-pane",
+    "metadata": {
+      "matches": 9,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789322676,
+      "end": 1769789322767
+    }
+  }
+}

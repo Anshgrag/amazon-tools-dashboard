@@ -1,0 +1,26 @@
+{
+  "id": "prt_be70b84b10013Ti3x09vW3FMOZ",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70b72d0002LZYzAWEUzRdm0R",
+  "type": "tool",
+  "callID": "call_function_a0nf4oa2j9m2_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/style.css",
+      "limit": 30,
+      "offset": 50
+    },
+    "output": "<file>\n00051|     transition: all 0.5s ease;\n00052| }\n00053| \n00054| /* ==================== APP CONTAINER ==================== */\n00055| \n00056| .app-container {\n00057|     display: flex;\n00058|     min-height: 100vh;\n00059| }\n00060| \n00061| /* ==================== SIDEBAR ==================== */\n00062| \n00063| .sidebar {\n00064|     width: 250px;\n00065|     background: #1a1f3a;\n00066|     padding: 30px 20px;\n00067|     display: flex;\n00068|     flex-direction: column;\n00069|     position: fixed;\n00070|     height: 100vh;\n00071|     border-right: 1px solid var(--border-color);\n00072| }\n00073| \n00074| .logo {\n00075|     margin-bottom: 50px;\n00076| }\n00077| \n00078| .logo h1 {\n00079|     font-size: 1.5em;\n00080|     font-weight: 600;\n\n(File has more lines. Use 'offset' parameter to read beyond line 80)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/style.css",
+    "metadata": {
+      "preview": "    transition: all 0.5s ease;\n}\n\n/* ==================== APP CONTAINER ==================== */\n\n.app-container {\n    display: flex;\n    min-height: 100vh;\n}\n\n/* ==================== SIDEBAR ==================== */\n\n.sidebar {\n    width: 250px;\n    background: #1a1f3a;\n    padding: 30px 20px;\n    display: flex;\n    flex-direction: column;\n    position: fixed;\n    height: 100vh;",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769107850855,
+      "end": 1769107850868
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Improve scheduler UI design to match overall theme",
+    "id": "1",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Add device type/appliance mapping for smart plugs",
+    "id": "2",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Enhance visual consistency with existing tabs",
+    "id": "3",
+    "priority": "high",
+    "status": "completed"
+  },
+  {
+    "content": "Add smart plug device identification logic",
+    "id": "4",
+    "priority": "medium",
+    "status": "completed"
+  },
+  {
+    "content": "Improve responsive design for mobile",
+    "id": "5",
+    "priority": "medium",
+    "status": "completed"
+  }
+]

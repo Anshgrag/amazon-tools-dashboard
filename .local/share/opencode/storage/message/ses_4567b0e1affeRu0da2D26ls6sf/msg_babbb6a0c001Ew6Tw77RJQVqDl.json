@@ -1,0 +1,17 @@
+{
+  "id": "msg_babbb6a0c001Ew6Tw77RJQVqDl",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768112744996
+  },
+  "summary": {
+    "title": "Build request confirmation",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

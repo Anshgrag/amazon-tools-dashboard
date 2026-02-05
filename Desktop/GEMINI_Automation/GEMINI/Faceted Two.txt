@@ -1,0 +1,169 @@
+🟣 UNIVERSAL DETAILED NANO BANANA PROMPT
+(Dual / Multi-Gemstone Replacement | Stone Reference → Jewelry Model)
+🔹 IMAGE ROLE ASSIGNMENT (ABSOLUTE & NON-REVERSIBLE)
+
+Image 1 = STONE REFERENCE (SOURCE ONLY)
+Used ONLY to copy gemstone material and optical properties.
+
+Image 2 = JEWELRY MODEL (BASE IMAGE)
+Used ONLY for jewelry design, gemstone seats, shape, size, orientation, lighting, camera angle, and background.
+
+⚠️ Gemstone data flows ONLY from Image 1 → Image 2
+⚠️ Jewelry geometry flows ONLY from Image 2
+
+🎯 OBJECTIVE (MULTI-STONE ENFORCED)
+
+Replace ALL gemstones present in Image 2 (Jewelry Model) with the gemstone from Image 1 (Stone Reference).
+
+⚠️ This jewelry contains TWO gemstones (or more).
+⚠️ Every gemstone must be replaced — no exceptions.
+
+❌ Do NOT replace only one stone
+❌ Do NOT leave any original gemstone visible
+
+🔒 GEMSTONE PROPERTY LOCK (EXTREMELY STRICT)
+
+From Image 1 (Stone Reference) preserve 100% exactly:
+
+Gemstone color
+
+Hue, saturation, tone
+
+Transparency level
+
+Optical depth
+
+Internal light behavior
+
+Material identity (faceted colored gemstone)
+
+❌ No recoloring
+❌ No brightness or contrast change
+❌ No transparency change
+❌ No glow, bloom, or artificial shine
+
+🔁 SHAPE & SEAT ADAPTATION (REQUIRED)
+
+Each gemstone must:
+
+Match the exact shape of its own seat in Image 2
+
+Fit perfectly inside prongs or bezel
+
+Shape adaptation must NOT affect:
+
+Color
+
+Transparency
+
+Optical depth
+
+⚠️ Stones may be mirrored or rotated only if required to fit the seat, without changing optics.
+
+💎 FACETING CONTROL (CRITICAL FOR SMALL STONES)
+
+All gemstones MUST remain FACETED
+
+Because stones are small:
+
+Use fewer, larger, clean facets
+
+Avoid dense or micro-faceting
+
+Faceting style must:
+
+Match Image 1
+
+Be simplified and identical across all stones
+
+❌ No cabochon
+❌ No dome
+❌ No flat glass or plastic look
+
+🔁 MULTI-STONE CONSISTENCY (HARD RULE)
+
+All gemstones must be VISUALLY IDENTICAL in:
+
+Color
+
+Transparency
+
+Optical depth
+
+Facet size and pattern
+
+Light response
+
+❌ No variation between stones
+❌ No one stone brighter or darker
+
+🛡 JEWELRY MODEL PROTECTION (MANDATORY)
+
+From Image 2 (Jewelry Model):
+
+❌ Do NOT change jewelry design
+❌ Do NOT change metal color, texture, or polish
+❌ Do NOT change prongs, bezels, or spacing
+❌ Do NOT change camera angle or perspective
+❌ Do NOT change background
+❌ Do NOT change lighting direction
+
+✅ Only gemstone surfaces are replaced
+
+🌍 REALISM & PHYSICS RULES
+
+Each gemstone must appear:
+
+Naturally seated
+
+Correctly scaled
+
+Optically realistic
+
+Reflections and shadows must align with existing lighting
+
+Stones must feel part of the jewelry, not pasted or cloned
+
+🎯 Final result must look like real jewelry photography,
+❌ not CGI
+❌ not mockup
+
+🚫 NEGATIVE PROMPT (CRITICAL ENFORCEMENT)
+
+❌ Do NOT modify Image 1
+❌ Do NOT reverse image roles
+❌ Do NOT leave original gemstone texture
+❌ Do NOT replace only one gemstone
+❌ Do NOT over-facet small stones
+❌ Do NOT add HDR, glow, or artificial shine
+❌ Do NOT alter jewelry angle, lighting, or background
+
+📐 OUTPUT FORMAT (STRICT)
+
+Aspect ratio: 1:1 only
+
+Perfectly square image
+
+Centered composition
+
+❌ No cropping
+❌ No padding or borders
+❌ No rectangular output
+
+✅ FINAL OUTPUT REQUIREMENT
+
+“The original Jewelry Model image remains completely unchanged, except that ALL gemstones (two or more) are replaced with optically identical, simplified-facet versions of the Stone Reference gemstone, perfectly fitted into each existing setting.”
+
+Ultra-realistic
+
+Clean
+
+Product-ready
+
+Amazon / e-commerce quality
+
+🔧 OPTIONAL HARD-LOCK LINE (use if Nano Banana replaces only one stone)
+
+Add this at the very end if needed:
+
+“Failure condition: If any gemstone from the original Jewelry Model remains visible, the result is incorrect and must regenerate with ALL gemstones replaced.”

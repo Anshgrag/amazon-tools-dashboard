@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaa63f56001Be9QnbAB92C53J",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa63b0d001kQdLkhCxiuAAcW",
+  "type": "reasoning",
+  "text": "The tuya_integration.py has placeholder credentials: ACCESS_ID = \"your_access_id_here\", etc.",
+  "time": {
+    "start": 1769168322391,
+    "end": 1769168323169
+  }
+}

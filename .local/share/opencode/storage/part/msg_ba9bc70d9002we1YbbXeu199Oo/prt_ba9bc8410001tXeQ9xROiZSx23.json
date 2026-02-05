@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9bc8410001tXeQ9xROiZSx23",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9bc70d9002we1YbbXeu199Oo",
+  "type": "tool",
+  "callID": "call_cd5b635433c343879fc30451",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"🌐 ACCESS URLs:\"\necho \"Main Dashboard: http://localhost:8000\"\necho \"Simple Test: http://localhost:8000/simple_test.html\"\necho \"\"\necho \"📊 Current API Data:\"\ncurl -s http://localhost:5000/api/savings | jq '{wasted: .data.total_waste_cost, saved: .data.total_saved_cost, net: .data.net_savings}'",
+      "description": "Show access URLs and current data"
+    },
+    "output": "🌐 ACCESS URLs:\nMain Dashboard: http://localhost:8000\nSimple Test: http://localhost:8000/simple_test.html\n\n📊 Current API Data:\n{\n  \"wasted\": 38.99,\n  \"saved\": 7.84,\n  \"net\": -31.15\n}\n",
+    "title": "Show access URLs and current data",
+    "metadata": {
+      "output": "🌐 ACCESS URLs:\nMain Dashboard: http://localhost:8000\nSimple Test: http://localhost:8000/simple_test.html\n\n📊 Current API Data:\n{\n  \"wasted\": 38.99,\n  \"saved\": 7.84,\n  \"net\": -31.15\n}\n",
+      "exit": 0,
+      "description": "Show access URLs and current data",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079262754,
+      "end": 1768079262791
+    }
+  }
+}

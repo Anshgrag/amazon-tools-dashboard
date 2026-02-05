@@ -1,0 +1,26 @@
+{
+  "id": "prt_beaded99f001KABwpzCaiS6R4Q",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beadea75f001qCKUiGqBD38cOg",
+  "type": "tool",
+  "callID": "call_b4bb2c2e6f944ffc9f48d5cb",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "frontend/script.js",
+      "offset": 1185,
+      "limit": 20
+    },
+    "output": "<file>\n01186|     \n01187|     const loadingElements = ['wastedAmount', 'savedAmount', 'netSavings', 'totalCost', 'usageTillNow', 'usagePredicted'];\n01188|     loadingElements.forEach(id => {\n01189|         const element = document.getElementById(id);\n01190|         if (element) element.textContent = 'Loading...';\n01191|     });\n01192| }\n01193| \n01194| function hideLoadingStates() {\n01195|     document.querySelectorAll('.filter-btn').forEach(btn => {\n01196|         btn.classList.remove('loading');\n01197|     });\n01198| }\n01199| \n01200| // ==================== LIGHT/DARK THEME TOGGLE ====================\n01201| \n01202| function setupThemeToggle() {\n01203|     const themeToggle = document.getElementById('themeToggle');\n01204|     if (!themeToggle) return;\n01205|     \n\n(File has more lines. Use 'offset' parameter to read beyond line 1205)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "    \n    const loadingElements = ['wastedAmount', 'savedAmount', 'netSavings', 'totalCost', 'usageTillNow', 'usagePredicted'];\n    loadingElements.forEach(id => {\n        const element = document.getElementById(id);\n        if (element) element.textContent = 'Loading...';\n    });\n}\n\nfunction hideLoadingStates() {\n    document.querySelectorAll('.filter-btn').forEach(btn => {\n        btn.classList.remove('loading');\n    });\n}\n\n// ==================== LIGHT/DARK THEME TOGGLE ====================\n\nfunction setupThemeToggle() {\n    const themeToggle = document.getElementById('themeToggle');\n    if (!themeToggle) return;\n    ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769172031907,
+      "end": 1769172031922
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba9b6f873001WwNNsNLynFVQeN",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768078899328
+  },
+  "summary": {
+    "title": "Frontend data not rendering after load",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

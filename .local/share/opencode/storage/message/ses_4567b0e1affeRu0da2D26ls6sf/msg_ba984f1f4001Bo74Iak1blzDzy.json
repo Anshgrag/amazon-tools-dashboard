@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba984f1f4001Bo74Iak1blzDzy",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768075620899
+  },
+  "summary": {
+    "title": "Project read and planned edits discussion",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "prt_bac4777f3001EGOxvQ57IK6cSy",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac45360e002qlbarkpNgxU8nh",
+  "type": "tool",
+  "callID": "call_40ec6a08f19440e1be721658",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/.github/copilot-instructions.md"
+    },
+    "output": "No files found",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project",
+    "metadata": {
+      "count": 0,
+      "truncated": false
+    },
+    "time": {
+      "start": 1768121923574,
+      "end": 1768121923614
+    }
+  }
+}

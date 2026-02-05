@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fa2cec6001QGvr5eq2LyAmWb",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa2bfd80020qqiGpUu3ZYxRb",
+  "type": "tool",
+  "callID": "call_81d26b3382934a998e0ed79a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend && python3 app.py &",
+      "description": "Start the backend server"
+    },
+    "output": "",
+    "title": "Start the backend server",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start the backend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769788853967,
+      "end": 1769788854015
+    }
+  }
+}

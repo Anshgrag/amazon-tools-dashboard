@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead846dc0012HOXPxrCO9JBQo",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead830fb001Xzai249NOB5fHu",
+  "type": "tool",
+  "callID": "call_d3d2bc7ebb054c1caf406393",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd frontend && grep -A 5 -B 5 \"DOMContentLoaded\" script.js",
+      "description": "Check initialization code"
+    },
+    "output": "    grid.innerHTML = html;\n}\n\n// ==================== INITIALIZATION ====================\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n--\n        body.setAttribute('data-theme', 'light');\n        if (themeIcon) themeIcon.textContent = '☀️';\n    }\n}\n\nwindow.addEventListener('DOMContentLoaded', () => {\n    console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n    \n    setupThemeToggle();\n    setupTabSwitching();\n    setupTimeFilters();\n",
+    "title": "Check initialization code",
+    "metadata": {
+      "output": "    grid.innerHTML = html;\n}\n\n// ==================== INITIALIZATION ====================\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n--\n        body.setAttribute('data-theme', 'light');\n        if (themeIcon) themeIcon.textContent = '☀️';\n    }\n}\n\nwindow.addEventListener('DOMContentLoaded', () => {\n    console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n    \n    setupThemeToggle();\n    setupTabSwitching();\n    setupTimeFilters();\n",
+      "exit": 0,
+      "description": "Check initialization code",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171601119,
+      "end": 1769171601125
+    }
+  }
+}

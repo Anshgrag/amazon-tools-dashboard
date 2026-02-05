@@ -1,0 +1,11 @@
+{
+  "id": "prt_c2e05cc5b0016bibGMSnzGk5fn",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e05af26001446RyvI5ZUhk1K",
+  "type": "text",
+  "text": "\n\nThe command is timing out because it's trying to add too many files (including cache directories). Let me create a better version that only adds relevant project files:",
+  "time": {
+    "start": 1770298658859,
+    "end": 1770298658859
+  }
+}

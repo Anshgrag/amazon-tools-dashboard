@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6fc91d9001do97vFyyxyvVwA",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fc8384002rTEqDtz0DjcQob",
+  "type": "reasoning",
+  "text": "Good, servers are stopped. Now let me start them both.",
+  "metadata": {
+    "anthropic": {
+      "signature": "d487b0a69b7ecc7c9d730b7d75d1273cb92ffd073859603bf84513c54485f10c"
+    }
+  },
+  "time": {
+    "start": 1769106870745,
+    "end": 1769106871031
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9abcb170019j2Hhg0dn9Xcqp",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9abbf32001V0dltCNOWxjd3i",
+  "type": "tool",
+  "callID": "call_76e6189120254a1db012d458",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl http://localhost:5000/api/savings 2>&1",
+      "description": "Check savings API errors"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   857  100   857    0     0   123k      0 --:--:-- --:--:-- --:--:--  139k\n{\n  \"data\": {\n    \"cost_per_kwh\": 0.12,\n    \"device_details\": [\n      {\n        \"device_name\": \"Charger\",\n        \"saved_cost\": 0.22,\n        \"saved_power\": 75.77,\n        \"waste_cost\": 0.73,\n        \"waste_power\": 251.76\n      },\n      {\n        \"device_name\": \"Refrigerator\",\n        \"saved_cost\": 2.46,\n        \"saved_power\": 853.8,\n        \"waste_cost\": 15.26,\n        \"waste_power\": 5299.37\n      },\n      {\n        \"device_name\": \"Router\",\n        \"saved_cost\": 0.73,\n        \"saved_power\": 254.86,\n        \"waste_cost\": 1.36,\n        \"waste_power\": 472.27\n      },\n      {\n        \"device_name\": \"TV\",\n        \"saved_cost\": 0.69,\n        \"saved_power\": 239.52,\n        \"waste_cost\": 3.44,\n        \"waste_power\": 1195.57\n      }\n    ],\n    \"net_savings\": -16.69,\n    \"total_saved_cost\": 4.1,\n    \"total_waste_cost\": 20.79\n  },\n  \"status\": \"success\"\n}\n",
+    "title": "Check savings API errors",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   857  100   857    0     0   123k      0 --:--:-- --:--:-- --:--:--  139k\n{\n  \"data\": {\n    \"cost_per_kwh\": 0.12,\n    \"device_details\": [\n      {\n        \"device_name\": \"Charger\",\n        \"saved_cost\": 0.22,\n        \"saved_power\": 75.77,\n        \"waste_cost\": 0.73,\n        \"waste_power\": 251.76\n      },\n      {\n        \"device_name\": \"Refrigerator\",\n        \"saved_cost\": 2.46,\n        \"saved_power\": 853.8,\n        \"waste_cost\": 15.26,\n        \"waste_power\": 5299.37\n      },\n      {\n        \"device_name\": \"Router\",\n        \"saved_cost\": 0.73,\n        \"saved_power\": 254.86,\n        \"waste_cost\": 1.36,\n        \"waste_power\": 472.27\n      },\n      {\n        \"device_name\": \"TV\",\n        \"saved_cost\": 0.69,\n        \"saved_power\": 239.52,\n        \"waste_cost\": 3.44,\n        \"waste_power\": 1195.57\n      }\n    ],\n    \"net_savings\": -16.69,\n    \"total_saved_cost\": 4.1,\n    \"total_waste_cost\": 20.79\n  },\n  \"status\": \"success\"\n}\n",
+      "exit": 0,
+      "description": "Check savings API errors",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078166823,
+      "end": 1768078166867
+    }
+  }
+}

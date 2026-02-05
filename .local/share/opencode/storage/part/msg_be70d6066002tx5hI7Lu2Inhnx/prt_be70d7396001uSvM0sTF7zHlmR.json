@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70d7396001uSvM0sTF7zHlmR",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70d6066002tx5hI7Lu2Inhnx",
+  "type": "reasoning",
+  "text": "Germany has autumn leaves (🍂, 🪵, 🌰, 🍁). Let me verify Nordic has snowflakes.",
+  "metadata": {
+    "anthropic": {
+      "signature": "38c1ef684695bc390f8ee9824042019bf0aa4eb63b68d9d84671eeeb8c2f3d7d"
+    }
+  },
+  "time": {
+    "start": 1769107977110,
+    "end": 1769107977408
+  }
+}

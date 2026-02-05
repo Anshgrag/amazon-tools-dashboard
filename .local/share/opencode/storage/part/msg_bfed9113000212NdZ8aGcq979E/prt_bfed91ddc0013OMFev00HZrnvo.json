@@ -1,0 +1,24 @@
+{
+  "id": "prt_bfed91ddc0013OMFev00HZrnvo",
+  "sessionID": "ses_401271315ffezF15p2W1dB1lv5",
+  "messageID": "msg_bfed9113000212NdZ8aGcq979E",
+  "type": "tool",
+  "callID": "chatcmpl-tool-0cd773569b9c42e18b33d970cda9991a",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/*card*.pdf"
+    },
+    "output": "/home/bot4u/Documents/FInal_card.pdf\n/home/bot4u/Documents/Draft(1)_card.pdf\n/home/bot4u/Documents/Invitation card.pdf",
+    "title": "Documents",
+    "metadata": {
+      "count": 3,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769507200476,
+      "end": 1769507200478
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_be70d74c10014ZlIAToKwzcOHr",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70d6066002tx5hI7Lu2Inhnx",
+  "type": "tool",
+  "callID": "call_function_msfwt5mj9eg1_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/script.js | grep -A10 \"nordic:\" | grep emoji",
+      "description": "Verify Nordic particle config"
+    },
+    "output": "        emoji: ['❄️', '✨', '💎', '🌟'],\n",
+    "title": "Verify Nordic particle config",
+    "metadata": {
+      "output": "        emoji: ['❄️', '✨', '💎', '🌟'],\n",
+      "exit": 0,
+      "description": "Verify Nordic particle config",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107978027,
+      "end": 1769107978072
+    }
+  }
+}

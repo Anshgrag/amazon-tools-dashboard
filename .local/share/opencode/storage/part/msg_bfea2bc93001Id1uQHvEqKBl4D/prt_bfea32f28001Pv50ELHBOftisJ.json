@@ -1,0 +1,49 @@
+{
+  "id": "prt_bfea32f28001Pv50ELHBOftisJ",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "messageID": "msg_bfea2bc93001Id1uQHvEqKBl4D",
+  "type": "tool",
+  "callID": "call_773b1026b3ca48eab743075b",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "#!/usr/bin/env python3\n\"\"\"\nTest script for the updated savings logic\n\"\"\"\n\nimport requests\nimport json\nfrom datetime import datetime, timedelta\n\nBASE_URL = \"http://localhost:5000\"\n\ndef setup_device_profiles():\n    \"\"\"Setup sample device profiles for testing\"\"\"\n    \n    devices = [\n        {\n            \"device_name\": \"TV\",\n            \"device_type\": \"entertainment\", \n            \"rated_power\": 120,\n            \"sleep_threshold\": 15\n        },\n        {\n            \"device_name\": \"Computer\",\n            \"device_type\": \"electronics\",\n            \"rated_power\": 200,\n            \"sleep_threshold\": 25\n        },\n        {\n            \"device_name\": \"Router\",\n            \"device_type\": \"network\",\n            \"rated_power\": 15,\n            \"sleep_threshold\": 5\n        }\n    ]\n    \n    for device in devices:\n        response = requests.post(f\"{BASE_URL}/api/device-profile\", json=device)\n        print(f\"Device profile for {device['device_name']}: {response.status_code}\")\n\ndef add_sample_data():\n    \"\"\"Add sample electricity data for testing\"\"\"\n    \n    # Simulate 24 hours of data for TV\n    base_time = datetime.now() - timedelta(hours=24)\n    \n    for i in range(24):\n        timestamp = base_time + timedelta(hours=i)\n        \n        # Simulate TV usage pattern\n        if 18 <= i <= 23:  # Active evening usage (6 PM - 11 PM)\n            power_watts = 120\n            auto_controlled = False\n        elif 0 <= i <= 5:  # Sleep mode at night (12 AM - 5 AM)\n            power_watts = 8\n            auto_controlled = True  # Auto-controlled to turn off\n        else:  # Standby during day\n            power_watts = 12\n            auto_controlled = False\n        \n        data = {\n            \"device_name\": \"TV\",\n            \"mode\": \"manual\",  # Will be overridden by detection logic\n            \"voltage\": 220,\n            \"power_watts\": power_watts,\n            \"timestamp\": timestamp.isoformat(),\n            \"auto_controlled\": auto_controlled,\n            \"manual_override\": False\n        }\n        \n        response = requests.post(f\"{BASE_URL}/api/electricity/add\", json=data)\n        print(f\"Hour {i}: {response.status_code} - Power: {power_watts}W - Auto: {auto_controlled}\")\n\ndef test_savings():\n    \"\"\"Test the savings calculation\"\"\"\n    \n    print(\"\\n=== Testing Savings Calculation ===\")\n    \n    periods = ['today', 'month', 'year']\n    \n    for period in periods:\n        response = requests.get(f\"{BASE_URL}/api/savings?period={period}\")\n        if response.status_code == 200:\n            data = response.json()\n            print(f\"\\nPeriod: {period}\")\n            print(f\"Total Waste Cost: ${data['data']['total_waste_cost']}\")\n            print(f\"Total Saved Cost: ${data['data']['total_saved_cost']}\")\n            print(f\"Net Savings: ${data['data']['net_savings']}\")\n            \n            for device in data['data']['device_details']:\n                print(f\"  {device['device_name']}:\")\n                print(f\"    Sleep Waste Cost: ${device['sleep_waste_cost']}\")\n                print(f\"    Sleep Saved Cost: ${device['sleep_saved_cost']}\")\n                print(f\"    Sleep Hours Detected: {device['sleep_hours_detected']}\")\n                print(f\"    Efficiency: {device['efficiency_percentage']}%\")\n        else:\n            print(f\"Error for period {period}: {response.status_code}\")\n\nif __name__ == \"__main__\":\n    print(\"Setting up device profiles...\")\n    setup_device_profiles()\n    \n    print(\"\\nAdding sample data...\")\n    add_sample_data()\n    \n    print(\"\\nTesting savings calculation...\")\n    test_savings()",
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/test_savings_logic.py"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/app.py\">\nERROR [5:8] Import \"tinytuya\" could not be resolved\n</diagnostics>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/backend/test_savings_logic.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/app.py": [
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 7
+              },
+              "end": {
+                "line": 4,
+                "character": 15
+              }
+            },
+            "message": "Import \"tinytuya\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ]
+      },
+      "filepath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/test_savings_logic.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769503665971,
+      "end": 1769503668987
+    }
+  }
+}

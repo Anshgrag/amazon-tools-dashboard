@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6fa9a28001kJCuARfeRT50r9",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fa7a23002jsCoRImaNZyWxk",
+  "type": "tool",
+  "callID": "call_function_0gqt7o7uy0u0_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 30,
+      "offset": 178
+    },
+    "output": "<file>\n00179| \n00180| async function fetchRoomsData() {\n00181|     try {\n00182|         console.log('=== FETCHING ROOMS DATA FOR PERIOD:', currentPeriod);\n00183|         const response = await fetch(`${API_BASE_URL}/api/rooms/usage?period=${currentPeriod}`);\n00184|         \n00185|         if (!response.ok) {\n00186|             throw new Error(`HTTP error! status: ${response.status}`);\n00187|         }\n00188|         \n00189|         const result = await response.json();\n00190|         \n00191|         if (result.status === 'success') {\n00192|             updateRoomsTab(result.data);\n00193|         }\n00194|     } catch (error) {\n00195|         console.error('Error fetching rooms data:', error);\n00196|     }\n00197| }\n00198| \n00199| // ==================== UPDATE DISPLAY FUNCTIONS ====================\n00200| \n00201| function updateAppliancesDisplay(data) {\n00202|     const appliancesList = document.getElementById('appliancesList');\n00203|     if (!appliancesList) return;\n00204|     \n00205|     const deviceMap = {};\n00206|     data.forEach(record => {\n00207|         if (!deviceMap[record.device_name] || \n00208|             new Date(record.timestamp) > new Date(deviceMap[record.device_name].timestamp)) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 208)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "\nasync function fetchRoomsData() {\n    try {\n        console.log('=== FETCHING ROOMS DATA FOR PERIOD:', currentPeriod);\n        const response = await fetch(`${API_BASE_URL}/api/rooms/usage?period=${currentPeriod}`);\n        \n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        \n        const result = await response.json();\n        \n        if (result.status === 'success') {\n            updateRoomsTab(result.data);\n        }\n    } catch (error) {\n        console.error('Error fetching rooms data:', error);\n    }\n}\n",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769106742113,
+      "end": 1769106742120
+    }
+  }
+}

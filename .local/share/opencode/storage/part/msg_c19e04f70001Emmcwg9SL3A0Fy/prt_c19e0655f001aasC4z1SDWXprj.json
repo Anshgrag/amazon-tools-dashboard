@@ -1,0 +1,28 @@
+{
+  "id": "prt_c19e0655f001aasC4z1SDWXprj",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e04f70001Emmcwg9SL3A0Fy",
+  "type": "tool",
+  "callID": "call_5169bc7ed31f4fbb96db747d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "source venv/bin/activate && pip install -r requirements.txt -q",
+      "description": "Install project dependencies",
+      "timeout": 180000
+    },
+    "output": "  error: subprocess-exited-with-error\n  \n  × Getting requirements to build wheel did not run successfully.\n  │ exit code: 1\n  ╰─> [14 lines of output]\n      Traceback (most recent call last):\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 389, in <module>\n          main()\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 373, in main\n          json_out[\"return_val\"] = hook(**hook_input[\"kwargs\"])\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 137, in get_requires_for_build_wheel\n          backend = _build_backend()\n                    ^^^^^^^^^^^^^^^^\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 61, in _build_backend\n          ep = os.environ[\"_PYPROJECT_HOOKS_BUILD_BACKEND\"]\n               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"<frozen os>\", line 685, in __getitem__\n      KeyError: '_PYPROJECT_HOOKS_BUILD_BACKEND'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nerror: subprocess-exited-with-error\n\n× Getting requirements to build wheel did not run successfully.\n│ exit code: 1\n╰─> See above for output.\n\nnote: This error originates from a subprocess, and is likely not a problem with pip.\n",
+    "title": "Install project dependencies",
+    "metadata": {
+      "output": "  error: subprocess-exited-with-error\n  \n  × Getting requirements to build wheel did not run successfully.\n  │ exit code: 1\n  ╰─> [14 lines of output]\n      Traceback (most recent call last):\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 389, in <module>\n          main()\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 373, in main\n          json_out[\"return_val\"] = hook(**hook_input[\"kwargs\"])\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 137, in get_requires_for_build_wheel\n          backend = _build_backend()\n                    ^^^^^^^^^^^^^^^^\n        File \"/home/bot4u/Desktop/EYE/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 61, in _build_backend\n          ep = os.environ[\"_PYPROJECT_HOOKS_BUILD_BACKEND\"]\n               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"<frozen os>\", line 685, in __getitem__\n      KeyError: '_PYPROJECT_HOOKS_BUILD_BACKEND'\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nerror: subprocess-exited-with-error\n\n× Getting requirements to build wheel did not run successfully.\n│ exit code: 1\n╰─> See above for output.\n\nnote: This error originates from a subprocess, and is likely not a problem with pip.\n",
+      "exit": 1,
+      "description": "Install project dependencies",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769960662371,
+      "end": 1769960670881
+    }
+  }
+}

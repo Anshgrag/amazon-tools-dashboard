@@ -1,0 +1,34 @@
+{
+  "id": "msg_c0a9ac01a002XSjZGTPjknoFp8",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "role": "assistant",
+  "time": {
+    "created": 1769704439834,
+    "completed": 1769704441466
+  },
+  "error": {
+    "name": "MessageAbortedError",
+    "data": {
+      "message": "The operation was aborted."
+    }
+  },
+  "parentID": "msg_c0a9abf01001PObSV6DnFu1Nvl",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/eye project",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

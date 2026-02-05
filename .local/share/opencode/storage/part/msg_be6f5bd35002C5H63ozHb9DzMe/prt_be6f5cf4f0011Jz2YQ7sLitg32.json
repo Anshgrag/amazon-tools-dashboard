@@ -1,0 +1,11 @@
+{
+  "id": "prt_be6f5cf4f0011Jz2YQ7sLitg32",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f5bd35002C5H63ozHb9DzMe",
+  "type": "text",
+  "text": "The JavaScript is now updated with debug logging. **Please do the following:**\n\n1. **Clear your browser cache** (Ctrl+Shift+Delete or Cmd+Shift+Delete)\n2. **Hard refresh the page** (Ctrl+F5 or Cmd+Shift+R)\n3. **Open browser console** (F12 → Console tab)\n4. **Click on each tab** and watch the console for messages like:\n   - `=== CLICKED TAB: cost ===`\n   - `=== CLICKED TAB: appliances ===`\n   - `=== CLICKED TAB: rooms ===`\n\nThe console should show tab switching logs. If you see `=== SETUP TAB SWITCHING ===` with \"Found nav items: 4\", the JavaScript is loading correctly.\n\n**What should happen:**\n- Dashboard tab shows by default\n- Clicking \"Cost\" should hide Dashboard and show Cost view\n- Clicking \"Appliances\" should hide Cost and show Appliances view\n- Clicking \"Usage by Rooms\" should hide Appliances and show Rooms view\n\nIf it still shows all content at once, there might be a browser caching issue. Try opening in an Incognito/Private window.",
+  "time": {
+    "start": 1769106430188,
+    "end": 1769106430188
+  }
+}

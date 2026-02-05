@@ -1,0 +1,241 @@
+{
+  "id": "prt_c19788c73001yzDCDFsfjAcde7",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19780d40001D6jaI6DxOSHJdl",
+  "type": "tool",
+  "callID": "call_563081f0da334f89a765cea9",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "\"\"\"\nUtility script to test the backend API without the frontend.\n\"\"\"\nimport requests\nfrom pathlib import Path\n\nAPI_URL = \"http://localhost:8000/predict\"\nIMAGE_PATH = \"path/to/your/test_image.jpg\"  # Change this to your test image\n\n\ndef test_prediction(image_path: str):\n    \"\"\"Test the prediction endpoint.\"\"\"\n    \n    if not Path(image_path).exists():\n        print(f\"Error: Image not found at {image_path}\")\n        return\n    \n    try:\n        with open(image_path, 'rb') as f:\n            files = {'file': f}\n            response = requests.post(API_URL, files=files)\n        \n        if response.status_code == 200:\n            result = response.json()\n            print(\"Prediction Result:\")\n            print(f\"  Class: {result['predicted_class']}\")\n            print(f\"  Confidence: {result['confidence_score']:.2%}\")\n        else:\n            print(f\"Error: {response.status_code}\")\n            print(response.json())\n    \n    except requests.exceptions.ConnectionError:\n        print(\"Error: Could not connect to API. Is the backend running?\")\n    except Exception as e:\n        print(f\"Error: {str(e)}\")\n\n\nif __name__ == \"__main__\":\n    import sys\n    \n    if len(sys.argv) > 1:\n        IMAGE_PATH = sys.argv[1]\n    \n    test_prediction(IMAGE_PATH)\n",
+      "filePath": "/home/bot4u/Desktop/EYE/backend/test_api.py"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/EYE/backend/utils/inference.py\">\nERROR [121:10] Import \"tensorflow.keras.applications\" could not be resolved\nERROR [14:42] Expression of type \"None\" cannot be assigned to parameter of type \"str\"\n  \"None\" is not assignable to \"str\"\nERROR [67:32] Type \"dict[str, str | float]\" is not assignable to return type \"Dict[str, float]\"\n  \"str\" is not assignable to \"float\"\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/EYE/backend/main.py\">\nERROR [107:34] Argument of type \"str | None\" cannot be assigned to parameter \"file_path\" of type \"str\" in function \"validate_image_format\"\n  Type \"str | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\nERROR [115:26] No overloads for \"splitext\" match the provided arguments\nERROR [115:43] Argument of type \"str | None\" cannot be assigned to parameter \"p\" of type \"AnyOrLiteralStr@splitext\" in function \"splitext\"\n  Type \"str | None\" is not assignable to constrained type variable \"AnyOrLiteralStr\"\n</diagnostics>",
+    "title": "Desktop/EYE/backend/test_api.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py": [],
+        "/home/bot4u/Desktop/EYE/backend/utils/inference.py": [
+          {
+            "range": {
+              "start": {
+                "line": 120,
+                "character": 9
+              },
+              "end": {
+                "line": 120,
+                "character": 38
+              }
+            },
+            "message": "Import \"tensorflow.keras.applications\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 7
+              },
+              "end": {
+                "line": 4,
+                "character": 17
+              }
+            },
+            "message": "Import \"tensorflow\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 5
+              },
+              "end": {
+                "line": 5,
+                "character": 28
+              }
+            },
+            "message": "Import \"tensorflow.keras.models\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 41
+              },
+              "end": {
+                "line": 13,
+                "character": 45
+              }
+            },
+            "message": "Expression of type \"None\" cannot be assigned to parameter of type \"str\"\n  \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 66,
+                "character": 31
+              },
+              "end": {
+                "line": 66,
+                "character": 64
+              }
+            },
+            "message": "Type \"dict[str, str | float]\" is not assignable to return type \"Dict[str, float]\"\n  \"str\" is not assignable to \"float\"",
+            "severity": 1,
+            "code": "reportReturnType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportReturnType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 121,
+                "character": 9
+              },
+              "end": {
+                "line": 121,
+                "character": 32
+              }
+            },
+            "message": "Import \"tensorflow.keras.layers\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 122,
+                "character": 9
+              },
+              "end": {
+                "line": 122,
+                "character": 32
+              }
+            },
+            "message": "Import \"tensorflow.keras.models\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/EYE/backend/main.py": [
+          {
+            "range": {
+              "start": {
+                "line": 106,
+                "character": 33
+              },
+              "end": {
+                "line": 106,
+                "character": 46
+              }
+            },
+            "message": "Argument of type \"str | None\" cannot be assigned to parameter \"file_path\" of type \"str\" in function \"validate_image_format\"\n  Type \"str | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 114,
+                "character": 25
+              },
+              "end": {
+                "line": 114,
+                "character": 56
+              }
+            },
+            "message": "No overloads for \"splitext\" match the provided arguments",
+            "severity": 1,
+            "code": "reportCallIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportCallIssue"
+            },
+            "relatedInformation": [
+              {
+                "location": {
+                  "uri": "file:///home/bot4u/.local/share/opencode/bin/node_modules/pyright/dist/typeshed-fallback/stdlib/posixpath.pyi",
+                  "range": {
+                    "start": {
+                      "line": 148,
+                      "character": 4
+                    },
+                    "end": {
+                      "line": 148,
+                      "character": 12
+                    }
+                  }
+                },
+                "message": "Overload 2 is the closest match"
+              }
+            ]
+          },
+          {
+            "range": {
+              "start": {
+                "line": 114,
+                "character": 42
+              },
+              "end": {
+                "line": 114,
+                "character": 55
+              }
+            },
+            "message": "Argument of type \"str | None\" cannot be assigned to parameter \"p\" of type \"AnyOrLiteralStr@splitext\" in function \"splitext\"\n  Type \"str | None\" is not assignable to constrained type variable \"AnyOrLiteralStr\"",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          }
+        ]
+      },
+      "filepath": "/home/bot4u/Desktop/EYE/backend/test_api.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953856636,
+      "end": 1769953859648
+    }
+  }
+}

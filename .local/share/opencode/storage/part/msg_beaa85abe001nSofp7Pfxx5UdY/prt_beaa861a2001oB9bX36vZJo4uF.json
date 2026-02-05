@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaa861a2001oB9bX36vZJo4uF",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa85abe001nSofp7Pfxx5UdY",
+  "type": "text",
+  "text": "I've fixed the Tuya integration code to use the correct credentials from your `tinytuya.json` file and installed the required `tinytuya` library. The database has been emptied by deleting the old `ecotrack.db` file, so the app will create a fresh one with only new data from your smart switch.\n\nThe integration now properly connects to Tuya Cloud and fetches real-time power data (voltage, current, power consumption). To run it continuously, use:\n\n```\ncd backend && source venv/bin/activate && python tuya_integration.py\n```\n\nStart the backend first with `python app.py` in another terminal. The system will now collect fresh data from your smart switch only.",
+  "time": {
+    "start": 1769168463183,
+    "end": 1769168463183
+  }
+}

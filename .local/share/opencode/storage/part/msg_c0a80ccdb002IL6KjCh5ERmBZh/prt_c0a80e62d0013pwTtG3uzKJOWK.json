@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a80e62d0013pwTtG3uzKJOWK",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a80ccdb002IL6KjCh5ERmBZh",
+  "type": "tool",
+  "callID": "call_febc6e24bdf643a3b028db43",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd \"/home/bot4u/Desktop/eye project/docker\" && docker compose ps",
+      "description": "Check Docker container status"
+    },
+    "output": "time=\"2026-01-29T21:35:45+05:30\" level=warning msg=\"/home/bot4u/Desktop/eye project/docker/docker-compose.yml: `version` is obsolete\"\nNAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS\n",
+    "title": "Check Docker container status",
+    "metadata": {
+      "output": "time=\"2026-01-29T21:35:45+05:30\" level=warning msg=\"/home/bot4u/Desktop/eye project/docker/docker-compose.yml: `version` is obsolete\"\nNAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS\n",
+      "exit": 0,
+      "description": "Check Docker container status",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702745663,
+      "end": 1769702746014
+    }
+  }
+}

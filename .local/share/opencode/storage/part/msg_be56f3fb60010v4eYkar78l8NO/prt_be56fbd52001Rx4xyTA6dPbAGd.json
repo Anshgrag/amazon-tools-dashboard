@@ -1,0 +1,11 @@
+{
+  "id": "prt_be56fbd52001Rx4xyTA6dPbAGd",
+  "sessionID": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "messageID": "msg_be56f3fb60010v4eYkar78l8NO",
+  "type": "text",
+  "text": "I cannot change the default working directory of this opencode session - it's set to `/home/bot4u/Downloads/IEC`.\n\nHowever, I can run commands in any directory using the `workdir` parameter. \n\n**Options:**\n\n1. **Tell me the directory** - When you want to run a command elsewhere, just say the path and I'll use it\n\n2. **For bash commands** - I can specify the `workdir` parameter to execute in any folder\n\n3. **Exit and restart** - If you want a different default directory, you'd need to exit opencode and restart from that location\n\nWhich approach works for you? What directory do you want to work in?",
+  "time": {
+    "start": 1769080867037,
+    "end": 1769080867037
+  }
+}

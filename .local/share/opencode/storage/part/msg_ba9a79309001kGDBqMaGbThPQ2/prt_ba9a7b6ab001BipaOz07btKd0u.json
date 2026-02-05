@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a7b6ab001BipaOz07btKd0u",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a79309001kGDBqMaGbThPQ2",
+  "type": "tool",
+  "callID": "call_fa0c37ca21e64b0ba7bc9180",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project/backend && source venv/bin/activate && python app.py &",
+      "description": "Use virtual environment to start Flask server"
+    },
+    "output": "",
+    "title": "Use virtual environment to start Flask server",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Use virtual environment to start Flask server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077899447,
+      "end": 1768077899468
+    }
+  }
+}

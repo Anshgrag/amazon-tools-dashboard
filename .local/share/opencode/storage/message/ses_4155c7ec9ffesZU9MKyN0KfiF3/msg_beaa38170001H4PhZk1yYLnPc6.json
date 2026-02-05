@@ -1,0 +1,50 @@
+{
+  "id": "msg_beaa38170001H4PhZk1yYLnPc6",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "role": "assistant",
+  "time": {
+    "created": 1769168142704,
+    "completed": 1769168143788
+  },
+  "error": {
+    "name": "APIError",
+    "data": {
+      "message": "Model minimax-m2.1-free not supported",
+      "statusCode": 401,
+      "isRetryable": false,
+      "responseHeaders": {
+        "cf-placement": "local-EWR",
+        "cf-ray": "9c26fd40bdad0fa4-EWR",
+        "connection": "keep-alive",
+        "content-length": "96",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Fri, 23 Jan 2026 11:35:43 GMT",
+        "server": "cloudflare",
+        "vary": "accept-encoding"
+      },
+      "responseBody": "{\"type\":\"error\",\"error\":{\"type\":\"ModelError\",\"message\":\"Model minimax-m2.1-free not supported\"}}",
+      "metadata": {
+        "url": "https://opencode.ai/zen/v1/messages"
+      }
+    }
+  },
+  "parentID": "msg_beaa38143001SczyOTG6jXmrKk",
+  "modelID": "minimax-m2.1-free",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

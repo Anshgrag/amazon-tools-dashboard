@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Waste-to-Energy AD Simulation</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #0f0f0f;
+        color: #e8e8e8;
+        display: flex;
+    }
+
+    /* ---------------- SIDEBAR ---------------- */
+    #sidebar {
+        width: 240px;
+        background: #151515;
+        padding: 20px;
+        height: 100vh;
+        border-right: 1px solid #222;
+    }
+
+    #sidebar h2 {
+        margin-top: 0;
+        color: #8be88b;
+        font-size: 20px;
+    }
+
+    .nav-btn {
+        display: block;
+        padding: 12px;
+        margin: 6px 0;
+        background: #222;
+        color: #ddd;
+        text-decoration: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .nav-btn:hover {
+        background: #2f2f2f;
+    }
+
+    /* ---------------- MAIN CONTENT ---------------- */
+    #main {
+        flex: 1;
+        padding: 30px;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background: #1b1b1b;
+        padding: 18px;
+        border-radius: 10px;
+        border: 1px solid #262626;
+    }
+
+    .card h3 {
+        margin: 0;
+        font-size: 15px;
+        color: #9c9;
+    }
+
+    .card p {
+        font-size: 22px;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+
+    input, select {
+        padding: 10px;
+        width: 100%;
+        background: #222;
+        color: #eee;
+        border: 1px solid #333;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background: #28a745;
+        padding: 12px 20px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #1f8a3a;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- --------------------------------------------------------------- -->
+<!-- SIDEBAR -->
+<!-- --------------------------------------------------------------- -->
+<div id="sidebar">
+    <h2>⚡ AD Simulator</h2>
+
+    <div class="nav-btn" onclick="showPage('individual')">Individual Waste</div>
+    <div class="nav-btn" onclick="showPage('mixed')">Mixed Waste</div>
+    <div class="nav-btn" onclick="showPage('results')">Results</div>
+</div>
+
+<!-- --------------------------------------------------------------- -->
+<!-- MAIN CONTENT -->
+<!-- --------------------------------------------------------------- -->
+<div id="main">
+
+    <h1>Waste-to-Energy AD Simulation</h1>
+
+    <!-- =================== INDIVIDUAL WASTE PAGE =================== -->
+    <div id="page-individual">
+        <h2>Individual Waste Simulation</h2>
+
+        <select id="wasteType">
+            <option value="0">Agricultural Waste</option>
+            <option value="1">Household Waste</option>
+            <option value="2">Garden Waste</option>
+            <option value="3">Paper Waste</option>
+            <option value="4">Cow Dung</option>
+        </select>
+
+        <input type="number" id="wasteWeight" placeholder="Waste Weight (kg)" value="50">
+
+        <input type="number" id="days" placeholder="Days" value="30">
+        <input type="number" id="Tavg" placeholder="Average Temp (°C)" value="35">
+        <input type="number" id="Tvar" placeholder="Temperature Variation (±°C)" value="2">
+
+        <button onclick="simulateIndividual()">Run Simulation</button>
+    </div>
+
+    <!-- ==================== MIXED WASTE PAGE ==================== -->
+    <div id="page-mixed" style="display:none;">
+        <h2>Mixed Waste Simulation</h2>
+
+        <input type="number" id="mixWeight" placeholder="Total Mixed Waste (kg)" value="100">
+
+        <h3>Composition (%)</h3>
+
+        <input type="number" id="p0" placeholder="Agricultural (%)" value="20">
+        <input type="number" id="p1" placeholder="Household (%)" value="20">
+        <input type="number" id="p2" placeholder="Garden (%)" value="20">
+        <input type="number" id="p3" placeholder="Paper (%)" value="20">
+        <input type="number" id="p4" placeholder="Cow Dung (%)" value="20">
+
+        <input type="number" id="days2" placeholder="Days" value="30">
+        <input type="number" id="Tavg2" placeholder="Average Temp (°C)" value="35">
+        <input type="number" id="Tvar2" placeholder="Temperature Variation (±°C)" value="2">
+
+        <button onclick="simulateMixed()">Run Simulation</button>
+    </div>
+
+    <!-- ====================== RESULTS PAGE ====================== -->
+    <div id="page-results" style="display:none;">
+        <h2>Results Dashboard</h2>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>Total Biogas (m³)</h3>
+                <p id="biogasTotal">0</p>
+            </div>
+            <div class="card">
+                <h3>Total Methane (m³)</h3>
+                <p id="methaneTotal">0</p>
+            </div>
+            <div class="card">
+                <h3>Total Energy (kWh)</h3>
+                <p id="energyTotal">0</p>
+            </div>
+        </div>
+
+        <canvas id="chartBiogas" style="margin-top:30px;"></canvas>
+    </div>
+
+</div>
+
+<!-- --------------------------------------------------------------- -->
+<!-- JAVASCRIPT LOGIC (Matches C Program Logic) -->
+<!-- --------------------------------------------------------------- -->
+<script>
+const wasteList = [
+    {name:"Agricultural Waste", biogas:0.40, ch4:0.52, k:0.08, vs:0.80},
+    {name:"Household Waste",    biogas:0.55, ch4:0.60, k:0.20, vs:0.85},
+    {name:"Garden Waste",       biogas:0.33, ch4:0.50, k:0.06, vs:0.75},
+    {name:"Paper Waste",        biogas:0.25, ch4:0.52, k:0.05, vs:0.90},
+    {name:"Cow Dung",           biogas:0.25, ch4:0.55, k:0.10, vs:0.70}
+];
+
+let simData = [];
+
+function showPage(page) {
+    document.getElementById("page-individual").style.display = "none";
+    document.getElementById("page-mixed").style.display = "none";
+    document.getElementById("page-results").style.display = "none";
+    document.getElementById(`page-${page}`).style.display = "block";
+}
+
+/* ---------------- TEMPERATURE CORRECTION ---------------- */
+function tempCorrect(Y35, T) {
+    return Y35 * (1 + 0.02 * (T - 35));
+}
+
+/* ------------------- SIMULATION CORE -------------------- */
+function runSim(Y35, ch4, k, VS, days, Tavg, Tvar) {
+    let S0 = VS;
+    let S_prev = S0;
+    let results = [];
+
+    let totalBiogas = 0;
+    let totalMethane = 0;
+    let totalEnergy = 0;
+
+    for (let t = 1; t <= days; t++) {
+        let T_day = Tavg + ((-1) ** t) * Tvar;
+        let YT = tempCorrect(Y35, T_day);
+
+        let S_now = S0 * Math.exp(-k * t);
+        let dS = S_prev - S_now;
+
+        let biogas = YT * dS;
+        let methane = biogas * ch4;
+        let energy = methane * 9.97;
+
+        results.push(biogas);
+
+        totalBiogas += biogas;
+        totalMethane += methane;
+        totalEnergy += energy;
+
+        S_prev = S_now;
+    }
+
+    return [results, totalBiogas, totalMethane, totalEnergy];
+}
+
+/* ------------------- INDIVIDUAL SIMULATION ------------------- */
+function simulateIndividual() {
+    let i = Number(document.getElementById("wasteType").value);
+    let w = wasteList[i];
+
+    let weight = Number(document.getElementById("wasteWeight").value);
+    let VS = weight * w.vs;
+
+    let days = Number(document.getElementById("days").value);
+    let Tavg = Number(document.getElementById("Tavg").value);
+    let Tvar = Number(document.getElementById("Tvar").value);
+
+    simData = runSim(w.biogas, w.ch4, w.k, VS, days, Tavg, Tvar);
+
+    renderResults();
+}
+
+/* --------------------- MIXED SIMULATION -------------------- */
+function simulateMixed() {
+    let weight = Number(document.getElementById("mixWeight").value);
+
+    let perc = [
+        Number(document.getElementById("p0").value)/100,
+        Number(document.getElementById("p1").value)/100,
+        Number(document.getElementById("p2").value)/100,
+        Number(document.getElementById("p3").value)/100,
+        Number(document.getElementById("p4").value)/100
+    ];
+
+    let Y=0, ch4=0, k=0, vs=0;
+    for(let i=0;i<5;i++){
+        Y   += perc[i] * wasteList[i].biogas;
+        ch4 += perc[i] * wasteList[i].ch4;
+        k   += perc[i] * wasteList[i].k;
+        vs  += perc[i] * wasteList[i].vs;
+    }
+
+    let VS = weight * vs;
+
+    let days = Number(document.getElementById("days2").value);
+    let Tavg = Number(document.getElementById("Tavg2").value);
+    let Tvar = Number(document.getElementById("Tvar2").value);
+
+    simData = runSim(Y, ch4, k, VS, days, Tavg, Tvar);
+
+    renderResults();
+}
+
+/* -------------------------- RESULTS PAGE ------------------------- */
+let chart;
+
+function renderResults() {
+    showPage("results");
+
+    document.getElementById("biogasTotal").innerText  = simData[1].toFixed(2);
+    document.getElementById("methaneTotal").innerText = simData[2].toFixed(2);
+    document.getElementById("energyTotal").innerText  = simData[3].toFixed(2);
+
+    if (chart) chart.destroy();
+
+    chart = new Chart(document.getElementById("chartBiogas"), {
+        type: "line",
+        data: {
+            labels: simData[0].map((_, i) => i + 1),
+            datasets: [{
+                label: "Biogas per Day (m³)",
+                data: simData[0],
+                borderColor: "#76ff76",
+                borderWidth: 2,
+                fill: true,
+                backgroundColor: "rgba(100,255,100,0.1)"
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { ticks: { color: "#ccc" }},
+                y: { ticks: { color: "#ccc" }}
+            }
+        }
+    });
+}
+</script>
+
+</body>
+</html>

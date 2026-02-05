@@ -1,0 +1,29 @@
+{
+  "id": "msg_ba985cc29001AypY9Fe4BuwPkT",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "assistant",
+  "time": {
+    "created": 1768075676713,
+    "completed": 1768075678245
+  },
+  "parentID": "msg_ba985cbf0001rmUXpHHvki7LzL",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Desktop/GEMINI/Mini_project",
+    "root": "/"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 10969,
+    "output": 20,
+    "reasoning": 0,
+    "cache": {
+      "read": 448,
+      "write": 0
+    }
+  },
+  "finish": "stop"
+}

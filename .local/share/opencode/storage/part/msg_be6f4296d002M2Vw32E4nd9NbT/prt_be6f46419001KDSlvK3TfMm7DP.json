@@ -1,0 +1,62 @@
+{
+  "id": "prt_be6f46419001KDSlvK3TfMm7DP",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f4296d002M2Vw32E4nd9NbT",
+  "type": "tool",
+  "callID": "call_function_9c0innlugxar_1",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Fix tab content to show only active tab",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Ensure CSS properly hides inactive tabs",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Test tab switching works correctly",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Fix tab content to show only active tab\",\n    \"id\": \"1\",\n    \"priority\": \"high\",\n    \"status\": \"in_progress\"\n  },\n  {\n    \"content\": \"Ensure CSS properly hides inactive tabs\",\n    \"id\": \"2\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Test tab switching works correctly\",\n    \"id\": \"3\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  }\n]",
+    "title": "3 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Fix tab content to show only active tab",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Ensure CSS properly hides inactive tabs",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Test tab switching works correctly",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106335874,
+      "end": 1769106335881
+    }
+  }
+}

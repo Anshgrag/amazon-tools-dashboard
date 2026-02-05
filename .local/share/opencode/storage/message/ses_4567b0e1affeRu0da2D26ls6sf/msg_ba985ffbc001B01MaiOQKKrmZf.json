@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba985ffbc001B01MaiOQKKrmZf",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768075689924
+  },
+  "summary": {
+    "title": "Project read status inquiry",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

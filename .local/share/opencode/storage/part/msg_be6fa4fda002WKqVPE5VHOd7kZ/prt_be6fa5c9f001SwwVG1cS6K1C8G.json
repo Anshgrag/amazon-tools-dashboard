@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6fa5c9f001SwwVG1cS6K1C8G",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fa4fda002WKqVPE5VHOd7kZ",
+  "type": "reasoning",
+  "text": "I need to add the devices case to the switch statement.",
+  "metadata": {
+    "anthropic": {
+      "signature": "da740fc77068979c936585f85ce401ae70d3c7ceb0b3ebe06f0e10106688d865"
+    }
+  },
+  "time": {
+    "start": 1769106726047,
+    "end": 1769106726341
+  }
+}

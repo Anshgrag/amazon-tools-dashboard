@@ -1,0 +1,51 @@
+{
+  "id": "prt_beaa408af0016FtG1xhaPQE5r6",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa3e8b3001Ntaqxrg6m3vvW9",
+  "type": "tool",
+  "callID": "call_33276982",
+  "tool": "question",
+  "state": {
+    "status": "error",
+    "input": {
+      "questions": [
+        {
+          "question": "What files do you consider unnecessary in this folder? For example, are you referring to temporary files, build artifacts, archives, or something else?",
+          "header": "Clarify unnecessary files",
+          "options": [
+            {
+              "label": "Debug and test files (e.g., debug_savings.html, test_*.sh, test.py)",
+              "description": "Remove files used for debugging and testing"
+            },
+            {
+              "label": "Archives and backups (e.g., *.zip files)",
+              "description": "Delete zip files and archives"
+            },
+            {
+              "label": "Documentation and reports (e.g., *.md files, *.docx, *.pdf)",
+              "description": "Remove documentation, presentations, and reports"
+            },
+            {
+              "label": "Data files (e.g., *.json, *.db)",
+              "description": "Delete data files like JSON and database"
+            },
+            {
+              "label": "Virtual environment (venv folder)",
+              "description": "Remove the virtual environment directory"
+            },
+            {
+              "label": "Other - specify in text",
+              "description": "Custom selection of files"
+            }
+          ],
+          "multiple": true
+        }
+      ]
+    },
+    "error": "Error: The question tool was called with invalid arguments: [\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 30,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      0,\n      \"options\",\n      0,\n      \"label\"\n    ],\n    \"message\": \"Too big: expected string to have <=30 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 30,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      0,\n      \"options\",\n      1,\n      \"label\"\n    ],\n    \"message\": \"Too big: expected string to have <=30 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 30,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      0,\n      \"options\",\n      2,\n      \"label\"\n    ],\n    \"message\": \"Too big: expected string to have <=30 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 30,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      0,\n      \"options\",\n      3,\n      \"label\"\n    ],\n    \"message\": \"Too big: expected string to have <=30 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 30,\n    \"inclusive\": true,\n    \"path\": [\n      \"questions\",\n      0,\n      \"options\",\n      4,\n      \"label\"\n    ],\n    \"message\": \"Too big: expected string to have <=30 characters\"\n  }\n].\nPlease rewrite the input so it satisfies the expected schema.",
+    "time": {
+      "start": 1769168177341,
+      "end": 1769168177357
+    }
+  }
+}

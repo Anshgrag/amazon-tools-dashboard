@@ -1,0 +1,11 @@
+{
+  "id": "prt_c2e01349f00102WIWV3RyhwO3Q",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e012b3f001NIIwcaGRbslHAH",
+  "type": "text",
+  "text": "\n\nSimply run:\n\n```bash\ngit quickpush \"your commit message here\"\n```\n\nFor example:\n```bash\ngit quickpush \"fixed login bug\"\ngit quickpush \"added new feature\"\ngit quickpush \"updated documentation\"\n```\n\nThis will automatically add all changes, commit them, and push to your remote repository.",
+  "time": {
+    "start": 1770298357601,
+    "end": 1770298357601
+  }
+}

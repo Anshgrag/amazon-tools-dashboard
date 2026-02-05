@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fa9b73c001bBpgAuWf848KoQ",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa97525002J9rLUkq2Ht8SzH",
+  "type": "tool",
+  "callID": "call_1a03191df6444cf99b5aa78f",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/style.css",
+      "limit": 20,
+      "offset": 300
+    },
+    "output": "<file>\n00301|     color: white;\n00302| }\n00303| \n00304| .control-btn.on:hover {\n00305|     background: #05d686;\n00306| }\n00307| \n00308| .control-btn.off {\n00309|     background: var(--accent-red);\n00310|     color: white;\n00311| }\n00312| \n00313| .control-btn.off:hover {\n00314|     background: #ff3838;\n00315| }\n00316| \n00317| /* Time Scheduler */\n00318| .scheduler {\n00319|     padding: 20px;\n00320| }\n\n(File has more lines. Use 'offset' parameter to read beyond line 320)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/style.css",
+    "metadata": {
+      "preview": "    color: white;\n}\n\n.control-btn.on:hover {\n    background: #05d686;\n}\n\n.control-btn.off {\n    background: var(--accent-red);\n    color: white;\n}\n\n.control-btn.off:hover {\n    background: #ff3838;\n}\n\n/* Time Scheduler */\n.scheduler {\n    padding: 20px;\n}",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769789306688,
+      "end": 1769789306720
+    }
+  }
+}

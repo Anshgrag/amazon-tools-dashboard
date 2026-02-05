@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0a414e550012cLQ1IhYGg2xRi",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "role": "user",
+  "time": {
+    "created": 1769698578040
+  },
+  "summary": {
+    "title": "Eye health AI product design and deployment plan",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

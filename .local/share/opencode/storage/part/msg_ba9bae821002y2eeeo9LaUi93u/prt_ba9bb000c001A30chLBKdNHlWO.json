@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9bb000c001A30chLBKdNHlWO",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9bae821002y2eeeo9LaUi93u",
+  "type": "tool",
+  "callID": "call_00a06eef87d34454bb1e70ba",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s \"http://localhost:5000/api/savings\" | jq '.data.total_waste_cost'",
+      "description": "Test API endpoint directly"
+    },
+    "output": "38.99\n",
+    "title": "Test API endpoint directly",
+    "metadata": {
+      "output": "38.99\n",
+      "exit": 0,
+      "description": "Test API endpoint directly",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079163415,
+      "end": 1768079163450
+    }
+  }
+}

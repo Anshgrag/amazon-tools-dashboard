@@ -1,0 +1,7 @@
+{
+  "id": "prt_beaa618cf00136GZa3GS5Qegi0",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa618ce001h00ojapiUAXok2",
+  "type": "text",
+  "text": "okay so i have this smart switch through tuya api which i already in the backend now i want it to connect properly and get the data from that only so i want you to fix that part of the code if it is not working empty the data base so only fresh data is incoming from that smart switch "
+}

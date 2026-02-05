@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaa646fc0012lI1a3mM6SKLg4",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa642e2001mXymGJ1e2ktGHt",
+  "type": "reasoning",
+  "text": "This tuya.py has actual credentials: ACCESS_ID = \"m3negp3fvw7ugp7cqae8\", etc.",
+  "time": {
+    "start": 1769168324348,
+    "end": 1769168328401
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba9b2beab001WJUGpVmKCm9Ng7",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768078622393
+  },
+  "summary": {
+    "title": "Frontend display issue: no styling, 0 0 0 appears",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

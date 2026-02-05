@@ -1,0 +1,139 @@
+{
+  "id": "prt_ba9a5cea8001gq9KSb7UoWLl4F",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a507f2001P27vf4ubLrOEur",
+  "type": "tool",
+  "callID": "call_3a398a1a7ecd4b9780763615",
+  "tool": "edit",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py",
+      "oldString": "        else:  # Off hours\n            power_watts = config[\"power_standby\"] if not is_auto_controlled else config[\"power_idle\"]\n            mode = \"Standby\"",
+      "newString": "        else:  # Off hours\n            idle_power = config.get(\"power_idle\", 0.1)  # Default to very low power if not specified\n            power_watts = config[\"power_standby\"] if not is_auto_controlled else idle_power\n            mode = \"Standby\""
+    },
+    "output": "",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/app.py": [],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/tuya_integration.py": [
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 5
+              },
+              "end": {
+                "line": 5,
+                "character": 19
+              }
+            },
+            "message": "Import \"tuya_connector\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 6,
+                "character": 7
+              },
+              "end": {
+                "line": 6,
+                "character": 15
+              }
+            },
+            "message": "Import \"requests\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/tuya.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 19
+              }
+            },
+            "message": "Import \"tuya_connector\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/test_data.py": [
+          {
+            "range": {
+              "start": {
+                "line": 14,
+                "character": 7
+              },
+              "end": {
+                "line": 14,
+                "character": 15
+              }
+            },
+            "message": "Import \"requests\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py": [
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 7
+              },
+              "end": {
+                "line": 5,
+                "character": 15
+              }
+            },
+            "message": "Import \"requests\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ]
+      },
+      "diff": "Index: /home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\n===================================================================\n--- /home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\n+++ /home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py\n@@ -80,9 +80,10 @@\n         else:\n             power_watts = config[\"power_on\"]\n             mode = \"ON\"\n     else:  # Off hours\n-        power_watts = config[\"power_standby\"] if not is_auto_controlled else config[\"power_idle\"]\n+        idle_power = config.get(\"power_idle\", 0.1)  # Default to very low power if not specified\n+        power_watts = config[\"power_standby\"] if not is_auto_controlled else idle_power\n         mode = \"Standby\"\n else:  # Charger\n     # Charger patterns\n     if 7 <= hour_of_day <= 9 or 19 <= hour_of_day <= 23:  # Charging times\n",
+      "filediff": {
+        "file": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py",
+        "before": "\"\"\"\nSmart Savings Test Data Generator for EcoTrack\nGenerates realistic data demonstrating cost savings from automation\n\"\"\"\n\nimport requests\nimport random\nimport time\nfrom datetime import datetime, timedelta\n\nAPI_URL = \"http://localhost:5000\"\nCOST_PER_KWH = 0.12  # $0.12 per kWh\n\n# Device configurations with waste patterns\nDEVICES_CONFIG = {\n    \"TV\": {\n        \"power_on\": 120,           # watts\n        \"power_standby\": 3,        # watts\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 4,  # Hours left on when没人 watching\n        \"auto_saved_hours\": 3,     # Hours automation saves\n    },\n    \"Router\": {\n        \"power_on\": 15,            # watts (should be 24/7)\n        \"power_standby\": 12,       # watts\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 0,  # Router should always be on\n        \"auto_saved_hours\": 0,     # No savings for router\n    },\n    \"Charger\": {\n        \"power_on\": 25,            # watts (phone charging)\n        \"power_standby\": 0.5,      # watts (left plugged in)\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 8,  # Left plugged in unnecessarily\n        \"auto_saved_hours\": 6,     # Automation unplug saves\n    },\n    \"Refrigerator\": {\n        \"power_on\": 200,           # watts (compressor running)\n        \"power_standby\": 50,       # watts (idle)\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 2,  # Door left open, inefficient settings\n        \"auto_saved_hours\": 1.5,   # Smart automation saves\n    }\n}\n\ndef calculate_cost(power_watts, hours):\n    \"\"\"Calculate cost for given power and duration\"\"\"\n    power_kw = power_watts / 1000\n    kwh = power_kw * hours\n    return kwh * COST_PER_KWH\n\ndef generate_device_data(device_name, config, hours_ago=0):\n    \"\"\"Generate realistic device data for a specific time\"\"\"\n    hour_of_day = (datetime.now().hour - hours_ago) % 24\n    \n    # Simulate different scenarios\n    is_auto_controlled = random.random() < 0.3  # 30% chance automation was active\n    is_manual_override = random.random() < 0.1  # 10% chance user overrode automation\n    \n    # Determine power state based on time and automation\n    if device_name == \"Router\":\n        # Router is always on\n        power_watts = config[\"power_on\"]\n        mode = \"ON\"\n    elif device_name == \"Refrigerator\":\n        # Refrigerator cycles\n        if random.random() < 0.7:  # 70% chance compressor is running\n            power_watts = config[\"power_on\"] if not is_auto_controlled else config[\"power_standby\"]\n            mode = \"ON\"\n        else:\n            power_watts = config[\"power_standby\"]\n            mode = \"Standby\"\n    elif device_name == \"TV\":\n        # TV usage patterns\n        if 18 <= hour_of_day <= 23:  # Evening prime time\n            if is_auto_controlled and random.random() < 0.4:  # 40% chance auto turned off\n                power_watts = config[\"power_standby\"]\n                mode = \"Standby\"\n                is_auto_controlled = True\n            else:\n                power_watts = config[\"power_on\"]\n                mode = \"ON\"\n        else:  # Off hours\n            power_watts = config[\"power_standby\"] if not is_auto_controlled else config[\"power_idle\"]\n            mode = \"Standby\"\n    else:  # Charger\n        # Charger patterns\n        if 7 <= hour_of_day <= 9 or 19 <= hour_of_day <= 23:  # Charging times\n            if is_auto_controlled and random.random() < 0.6:  # Smart charging\n                power_watts = config[\"power_on\"] if random.random() < 0.3 else config[\"power_standby\"]\n                mode = \"ON\" if power_watts > 5 else \"Standby\"\n            else:\n                power_watts = config[\"power_on\"]\n                mode = \"ON\"\n        else:  # Should be off\n            idle_power = config.get(\"power_idle\", 0.1)  # Default to very low power if not specified\n            power_watts = config[\"power_standby\"] if not is_auto_controlled else idle_power\n            mode = \"Standby\"\n    \n    return {\n        \"device_name\": device_name,\n        \"mode\": mode,\n        \"voltage\": config[\"voltage\"] + random.uniform(-5, 5),\n        \"power_watts\": power_watts + random.uniform(-2, 2),\n        \"timestamp\": (datetime.now() - timedelta(hours=hours_ago)).isoformat(),\n        \"auto_controlled\": is_auto_controlled,\n        \"manual_override\": is_manual_override\n    }\n\ndef add_device_events():\n    \"\"\"Add specific device waste/saved events\"\"\"\n    print(\"📊 Adding device waste/saved events...\")\n    \n    for device_name, config in DEVICES_CONFIG.items():\n        # Calculate waste for the day\n        waste_power = config[\"power_on\"] - config[\"power_standby\"]\n        waste_hours = config[\"waste_hours_per_day\"]\n        saved_hours = config[\"auto_saved_hours\"]\n        \n        if waste_hours > 0:\n            # Add waste event (without automation)\n            waste_event = {\n                \"device_name\": device_name,\n                \"event_type\": \"waste\",\n                \"power_watts\": waste_power,\n                \"duration_minutes\": int(waste_hours * 60),\n                \"auto_saved\": False,\n                \"timestamp\": (datetime.now() - timedelta(hours=12)).isoformat()\n            }\n            \n            response = requests.post(f\"{API_URL}/api/device-event\", json=waste_event)\n            if response.status_code == 201:\n                result = response.json()\n                print(f\"  ❌ {device_name}: ${result['cost_wasted']:.4f} wasted without automation\")\n        \n        if saved_hours > 0:\n            # Add saved event (with automation)\n            saved_event = {\n                \"device_name\": device_name,\n                \"event_type\": \"saved\",\n                \"power_watts\": waste_power,\n                \"duration_minutes\": int(saved_hours * 60),\n                \"auto_saved\": True,\n                \"timestamp\": (datetime.now() - timedelta(hours=6)).isoformat()\n            }\n            \n            response = requests.post(f\"{API_URL}/api/device-event\", json=saved_event)\n            if response.status_code == 201:\n                result = response.json()\n                print(f\"  ✅ {device_name}: ${result['cost_wasted']:.4f} saved with automation\")\n\ndef generate_historical_data(hours=24):\n    \"\"\"Generate historical data for the past N hours\"\"\"\n    print(f\"🔄 Generating {hours} hours of realistic device data...\")\n    \n    for hours_ago in range(hours, 0, -1):\n        for device_name, config in DEVICES_CONFIG.items():\n            data = generate_device_data(device_name, config, hours_ago)\n            \n            response = requests.post(f\"{API_URL}/api/electricity/add\", json=data)\n            if response.status_code == 201:\n                power = data[\"power_watts\"]\n                auto = \"🤖\" if data[\"auto_controlled\"] else \"👤\"\n                mode = data[\"mode\"]\n                print(f\"  {auto} {device_name} ({hours_ago}h ago): {power:.1f}W - {mode}\")\n            \n            time.sleep(0.1)  # Small delay to avoid overwhelming the API\n\ndef show_savings_summary():\n    \"\"\"Display the savings summary\"\"\"\n    print(\"\\n📈 Fetching savings summary...\")\n    \n    try:\n        response = requests.get(f\"{API_URL}/api/savings\")\n        if response.status_code == 200:\n            data = response.json()\n            if data[\"status\"] == \"success\":\n                savings = data[\"data\"]\n                print(f\"\\n💰 SMART SAVINGS SUMMARY:\")\n                print(f\"  ❌ Wasted (Without Automation): ${savings['total_waste_cost']:.2f}\")\n                print(f\"  ✅ Saved (With Automation): ${savings['total_saved_cost']:.2f}\")\n                print(f\"  🎯 Net Savings: ${savings['net_savings']:.2f}\")\n                print(f\"  ⚡ Cost per kWh: ${savings['cost_per_kwh']:.2f}\")\n                \n                print(f\"\\n📱 DEVICE BREAKDOWN:\")\n                for device in savings[\"device_details\"]:\n                    net = device[\"saved_cost\"] - device[\"waste_cost\"]\n                    icon = \"✅\" if net >= 0 else \"❌\"\n                    print(f\"  {icon} {device['device_name']}: {format(net, '+.2f')}\")\n    except Exception as e:\n        print(f\"❌ Error fetching savings: {e}\")\n\ndef main():\n    print(\"🚀 EcoTrack Smart Savings Test Data Generator\")\n    print(\"=\" * 50)\n    \n    # First check if API is running\n    try:\n        response = requests.get(f\"{API_URL}/\")\n        if response.status_code != 200:\n            print(\"❌ API is not running. Please start the backend first.\")\n            return\n    except:\n        print(\"❌ Cannot connect to API. Please start the backend first.\")\n        return\n    \n    # Generate data\n    generate_historical_data(24)\n    add_device_events()\n    \n    # Show summary\n    show_savings_summary()\n    \n    print(f\"\\n✅ Test data generation complete!\")\n    print(f\"🌐 Open http://localhost:5000 to see your Smart Savings Monitor\")\n\nif __name__ == \"__main__\":\n    main()",
+        "after": "\"\"\"\nSmart Savings Test Data Generator for EcoTrack\nGenerates realistic data demonstrating cost savings from automation\n\"\"\"\n\nimport requests\nimport random\nimport time\nfrom datetime import datetime, timedelta\n\nAPI_URL = \"http://localhost:5000\"\nCOST_PER_KWH = 0.12  # $0.12 per kWh\n\n# Device configurations with waste patterns\nDEVICES_CONFIG = {\n    \"TV\": {\n        \"power_on\": 120,           # watts\n        \"power_standby\": 3,        # watts\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 4,  # Hours left on when没人 watching\n        \"auto_saved_hours\": 3,     # Hours automation saves\n    },\n    \"Router\": {\n        \"power_on\": 15,            # watts (should be 24/7)\n        \"power_standby\": 12,       # watts\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 0,  # Router should always be on\n        \"auto_saved_hours\": 0,     # No savings for router\n    },\n    \"Charger\": {\n        \"power_on\": 25,            # watts (phone charging)\n        \"power_standby\": 0.5,      # watts (left plugged in)\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 8,  # Left plugged in unnecessarily\n        \"auto_saved_hours\": 6,     # Automation unplug saves\n    },\n    \"Refrigerator\": {\n        \"power_on\": 200,           # watts (compressor running)\n        \"power_standby\": 50,       # watts (idle)\n        \"voltage\": 230,\n        \"waste_hours_per_day\": 2,  # Door left open, inefficient settings\n        \"auto_saved_hours\": 1.5,   # Smart automation saves\n    }\n}\n\ndef calculate_cost(power_watts, hours):\n    \"\"\"Calculate cost for given power and duration\"\"\"\n    power_kw = power_watts / 1000\n    kwh = power_kw * hours\n    return kwh * COST_PER_KWH\n\ndef generate_device_data(device_name, config, hours_ago=0):\n    \"\"\"Generate realistic device data for a specific time\"\"\"\n    hour_of_day = (datetime.now().hour - hours_ago) % 24\n    \n    # Simulate different scenarios\n    is_auto_controlled = random.random() < 0.3  # 30% chance automation was active\n    is_manual_override = random.random() < 0.1  # 10% chance user overrode automation\n    \n    # Determine power state based on time and automation\n    if device_name == \"Router\":\n        # Router is always on\n        power_watts = config[\"power_on\"]\n        mode = \"ON\"\n    elif device_name == \"Refrigerator\":\n        # Refrigerator cycles\n        if random.random() < 0.7:  # 70% chance compressor is running\n            power_watts = config[\"power_on\"] if not is_auto_controlled else config[\"power_standby\"]\n            mode = \"ON\"\n        else:\n            power_watts = config[\"power_standby\"]\n            mode = \"Standby\"\n    elif device_name == \"TV\":\n        # TV usage patterns\n        if 18 <= hour_of_day <= 23:  # Evening prime time\n            if is_auto_controlled and random.random() < 0.4:  # 40% chance auto turned off\n                power_watts = config[\"power_standby\"]\n                mode = \"Standby\"\n                is_auto_controlled = True\n            else:\n                power_watts = config[\"power_on\"]\n                mode = \"ON\"\n        else:  # Off hours\n            idle_power = config.get(\"power_idle\", 0.1)  # Default to very low power if not specified\n            power_watts = config[\"power_standby\"] if not is_auto_controlled else idle_power\n            mode = \"Standby\"\n    else:  # Charger\n        # Charger patterns\n        if 7 <= hour_of_day <= 9 or 19 <= hour_of_day <= 23:  # Charging times\n            if is_auto_controlled and random.random() < 0.6:  # Smart charging\n                power_watts = config[\"power_on\"] if random.random() < 0.3 else config[\"power_standby\"]\n                mode = \"ON\" if power_watts > 5 else \"Standby\"\n            else:\n                power_watts = config[\"power_on\"]\n                mode = \"ON\"\n        else:  # Should be off\n            idle_power = config.get(\"power_idle\", 0.1)  # Default to very low power if not specified\n            power_watts = config[\"power_standby\"] if not is_auto_controlled else idle_power\n            mode = \"Standby\"\n    \n    return {\n        \"device_name\": device_name,\n        \"mode\": mode,\n        \"voltage\": config[\"voltage\"] + random.uniform(-5, 5),\n        \"power_watts\": power_watts + random.uniform(-2, 2),\n        \"timestamp\": (datetime.now() - timedelta(hours=hours_ago)).isoformat(),\n        \"auto_controlled\": is_auto_controlled,\n        \"manual_override\": is_manual_override\n    }\n\ndef add_device_events():\n    \"\"\"Add specific device waste/saved events\"\"\"\n    print(\"📊 Adding device waste/saved events...\")\n    \n    for device_name, config in DEVICES_CONFIG.items():\n        # Calculate waste for the day\n        waste_power = config[\"power_on\"] - config[\"power_standby\"]\n        waste_hours = config[\"waste_hours_per_day\"]\n        saved_hours = config[\"auto_saved_hours\"]\n        \n        if waste_hours > 0:\n            # Add waste event (without automation)\n            waste_event = {\n                \"device_name\": device_name,\n                \"event_type\": \"waste\",\n                \"power_watts\": waste_power,\n                \"duration_minutes\": int(waste_hours * 60),\n                \"auto_saved\": False,\n                \"timestamp\": (datetime.now() - timedelta(hours=12)).isoformat()\n            }\n            \n            response = requests.post(f\"{API_URL}/api/device-event\", json=waste_event)\n            if response.status_code == 201:\n                result = response.json()\n                print(f\"  ❌ {device_name}: ${result['cost_wasted']:.4f} wasted without automation\")\n        \n        if saved_hours > 0:\n            # Add saved event (with automation)\n            saved_event = {\n                \"device_name\": device_name,\n                \"event_type\": \"saved\",\n                \"power_watts\": waste_power,\n                \"duration_minutes\": int(saved_hours * 60),\n                \"auto_saved\": True,\n                \"timestamp\": (datetime.now() - timedelta(hours=6)).isoformat()\n            }\n            \n            response = requests.post(f\"{API_URL}/api/device-event\", json=saved_event)\n            if response.status_code == 201:\n                result = response.json()\n                print(f\"  ✅ {device_name}: ${result['cost_wasted']:.4f} saved with automation\")\n\ndef generate_historical_data(hours=24):\n    \"\"\"Generate historical data for the past N hours\"\"\"\n    print(f\"🔄 Generating {hours} hours of realistic device data...\")\n    \n    for hours_ago in range(hours, 0, -1):\n        for device_name, config in DEVICES_CONFIG.items():\n            data = generate_device_data(device_name, config, hours_ago)\n            \n            response = requests.post(f\"{API_URL}/api/electricity/add\", json=data)\n            if response.status_code == 201:\n                power = data[\"power_watts\"]\n                auto = \"🤖\" if data[\"auto_controlled\"] else \"👤\"\n                mode = data[\"mode\"]\n                print(f\"  {auto} {device_name} ({hours_ago}h ago): {power:.1f}W - {mode}\")\n            \n            time.sleep(0.1)  # Small delay to avoid overwhelming the API\n\ndef show_savings_summary():\n    \"\"\"Display the savings summary\"\"\"\n    print(\"\\n📈 Fetching savings summary...\")\n    \n    try:\n        response = requests.get(f\"{API_URL}/api/savings\")\n        if response.status_code == 200:\n            data = response.json()\n            if data[\"status\"] == \"success\":\n                savings = data[\"data\"]\n                print(f\"\\n💰 SMART SAVINGS SUMMARY:\")\n                print(f\"  ❌ Wasted (Without Automation): ${savings['total_waste_cost']:.2f}\")\n                print(f\"  ✅ Saved (With Automation): ${savings['total_saved_cost']:.2f}\")\n                print(f\"  🎯 Net Savings: ${savings['net_savings']:.2f}\")\n                print(f\"  ⚡ Cost per kWh: ${savings['cost_per_kwh']:.2f}\")\n                \n                print(f\"\\n📱 DEVICE BREAKDOWN:\")\n                for device in savings[\"device_details\"]:\n                    net = device[\"saved_cost\"] - device[\"waste_cost\"]\n                    icon = \"✅\" if net >= 0 else \"❌\"\n                    print(f\"  {icon} {device['device_name']}: {format(net, '+.2f')}\")\n    except Exception as e:\n        print(f\"❌ Error fetching savings: {e}\")\n\ndef main():\n    print(\"🚀 EcoTrack Smart Savings Test Data Generator\")\n    print(\"=\" * 50)\n    \n    # First check if API is running\n    try:\n        response = requests.get(f\"{API_URL}/\")\n        if response.status_code != 200:\n            print(\"❌ API is not running. Please start the backend first.\")\n            return\n    except:\n        print(\"❌ Cannot connect to API. Please start the backend first.\")\n        return\n    \n    # Generate data\n    generate_historical_data(24)\n    add_device_events()\n    \n    # Show summary\n    show_savings_summary()\n    \n    print(f\"\\n✅ Test data generation complete!\")\n    print(f\"🌐 Open http://localhost:5000 to see your Smart Savings Monitor\")\n\nif __name__ == \"__main__\":\n    main()",
+        "additions": 2,
+        "deletions": 1
+      },
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077774509,
+      "end": 1768077775210
+    }
+  }
+}

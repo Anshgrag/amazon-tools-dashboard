@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba98ca3850015e0ZGhwcWJdfSJ",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768076125070
+  },
+  "summary": {
+    "title": "User flow: add “if user didn” clause",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9b95ed3001CQeU00ZjW2r7oA",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b94f8d002R3ClU1pYdRgBGC",
+  "type": "tool",
+  "callID": "call_1f91acaa58864ee6b267e61f",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"python3.*8000\"",
+      "description": "Stop frontend server"
+    },
+    "output": "",
+    "title": "Stop frontend server",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Stop frontend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079056604,
+      "end": 1768079056715
+    }
+  }
+}

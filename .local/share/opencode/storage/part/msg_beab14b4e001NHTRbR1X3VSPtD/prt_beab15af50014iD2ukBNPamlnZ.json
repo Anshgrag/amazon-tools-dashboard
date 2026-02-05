@@ -1,0 +1,27 @@
+{
+  "id": "prt_beab15af50014iD2ukBNPamlnZ",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab14b4e001NHTRbR1X3VSPtD",
+  "type": "tool",
+  "callID": "call_53530305",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:5000/api/devices/1/toggle -H \"Content-Type: application/json\" -d '{\"state\": \"off\"}'",
+      "description": "Test turning the device off via API"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    84  100    68  100    16  10391   2444 --:--:-- --:--:-- --:--:-- 14000\n{\n  \"message\": \"Tuya credentials not loaded\",\n  \"status\": \"error\"\n}\n",
+    "title": "Test turning the device off via API",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    84  100    68  100    16  10391   2444 --:--:-- --:--:-- --:--:-- 14000\n{\n  \"message\": \"Tuya credentials not loaded\",\n  \"status\": \"error\"\n}\n",
+      "exit": 0,
+      "description": "Test turning the device off via API",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769169050366,
+      "end": 1769169050401
+    }
+  }
+}

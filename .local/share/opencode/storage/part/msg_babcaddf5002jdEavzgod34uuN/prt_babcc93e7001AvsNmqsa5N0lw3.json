@@ -1,0 +1,27 @@
+{
+  "id": "prt_babcc93e7001AvsNmqsa5N0lw3",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_babcaddf5002jdEavzgod34uuN",
+  "type": "tool",
+  "callID": "call_69de8481eeac4eb491310b96",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"🔍 TESTING PERIOD FILTERING:\"\necho \"\"\necho \"Testing Today's data:\"\ncurl -s \"http://localhost:5000/api/savings?period=today\" | jq '{total_waste: .data.total_waste_cost, total_saved: .data.total_saved_cost}'\necho \"\"\necho \"Testing Month's data:\"\ncurl -s \"http://localhost:5000/api/savings?period=month\" | jq '{total_waste: .data.total_waste_cost, total_saved: .data.total_saved_cost}'\necho \"\"\necho \"Testing Year's data:\"\ncurl -s \"http://localhost:5000/api/savings?period=year\" | jq '{total_waste: .data.total_waste_cost, total_saved: .data.total_saved_cost}'",
+      "description": "Test different period filters"
+    },
+    "output": "🔍 TESTING PERIOD FILTERING:\n\nTesting Today's data:\n{\n  \"total_waste\": 48.01,\n  \"total_saved\": 9.89\n}\n\nTesting Month's data:\n{\n  \"total_waste\": 48.01,\n  \"total_saved\": 9.89\n}\n\nTesting Year's data:\n{\n  \"total_waste\": 48.01,\n  \"total_saved\": 9.89\n}\n",
+    "title": "Test different period filters",
+    "metadata": {
+      "output": "🔍 TESTING PERIOD FILTERING:\n\nTesting Today's data:\n{\n  \"total_waste\": 48.01,\n  \"total_saved\": 9.89\n}\n\nTesting Month's data:\n{\n  \"total_waste\": 48.01,\n  \"total_saved\": 9.89\n}\n\nTesting Year's data:\n{\n  \"total_waste\": 48.01,\n  \"total_saved\": 9.89\n}\n",
+      "exit": 0,
+      "description": "Test different period filters",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768113869824,
+      "end": 1768113869865
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "prt_ba9b35663001h3z4tcqtSX3QX9",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b33dc400229qPlLAm7t13LK",
+  "type": "tool",
+  "callID": "call_a425d73ae4c148a19f5348bb",
+  "tool": "question",
+  "state": {
+    "status": "completed",
+    "input": {
+      "questions": [
+        {
+          "question": "I can see the issues - formatCurrency is removing decimals, styling doesn't match, and layout needs fixes. What currency format do you prefer?",
+          "header": "Currency",
+          "options": [
+            {
+              "label": "$0.00 (show cents)",
+              "description": "Traditional format like $30.68"
+            },
+            {
+              "label": "$0 (whole dollars)",
+              "description": "Simplified format like $31"
+            },
+            {
+              "label": "€0.00 (euro style)",
+              "description": "Use euro symbol"
+            }
+          ]
+        },
+        {
+          "question": "The savings card needs to match existing dark theme design. What visual style should I use?",
+          "header": "Visual Style",
+          "options": [
+            {
+              "label": "Match existing cards",
+              "description": "Same borders, shadows, colors"
+            },
+            {
+              "label": "Accent colors emphasis",
+              "description": "Green/red highlights for savings"
+            },
+            {
+              "label": "Minimal design",
+              "description": "Clean, subtle styling"
+            }
+          ]
+        }
+      ]
+    },
+    "output": "User has answered your questions: \"I can see the issues - formatCurrency is removing decimals, styling doesn't match, and layout needs fixes. What currency format do you prefer?\"=\"$0.00 (show cents)\", \"The savings card needs to match existing dark theme design. What visual style should I use?\"=\"Match existing cards\". You can now continue with the user's answers in mind.",
+    "title": "Asked 2 questions",
+    "metadata": {
+      "answers": [
+        [
+          "$0.00 (show cents)"
+        ],
+        [
+          "Match existing cards"
+        ]
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078661232,
+      "end": 1768078727172
+    }
+  }
+}

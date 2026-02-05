@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6fbe0e6001HSuZ8AdycsrEBN",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fbd100001AE8i1BFHwOVhAL",
+  "type": "tool",
+  "callID": "call_function_gk047kqbyuqn_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/backend/app.py",
+      "limit": 30,
+      "offset": 310
+    },
+    "output": "<file>\n00311|         cost_per_kwh = 0.12\n00312|         power_kw = power_watts / 1000\n00313|         duration_hours = duration_minutes / 60\n00314|         cost_wasted = power_kw * duration_hours * cost_per_kwh\n00315|         \n00316|         conn = get_db_connection()\n00317|         cursor = conn.cursor()\n00318|         cursor.execute('''\n00319|             INSERT INTO device_events (device_name, event_type, power_watts, duration_minutes, cost_wasted, timestamp, auto_saved)\n00320|             VALUES (?, ?, ?, ?, ?, ?, ?)\n00321|         ''', (device_name, event_type, power_watts, duration_minutes, cost_wasted, timestamp, auto_saved))\n00322|         conn.commit()\n00323|         conn.close()\n00324|         \n00325|         return jsonify({\n00326|             'status': 'success',\n00327|             'message': 'Device event recorded successfully',\n00328|             'cost_wasted': round(cost_wasted, 4)\n00329|         }), 201\n00330|         \n00331|     except Exception as e:\n00332|         return jsonify({'status': 'error', 'message': str(e)}), 500\n00333| \n00334| @app.route('/api/rooms/usage', methods=['GET'])\n00335| def get_rooms_usage():\n00336|     try:\n00337|         period = request.args.get('period', 'month')\n00338|         print(f\"=== ROOMS API CALLED WITH PERIOD: {period} ===\")\n00339|         \n00340|         conn = get_db_connection()\n\n(File has more lines. Use 'offset' parameter to read beyond line 340)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/backend/app.py",
+    "metadata": {
+      "preview": "        cost_per_kwh = 0.12\n        power_kw = power_watts / 1000\n        duration_hours = duration_minutes / 60\n        cost_wasted = power_kw * duration_hours * cost_per_kwh\n        \n        conn = get_db_connection()\n        cursor = conn.cursor()\n        cursor.execute('''\n            INSERT INTO device_events (device_name, event_type, power_watts, duration_minutes, cost_wasted, timestamp, auto_saved)\n            VALUES (?, ?, ?, ?, ?, ?, ?)\n        ''', (device_name, event_type, power_watts, duration_minutes, cost_wasted, timestamp, auto_saved))\n        conn.commit()\n        conn.close()\n        \n        return jsonify({\n            'status': 'success',\n            'message': 'Device event recorded successfully',\n            'cost_wasted': round(cost_wasted, 4)\n        }), 201\n        ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769106825996,
+      "end": 1769106826009
+    }
+  }
+}

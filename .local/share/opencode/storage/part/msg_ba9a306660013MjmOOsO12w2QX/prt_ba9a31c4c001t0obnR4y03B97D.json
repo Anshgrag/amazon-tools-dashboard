@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a31c4c001t0obnR4y03B97D",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a306660013MjmOOsO12w2QX",
+  "type": "tool",
+  "callID": "call_b1a162c46e1446b8909e3acc",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl http://localhost:5000",
+      "description": "Test API endpoint"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   266  100   266    0     0  57228      0 --:--:-- --:--:-- --:--:-- 66500\n{\n  \"endpoints\": {\n    \"Electricity\": [\n      \"POST /api/electricity/add\",\n      \"GET /api/electricity/history\"\n    ],\n    \"Savings\": [\n      \"GET /api/savings\",\n      \"POST /api/device-event\"\n    ]\n  },\n  \"message\": \"EcoTrack API is running!\",\n  \"version\": \"1.0\"\n}\n",
+    "title": "Test API endpoint",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   266  100   266    0     0  57228      0 --:--:-- --:--:-- --:--:-- 66500\n{\n  \"endpoints\": {\n    \"Electricity\": [\n      \"POST /api/electricity/add\",\n      \"GET /api/electricity/history\"\n    ],\n    \"Savings\": [\n      \"GET /api/savings\",\n      \"POST /api/device-event\"\n    ]\n  },\n  \"message\": \"EcoTrack API is running!\",\n  \"version\": \"1.0\"\n}\n",
+      "exit": 0,
+      "description": "Test API endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077597781,
+      "end": 1768077599839
+    }
+  }
+}

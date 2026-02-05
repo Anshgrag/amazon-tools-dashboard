@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "responderUsername": "",
+  "initialLocation": "panel",
+  "requests": [],
+  "sessionId": "64d2a891-8896-43fd-8511-7b9b1c5340e2",
+  "creationDate": 1767095344442,
+  "lastMessageDate": 1767095344442,
+  "hasPendingEdits": false,
+  "contrib": {
+    "chatDynamicVariableModel": []
+  },
+  "attachments": [],
+  "mode": {
+    "id": "agent",
+    "kind": "agent"
+  },
+  "inputText": "@workspace /explain too many arguments for format [-Wformat-extra-args]",
+  "selections": [
+    {
+      "startLineNumber": 1,
+      "startColumn": 72,
+      "endLineNumber": 1,
+      "endColumn": 72,
+      "selectionStartLineNumber": 1,
+      "selectionStartColumn": 72,
+      "positionLineNumber": 1,
+      "positionColumn": 72
+    }
+  ]
+}

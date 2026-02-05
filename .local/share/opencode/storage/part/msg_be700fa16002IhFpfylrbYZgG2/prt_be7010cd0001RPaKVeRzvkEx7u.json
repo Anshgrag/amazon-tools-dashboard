@@ -1,0 +1,27 @@
+{
+  "id": "prt_be7010cd0001RPaKVeRzvkEx7u",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be700fa16002IhFpfylrbYZgG2",
+  "type": "tool",
+  "callID": "call_function_z1wwd222gfd0_2",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 & && sleep 2 && echo \"Frontend started\"",
+      "description": "Start frontend server"
+    },
+    "output": "/bin/bash: -c: line 1: syntax error near unexpected token `&&'\n/bin/bash: -c: line 1: `cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 & && sleep 2 && echo \"Frontend started\"'\n",
+    "title": "Start frontend server",
+    "metadata": {
+      "output": "/bin/bash: -c: line 1: syntax error near unexpected token `&&'\n/bin/bash: -c: line 1: `cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 & && sleep 2 && echo \"Frontend started\"'\n",
+      "exit": 2,
+      "description": "Start frontend server",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107164969,
+      "end": 1769107164975
+    }
+  }
+}

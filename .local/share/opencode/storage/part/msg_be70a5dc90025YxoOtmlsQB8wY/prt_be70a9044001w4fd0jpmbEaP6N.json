@@ -1,0 +1,86 @@
+{
+  "id": "prt_be70a9044001w4fd0jpmbEaP6N",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70a5dc90025YxoOtmlsQB8wY",
+  "type": "tool",
+  "callID": "call_function_j7v8yjkux9j8_1",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Create particle animation system",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Add cherry blossom animation for Japan",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add autumn leaves animation for Germany",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add snow animation for Nordic",
+          "id": "4",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add tropical particles for Tropical theme",
+          "id": "5",
+          "priority": "medium",
+          "status": "pending"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Create particle animation system\",\n    \"id\": \"1\",\n    \"priority\": \"high\",\n    \"status\": \"in_progress\"\n  },\n  {\n    \"content\": \"Add cherry blossom animation for Japan\",\n    \"id\": \"2\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Add autumn leaves animation for Germany\",\n    \"id\": \"3\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Add snow animation for Nordic\",\n    \"id\": \"4\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Add tropical particles for Tropical theme\",\n    \"id\": \"5\",\n    \"priority\": \"medium\",\n    \"status\": \"pending\"\n  }\n]",
+    "title": "5 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Create particle animation system",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Add cherry blossom animation for Japan",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add autumn leaves animation for Germany",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add snow animation for Nordic",
+          "id": "4",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add tropical particles for Tropical theme",
+          "id": "5",
+          "priority": "medium",
+          "status": "pending"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107789178,
+      "end": 1769107789183
+    }
+  }
+}

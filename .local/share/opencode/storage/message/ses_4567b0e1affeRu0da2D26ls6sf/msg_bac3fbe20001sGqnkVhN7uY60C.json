@@ -1,0 +1,17 @@
+{
+  "id": "msg_bac3fbe20001sGqnkVhN7uY60C",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768121417275
+  },
+  "summary": {
+    "title": "Conversation: summarize and save dialogue text",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

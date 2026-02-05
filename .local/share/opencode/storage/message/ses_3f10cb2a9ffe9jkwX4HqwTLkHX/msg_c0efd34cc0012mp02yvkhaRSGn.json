@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0efd34cc0012mp02yvkhaRSGn",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "role": "user",
+  "time": {
+    "created": 1769778001115
+  },
+  "summary": {
+    "title": "Concise request: under-100-word summary",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

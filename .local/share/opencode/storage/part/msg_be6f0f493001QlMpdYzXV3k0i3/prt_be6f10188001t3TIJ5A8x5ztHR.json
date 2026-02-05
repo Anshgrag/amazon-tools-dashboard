@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6f10188001t3TIJ5A8x5ztHR",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f0f493001QlMpdYzXV3k0i3",
+  "type": "reasoning",
+  "text": "Let me see the CSS for tab-pane to verify it's correct.",
+  "metadata": {
+    "anthropic": {
+      "signature": "9a201fcdc91fc82dc0579ac7e3f38107bd2a9651aed7a62c36cb0ef24b92e7e1"
+    }
+  },
+  "time": {
+    "start": 1769106112905,
+    "end": 1769106113144
+  }
+}

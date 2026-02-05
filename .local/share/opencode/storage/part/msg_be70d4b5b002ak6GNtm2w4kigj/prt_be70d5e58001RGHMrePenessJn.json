@@ -1,0 +1,27 @@
+{
+  "id": "prt_be70d5e58001RGHMrePenessJn",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70d4b5b002ak6GNtm2w4kigj",
+  "type": "tool",
+  "callID": "call_function_49yh1s2eb6x3_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/script.js | grep -A8 \"germany:\" | grep emoji",
+      "description": "Verify Germany particle config"
+    },
+    "output": "        emoji: ['🍂', '🪵', '🌰', '🍁'],\n",
+    "title": "Verify Germany particle config",
+    "metadata": {
+      "output": "        emoji: ['🍂', '🪵', '🌰', '🍁'],\n",
+      "exit": 0,
+      "description": "Verify Germany particle config",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107971884,
+      "end": 1769107971918
+    }
+  }
+}

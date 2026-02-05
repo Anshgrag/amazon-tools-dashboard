@@ -1,0 +1,16 @@
+{
+  "id": "prt_be700f338001TVkqWeKIGeeshx",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be700e470002Y4U06310LI9a83",
+  "type": "reasoning",
+  "text": "Let me restart the servers",
+  "metadata": {
+    "anthropic": {
+      "signature": "8d4a3f432ad5c134e93ef8e57b48817c3317f876c52b7b371620f3835d7ae99d"
+    }
+  },
+  "time": {
+    "start": 1769107157816,
+    "end": 1769107158409
+  }
+}

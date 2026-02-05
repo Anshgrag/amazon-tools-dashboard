@@ -1,0 +1,28 @@
+{
+  "id": "prt_be55aa03d0016eJUGONEAAa19F",
+  "sessionID": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "messageID": "msg_be55a7b9d001CSE9Hr9EPOMAyo",
+  "type": "tool",
+  "callID": "call_ab421fd63010401bae913079",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "which pandoc docx2txt unzip 2>/dev/null",
+      "description": "Check for DOCX extraction tools"
+    },
+    "output": "/usr/bin/unzip\n",
+    "title": "Check for DOCX extraction tools",
+    "metadata": {
+      "output": "/usr/bin/unzip\n",
+      "exit": 1,
+      "description": "Check for DOCX extraction tools",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769079480382,
+      "end": 1769079480391,
+      "compacted": 1769080776919
+    }
+  }
+}

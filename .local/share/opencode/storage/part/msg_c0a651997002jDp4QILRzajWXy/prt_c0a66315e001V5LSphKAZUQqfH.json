@@ -1,0 +1,1169 @@
+{
+  "id": "prt_c0a66315e001V5LSphKAZUQqfH",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a651997002jDp4QILRzajWXy",
+  "type": "tool",
+  "callID": "call_eba5882bd6cd450ca68a7056",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n/* Custom animations */\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n@keyframes pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.5; }\n}\n\n@keyframes slideIn {\n  from { transform: translateX(-100%); }\n  to { transform: translateX(0); }\n}\n\n.animate-fade-in {\n  animation: fadeIn 0.5s ease-out;\n}\n\n.animate-pulse-slow {\n  animation: pulse 2s infinite;\n}\n\n.animate-slide-in {\n  animation: slideIn 0.3s ease-out;\n}\n\n/* Custom scrollbar */\n::-webkit-scrollbar {\n  width: 6px;\n}\n\n::-webkit-scrollbar-track {\n  background: #f1f1f1;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #888;\n  border-radius: 3px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: #555;\n}\n\n/* Gradient backgrounds */\n.gradient-primary {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n}\n\n.gradient-secondary {\n  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n}\n\n.gradient-success {\n  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);\n}\n\n.gradient-warning {\n  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);\n}\n\n.gradient-danger {\n  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);\n}\n\n/* Card styles */\n.card-hover {\n  transition: all 0.3s ease;\n}\n\n.card-hover:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);\n}\n\n/* Button styles */\n.btn-primary {\n  @apply bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200;\n}\n\n.btn-secondary {\n  @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200;\n}\n\n.btn-success {\n  @apply bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200;\n}\n\n.btn-danger {\n  @apply bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors duration-200;\n}\n\n.btn-warning {\n  @apply bg-yellow-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-yellow-700 transition-colors duration-200;\n}\n\n/* Form styles */\n.form-input {\n  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;\n}\n\n.form-label {\n  @apply block text-sm font-medium text-gray-700 mb-1;\n}\n\n.form-error {\n  @apply text-red-600 text-sm mt-1;\n}\n\n/* Loading spinner */\n.spinner {\n  border: 2px solid #f3f3f3;\n  border-top: 2px solid #3498db;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  animation: spin 1s linear infinite;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n/* Mobile responsive */\n@media (max-width: 640px) {\n  .container {\n    padding-left: 1rem;\n    padding-right: 1rem;\n  }\n}\n\n/* Dark mode support */\n@media (prefers-color-scheme: dark) {\n  .card-hover:hover {\n    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);\n  }\n}",
+      "filePath": "/home/bot4u/Desktop/eye project/frontend/src/styles/globals.css"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/config.py\">\nERROR [1:6] Import \"pydantic_settings\" could not be resolved\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/database.py\">\nERROR [1:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [2:6] Import \"sqlalchemy.ext.declarative\" could not be resolved\nERROR [3:6] Import \"sqlalchemy\" could not be resolved\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/security.py\">\nERROR [37:22] Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\nERROR [38:20] Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"\nERROR [39:33] Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/api/auth.py\">\nERROR [3:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [9:6] Import \"app.schemas.auth\" could not be resolved\nERROR [10:6] Import \"app.models.auth\" could not be resolved\nERROR [91:34] \"get_current_user\" is not defined\nERROR [102:25] Cannot access attribute \"credentials\" for class \"str\"\n  Attribute \"credentials\" is unknown\nERROR [90:11] Function declaration \"get_current_user\" is obscured by a declaration of the same name\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/api/analysis.py\">\nERROR [2:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [10:6] Import \"app.schemas.analysis\" could not be resolved\nERROR [11:6] Import \"app.models.auth\" could not be resolved\nERROR [12:6] Import \"app.models.analysis\" could not be resolved\nERROR [14:6] Import \"app.services.ml_service\" could not be resolved\nERROR [15:6] Import \"app.services.image_service\" could not be resolved\nERROR [8:31] \"get_current_user\" is unknown import symbol\nERROR [190:19] \"scan\" is possibly unbound\n</diagnostics>",
+    "title": "Desktop/eye project/frontend/src/styles/globals.css",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/eye project/backend/app/main.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/config.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 22
+              }
+            },
+            "message": "Import \"pydantic_settings\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/database.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 31
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.declarative\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 15
+              }
+            },
+            "message": "Import \"sqlalchemy\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/security.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 9
+              }
+            },
+            "message": "Import \"jose\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 27
+              },
+              "end": {
+                "line": 2,
+                "character": 30
+              }
+            },
+            "message": "Import \"jose.jwt\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 5
+              },
+              "end": {
+                "line": 3,
+                "character": 20
+              }
+            },
+            "message": "Import \"passlib.context\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 36,
+                "character": 21
+              },
+              "end": {
+                "line": 36,
+                "character": 39
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 37,
+                "character": 19
+              },
+              "end": {
+                "line": 37,
+                "character": 37
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 38,
+                "character": 32
+              },
+              "end": {
+                "line": 38,
+                "character": 51
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/exceptions.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/api/auth.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 8,
+                "character": 5
+              },
+              "end": {
+                "line": 8,
+                "character": 21
+              }
+            },
+            "message": "Import \"app.schemas.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 5
+              },
+              "end": {
+                "line": 9,
+                "character": 20
+              }
+            },
+            "message": "Import \"app.models.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 90,
+                "character": 33
+              },
+              "end": {
+                "line": 90,
+                "character": 49
+              }
+            },
+            "message": "\"get_current_user\" is not defined",
+            "severity": 1,
+            "code": "reportUndefinedVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportUndefinedVariable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 101,
+                "character": 24
+              },
+              "end": {
+                "line": 101,
+                "character": 35
+              }
+            },
+            "message": "Cannot access attribute \"credentials\" for class \"str\"\n  Attribute \"credentials\" is unknown",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 89,
+                "character": 10
+              },
+              "end": {
+                "line": 89,
+                "character": 26
+              }
+            },
+            "message": "Function declaration \"get_current_user\" is obscured by a declaration of the same name",
+            "severity": 1,
+            "code": "reportRedeclaration",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportRedeclaration"
+            },
+            "relatedInformation": [
+              {
+                "location": {
+                  "uri": "file:///home/bot4u/Desktop/eye%20project/backend/app/api/auth.py",
+                  "range": {
+                    "start": {
+                      "line": 96,
+                      "character": 10
+                    },
+                    "end": {
+                      "line": 96,
+                      "character": 26
+                    }
+                  }
+                },
+                "message": "See function declaration"
+              }
+            ]
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/analysis.py": [
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 5
+              },
+              "end": {
+                "line": 9,
+                "character": 25
+              }
+            },
+            "message": "Import \"app.schemas.analysis\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 10,
+                "character": 5
+              },
+              "end": {
+                "line": 10,
+                "character": 20
+              }
+            },
+            "message": "Import \"app.models.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 11,
+                "character": 5
+              },
+              "end": {
+                "line": 11,
+                "character": 24
+              }
+            },
+            "message": "Import \"app.models.analysis\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 5
+              },
+              "end": {
+                "line": 13,
+                "character": 28
+              }
+            },
+            "message": "Import \"app.services.ml_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 14,
+                "character": 5
+              },
+              "end": {
+                "line": 14,
+                "character": 31
+              }
+            },
+            "message": "Import \"app.services.image_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 7,
+                "character": 30
+              },
+              "end": {
+                "line": 7,
+                "character": 46
+              }
+            },
+            "message": "\"get_current_user\" is unknown import symbol",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 189,
+                "character": 18
+              },
+              "end": {
+                "line": 189,
+                "character": 22
+              }
+            },
+            "message": "\"scan\" is possibly unbound",
+            "severity": 1,
+            "code": "reportPossiblyUnboundVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportPossiblyUnboundVariable"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/health.py": [
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 7
+              },
+              "end": {
+                "line": 3,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 7,
+                "character": 5
+              },
+              "end": {
+                "line": 7,
+                "character": 28
+              }
+            },
+            "message": "Import \"app.services.ml_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/ml/models/cnn_vit_hybrid.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 7
+              },
+              "end": {
+                "line": 0,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 7
+              },
+              "end": {
+                "line": 1,
+                "character": 15
+              }
+            },
+            "message": "Import \"torch.nn\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 7
+              },
+              "end": {
+                "line": 2,
+                "character": 29
+              }
+            },
+            "message": "Import \"torchvision.transforms\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 7
+              },
+              "end": {
+                "line": 3,
+                "character": 25
+              }
+            },
+            "message": "Import \"torchvision.models\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 5
+              },
+              "end": {
+                "line": 4,
+                "character": 17
+              }
+            },
+            "message": "Import \"transformers\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 208,
+                "character": 15
+              },
+              "end": {
+                "line": 208,
+                "character": 36
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/ml/training/train.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 7
+              },
+              "end": {
+                "line": 0,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 7
+              },
+              "end": {
+                "line": 1,
+                "character": 15
+              }
+            },
+            "message": "Import \"torch.nn\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 7
+              },
+              "end": {
+                "line": 2,
+                "character": 18
+              }
+            },
+            "message": "Import \"torch.optim\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 5
+              },
+              "end": {
+                "line": 3,
+                "character": 21
+              }
+            },
+            "message": "Import \"torch.utils.data\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 5
+              },
+              "end": {
+                "line": 4,
+                "character": 16
+              }
+            },
+            "message": "Import \"torchvision\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 10,
+                "character": 5
+              },
+              "end": {
+                "line": 10,
+                "character": 20
+              }
+            },
+            "message": "Import \"sklearn.metrics\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 11,
+                "character": 5
+              },
+              "end": {
+                "line": 11,
+                "character": 28
+              }
+            },
+            "message": "Import \"sklearn.model_selection\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 12,
+                "character": 7
+              },
+              "end": {
+                "line": 12,
+                "character": 24
+              }
+            },
+            "message": "Import \"matplotlib.pyplot\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 17,
+                "character": 7
+              },
+              "end": {
+                "line": 17,
+                "character": 21
+              }
+            },
+            "message": "Import \"albumentations\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 18,
+                "character": 5
+              },
+              "end": {
+                "line": 18,
+                "character": 27
+              }
+            },
+            "message": "Import \"albumentations.pytorch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 20,
+                "character": 5
+              },
+              "end": {
+                "line": 20,
+                "character": 20
+              }
+            },
+            "message": "Import \".cnn_vit_hybrid\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 7
+              },
+              "end": {
+                "line": 13,
+                "character": 14
+              }
+            },
+            "message": "Import \"seaborn\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 218,
+                "character": 19
+              },
+              "end": {
+                "line": 218,
+                "character": 24
+              }
+            },
+            "message": "\"train\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 223,
+                "character": 53
+              },
+              "end": {
+                "line": 223,
+                "character": 70
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"iterable\" of type \"Iterable[_T@enumerate]\" in function \"__new__\"\n  Type \"Unknown | None\" is not assignable to type \"Iterable[_T@enumerate]\"\n    \"None\" is incompatible with protocol \"Iterable[_T@enumerate]\"\n      \"__iter__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 230,
+                "character": 22
+              },
+              "end": {
+                "line": 230,
+                "character": 40
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 245,
+                "character": 53
+              },
+              "end": {
+                "line": 245,
+                "character": 70
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"obj\" of type \"Sized\" in function \"len\"\n  Type \"Unknown | None\" is not assignable to type \"Sized\"\n    \"None\" is incompatible with protocol \"Sized\"\n      \"__len__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 247,
+                "character": 36
+              },
+              "end": {
+                "line": 247,
+                "character": 53
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"obj\" of type \"Sized\" in function \"len\"\n  Type \"Unknown | None\" is not assignable to type \"Sized\"\n    \"None\" is incompatible with protocol \"Sized\"\n      \"__len__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 254,
+                "character": 19
+              },
+              "end": {
+                "line": 254,
+                "character": 23
+              }
+            },
+            "message": "\"eval\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 262,
+                "character": 34
+              },
+              "end": {
+                "line": 262,
+                "character": 49
+              }
+            },
+            "message": "Object of type \"None\" cannot be used as iterable value",
+            "severity": 1,
+            "code": "reportOptionalIterable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalIterable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 265,
+                "character": 26
+              },
+              "end": {
+                "line": 265,
+                "character": 44
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 276,
+                "character": 36
+              },
+              "end": {
+                "line": 276,
+                "character": 51
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"obj\" of type \"Sized\" in function \"len\"\n  Type \"Unknown | None\" is not assignable to type \"Sized\"\n    \"None\" is incompatible with protocol \"Sized\"\n      \"__len__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 355,
+                "character": 25
+              },
+              "end": {
+                "line": 355,
+                "character": 32
+              }
+            },
+            "message": "\"history\" is not defined",
+            "severity": 1,
+            "code": "reportUndefinedVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportUndefinedVariable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 356,
+                "character": 43
+              },
+              "end": {
+                "line": 356,
+                "character": 53
+              }
+            },
+            "message": "\"state_dict\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 394,
+                "character": 19
+              },
+              "end": {
+                "line": 394,
+                "character": 23
+              }
+            },
+            "message": "\"eval\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 399,
+                "character": 34
+              },
+              "end": {
+                "line": 399,
+                "character": 50
+              }
+            },
+            "message": "Object of type \"None\" cannot be used as iterable value",
+            "severity": 1,
+            "code": "reportOptionalIterable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalIterable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 401,
+                "character": 26
+              },
+              "end": {
+                "line": 401,
+                "character": 44
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          }
+        ]
+      },
+      "filepath": "/home/bot4u/Desktop/eye project/frontend/src/styles/globals.css",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769700995428,
+      "end": 1769700995439
+    }
+  }
+}

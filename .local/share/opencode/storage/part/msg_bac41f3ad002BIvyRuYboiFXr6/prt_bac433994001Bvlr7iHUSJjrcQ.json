@@ -1,0 +1,24 @@
+{
+  "id": "prt_bac433994001Bvlr7iHUSJjrcQ",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac41f3ad002BIvyRuYboiFXr6",
+  "type": "tool",
+  "callID": "call_89536ddd08dd43628972f971",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/AGENTS.md"
+    },
+    "output": "No files found",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project",
+    "metadata": {
+      "count": 0,
+      "truncated": false
+    },
+    "time": {
+      "start": 1768121645480,
+      "end": 1768121645532
+    }
+  }
+}

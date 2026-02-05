@@ -1,0 +1,27 @@
+{
+  "id": "prt_beab1da28001INJaK1SbXt2pky",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab1cff9001XsnDpngqWnZ313",
+  "type": "tool",
+  "callID": "call_27638156",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:5000/api/devices/1/toggle -H \"Content-Type: application/json\" -d '{\"state\": \"on\"}'",
+      "description": "Turn the device back on"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    76  100    61  100    15    111     27 --:--:-- --:--:-- --:--:--   138\r100    76  100    61  100    15    111     27 --:--:-- --:--:-- --:--:--   138\n{\n  \"message\": \"Device 1 turned on\",\n  \"status\": \"success\"\n}\n",
+    "title": "Turn the device back on",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    76  100    61  100    15    111     27 --:--:-- --:--:-- --:--:--   138\r100    76  100    61  100    15    111     27 --:--:-- --:--:-- --:--:--   138\n{\n  \"message\": \"Device 1 turned on\",\n  \"status\": \"success\"\n}\n",
+      "exit": 0,
+      "description": "Turn the device back on",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769169082933,
+      "end": 1769169083516
+    }
+  }
+}

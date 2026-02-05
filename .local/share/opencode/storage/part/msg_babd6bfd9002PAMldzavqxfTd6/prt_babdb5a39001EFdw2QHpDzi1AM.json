@@ -1,0 +1,134 @@
+{
+  "id": "prt_babdb5a39001EFdw2QHpDzi1AM",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_babd6bfd9002PAMldzavqxfTd6",
+  "type": "tool",
+  "callID": "call_2281d0dce47d477a93e74671",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "\"\"\"\nMulti-Period Smart Savings Test Data Generator\nGenerates data for different time periods to test filtering\n\"\"\"\n\nimport requests\nimport random\nimport time\nfrom datetime import datetime, timedelta\n\nAPI_URL = \"http://localhost:5000\"\nCOST_PER_KWH = 0.12\n\n# Device configurations\nDEVICES_CONFIG = {\n    \"TV\": {\"power_on\": 120, \"power_standby\": 3, \"voltage\": 230},\n    \"Router\": {\"power_on\": 15, \"power_standby\": 12, \"voltage\": 230},\n    \"Charger\": {\"power_on\": 25, \"power_standby\": 0.5, \"voltage\": 230},\n    \"Refrigerator\": {\"power_on\": 200, \"power_standby\": 50, \"voltage\": 230}\n}\n\ndef generate_device_data(device_name, config, hours_ago=0, period='month'):\n    \"\"\"Generate device data for specific time period\"\"\"\n    hour_of_day = (datetime.now().hour - hours_ago) % 24\n    \n    # Determine if data should be included based on period\n    days_ago = hours_ago // 24\n    \n    if period == 'today' and days_ago >= 1:\n        return None\n    elif period == 'month' and days_ago >= 30:\n        return None\n    elif period == 'year' and days_ago >= 365:\n        return None\n    \n    # Simulate different scenarios\n    is_auto_controlled = random.random() < 0.3\n    is_manual_override = random.random() < 0.1\n    \n    # Determine power state based on time and automation\n    if device_name == \"Router\":\n        power_watts = config[\"power_on\"]\n        mode = \"ON\"\n    elif device_name == \"Refrigerator\":\n        if random.random() < 0.7:\n            power_watts = config[\"power_on\"] if not is_auto_controlled else config[\"power_standby\"]\n            mode = \"ON\"\n        else:\n            power_watts = config[\"power_standby\"]\n            mode = \"Standby\"\n    elif device_name == \"TV\":\n        if 18 <= hour_of_day <= 23 and days_ago == 0:  # Evening today\n            if is_auto_controlled and random.random() < 0.4:\n                power_watts = config[\"power_standby\"]\n                mode = \"Standby\"\n                is_auto_controlled = True\n            else:\n                power_watts = config[\"power_on\"]\n                mode = \"ON\"\n        else:\n            power_watts = config[\"power_standby\"]\n            mode = \"Standby\"\n    else:  # Charger\n        if 7 <= hour_of_day <= 9 or 19 <= hour_of_day <= 23:  # Charging times\n            if is_auto_controlled and random.random() < 0.6:\n                power_watts = config[\"power_standby\"]\n                mode = \"Standby\"\n                is_auto_controlled = True\n            else:\n                power_watts = config[\"power_on\"]\n                mode = \"ON\"\n        else:\n            power_watts = config[\"power_standby\"]\n            mode = \"Standby\"\n    \n    return {\n        \"device_name\": device_name,\n        \"mode\": mode,\n        \"voltage\": config[\"voltage\"] + random.uniform(-5, 5),\n        \"power_watts\": power_watts + random.uniform(-2, 2),\n        \"timestamp\": (datetime.now() - timedelta(hours=hours_ago)).isoformat(),\n        \"auto_controlled\": is_auto_controlled,\n        \"manual_override\": is_manual_override\n    }\n\ndef generate_period_data(period, hours_to_generate):\n    \"\"\"Generate data for specific period\"\"\"\n    print(f\"🔄 Generating {hours_to_generate} hours of data for {period.upper()}...\")\n    \n    for hours_ago in range(hours_to_generate, 0, -1):\n        for device_name, config in DEVICES_CONFIG.items():\n            data = generate_device_data(device_name, config, hours_ago, period)\n            \n            if data:  # Only add if data should be included for this period\n                response = requests.post(f\"{API_URL}/api/electricity/add\", json=data)\n                if response.status_code == 201:\n                    auto = \"🤖\" if data[\"auto_controlled\"] else \"👤\"\n                    mode = data[\"mode\"]\n                    power = data[\"power_watts\"]\n                    print(f\"  {auto} {device_name} ({hours_ago}h ago): {power:.1f}W - {mode}\")\n                else:\n                    print(f\"  ❌ Failed to add data for {device_name}\")\n        \n        time.sleep(0.05)  # Small delay to avoid overwhelming API\n    \n    print(f\"✅ {period.upper()} data generation complete!\")\n\ndef add_device_events(period):\n    \"\"\"Add device events for specific period\"\"\"\n    print(f\"📊 Adding {period} device events...\")\n    \n    for device_name, config in DEVICES_CONFIG.items():\n        waste_power = config[\"power_on\"] - config[\"power_standby\"]\n        \n        # Adjust waste/saved hours based on period\n        if period == 'today':\n            waste_hours = random.uniform(2, 4)\n            saved_hours = random.uniform(1, 2)\n        elif period == 'month':\n            waste_hours = random.uniform(60, 120)\n            saved_hours = random.uniform(30, 60)\n        elif period == 'year':\n            waste_hours = random.uniform(730, 1460)\n            saved_hours = random.uniform(365, 730)\n        else:\n            waste_hours = 60\n            saved_hours = 30\n        \n        # Add waste event\n        waste_event = {\n            \"device_name\": device_name,\n            \"event_type\": \"waste\",\n            \"power_watts\": waste_power,\n            \"duration_minutes\": int(waste_hours * 60),\n            \"auto_saved\": False,\n            \"timestamp\": (datetime.now() - timedelta(hours=12)).isoformat()\n        }\n        \n        response = requests.post(f\"{API_URL}/api/device-event\", json=waste_event)\n        if response.status_code == 201:\n            result = response.json()\n            print(f\"  ❌ {device_name}: ${result['cost_wasted']:.4f} wasted\")\n        \n        # Add saved event (if significant)\n        if saved_hours > 1:\n            saved_event = {\n                \"device_name\": device_name,\n                \"event_type\": \"saved\",\n                \"power_watts\": waste_power,\n                \"duration_minutes\": int(saved_hours * 60),\n                \"auto_saved\": True,\n                \"timestamp\": (datetime.now() - timedelta(hours=6)).isoformat()\n            }\n            \n            response = requests.post(f\"{API_URL}/api/device-event\", json=saved_event)\n            if response.status_code == 201:\n                result = response.json()\n                print(f\"  ✅ {device_name}: ${result['cost_wasted']:.4f} saved\")\n\ndef test_period_filtering():\n    \"\"\"Test that period filtering works correctly\"\"\"\n    print(\"\\n🔍 Testing Period Filtering...\")\n    \n    periods = ['today', 'month', 'year']\n    for period in periods:\n        try:\n            response = requests.get(f\"{API_URL}/api/savings?period={period}\")\n            if response.status_code == 200:\n                result = response.json()\n                if result[\"status\"] == \"success\":\n                    data = result[\"data\"]\n                    print(f\"  ✅ {period.upper()}: Waste=${data['total_waste_cost']:.2f}, Saved=${data['total_saved_cost']:.2f}\")\n                else:\n                    print(f\"  ❌ {period.upper()}: API error\")\n            else:\n                print(f\"  ❌ {period.upper()}: HTTP {response.status_code}\")\n        except Exception as e:\n            print(f\"  ❌ {period.upper()}: {e}\")\n\ndef main():\n    print(\"🚀 Multi-Period Smart Savings Test Data Generator\")\n    print(\"=\" * 60)\n    \n    # Check if API is running\n    try:\n        response = requests.get(f\"{API_URL}/\")\n        if response.status_code != 200:\n            print(\"❌ API is not running. Please start the backend first.\")\n            return\n    except:\n        print(\"❌ Cannot connect to API. Please start the backend first.\")\n        return\n    \n    # Generate data for all periods\n    periods_to_generate = {\n        'today': 24,\n        'month': 24 * 7,  # 1 week of data\n        'year': 24 * 2     # 2 days of data\n    }\n    \n    for period, hours in periods_to_generate.items():\n        generate_period_data(period, hours)\n        add_device_events(period)\n        print()\n    \n    # Test filtering\n    test_period_filtering()\n    \n    print(f\"\\n✅ Multi-period data generation complete!\")\n    print(f\"🌐 Open http://localhost:8000 to test the time filter tabs\")\n    print(f\"\\n📊 Available periods:\")\n    for period in ['today', 'month', 'year']:\n        print(f\"  - {period.upper()}: http://localhost:5000/api/savings?period={period}\")\n\nif __name__ == \"__main__\":\n    main()",
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/multi_period_data.py"
+    },
+    "output": "\n<project_diagnostics>\n/home/bot4u/Desktop/GEMINI/Mini_project/backend/tuya_integration.py\nERROR [6:6] Import \"tuya_connector\" could not be resolved\n</project_diagnostics>\n\n<project_diagnostics>\n/home/bot4u/Desktop/GEMINI/Mini_project/tuya.py\nERROR [1:6] Import \"tuya_connector\" could not be resolved\n</project_diagnostics>\n",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/backend/multi_period_data.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/app.py": [],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/tuya_integration.py": [
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 5
+              },
+              "end": {
+                "line": 5,
+                "character": 19
+              }
+            },
+            "message": "Import \"tuya_connector\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 6,
+                "character": 7
+              },
+              "end": {
+                "line": 6,
+                "character": 15
+              }
+            },
+            "message": "Import \"requests\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/tuya.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 19
+              }
+            },
+            "message": "Import \"tuya_connector\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/test_data.py": [
+          {
+            "range": {
+              "start": {
+                "line": 14,
+                "character": 7
+              },
+              "end": {
+                "line": 14,
+                "character": 15
+              }
+            },
+            "message": "Import \"requests\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/backend/savings_test_data.py": [
+          {
+            "range": {
+              "start": {
+                "line": 5,
+                "character": 7
+              },
+              "end": {
+                "line": 5,
+                "character": 15
+              }
+            },
+            "message": "Import \"requests\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/test_apis.sh": [],
+        "/home/bot4u/Desktop/GEMINI/Mini_project/diagnose.sh": []
+      },
+      "filepath": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/multi_period_data.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1768114838088,
+      "end": 1768114841100
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6fca638001aMfvGeYdrEkued",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fc98f4002psDNvC1gF69UtP",
+  "type": "reasoning",
+  "text": "Let me verify both servers are running.",
+  "metadata": {
+    "anthropic": {
+      "signature": "613779b9d3097d4630e40a6020a6983b90afdf26019fdf98c3e36c936d8e4556"
+    }
+  },
+  "time": {
+    "start": 1769106875960,
+    "end": 1769106876559
+  }
+}

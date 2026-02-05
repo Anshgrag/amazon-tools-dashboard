@@ -1,0 +1,26 @@
+{
+  "id": "prt_be70bce4f0017D4lJcYj0Wt5tp",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70bbcb3002etr65Me2INgqc8",
+  "type": "tool",
+  "callID": "call_function_ck1v03pkj1en_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/style.css",
+      "limit": 50,
+      "offset": 1760
+    },
+    "output": "<file>\n01761| \n01762| body[data-theme=\"nordic\"] .device-card.active {\n01763|     border-color: var(--accent-teal);\n01764|     box-shadow: 0 0 25px rgba(128, 222, 234, 0.3);\n01765| }\n01766| \n01767| body[data-theme=\"nordic\"] .chart-center-text .total-value {\n01768|     text-shadow: 0 0 15px rgba(128, 222, 234, 0.5);\n01769| }\n01770| \n01771| body[data-theme=\"nordic\"] .net-amount {\n01772|     text-shadow: 0 0 10px var(--accent-teal);\n01773| }\n01774| \n01775| /* ==================== THEME FONT STYLES ==================== */\n01776| \n01777| body[data-theme=\"japan\"] {\n01778|     font-family: var(--font);\n01779| }\n01780| \n01781| body[data-theme=\"germany\"] {\n01782|     font-family: var(--font);\n01783| }\n01784| \n01785| body[data-theme=\"scandinavia\"] {\n01786|     font-family: var(--font);\n01787| }\n01788| \n01789| body[data-theme=\"tropical\"] {\n01790|     font-family: var(--font);\n01791| }\n01792| \n01793| body[data-theme=\"nordic\"] {\n01794|     font-family: var(--font);\n01795| }\n01796| \n\n(End of file - total 1796 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/style.css",
+    "metadata": {
+      "preview": "\nbody[data-theme=\"nordic\"] .device-card.active {\n    border-color: var(--accent-teal);\n    box-shadow: 0 0 25px rgba(128, 222, 234, 0.3);\n}\n\nbody[data-theme=\"nordic\"] .chart-center-text .total-value {\n    text-shadow: 0 0 15px rgba(128, 222, 234, 0.5);\n}\n\nbody[data-theme=\"nordic\"] .net-amount {\n    text-shadow: 0 0 10px var(--accent-teal);\n}\n\n/* ==================== THEME FONT STYLES ==================== */\n\nbody[data-theme=\"japan\"] {\n    font-family: var(--font);\n}\n",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107869617,
+      "end": 1769107869635
+    }
+  }
+}

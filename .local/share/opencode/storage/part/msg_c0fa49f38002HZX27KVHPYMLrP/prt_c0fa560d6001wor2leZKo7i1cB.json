@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fa560d6001wor2leZKo7i1cB",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa49f38002HZX27KVHPYMLrP",
+  "type": "tool",
+  "callID": "call_c94069d1d58749fc9a3058c5",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend && python3 app.py > /dev/null 2>&1 &",
+      "description": "Start backend for final test"
+    },
+    "output": "",
+    "title": "Start backend for final test",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start backend for final test",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789022433,
+      "end": 1769789022456
+    }
+  }
+}

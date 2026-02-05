@@ -1,0 +1,25 @@
+{
+  "id": "prt_be7000f790014DPVNqJa57pYj9",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fffd3e002nEmdKae2sqo9vl",
+  "type": "tool",
+  "callID": "call_function_u0hzh50mbnnk_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/style.css",
+      "limit": 30
+    },
+    "output": "<file>\n00001| /* ==================== GLOBAL RESET ==================== */\n00002| \n00003| * {\n00004|     margin: 0;\n00005|     padding: 0;\n00006|     box-sizing: border-box;\n00007| }\n00008| \n00009| :root {\n00010|     /* Color Palette - Dark Theme */\n00011|     --bg-primary: #1a2332;\n00012|     --bg-secondary: #243447;\n00013|     --bg-card: #2a3f5f;\n00014|     --text-primary: #ffffff;\n00015|     --text-secondary: #b0c4de;\n00016|     --accent-teal: #4ecdc4;\n00017|     --accent-yellow: #ffd166;\n00018|     --accent-pink: #ff6b9d;\n00019|     --accent-purple: #c77dff;\n00020|     --accent-green: #06ffa5;\n00021|     --accent-red: #ff4757;\n00022|     --border-color: #3d5a80;\n00023| }\n00024| \n00025| body {\n00026|     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n00027|     background: var(--bg-primary);\n00028|     color: var(--text-primary);\n00029|     overflow-x: hidden;\n00030| }\n\n(File has more lines. Use 'offset' parameter to read beyond line 30)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/style.css",
+    "metadata": {
+      "preview": "/* ==================== GLOBAL RESET ==================== */\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\n:root {\n    /* Color Palette - Dark Theme */\n    --bg-primary: #1a2332;\n    --bg-secondary: #243447;\n    --bg-card: #2a3f5f;\n    --text-primary: #ffffff;\n    --text-secondary: #b0c4de;\n    --accent-teal: #4ecdc4;\n    --accent-yellow: #ffd166;\n    --accent-pink: #ff6b9d;\n    --accent-purple: #c77dff;\n    --accent-green: #06ffa5;",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769107099932,
+      "end": 1769107099941
+    }
+  }
+}

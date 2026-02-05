@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a7d1e8f0015m45xIPloGI3t6",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7cda33002v6YpGFJvlV0V3D",
+  "type": "tool",
+  "callID": "call_43624494f47149bf83b8daa6",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sudo apt-get update && sudo apt-get install -y docker-compose-plugin",
+      "description": "Install Docker Compose plugin"
+    },
+    "output": "sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: a password is required\n",
+    "title": "Install Docker Compose plugin",
+    "metadata": {
+      "output": "sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: a password is required\n",
+      "exit": 1,
+      "description": "Install Docker Compose plugin",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702497955,
+      "end": 1769702497984
+    }
+  }
+}

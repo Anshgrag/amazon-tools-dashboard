@@ -1,0 +1,98 @@
+{
+  "id": "prt_be70b6986001wW6x8eucqNXn0f",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70b4e47002FmPOTIQbkOHfwU",
+  "type": "tool",
+  "callID": "call_function_2azalj3k0162_1",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Create particle animation system",
+          "id": "1",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add cherry blossom animation for Japan",
+          "id": "2",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add autumn leaves animation for Germany",
+          "id": "3",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add snow animation for Nordic",
+          "id": "4",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add tropical particles for Tropical theme",
+          "id": "5",
+          "priority": "medium",
+          "status": "completed"
+        },
+        {
+          "content": "Add CSS enhancements for particle canvas",
+          "id": "6",
+          "priority": "medium",
+          "status": "in_progress"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Create particle animation system\",\n    \"id\": \"1\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add cherry blossom animation for Japan\",\n    \"id\": \"2\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add autumn leaves animation for Germany\",\n    \"id\": \"3\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add snow animation for Nordic\",\n    \"id\": \"4\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add tropical particles for Tropical theme\",\n    \"id\": \"5\",\n    \"priority\": \"medium\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add CSS enhancements for particle canvas\",\n    \"id\": \"6\",\n    \"priority\": \"medium\",\n    \"status\": \"in_progress\"\n  }\n]",
+    "title": "1 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Create particle animation system",
+          "id": "1",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add cherry blossom animation for Japan",
+          "id": "2",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add autumn leaves animation for Germany",
+          "id": "3",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add snow animation for Nordic",
+          "id": "4",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add tropical particles for Tropical theme",
+          "id": "5",
+          "priority": "medium",
+          "status": "completed"
+        },
+        {
+          "content": "Add CSS enhancements for particle canvas",
+          "id": "6",
+          "priority": "medium",
+          "status": "in_progress"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107845521,
+      "end": 1769107845532
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "timestamp": 1768285418.1373794,
+    "devices": [
+        {
+            "id": "d78fcea6e6c3b03d40zcwp",
+            "ip": "192.168.1.43",
+            "active": 2,
+            "encrypt": true,
+            "productKey": "keyjup78v54myhan",
+            "name": "16Amp Smart Plug",
+            "key": "^w2=bi}(Bh2H't/V",
+            "mac": "a0:92:08:18:15:31",
+            "ability": 0,
+            "token": "",
+            "wf_cfg": "",
+            "dev_type": "default",
+            "err": "",
+            "type": "default",
+            "dps": {
+                "dps": {
+                    "1": true,
+                    "9": 0,
+                    "18": 0,
+                    "19": 0,
+                    "20": 2334,
+                    "21": 1,
+                    "22": 573,
+                    "23": 24095,
+                    "24": 13130,
+                    "25": 3170,
+                    "26": 0,
+                    "38": "memory",
+                    "39": false,
+                    "40": "relay",
+                    "41": false,
+                    "42": "",
+                    "43": "",
+                    "44": ""
+                }
+            },
+            "origin": "broadcast",
+            "ver": "3.3"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_beab122f3001RHE12WGoxLTIo2",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab11d9d001twHIRdxgOvii8B",
+  "type": "tool",
+  "callID": "call_29901580",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd backend && source venv/bin/activate && timeout 10 python tuya_integration.py",
+      "description": "Run integration with debug to see current switch status"
+    },
+    "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\nStatus data: {'switch_1': True, 'countdown_1': 0, 'add_ele': 32, 'cur_current': 0, 'cur_power': 0, 'cur_voltage': 2387, 'voltage_coe': 573, 'electric_coe': 24095, 'power_coe': 13130, 'electricity_coe': 3170, 'fault': 0, 'relay_status': 'last', 'overcharge_switch': False, 'light_mode': 'relay', 'child_lock': False, 'cycle_time': '', 'random_time': '', 'switch_inching': ''}\n✅ Sent data for Smart Switch: 0.0W\n⏳ Waiting 60 seconds before next update...\n\n",
+    "title": "Run integration with debug to see current switch status",
+    "metadata": {
+      "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\nStatus data: {'switch_1': True, 'countdown_1': 0, 'add_ele': 32, 'cur_current': 0, 'cur_power': 0, 'cur_voltage': 2387, 'voltage_coe': 573, 'electric_coe': 24095, 'power_coe': 13130, 'electricity_coe': 3170, 'fault': 0, 'relay_status': 'last', 'overcharge_switch': False, 'light_mode': 'relay', 'child_lock': False, 'cycle_time': '', 'random_time': '', 'switch_inching': ''}\n✅ Sent data for Smart Switch: 0.0W\n⏳ Waiting 60 seconds before next update...\n\n",
+      "exit": 124,
+      "description": "Run integration with debug to see current switch status",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769169036025,
+      "end": 1769169046049
+    }
+  }
+}

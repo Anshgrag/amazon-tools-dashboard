@@ -1,0 +1,1179 @@
+{
+  "id": "prt_c0a7ebdc4001S2pz34AIrIrSoS",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7e64d7002p9NBuYpkDlZtzJ",
+  "type": "tool",
+  "callID": "call_2f92e63b753946a09f7f47e3",
+  "tool": "edit",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/eye project/scripts/setup.sh",
+      "oldString": "cd \"$(dirname \"$0\")/docker\"",
+      "newString": "cd docker"
+    },
+    "output": "Edit applied successfully.",
+    "title": "Desktop/eye project/scripts/setup.sh",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/eye project/backend/app/main.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/config.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 22
+              }
+            },
+            "message": "Import \"pydantic_settings\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/database.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 31
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.declarative\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 15
+              }
+            },
+            "message": "Import \"sqlalchemy\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/security.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 9
+              }
+            },
+            "message": "Import \"jose\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 27
+              },
+              "end": {
+                "line": 2,
+                "character": 30
+              }
+            },
+            "message": "Import \"jose.jwt\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 5
+              },
+              "end": {
+                "line": 3,
+                "character": 20
+              }
+            },
+            "message": "Import \"passlib.context\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 36,
+                "character": 21
+              },
+              "end": {
+                "line": 36,
+                "character": 39
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 37,
+                "character": 19
+              },
+              "end": {
+                "line": 37,
+                "character": 37
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 38,
+                "character": 32
+              },
+              "end": {
+                "line": 38,
+                "character": 51
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/exceptions.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/api/auth.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 8,
+                "character": 5
+              },
+              "end": {
+                "line": 8,
+                "character": 21
+              }
+            },
+            "message": "Import \"app.schemas.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 5
+              },
+              "end": {
+                "line": 9,
+                "character": 20
+              }
+            },
+            "message": "Import \"app.models.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 90,
+                "character": 33
+              },
+              "end": {
+                "line": 90,
+                "character": 49
+              }
+            },
+            "message": "\"get_current_user\" is not defined",
+            "severity": 1,
+            "code": "reportUndefinedVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportUndefinedVariable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 101,
+                "character": 24
+              },
+              "end": {
+                "line": 101,
+                "character": 35
+              }
+            },
+            "message": "Cannot access attribute \"credentials\" for class \"str\"\n  Attribute \"credentials\" is unknown",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 89,
+                "character": 10
+              },
+              "end": {
+                "line": 89,
+                "character": 26
+              }
+            },
+            "message": "Function declaration \"get_current_user\" is obscured by a declaration of the same name",
+            "severity": 1,
+            "code": "reportRedeclaration",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportRedeclaration"
+            },
+            "relatedInformation": [
+              {
+                "location": {
+                  "uri": "file:///home/bot4u/Desktop/eye%20project/backend/app/api/auth.py",
+                  "range": {
+                    "start": {
+                      "line": 96,
+                      "character": 10
+                    },
+                    "end": {
+                      "line": 96,
+                      "character": 26
+                    }
+                  }
+                },
+                "message": "See function declaration"
+              }
+            ]
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/analysis.py": [
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 5
+              },
+              "end": {
+                "line": 9,
+                "character": 25
+              }
+            },
+            "message": "Import \"app.schemas.analysis\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 10,
+                "character": 5
+              },
+              "end": {
+                "line": 10,
+                "character": 20
+              }
+            },
+            "message": "Import \"app.models.auth\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 11,
+                "character": 5
+              },
+              "end": {
+                "line": 11,
+                "character": 24
+              }
+            },
+            "message": "Import \"app.models.analysis\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 5
+              },
+              "end": {
+                "line": 13,
+                "character": 28
+              }
+            },
+            "message": "Import \"app.services.ml_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 14,
+                "character": 5
+              },
+              "end": {
+                "line": 14,
+                "character": 31
+              }
+            },
+            "message": "Import \"app.services.image_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 7,
+                "character": 30
+              },
+              "end": {
+                "line": 7,
+                "character": 46
+              }
+            },
+            "message": "\"get_current_user\" is unknown import symbol",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 189,
+                "character": 18
+              },
+              "end": {
+                "line": 189,
+                "character": 22
+              }
+            },
+            "message": "\"scan\" is possibly unbound",
+            "severity": 1,
+            "code": "reportPossiblyUnboundVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportPossiblyUnboundVariable"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/health.py": [
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 7
+              },
+              "end": {
+                "line": 3,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 7,
+                "character": 5
+              },
+              "end": {
+                "line": 7,
+                "character": 28
+              }
+            },
+            "message": "Import \"app.services.ml_service\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/api/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/ml/models/cnn_vit_hybrid.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 7
+              },
+              "end": {
+                "line": 0,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 7
+              },
+              "end": {
+                "line": 1,
+                "character": 15
+              }
+            },
+            "message": "Import \"torch.nn\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 7
+              },
+              "end": {
+                "line": 2,
+                "character": 29
+              }
+            },
+            "message": "Import \"torchvision.transforms\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 7
+              },
+              "end": {
+                "line": 3,
+                "character": 25
+              }
+            },
+            "message": "Import \"torchvision.models\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 5
+              },
+              "end": {
+                "line": 4,
+                "character": 17
+              }
+            },
+            "message": "Import \"transformers\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 208,
+                "character": 15
+              },
+              "end": {
+                "line": 208,
+                "character": 36
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/ml/training/train.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 7
+              },
+              "end": {
+                "line": 0,
+                "character": 12
+              }
+            },
+            "message": "Import \"torch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 7
+              },
+              "end": {
+                "line": 1,
+                "character": 15
+              }
+            },
+            "message": "Import \"torch.nn\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 7
+              },
+              "end": {
+                "line": 2,
+                "character": 18
+              }
+            },
+            "message": "Import \"torch.optim\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 5
+              },
+              "end": {
+                "line": 3,
+                "character": 21
+              }
+            },
+            "message": "Import \"torch.utils.data\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 4,
+                "character": 5
+              },
+              "end": {
+                "line": 4,
+                "character": 16
+              }
+            },
+            "message": "Import \"torchvision\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 10,
+                "character": 5
+              },
+              "end": {
+                "line": 10,
+                "character": 20
+              }
+            },
+            "message": "Import \"sklearn.metrics\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 11,
+                "character": 5
+              },
+              "end": {
+                "line": 11,
+                "character": 28
+              }
+            },
+            "message": "Import \"sklearn.model_selection\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 12,
+                "character": 7
+              },
+              "end": {
+                "line": 12,
+                "character": 24
+              }
+            },
+            "message": "Import \"matplotlib.pyplot\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 17,
+                "character": 7
+              },
+              "end": {
+                "line": 17,
+                "character": 21
+              }
+            },
+            "message": "Import \"albumentations\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 18,
+                "character": 5
+              },
+              "end": {
+                "line": 18,
+                "character": 27
+              }
+            },
+            "message": "Import \"albumentations.pytorch\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 20,
+                "character": 5
+              },
+              "end": {
+                "line": 20,
+                "character": 20
+              }
+            },
+            "message": "Import \".cnn_vit_hybrid\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 13,
+                "character": 7
+              },
+              "end": {
+                "line": 13,
+                "character": 14
+              }
+            },
+            "message": "Import \"seaborn\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 218,
+                "character": 19
+              },
+              "end": {
+                "line": 218,
+                "character": 24
+              }
+            },
+            "message": "\"train\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 223,
+                "character": 53
+              },
+              "end": {
+                "line": 223,
+                "character": 70
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"iterable\" of type \"Iterable[_T@enumerate]\" in function \"__new__\"\n  Type \"Unknown | None\" is not assignable to type \"Iterable[_T@enumerate]\"\n    \"None\" is incompatible with protocol \"Iterable[_T@enumerate]\"\n      \"__iter__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 230,
+                "character": 22
+              },
+              "end": {
+                "line": 230,
+                "character": 40
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 245,
+                "character": 53
+              },
+              "end": {
+                "line": 245,
+                "character": 70
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"obj\" of type \"Sized\" in function \"len\"\n  Type \"Unknown | None\" is not assignable to type \"Sized\"\n    \"None\" is incompatible with protocol \"Sized\"\n      \"__len__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 247,
+                "character": 36
+              },
+              "end": {
+                "line": 247,
+                "character": 53
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"obj\" of type \"Sized\" in function \"len\"\n  Type \"Unknown | None\" is not assignable to type \"Sized\"\n    \"None\" is incompatible with protocol \"Sized\"\n      \"__len__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 254,
+                "character": 19
+              },
+              "end": {
+                "line": 254,
+                "character": 23
+              }
+            },
+            "message": "\"eval\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 262,
+                "character": 34
+              },
+              "end": {
+                "line": 262,
+                "character": 49
+              }
+            },
+            "message": "Object of type \"None\" cannot be used as iterable value",
+            "severity": 1,
+            "code": "reportOptionalIterable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalIterable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 265,
+                "character": 26
+              },
+              "end": {
+                "line": 265,
+                "character": 44
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 276,
+                "character": 36
+              },
+              "end": {
+                "line": 276,
+                "character": 51
+              }
+            },
+            "message": "Argument of type \"Unknown | None\" cannot be assigned to parameter \"obj\" of type \"Sized\" in function \"len\"\n  Type \"Unknown | None\" is not assignable to type \"Sized\"\n    \"None\" is incompatible with protocol \"Sized\"\n      \"__len__\" is not present",
+            "severity": 1,
+            "code": "reportArgumentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportArgumentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 355,
+                "character": 25
+              },
+              "end": {
+                "line": 355,
+                "character": 32
+              }
+            },
+            "message": "\"history\" is not defined",
+            "severity": 1,
+            "code": "reportUndefinedVariable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportUndefinedVariable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 356,
+                "character": 43
+              },
+              "end": {
+                "line": 356,
+                "character": 53
+              }
+            },
+            "message": "\"state_dict\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 394,
+                "character": 19
+              },
+              "end": {
+                "line": 394,
+                "character": 23
+              }
+            },
+            "message": "\"eval\" is not a known attribute of \"None\"",
+            "severity": 1,
+            "code": "reportOptionalMemberAccess",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalMemberAccess"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 399,
+                "character": 34
+              },
+              "end": {
+                "line": 399,
+                "character": 50
+              }
+            },
+            "message": "Object of type \"None\" cannot be used as iterable value",
+            "severity": 1,
+            "code": "reportOptionalIterable",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalIterable"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 401,
+                "character": 26
+              },
+              "end": {
+                "line": 401,
+                "character": 44
+              }
+            },
+            "message": "Object of type \"None\" cannot be called",
+            "severity": 1,
+            "code": "reportOptionalCall",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportOptionalCall"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/docker/docker-compose.yml": [],
+        "/home/bot4u/Desktop/eye project/scripts/setup.sh": [],
+        "/home/bot4u/Desktop/eye project/scripts/dev-setup.sh": []
+      },
+      "diff": "Index: /home/bot4u/Desktop/eye project/scripts/setup.sh\n===================================================================\n--- /home/bot4u/Desktop/eye project/scripts/setup.sh\n+++ /home/bot4u/Desktop/eye project/scripts/setup.sh\n@@ -122,9 +122,9 @@\n       - targets: ['localhost:9090']\n EOF\n \n echo \"🐳 Building and starting containers...\"\n-cd \"$(dirname \"$0\")/docker\"\n+cd docker\n docker compose down 2>/dev/null\n docker compose up --build -d\n \n echo \"⏳ Waiting for services to start...\"\n",
+      "filediff": {
+        "file": "/home/bot4u/Desktop/eye project/scripts/setup.sh",
+        "before": "#!/bin/bash\n\n# Eye Disease Detection - Quick Setup Script\necho \"🏥 Setting up Eye Disease Detection Application...\"\n\n# Check if Docker is installed\nif ! command -v docker &> /dev/null; then\n    echo \"❌ Docker is not installed. Please install Docker first.\"\n    exit 1\nfi\n\nif ! command -v docker &> /dev/null; then\n    echo \"❌ Docker is not installed. Please install Docker first.\"\n    exit 1\nfi\n\nif ! docker compose version &> /dev/null; then\n    echo \"❌ Docker Compose is not installed. Please install Docker Compose first.\"\n    exit 1\nfi\n\n# Create necessary directories\necho \"📁 Creating directories...\"\nmkdir -p ml/models/weights\nmkdir -p ml/data/processed\nmkdir -p uploads\nmkdir -p docker/grafana/{dashboards,datasources}\nmkdir -p docker/ssl\n\n# Copy environment files\necho \"⚙️ Setting up environment...\"\ncat > backend/.env << EOF\nDATABASE_URL=postgresql://postgres:postgres123@postgres:5432/eyedisease\nREDIS_URL=redis://redis:6379\nCELERY_BROKER_URL=redis://redis:6379/0\nCELERY_RESULT_BACKEND=redis://redis:6379/0\nSECRET_KEY=your-production-secret-key-change-this-in-production\nDEBUG=false\nMODEL_PATH=ml/models/weights/best_model.pth\nALLOWED_ORIGINS=[\"http://localhost:3000\",\"http://127.0.0.1:3000\"]\nEOF\n\ncat > frontend/.env.local << EOF\nNEXT_PUBLIC_API_URL=http://localhost:8000\nNEXT_PUBLIC_ENVIRONMENT=development\nEOF\n\n# Create Grafana datasource config\ncat > docker/grafana/datasources/prometheus.yml << EOF\napiVersion: 1\ndatasources:\n  - name: Prometheus\n    type: prometheus\n    access: proxy\n    url: http://prometheus:9090\n    isDefault: true\nEOF\n\n# Create Nginx config\ncat > docker/nginx.conf << EOF\nevents {\n    worker_connections 1024;\n}\n\nhttp {\n    upstream backend {\n        server backend:8000;\n    }\n    \n    upstream frontend {\n        server frontend:3000;\n    }\n    \n    server {\n        listen 80;\n        server_name localhost;\n        \n        # Frontend\n        location / {\n            proxy_pass http://frontend;\n            proxy_set_header Host \\$host;\n            proxy_set_header X-Real-IP \\$remote_addr;\n            proxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto \\$scheme;\n        }\n        \n        # Backend API\n        location /api/ {\n            proxy_pass http://backend;\n            proxy_set_header Host \\$host;\n            proxy_set_header X-Real-IP \\$remote_addr;\n            proxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto \\$scheme;\n        }\n        \n        # API Documentation\n        location /docs {\n            proxy_pass http://backend;\n            proxy_set_header Host \\$host;\n            proxy_set_header X-Real-IP \\$remote_addr;\n            proxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto \\$scheme;\n        }\n    }\n}\nEOF\n\n# Create Prometheus config\ncat > docker/prometheus.yml << EOF\nglobal:\n  scrape_interval: 15s\n\nscrape_configs:\n  - job_name: 'backend'\n    static_configs:\n      - targets: ['backend:8000']\n    metrics_path: '/metrics'\n    scrape_interval: 5s\n\n  - job_name: 'prometheus'\n    static_configs:\n      - targets: ['localhost:9090']\nEOF\n\necho \"🐳 Building and starting containers...\"\ncd \"$(dirname \"$0\")/docker\"\ndocker compose down 2>/dev/null\ndocker compose up --build -d\n\necho \"⏳ Waiting for services to start...\"\nsleep 30\n\n# Check if services are running\necho \"🔍 Checking service health...\"\nif curl -s http://localhost:8000/health > /dev/null; then\n    echo \"✅ Backend is running\"\nelse\n    echo \"❌ Backend failed to start\"\nfi\n\nif curl -s http://localhost:3000 > /dev/null; then\n    echo \"✅ Frontend is running\"\nelse\n    echo \"❌ Frontend failed to start\"\nfi\n\nif curl -s http://localhost:9090 > /dev/null; then\n    echo \"✅ Prometheus is running\"\nelse\n    echo \"❌ Prometheus failed to start\"\nfi\n\necho \"\"\necho \"🎉 Setup complete! Access the application:\"\necho \"🌐 Frontend: http://localhost:3000\"\necho \"📚 API Docs: http://localhost:8000/api/docs\"\necho \"📊 Monitoring: http://localhost:3001 (Grafana - admin/admin123)\"\necho \"🔍 Metrics: http://localhost:9090 (Prometheus)\"\necho \"\"\necho \"⚠️  Note: You'll need to add a trained model to ml/models/weights/best_model.pth\"\necho \"   For testing without a model, the API will return mock responses.\"",
+        "after": "#!/bin/bash\n\n# Eye Disease Detection - Quick Setup Script\necho \"🏥 Setting up Eye Disease Detection Application...\"\n\n# Check if Docker is installed\nif ! command -v docker &> /dev/null; then\n    echo \"❌ Docker is not installed. Please install Docker first.\"\n    exit 1\nfi\n\nif ! command -v docker &> /dev/null; then\n    echo \"❌ Docker is not installed. Please install Docker first.\"\n    exit 1\nfi\n\nif ! docker compose version &> /dev/null; then\n    echo \"❌ Docker Compose is not installed. Please install Docker Compose first.\"\n    exit 1\nfi\n\n# Create necessary directories\necho \"📁 Creating directories...\"\nmkdir -p ml/models/weights\nmkdir -p ml/data/processed\nmkdir -p uploads\nmkdir -p docker/grafana/{dashboards,datasources}\nmkdir -p docker/ssl\n\n# Copy environment files\necho \"⚙️ Setting up environment...\"\ncat > backend/.env << EOF\nDATABASE_URL=postgresql://postgres:postgres123@postgres:5432/eyedisease\nREDIS_URL=redis://redis:6379\nCELERY_BROKER_URL=redis://redis:6379/0\nCELERY_RESULT_BACKEND=redis://redis:6379/0\nSECRET_KEY=your-production-secret-key-change-this-in-production\nDEBUG=false\nMODEL_PATH=ml/models/weights/best_model.pth\nALLOWED_ORIGINS=[\"http://localhost:3000\",\"http://127.0.0.1:3000\"]\nEOF\n\ncat > frontend/.env.local << EOF\nNEXT_PUBLIC_API_URL=http://localhost:8000\nNEXT_PUBLIC_ENVIRONMENT=development\nEOF\n\n# Create Grafana datasource config\ncat > docker/grafana/datasources/prometheus.yml << EOF\napiVersion: 1\ndatasources:\n  - name: Prometheus\n    type: prometheus\n    access: proxy\n    url: http://prometheus:9090\n    isDefault: true\nEOF\n\n# Create Nginx config\ncat > docker/nginx.conf << EOF\nevents {\n    worker_connections 1024;\n}\n\nhttp {\n    upstream backend {\n        server backend:8000;\n    }\n    \n    upstream frontend {\n        server frontend:3000;\n    }\n    \n    server {\n        listen 80;\n        server_name localhost;\n        \n        # Frontend\n        location / {\n            proxy_pass http://frontend;\n            proxy_set_header Host \\$host;\n            proxy_set_header X-Real-IP \\$remote_addr;\n            proxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto \\$scheme;\n        }\n        \n        # Backend API\n        location /api/ {\n            proxy_pass http://backend;\n            proxy_set_header Host \\$host;\n            proxy_set_header X-Real-IP \\$remote_addr;\n            proxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto \\$scheme;\n        }\n        \n        # API Documentation\n        location /docs {\n            proxy_pass http://backend;\n            proxy_set_header Host \\$host;\n            proxy_set_header X-Real-IP \\$remote_addr;\n            proxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto \\$scheme;\n        }\n    }\n}\nEOF\n\n# Create Prometheus config\ncat > docker/prometheus.yml << EOF\nglobal:\n  scrape_interval: 15s\n\nscrape_configs:\n  - job_name: 'backend'\n    static_configs:\n      - targets: ['backend:8000']\n    metrics_path: '/metrics'\n    scrape_interval: 5s\n\n  - job_name: 'prometheus'\n    static_configs:\n      - targets: ['localhost:9090']\nEOF\n\necho \"🐳 Building and starting containers...\"\ncd docker\ndocker compose down 2>/dev/null\ndocker compose up --build -d\n\necho \"⏳ Waiting for services to start...\"\nsleep 30\n\n# Check if services are running\necho \"🔍 Checking service health...\"\nif curl -s http://localhost:8000/health > /dev/null; then\n    echo \"✅ Backend is running\"\nelse\n    echo \"❌ Backend failed to start\"\nfi\n\nif curl -s http://localhost:3000 > /dev/null; then\n    echo \"✅ Frontend is running\"\nelse\n    echo \"❌ Frontend failed to start\"\nfi\n\nif curl -s http://localhost:9090 > /dev/null; then\n    echo \"✅ Prometheus is running\"\nelse\n    echo \"❌ Prometheus failed to start\"\nfi\n\necho \"\"\necho \"🎉 Setup complete! Access the application:\"\necho \"🌐 Frontend: http://localhost:3000\"\necho \"📚 API Docs: http://localhost:8000/api/docs\"\necho \"📊 Monitoring: http://localhost:3001 (Grafana - admin/admin123)\"\necho \"🔍 Metrics: http://localhost:9090 (Prometheus)\"\necho \"\"\necho \"⚠️  Note: You'll need to add a trained model to ml/models/weights/best_model.pth\"\necho \"   For testing without a model, the API will return mock responses.\"",
+        "additions": 1,
+        "deletions": 1
+      },
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702604242,
+      "end": 1769702604527
+    }
+  }
+}

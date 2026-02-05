@@ -1,0 +1,25 @@
+{
+  "id": "prt_c0fb00783001M1FvUPaeIRsxx5",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0faff8de0025iCODRfgXqNGSy",
+  "type": "tool",
+  "callID": "call_a896e71209b242d4a1e9f73b",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "offset": 1240
+    },
+    "output": "<file>\n01241|     fetchElectricityData();\n01242|     fetchSavingsData();\n01243|     updateDateDisplay(currentPeriod);\n01244| }\n01245| \n01246| document.addEventListener('DOMContentLoaded', function() {\n01247|     console.log('=== DOMContentLoaded ===');\n01248|     setupTabSwitching();\n01249|     setupTimeFilters();\n01250|     setupThemeToggle();\n01251|     initializeCharts();\n01252|     fetchAllData();\n01253|     \n01254|     // Set up periodic data refresh\n01255|     setInterval(fetchAllData, REFRESH_INTERVAL);\n01256|     \n01257|     // Initialize device control\n01258|     updateDeviceStatus('on'); // Default to on\n01259|     \n01260|     // Initialize schedule checker (every minute)\n01261|     setInterval(checkSchedules, 60000);\n01262|     \n01263|     // Initialize schedule list\n01264|     updateScheduleList();\n01265| });\n01266| \n\n(End of file - total 1266 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "    fetchElectricityData();\n    fetchSavingsData();\n    updateDateDisplay(currentPeriod);\n}\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n    \n    // Set up periodic data refresh\n    setInterval(fetchAllData, REFRESH_INTERVAL);\n    \n    // Initialize device control\n    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789720460,
+      "end": 1769789720496
+    }
+  }
+}

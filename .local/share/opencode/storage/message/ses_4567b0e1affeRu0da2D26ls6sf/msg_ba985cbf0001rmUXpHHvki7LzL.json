@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba985cbf0001rmUXpHHvki7LzL",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768075676682
+  },
+  "summary": {
+    "title": "Short conversation summary: casual prompt",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

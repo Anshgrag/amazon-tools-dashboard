@@ -1,0 +1,26 @@
+{
+  "id": "prt_ba9abf331001aEGiu0LYNqyrLd",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9abe63a001Hx5JIyfTEaXMkm",
+  "type": "tool",
+  "callID": "call_fd3311265d214bbcbb685415",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+      "limit": 50,
+      "offset": 150
+    },
+    "output": "<file>\n00151|     createUsageChart(usageTillNow, usagePredicted);\n00152| }\n00153| \n00154| function updateCarbonFootprint(data) {\n00155|     // Calculate emissions (0.92 lbs CO2 per kWh = 0.417 kg CO2 per kWh)\n00156|     let totalPower = 0;\n00157|     data.forEach(record => {\n00158|         totalPower += record.power_watts;\n00159|     });\n00160|     \n00161|     const avgPowerKW = totalPower / data.length / 1000;\n00162|     const currentDay = new Date().getDate();\n00163|     const daysInMonth = 30;\n00164|     \n00165|     const usageTillNow = avgPowerKW * currentDay * 24;\n00166|     const usagePredicted = avgPowerKW * daysInMonth * 24;\n00167|     \n00168|     const emissionTillDate = usageTillNow * 0.417;\n00169|     const emissionPredicted = usagePredicted * 0.417;\n00170|     \n00171|     document.getElementById('emissionTillDate').textContent = `${emissionTillDate.toFixed(1)} Kg of CO2`;\n00172|     document.getElementById('emissionPredicted').textContent = `${emissionPredicted.toFixed(1)} Kg of CO2`;\n00173|     \n00174|     // Green energy (simulate 30% of usage)\n00175|     const greenEnergy = usageTillNow * 0.3;\n00176|     const greenGoal = 500;\n00177|     const greenPercent = Math.min((greenEnergy / greenGoal) * 100, 100);\n00178|     \n00179|     document.getElementById('greenCurrent').textContent = `${greenEnergy.toFixed(0)} kWh`;\n00180|     document.getElementById('greenProgress').style.width = `${greenPercent}%`;\n00181| }\n00182| \n00183| // ==================== CHART FUNCTIONS ====================\n00184| \n00185| function createCostChart(electricityCost, gasCost) {\n00186|     const ctx = document.getElementById('costChart');\n00187|     if (!ctx) return;\n00188|     \n00189|     if (costChart) {\n00190|         costChart.destroy();\n00191|     }\n00192|     \n00193|     costChart = new Chart(ctx, {\n00194|         type: 'doughnut',\n00195|         data: {\n00196|             labels: ['Electricity', 'Gas'],\n00197|             datasets: [{\n00198|                 data: [electricityCost, gasCost],\n00199|                 backgroundColor: ['#4ecdc4', '#ffd166'],\n00200|                 borderWidth: 0\n\n(File has more lines. Use 'offset' parameter to read beyond line 200)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+    "metadata": {
+      "preview": "    createUsageChart(usageTillNow, usagePredicted);\n}\n\nfunction updateCarbonFootprint(data) {\n    // Calculate emissions (0.92 lbs CO2 per kWh = 0.417 kg CO2 per kWh)\n    let totalPower = 0;\n    data.forEach(record => {\n        totalPower += record.power_watts;\n    });\n    \n    const avgPowerKW = totalPower / data.length / 1000;\n    const currentDay = new Date().getDate();\n    const daysInMonth = 30;\n    \n    const usageTillNow = avgPowerKW * currentDay * 24;\n    const usagePredicted = avgPowerKW * daysInMonth * 24;\n    \n    const emissionTillDate = usageTillNow * 0.417;\n    const emissionPredicted = usagePredicted * 0.417;\n    ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768078177080,
+      "end": 1768078177092
+    }
+  }
+}

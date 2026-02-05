@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9adcc4d001KVNBkyYjMyiJwr",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9adbff8001rNdh6AWGxnY36U",
+  "type": "tool",
+  "callID": "call_c8874fc7942e40b0a88171c3",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl http://localhost:5000/api/savings 2>&1 | head -5",
+      "description": "Test savings API after restart"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   857  100   857    0     0  97508      0 --:--:-- --:--:-- --:--:--  104k\n{\n  \"data\": {\n",
+    "title": "Test savings API after restart",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   857  100   857    0     0  97508      0 --:--:-- --:--:-- --:--:--  104k\n{\n  \"data\": {\n",
+      "exit": 0,
+      "description": "Test savings API after restart",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078298194,
+      "end": 1768078301232
+    }
+  }
+}

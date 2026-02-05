@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0a83d64300133k715E37tARKQ",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a83be790026t4F6As0a5yPpz",
+  "type": "tool",
+  "callID": "call_97125d0be96b4b9f89dd2d6f",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/eye project/docker/docker-compose.yml",
+      "limit": 20,
+      "offset": 100
+    },
+    "output": "<file>\n00101|   frontend:\n00102|     build:\n00103|       context: ./frontend\n00104|       dockerfile: Dockerfile\n00105|     container_name: eye_disease_frontend\n00106|     environment:\n00107|       - NEXT_PUBLIC_API_URL=http://localhost:8000\n00108|     volumes:\n00109|       - ./frontend:/app\n00110|       - /app/node_modules\n00111|       - /app/.next\n00112|     ports:\n00113|       - \"3000:3000\"\n00114|     depends_on:\n00115|       - backend\n00116|     networks:\n00117|       - eye_disease_network\n00118|     restart: unless-stopped\n00119| \n00120|   # Nginx Reverse Proxy\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "title": "Desktop/eye project/docker/docker-compose.yml",
+    "metadata": {
+      "preview": "  frontend:\n    build:\n      context: ./frontend\n      dockerfile: Dockerfile\n    container_name: eye_disease_frontend\n    environment:\n      - NEXT_PUBLIC_API_URL=http://localhost:8000\n    volumes:\n      - ./frontend:/app\n      - /app/node_modules\n      - /app/.next\n    ports:\n      - \"3000:3000\"\n    depends_on:\n      - backend\n    networks:\n      - eye_disease_network\n    restart: unless-stopped\n\n  # Nginx Reverse Proxy",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769702938183,
+      "end": 1769702938187
+    }
+  }
+}

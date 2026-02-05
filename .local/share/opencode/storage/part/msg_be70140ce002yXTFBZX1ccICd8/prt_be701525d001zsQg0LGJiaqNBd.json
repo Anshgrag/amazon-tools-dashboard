@@ -1,0 +1,27 @@
+{
+  "id": "prt_be701525d001zsQg0LGJiaqNBd",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70140ce002yXTFBZX1ccICd8",
+  "type": "tool",
+  "callID": "call_function_6gon1mbo3tsc_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s http://localhost:5000/api/devices | head -5 && echo \"---\" && curl -s http://localhost:8000/ | grep -c \"THEME\"",
+      "description": "Test servers"
+    },
+    "output": "{\n  \"data\": {\n    \"devices\": [\n      {\n        \"id\": 1,\n---\n1\n",
+    "title": "Test servers",
+    "metadata": {
+      "output": "{\n  \"data\": {\n    \"devices\": [\n      {\n        \"id\": 1,\n---\n1\n",
+      "exit": 0,
+      "description": "Test servers",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107182680,
+      "end": 1769107184763
+    }
+  }
+}

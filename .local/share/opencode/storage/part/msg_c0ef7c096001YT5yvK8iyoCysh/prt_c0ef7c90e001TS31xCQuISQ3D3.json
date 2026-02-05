@@ -1,0 +1,11 @@
+{
+  "id": "prt_c0ef7c90e001TS31xCQuISQ3D3",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0ef7c096001YT5yvK8iyoCysh",
+  "type": "text",
+  "text": "\nHere are similar IoT energy monitoring projects for your literature survey:\n\n## Academic Papers & Research Projects:\n\n1. **\"Future of Energy Management Models in Smart Homes\"** (Springer, 2025)\n   - Systematic literature review of smart home energy management\n   - Covers research trends, gaps, and future directions\n\n2. **\"IoT-Enabled Real-Time Energy Monitoring System\"** (2025)\n   - Real-time energy monitoring and analysis\n   - Focus on predictive maintenance and efficient power management\n\n3. **\"Design and Implementation of an IoT Based Home Energy Monitoring System\"** (IEEE, 2025)\n   - Hardware implementation with IoT integration\n   - Smart home energy management approaches\n\n4. **\"IoT Based Smart Energy Consumption Prediction for Home Appliances\"** (2025)\n   - Energy consumption prediction algorithms\n   - Machine learning for appliance-level monitoring\n\n5. **\"A smart energy monitoring system using ESP32 microcontroller\"** (ScienceDirect, 2024)\n   - ESP32-based monitoring with Blynk application\n   - Real-time power consumption tracking\n\n6. **\"An Open Source IoT-Integrated Interactive Smart Energy Monitoring System\"** (OSF, 2024)\n   - ESP32 with PZEM-004T sensor (0-100A range)\n   - Telegram bot integration and mobile app\n\n7. **\"Designing an intelligent smart energy monitoring system for optimizing PV energy\"** (Springer, 2024)\n   - XBee communication protocol\n   - Smart plugs with power characteristics measurement\n\n## Key Technologies in Similar Projects:\n- **Hardware**: ESP32, PZEM-004T sensors, XBee modules\n- **Communication**: MQTT, HTTP, Zigbee, WiFi\n- **Frameworks**: Blynk, MIT App Inventor, Telegram bots\n- **Features**: Real-time monitoring, predictive analytics, appliance-level tracking\n\nThese projects share similar functionality with your EcoTrack project and would make excellent references for your literature survey section.",
+  "time": {
+    "start": 1769777665195,
+    "end": 1769777665195
+  }
+}

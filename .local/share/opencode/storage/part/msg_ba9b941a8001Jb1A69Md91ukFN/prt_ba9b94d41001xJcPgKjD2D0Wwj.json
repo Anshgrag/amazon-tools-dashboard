@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9b94d41001xJcPgKjD2D0Wwj",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b941a8001Jb1A69Md91ukFN",
+  "type": "tool",
+  "callID": "call_767deda8ebad438fb7e3b75a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ls -la /home/bot4u/Desktop/GEMINI/Mini_project/frontend/",
+      "description": "Check frontend directory structure"
+    },
+    "output": "total 64\ndrwxrwxr-x 3 bot4u bot4u  4096 Jan 11 02:33 .\ndrwxrwxr-x 6 bot4u bot4u  4096 Jan 11 02:33 ..\n-rw-rw-r-- 1 bot4u bot4u  8929 Jan 11 02:33 index.html\n-rw-rw-r-- 1 bot4u bot4u  4165 Jan 11 02:33 minimal_script.js\n-rw-rw-r-- 1 bot4u bot4u 18633 Jan 11 02:34 script.js\n-rw-rw-r-- 1 bot4u bot4u 12224 Jan 11 02:33 style.css\ndrwxrwxr-x 5 bot4u bot4u  4096 Jan  9 13:34 venv\n",
+    "title": "Check frontend directory structure",
+    "metadata": {
+      "output": "total 64\ndrwxrwxr-x 3 bot4u bot4u  4096 Jan 11 02:33 .\ndrwxrwxr-x 6 bot4u bot4u  4096 Jan 11 02:33 ..\n-rw-rw-r-- 1 bot4u bot4u  8929 Jan 11 02:33 index.html\n-rw-rw-r-- 1 bot4u bot4u  4165 Jan 11 02:33 minimal_script.js\n-rw-rw-r-- 1 bot4u bot4u 18633 Jan 11 02:34 script.js\n-rw-rw-r-- 1 bot4u bot4u 12224 Jan 11 02:33 style.css\ndrwxrwxr-x 5 bot4u bot4u  4096 Jan  9 13:34 venv\n",
+      "exit": 0,
+      "description": "Check frontend directory structure",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079052105,
+      "end": 1768079052114
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9a5dfea0010FvHq8FbQdlFnS",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9a5d26b001zmSH3IgNe15uCk",
+  "type": "tool",
+  "callID": "call_d7eb2f16da7842e69fc3c4a5",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project/backend && python3 savings_test_data.py",
+      "description": "Generate smart savings test data once more"
+    },
+    "output": "🚀 EcoTrack Smart Savings Test Data Generator\n==================================================\n🔄 Generating 24 hours of realistic device data...\n📊 Adding device waste/saved events...\n  ❌ TV: $0.0562 wasted without automation\n  ✅ TV: $0.0421 saved with automation\n  ❌ Charger: $0.0235 wasted without automation\n  ✅ Charger: $0.0176 saved with automation\n  ❌ Refrigerator: $0.0360 wasted without automation\n  ✅ Refrigerator: $0.0270 saved with automation\n\n📈 Fetching savings summary...\n\n✅ Test data generation complete!\n🌐 Open http://localhost:5000 to see your Smart Savings Monitor\n",
+    "title": "Generate smart savings test data once more",
+    "metadata": {
+      "output": "🚀 EcoTrack Smart Savings Test Data Generator\n==================================================\n🔄 Generating 24 hours of realistic device data...\n📊 Adding device waste/saved events...\n  ❌ TV: $0.0562 wasted without automation\n  ✅ TV: $0.0421 saved with automation\n  ❌ Charger: $0.0235 wasted without automation\n  ✅ Charger: $0.0176 saved with automation\n  ❌ Refrigerator: $0.0360 wasted without automation\n  ✅ Refrigerator: $0.0270 saved with automation\n\n📈 Fetching savings summary...\n\n✅ Test data generation complete!\n🌐 Open http://localhost:5000 to see your Smart Savings Monitor\n",
+      "exit": 0,
+      "description": "Generate smart savings test data once more",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077778939,
+      "end": 1768077789961
+    }
+  }
+}

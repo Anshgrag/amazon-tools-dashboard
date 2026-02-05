@@ -1,0 +1,26 @@
+{
+  "id": "prt_beab45cfb001Q9Ss5AkitKIe3K",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab436b6001lRlw1Fnl2P8BC2",
+  "type": "tool",
+  "callID": "call_81122832",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "frontend/script.js",
+      "offset": 198,
+      "limit": 50
+    },
+    "output": "<file>\n00199|     const appliancesList = document.getElementById('appliancesList');\n00200|     if (!appliancesList) return;\n00201|     \n00202|     const deviceMap = {};\n00203|     data.forEach(record => {\n00204|         if (!deviceMap[record.device_name] || \n00205|             new Date(record.timestamp) > new Date(deviceMap[record.device_name].timestamp)) {\n00206|             deviceMap[record.device_name] = record;\n00207|         }\n00208|     });\n00209|     \n00210|     const colors = {\n00211|         'TV': '#ff6b9d',\n00212|         'Router': '#c77dff',\n00213|         'Charger': '#4ecdc4',\n00214|         'Refrigerator': '#ffd166'\n00215|     };\n00216|     \n00217|     const devices = Object.values(deviceMap).sort((a, b) => b.power_watts - a.power_watts);\n00218|     \n00219|     let html = '';\n00220|     devices.forEach(device => {\n00221|         const maxPower = 200;\n00222|         const barWidth = Math.min((device.power_watts / maxPower) * 100, 100);\n00223|         const color = colors[device.device_name] || '#4ecdc4';\n00224|         \n00225|         html += `\n00226|             <div class=\"appliance-item\">\n00227|                 <div class=\"appliance-name\">${device.device_name}</div>\n00228|                 <div class=\"appliance-bar\">\n00229|                     <div class=\"appliance-bar-fill\" style=\"width: ${barWidth}%; background: ${color};\"></div>\n00230|                 </div>\n00231|                 <div class=\"appliance-value\">${device.power_watts.toFixed(1)} kWh</div>\n00232|             </div>\n00233|         `;\n00234|     });\n00235|     \n00236|     appliancesList.innerHTML = html;\n00237| }\n00238| \n00239| function updateCostPredicted(data) {\n00240|     let totalPower = 0;\n00241|     data.forEach(record => {\n00242|         totalPower += record.power_watts;\n00243|     });\n00244|     \n00245|     const avgPowerKW = totalPower / data.length / 1000;\n00246|     const hoursPerMonth = 730;\n00247|     const costPerKWh = 0.12;\n00248|     const totalCost = avgPowerKW * hoursPerMonth * costPerKWh;\n\n(File has more lines. Use 'offset' parameter to read beyond line 248)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "    const appliancesList = document.getElementById('appliancesList');\n    if (!appliancesList) return;\n    \n    const deviceMap = {};\n    data.forEach(record => {\n        if (!deviceMap[record.device_name] || \n            new Date(record.timestamp) > new Date(deviceMap[record.device_name].timestamp)) {\n            deviceMap[record.device_name] = record;\n        }\n    });\n    \n    const colors = {\n        'TV': '#ff6b9d',\n        'Router': '#c77dff',\n        'Charger': '#4ecdc4',\n        'Refrigerator': '#ffd166'\n    };\n    \n    const devices = Object.values(deviceMap).sort((a, b) => b.power_watts - a.power_watts);\n    ",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769169247488,
+      "end": 1769169247497
+    }
+  }
+}

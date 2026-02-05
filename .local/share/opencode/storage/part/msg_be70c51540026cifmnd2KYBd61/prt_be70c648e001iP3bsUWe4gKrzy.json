@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70c648e001iP3bsUWe4gKrzy",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70c51540026cifmnd2KYBd61",
+  "type": "reasoning",
+  "text": "Now let me restart the servers to test the new animations.",
+  "metadata": {
+    "anthropic": {
+      "signature": "bec1dae18a5ef0f87c31eae537d37f7cf5b921db3b631da909a4e8cec7154901"
+    }
+  },
+  "time": {
+    "start": 1769107907726,
+    "end": 1769107907980
+  }
+}

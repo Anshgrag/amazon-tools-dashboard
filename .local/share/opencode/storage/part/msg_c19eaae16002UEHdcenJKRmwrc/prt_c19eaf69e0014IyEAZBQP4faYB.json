@@ -1,0 +1,26 @@
+{
+  "id": "prt_c19eaf69e0014IyEAZBQP4faYB",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19eaae16002UEHdcenJKRmwrc",
+  "type": "tool",
+  "callID": "call_ee60f12d9cfc4fae9b9bcf21",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/EYE/training/eye_detection_training.ipynb",
+      "offset": 100,
+      "limit": 50
+    },
+    "output": "<file>\n00101|     \"### Dataset Structure:\\n\",\n00102|     \"```\\n\",\n00103|     \"eye_dataset/\\n\",\n00104|     \"├── Normal/\\n\",\n00105|     \"│   ├── image1.jpg\\n\",\n00106|     \"│   ├── image2.jpg\\n\",\n00107|     \"│   └── ...\\n\",\n00108|     \"├── Conjunctivitis/\\n\",\n00109|     \"│   └── ...\\n\",\n00110|     \"├── Cataract/\\n\",\n00111|     \"│   └── ...\\n\",\n00112|     \"└── Glaucoma/\\n\",\n00113|     \"    └── ...\\n\",\n00114|     \"```\"\n00115|    ]\n00116|   },\n00117|   {\n00118|    \"cell_type\": \"code\",\n00119|    \"execution_count\": null,\n00120|    \"metadata\": {},\n00121|    \"outputs\": [],\n00122|    \"source\": [\n00123|     \"def create_dataset_splits(dataset_path, validation_split=0.2):\\n\",\n00124|     \"    \\\"\\\"\\\"\\n\",\n00125|     \"    Create train, validation, and test datasets.\\n\",\n00126|     \"    \\\"\\\"\\\"\\n\",\n00127|     \"    \\n\",\n00128|     \"    # Data augmentation for training\\n\",\n00129|     \"    train_datagen = ImageDataGenerator(\\n\",\n00130|     \"        preprocessing_function=preprocess_input,\\n\",\n00131|     \"        rotation_range=15,\\n\",\n00132|     \"        width_shift_range=0.1,\\n\",\n00133|     \"        height_shift_range=0.1,\\n\",\n00134|     \"        horizontal_flip=True,\\n\",\n00135|     \"        zoom_range=0.1,\\n\",\n00136|     \"        fill_mode='nearest',\\n\",\n00137|     \"        validation_split=validation_split\\n\",\n00138|     \"    )\\n\",\n00139|     \"    \\n\",\n00140|     \"    # No augmentation for validation\\n\",\n00141|     \"    val_datagen = ImageDataGenerator(\\n\",\n00142|     \"        preprocessing_function=preprocess_input,\\n\",\n00143|     \"        validation_split=validation_split\\n\",\n00144|     \"    )\\n\",\n00145|     \"    \\n\",\n00146|     \"    # Create generators\\n\",\n00147|     \"    train_generator = train_datagen.flow_from_directory(\\n\",\n00148|     \"        dataset_path,\\n\",\n00149|     \"        target_size=CONFIG['IMAGE_SIZE'],\\n\",\n00150|     \"        batch_size=CONFIG['BATCH_SIZE'],\\n\",\n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "title": "Desktop/EYE/training/eye_detection_training.ipynb",
+    "metadata": {
+      "preview": "    \"### Dataset Structure:\\n\",\n    \"```\\n\",\n    \"eye_dataset/\\n\",\n    \"├── Normal/\\n\",\n    \"│   ├── image1.jpg\\n\",\n    \"│   ├── image2.jpg\\n\",\n    \"│   └── ...\\n\",\n    \"├── Conjunctivitis/\\n\",\n    \"│   └── ...\\n\",\n    \"├── Cataract/\\n\",\n    \"│   └── ...\\n\",\n    \"└── Glaucoma/\\n\",\n    \"    └── ...\\n\",\n    \"```\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": null,\n   \"metadata\": {},",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769961354916,
+      "end": 1769961354926
+    }
+  }
+}

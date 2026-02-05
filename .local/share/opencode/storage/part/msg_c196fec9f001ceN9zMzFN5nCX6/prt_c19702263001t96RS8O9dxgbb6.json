@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19702263001t96RS8O9dxgbb6",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c196fec9f001ceN9zMzFN5nCX6",
+  "type": "tool",
+  "callID": "call_7dbdbbc0663b41768d811f25",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "fastapi==0.104.1\nuvicorn[standard]==0.24.0\npython-multipart==0.0.6\npillow==10.1.0\nnumpy==1.24.3\ntensorflow==2.15.0\nkeras==2.15.0\npython-dotenv==1.0.0\npydantic==2.5.0\naiofiles==23.2.1\n",
+      "filePath": "/home/bot4u/Desktop/EYE/requirements.txt"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/EYE/requirements.txt",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/bot4u/Desktop/EYE/requirements.txt",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953305206,
+      "end": 1769953305228
+    }
+  }
+}

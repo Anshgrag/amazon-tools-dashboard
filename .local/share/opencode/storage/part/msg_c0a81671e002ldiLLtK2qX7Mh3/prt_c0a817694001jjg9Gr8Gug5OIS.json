@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a817694001jjg9Gr8Gug5OIS",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a81671e002ldiLLtK2qX7Mh3",
+  "type": "tool",
+  "callID": "call_7c374829ae7446c688200ca7",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ls -la \"/home/bot4u/Desktop/eye project/\"",
+      "description": "Check main project directory"
+    },
+    "output": "total 88\ndrwxrwxr-x 10 bot4u bot4u  4096 Jan 29 21:32 .\ndrwxr-xr-x  6 bot4u bot4u  4096 Jan 29 20:22 ..\ndrwxrwxr-x  8 bot4u bot4u  4096 Jan 29 21:32 backend\n-rw-rw-r--  1 bot4u bot4u 14442 Jan 29 20:41 context.md\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 20:38 deployment\ndrwxrwxr-x  4 bot4u bot4u  4096 Jan 29 21:32 docker\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 21:21 docs\ndrwxrwxr-x  5 bot4u bot4u  4096 Jan 29 21:32 frontend\n-rw-rw-r--  1 bot4u bot4u 22405 Jan 29 21:26 get-docker.sh\ndrwxrwxr-x  8 bot4u bot4u  4096 Jan 29 21:05 ml\n-rw-rw-r--  1 bot4u bot4u  8138 Jan 29 21:12 README.md\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 21:17 scripts\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 21:32 uploads\n",
+    "title": "Check main project directory",
+    "metadata": {
+      "output": "total 88\ndrwxrwxr-x 10 bot4u bot4u  4096 Jan 29 21:32 .\ndrwxr-xr-x  6 bot4u bot4u  4096 Jan 29 20:22 ..\ndrwxrwxr-x  8 bot4u bot4u  4096 Jan 29 21:32 backend\n-rw-rw-r--  1 bot4u bot4u 14442 Jan 29 20:41 context.md\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 20:38 deployment\ndrwxrwxr-x  4 bot4u bot4u  4096 Jan 29 21:32 docker\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 21:21 docs\ndrwxrwxr-x  5 bot4u bot4u  4096 Jan 29 21:32 frontend\n-rw-rw-r--  1 bot4u bot4u 22405 Jan 29 21:26 get-docker.sh\ndrwxrwxr-x  8 bot4u bot4u  4096 Jan 29 21:05 ml\n-rw-rw-r--  1 bot4u bot4u  8138 Jan 29 21:12 README.md\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 21:17 scripts\ndrwxrwxr-x  2 bot4u bot4u  4096 Jan 29 21:32 uploads\n",
+      "exit": 0,
+      "description": "Check main project directory",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702782622,
+      "end": 1769702782632
+    }
+  }
+}

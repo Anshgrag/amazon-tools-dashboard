@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fa92a75001PHJ53j1pJapsQr",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa90c51002L4Gb6cGCcZF6vY",
+  "type": "tool",
+  "callID": "call_45a58f2dd320476b8400c18a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && echo \"=== Testing devices API ===\" && curl -s http://localhost:5000/api/devices | python3 -c \"\nimport json, sys\ndata = json.load(sys.stdin)\nprint(f'Status: {data[\\\"status\\\"]}')\nprint(f'Devices: {len(data[\\\"data\\\"][\\\"devices\\\"])}')\n\" && echo -e \"\\n=== Testing savings API ===\" && curl -s http://localhost:5000/api/savings?period=month | python3 -c \"\nimport json, sys\ndata = json.load(sys.stdin)\nprint(f'Status: {data[\\\"status\\\"]}')\nif data['status'] == 'success':\n    print(f'Waste: ${data[\\\"data\\\"][\\\"total_waste_cost\\\"]}')\n    print(f'Saved: ${data[\\\"data\\\"][\\\"total_saved_cost\\\"]}')\n\" && echo -e \"\\n=== Testing rooms API ===\" && curl -s http://localhost:5000/api/rooms/usage?period=month | python3 -c \"\nimport json, sys\ndata = json.load(sys.stdin)\nprint(f'Status: {data[\\\"status\\\"]}')\nif data['status'] == 'success':\n    rooms = data['data']['rooms']\n    print(f'Living Room: {rooms[\\\"living-room\\\"]} kWh')\n\"",
+      "description": "Test all API endpoints"
+    },
+    "output": "=== Testing devices API ===\nStatus: success\nDevices: 8\n\n=== Testing savings API ===\n/bin/bash: line 6: \nimport json, sys\ndata = json.load(sys.stdin)\nprint(f'Status: {data[\"status\"]}')\nif data['status'] == 'success':\n    print(f'Waste: ${data[\\\"data\\\"][\\\"total_waste_cost\\\"]}')\n    print(f'Saved: ${data[\\\"data\\\"][\\\"total_saved_cost\\\"]}')\n: bad substitution\n",
+    "title": "Test all API endpoints",
+    "metadata": {
+      "output": "=== Testing devices API ===\nStatus: success\nDevices: 8\n\n=== Testing savings API ===\n/bin/bash: line 6: \nimport json, sys\ndata = json.load(sys.stdin)\nprint(f'Status: {data[\"status\"]}')\nif data['status'] == 'success':\n    print(f'Waste: ${data[\\\"data\\\"][\\\"total_waste_cost\\\"]}')\n    print(f'Saved: ${data[\\\"data\\\"][\\\"total_saved_cost\\\"]}')\n: bad substitution\n",
+      "exit": 1,
+      "description": "Test all API endpoints",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789270671,
+      "end": 1769789272830
+    }
+  }
+}

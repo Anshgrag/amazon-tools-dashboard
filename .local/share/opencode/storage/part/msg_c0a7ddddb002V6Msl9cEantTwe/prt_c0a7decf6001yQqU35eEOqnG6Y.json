@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a7decf6001yQqU35eEOqnG6Y",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7ddddb002V6Msl9cEantTwe",
+  "type": "tool",
+  "callID": "call_ac07fff7a7bb43668c67f9a5",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd \"/home/bot4u/Desktop/eye project\" && ./scripts/setup.sh",
+      "description": "Run the setup script"
+    },
+    "output": "🏥 Setting up Eye Disease Detection Application...\n📁 Creating directories...\n⚙️ Setting up environment...\n🐳 Building and starting containers...\n./scripts/setup.sh: line 126: cd: ./scripts/docker: No such file or directory\nno configuration file provided: not found\n⏳ Waiting for services to start...\n🔍 Checking service health...\n❌ Backend failed to start\n❌ Frontend failed to start\n❌ Prometheus failed to start\n\n🎉 Setup complete! Access the application:\n🌐 Frontend: http://localhost:3000\n📚 API Docs: http://localhost:8000/api/docs\n📊 Monitoring: http://localhost:3001 (Grafana - admin/admin123)\n🔍 Metrics: http://localhost:9090 (Prometheus)\n\n⚠️  Note: You'll need to add a trained model to ml/models/weights/best_model.pth\n   For testing without a model, the API will return mock responses.\n",
+    "title": "Run the setup script",
+    "metadata": {
+      "output": "🏥 Setting up Eye Disease Detection Application...\n📁 Creating directories...\n⚙️ Setting up environment...\n🐳 Building and starting containers...\n./scripts/setup.sh: line 126: cd: ./scripts/docker: No such file or directory\nno configuration file provided: not found\n⏳ Waiting for services to start...\n🔍 Checking service health...\n❌ Backend failed to start\n❌ Frontend failed to start\n❌ Prometheus failed to start\n\n🎉 Setup complete! Access the application:\n🌐 Frontend: http://localhost:3000\n📚 API Docs: http://localhost:8000/api/docs\n📊 Monitoring: http://localhost:3001 (Grafana - admin/admin123)\n🔍 Metrics: http://localhost:9090 (Prometheus)\n\n⚠️  Note: You'll need to add a trained model to ml/models/weights/best_model.pth\n   For testing without a model, the API will return mock responses.\n",
+      "exit": 0,
+      "description": "Run the setup script",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702550794,
+      "end": 1769702581220
+    }
+  }
+}

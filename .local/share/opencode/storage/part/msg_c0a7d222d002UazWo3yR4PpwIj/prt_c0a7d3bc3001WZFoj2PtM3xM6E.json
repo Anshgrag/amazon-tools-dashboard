@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a7d3bc3001WZFoj2PtM3xM6E",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7d222d002UazWo3yR4PpwIj",
+  "type": "tool",
+  "callID": "call_e85e06d805fb4c43b646828d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "docker compose version",
+      "description": "Check if docker compose is available"
+    },
+    "output": "Docker Compose version v2.27.0\n",
+    "title": "Check if docker compose is available",
+    "metadata": {
+      "output": "Docker Compose version v2.27.0\n",
+      "exit": 0,
+      "description": "Check if docker compose is available",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702505422,
+      "end": 1769702505569
+    }
+  }
+}

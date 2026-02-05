@@ -1,0 +1,28 @@
+{
+  "id": "prt_be55a7b590012Dy9JJYQwSG4H0",
+  "sessionID": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "messageID": "msg_be55a2557001DcFmljWeJQOJdY",
+  "type": "tool",
+  "callID": "call_0af6d9edccb24a9ea53c6256",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "which pdftotext pdftk pdfinfo pandoc 2>/dev/null",
+      "description": "Check for available PDF tools"
+    },
+    "output": "/usr/bin/pdftotext\n/usr/bin/pdfinfo\n",
+    "title": "Check for available PDF tools",
+    "metadata": {
+      "output": "/usr/bin/pdftotext\n/usr/bin/pdfinfo\n",
+      "exit": 1,
+      "description": "Check for available PDF tools",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769079470940,
+      "end": 1769079470943,
+      "compacted": 1769080776920
+    }
+  }
+}

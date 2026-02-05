@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e004cf8001mKSsvYvQJQcnx3",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e0020a7001FccNtrkHIYR68d",
+  "type": "tool",
+  "callID": "chatcmpl-tool-64b0bf7410954ddca2a586f2f174fe72",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "#!/bin/bash\n\n# Custom git command to add, commit, and push all changes\n# Usage: git quickpush \"commit message\"\n\nif [ $# -eq 0 ]; then\n    echo \"Error: Please provide a commit message\"\n    echo \"Usage: git quickpush \\\"your commit message\\\"\"\n    exit 1\nfi\n\n# Add all changes\ngit add .\n\n# Commit with the provided message\ngit commit -m \"$1\"\n\n# Push to remote (if remote exists)\nif git remote get-url origin &>/dev/null; then\n    git push origin $(git rev-parse --abbrev-ref HEAD)\n    echo \"✓ Changes added, committed, and pushed successfully!\"\nelse\n    echo \"✓ Changes added and committed successfully!\"\n    echo \"ℹ No remote repository found. Set up a remote with: git remote add origin <repository-url>\"\nfi",
+      "filePath": "/home/bot4u/Desktop/EYE/git-quickpush"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/EYE/git-quickpush",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/bot4u/Desktop/EYE/git-quickpush",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1770298297600,
+      "end": 1770298297606
+    }
+  }
+}

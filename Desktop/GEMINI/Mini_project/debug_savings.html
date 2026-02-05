@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savings Debug</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body style="background: #1a2332; color: white; font-family: Arial, sans-serif;">
+    <h1>Savings Debug Test</h1>
+    
+    <div>
+        <h3>Test Elements:</h3>
+        <p>Wasted: <span id="wastedAmount">Loading...</span></p>
+        <p>Saved: <span id="savedAmount">Loading...</span></p>
+        <p>Net: <span id="netSavings">Loading...</span></p>
+        <p>Percentage: <span id="savingsPercentage">Loading...</span></p>
+    </div>
+    
+    <div>
+        <canvas id="savingsChart" width="400" height="200"></canvas>
+    </div>
+    
+    <div id="deviceSavingsList">
+        <p>Loading devices...</p>
+    </div>
+
+    <script>
+        // Test functions
+        function formatCurrency(value) {
+            return `$${parseFloat(value).toFixed(2)}`;
+        }
+        
+        async function fetchSavingsData() {
+            try {
+                console.log('Fetching from http://localhost:5000/api/savings');
+                const response = await fetch('http://localhost:5000/api/savings');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                console.log('Full response:', result);
+                
+                if (result.status === 'success') {
+                    updateSavingsDisplay(result.data);
+                } else {
+                    console.error('API returned error:', result);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('wastedAmount').textContent = 'ERROR';
+                document.getElementById('savedAmount').textContent = 'ERROR';
+                document.getElementById('netSavings').textContent = 'ERROR';
+            }
+        }
+        
+        function updateSavingsDisplay(data) {
+            console.log('Updating with data:', data);
+            
+            // Test direct element updates
+            document.getElementById('wastedAmount').textContent = formatCurrency(data.total_waste_cost);
+            document.getElementById('savedAmount').textContent = formatCurrency(data.total_saved_cost);
+            document.getElementById('netSavings').textContent = formatCurrency(data.net_savings);
+            
+            const percentage = ((data.total_saved_cost / (data.total_waste_cost + data.total_saved_cost)) * 100).toFixed(1);
+            document.getElementById('savingsPercentage').textContent = percentage + '%';
+            
+            // Update devices
+            if (data.device_details && data.device_details.length > 0) {
+                let html = '';
+                data.device_details.forEach(device => {
+                    const net = device.saved_cost - device.waste_cost;
+                    html += `<p>${device.device_name}: ${formatCurrency(net)}</p>`;
+                });
+                document.getElementById('deviceSavingsList').innerHTML = html;
+            }
+            
+            // Create chart
+            createSavingsChart(data.total_waste_cost, data.total_saved_cost);
+        }
+        
+        function createSavingsChart(wasteCost, savedCost) {
+            const ctx = document.getElementById('savingsChart');
+            if (!ctx) return;
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Without Automation', 'With Automation'],
+                    datasets: [{
+                        data: [wasteCost, savedCost],
+                        backgroundColor: ['#ff6b9d', '#06ffa5'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: 'white',
+                                callback: function(value) { return '$' + value; }
+                            },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            ticks: { color: 'white' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Start
+        fetchSavingsData();
+    </script>
+</body>
+</html>

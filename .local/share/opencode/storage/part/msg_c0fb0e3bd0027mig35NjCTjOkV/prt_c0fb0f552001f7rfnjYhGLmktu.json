@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fb0f552001f7rfnjYhGLmktu",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fb0e3bd0027mig35NjCTjOkV",
+  "type": "tool",
+  "callID": "call_1ae615cf038a4d1da698df63",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "limit": 15,
+      "offset": 220
+    },
+    "output": "<file>\n00221|     const colors = {\n00222|         'default': '#4ecdc4'\n00223|     };\n00224|     \n00225|     const devices = Object.values(deviceMap).sort((a, b) => b.power_watts - a.power_watts);\n00226|     \n00227|     let html = '';\n00228|     devices.forEach(device => {\n00229|         const maxPower = 200;\n00230|         const barWidth = Math.min((device.power_watts / maxPower) * 100, 100);\n00231|         const color = colors['default'];\n00232|         \n00233|         // Update device control status based on mode\n00234|             }\n00235|         }\n\n(File has more lines. Use 'offset' parameter to read beyond line 235)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "    const colors = {\n        'default': '#4ecdc4'\n    };\n    \n    const devices = Object.values(deviceMap).sort((a, b) => b.power_watts - a.power_watts);\n    \n    let html = '';\n    devices.forEach(device => {\n        const maxPower = 200;\n        const barWidth = Math.min((device.power_watts / maxPower) * 100, 100);\n        const color = colors['default'];\n        \n        // Update device control status based on mode\n            }\n        }",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769789781335,
+      "end": 1769789781446
+    }
+  }
+}

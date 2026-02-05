@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0aa77293001aJCu9sCMTl0MTk",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "role": "user",
+  "time": {
+    "created": 1769705271975
+  },
+  "summary": {
+    "title": "Build time expectations refinement\n\n",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

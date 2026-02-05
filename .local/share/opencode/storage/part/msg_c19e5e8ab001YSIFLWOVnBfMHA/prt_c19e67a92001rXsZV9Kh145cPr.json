@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e67a92001rXsZV9Kh145cPr",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e5e8ab001YSIFLWOVnBfMHA",
+  "type": "tool",
+  "callID": "call_f3739fc642fb44318f26766d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/ | python -m json.tool",
+      "description": "Test API root endpoint"
+    },
+    "output": "/bin/bash: line 1: python: command not found\n",
+    "title": "Test API root endpoint",
+    "metadata": {
+      "output": "/bin/bash: line 1: python: command not found\n",
+      "exit": 127,
+      "description": "Test API root endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961061018,
+      "end": 1769961061062
+    }
+  }
+}

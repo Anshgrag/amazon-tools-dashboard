@@ -1,0 +1,24 @@
+{
+  "id": "prt_be6eb26ca001FuEmy8TsykI6ki",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6eb1bf9001eXmjNVQ2r0IvBa",
+  "type": "tool",
+  "callID": "call_function_vhzwcou7swd1_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js"
+    },
+    "output": "<file>\n00001| // ==================== TAB SWITCHING ====================\n00002| \n00003| function setupTabSwitching() {\n00004|     const navItems = document.querySelectorAll('.nav-item');\n00005|     \n00006|     navItems.forEach(item => {\n00007|         item.addEventListener('click', function(e) {\n00008|             e.preventDefault();\n00009|             \n00010|             const tabName = this.getAttribute('data-tab');\n00011|             if (!tabName) return;\n00012|             \n00013|             // Don't do anything if clicking the already active tab\n00014|             if (tabName === currentTab) {\n00015|                 return;\n00016|             }\n00017|             \n00018|             // Update active nav item\n00019|             navItems.forEach(nav => nav.classList.remove('active'));\n00020|             this.classList.add('active');\n00021|             \n00022|             // Hide all tab panes\n00023|             document.querySelectorAll('.tab-pane').forEach(pane => {\n00024|                 pane.classList.remove('active');\n00025|             });\n00026|             \n00027|             // Show selected tab pane\n00028|             const tabPane = document.getElementById(`tab-${tabName}`);\n00029|             if (tabPane) {\n00030|                 tabPane.classList.add('active');\n00031|             }\n00032|             \n00033|             // Update current tab\n00034|             currentTab = tabName;\n00035|             \n00036|             // Refresh data for the new tab\n00037|             refreshTab(tabName);\n00038|         });\n00039|     });\n00040| }\n00041| \n00042| function refreshTab(tabName) {\n00043|     switch(tabName) {\n00044|         case 'dashboard':\n00045|             refreshDashboard();\n00046|             break;\n00047|         case 'cost':\n00048|             fetchCostData();\n00049|             break;\n00050|         case 'appliances':\n00051|             fetchAppliancesData();\n00052|             break;\n00053|         case 'rooms':\n00054|             fetchRoomsData();\n00055|             break;\n00056|     }\n00057| }\n\n(End of file - total 57 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "// ==================== TAB SWITCHING ====================\n\nfunction setupTabSwitching() {\n    const navItems = document.querySelectorAll('.nav-item');\n    \n    navItems.forEach(item => {\n        item.addEventListener('click', function(e) {\n            e.preventDefault();\n            \n            const tabName = this.getAttribute('data-tab');\n            if (!tabName) return;\n            \n            // Don't do anything if clicking the already active tab\n            if (tabName === currentTab) {\n                return;\n            }\n            \n            // Update active nav item\n            navItems.forEach(nav => nav.classList.remove('active'));\n            this.classList.add('active');",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769105729605,
+      "end": 1769105729640
+    }
+  }
+}

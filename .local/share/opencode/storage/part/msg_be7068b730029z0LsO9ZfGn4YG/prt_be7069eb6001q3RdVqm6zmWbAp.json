@@ -1,0 +1,26 @@
+{
+  "id": "prt_be7069eb6001q3RdVqm6zmWbAp",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be7068b730029z0LsO9ZfGn4YG",
+  "type": "tool",
+  "callID": "call_function_kplyabcf1oh0_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 50,
+      "offset": 1430
+    },
+    "output": "<file>\n01431|         btn.addEventListener('click', function() {\n01432|             const themeName = this.getAttribute('data-theme');\n01433|             applyTheme(themeName);\n01434|         });\n01435|     });\n01436|     \n01437|     console.log('Theme switching initialized');\n01438| }\n01439| \n01440| window.addEventListener('DOMContentLoaded', () => {\n01441|     console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n01442|     \n01443|     setupThemeSwitching();\n01444|     setupTabSwitching();\n01445|     setupTimeFilters();\n01446|     \n01447|     refreshDashboard();\n01448|     \n01449|     setInterval(refreshDashboard, REFRESH_INTERVAL);\n01450|     \n01451|     window.debugSavings = () => {\n01452|         console.log('=== MANUAL SAVINGS UPDATE ===');\n01453|         fetchSavingsData();\n01454|     };\n01455|     \n01456|     console.log('Debug function available: window.debugSavings()');\n01457|     console.log('=== INITIALIZATION COMPLETE ===');\n01458| });\n01459| \n\n(End of file - total 1459 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "        btn.addEventListener('click', function() {\n            const themeName = this.getAttribute('data-theme');\n            applyTheme(themeName);\n        });\n    });\n    \n    console.log('Theme switching initialized');\n}\n\nwindow.addEventListener('DOMContentLoaded', () => {\n    console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n    \n    setupThemeSwitching();\n    setupTabSwitching();\n    setupTimeFilters();\n    \n    refreshDashboard();\n    \n    setInterval(refreshDashboard, REFRESH_INTERVAL);\n    ",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107532152,
+      "end": 1769107532156
+    }
+  }
+}

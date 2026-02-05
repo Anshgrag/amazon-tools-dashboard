@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fd439d100112Ns2dlmHbL0DL",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fd42a41002Ye1baWNq4ht6s7",
+  "type": "tool",
+  "callID": "call_35be636883e14527a02319e2",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/style.css",
+      "limit": 10,
+      "offset": 1000
+    },
+    "output": "<file>\n01001| }\n01002| \n01003| /* ==================== COST ANALYSIS ==================== */\n01004| \n01005| .cost-analysis {\n01006|     padding: 10px 0;\n01007| }\n01008| \n01009| .cost-summary {\n01010|     display: flex;\n\n(File has more lines. Use 'offset' parameter to read beyond line 1010)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/style.css",
+    "metadata": {
+      "preview": "}\n\n/* ==================== COST ANALYSIS ==================== */\n\n.cost-analysis {\n    padding: 10px 0;\n}\n\n.cost-summary {\n    display: flex;",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769792092638,
+      "end": 1769792092748
+    }
+  }
+}

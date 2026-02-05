@@ -1,0 +1,11 @@
+{
+  "id": "prt_be70ea12f001PRsiXNuzlKDMlU",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70e8d6d002Jey8bJNJRpcLbq",
+  "type": "text",
+  "text": "Done! Both servers stopped:\n- Frontend (port 8000)\n- Backend (port 5000)",
+  "time": {
+    "start": 1769108054837,
+    "end": 1769108054837
+  }
+}

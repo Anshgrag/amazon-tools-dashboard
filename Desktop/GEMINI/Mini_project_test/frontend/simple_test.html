@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack Test</title>
+    <style>
+        :root {
+            --bg-primary: #1a2332;
+            --bg-card: #2a3f5f;
+            --text-primary: #ffffff;
+            --text-secondary: #b0c4de;
+            --accent-red: #ff4757;
+            --accent-green: #06ffa5;
+            --accent-teal: #4ecdc4;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        .card-title {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .savings-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .savings-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .savings-item.waste {
+            border: 2px solid var(--accent-red);
+            background: rgba(255, 71, 87, 0.1);
+        }
+        
+        .savings-item.saved {
+            border: 2px solid var(--accent-green);
+            background: rgba(6, 255, 165, 0.1);
+        }
+        
+        .savings-divider {
+            width: 2px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+        }
+        
+        .savings-amount {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .savings-item.waste .savings-amount {
+            color: var(--accent-red);
+        }
+        
+        .savings-item.saved .savings-amount {
+            color: var(--accent-green);
+        }
+        
+        .savings-label {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+        }
+        
+        .savings-desc {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+        }
+        
+        .net-savings {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+        .net-amount {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--accent-teal);
+            margin: 10px 0;
+        }
+        
+        .net-percentage {
+            font-size: 1em;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            margin-top: 20px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .loading {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3 class="card-title">SMART SAVINGS MONITOR</h3>
+        <div class="savings-row">
+            <div class="savings-item waste">
+                <div class="savings-label">Wasted Today</div>
+                <div class="savings-amount" id="wastedAmount" class="loading">Loading...</div>
+                <div class="savings-desc">Without automation</div>
+            </div>
+            <div class="savings-divider"></div>
+            <div class="savings-item saved">
+                <div class="savings-label">Saved Today</div>
+                <div class="savings-amount" id="savedAmount" class="loading">Loading...</div>
+                <div class="savings-desc">With automation</div>
+            </div>
+        </div>
+        <div class="net-savings">
+            <div class="net-amount" id="netSavings" class="loading">Loading...</div>
+            <div class="net-percentage" id="savingsPercentage">Loading...</div>
+        </div>
+        <div class="chart-container">
+            <canvas id="savingsChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        console.log('=== PAGE LOADED ===');
+        
+        function formatCurrency(value) {
+            return '$' + parseFloat(value).toFixed(2);
+        }
+        
+        async function updateSavings() {
+            console.log('=== UPDATING SAVINGS ===');
+            try {
+                const response = await fetch('http://localhost:5000/api/savings');
+                console.log('Response:', response);
+                
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+                
+                const result = await response.json();
+                console.log('Data:', result);
+                
+                if (result.status !== 'success') {
+                    throw new Error('API error');
+                }
+                
+                const data = result.data;
+                console.log('Processing:', data);
+                
+                // Update display
+                document.getElementById('wastedAmount').textContent = formatCurrency(data.total_waste_cost);
+                document.getElementById('wastedAmount').classList.remove('loading');
+                
+                document.getElementById('savedAmount').textContent = formatCurrency(data.total_saved_cost);
+                document.getElementById('savedAmount').classList.remove('loading');
+                
+                document.getElementById('netSavings').textContent = formatCurrency(data.net_savings);
+                document.getElementById('netSavings').classList.remove('loading');
+                
+                const percentage = ((data.total_saved_cost) / (data.total_waste_cost + data.total_saved_cost)) * 100;
+                document.getElementById('savingsPercentage').textContent = percentage.toFixed(1) + '%';
+                
+                // Create chart
+                createSavingsChart(data.total_waste_cost, data.total_saved_cost);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('wastedAmount').textContent = 'ERROR';
+                document.getElementById('savedAmount').textContent = 'ERROR';
+                document.getElementById('netSavings').textContent = 'ERROR';
+            }
+        }
+        
+        function createSavingsChart(wasteCost, savedCost) {
+            const ctx = document.getElementById('savingsChart');
+            if (!ctx) return;
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Without Automation', 'With Automation'],
+                    datasets: [{
+                        data: [wasteCost, savedCost],
+                        backgroundColor: ['#ff6b9d', '#06ffa5'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#b0c4de',
+                                callback: function(value) { return '$' + value; }
+                            },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#b0c4de' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Start
+        updateSavings();
+        
+        // Refresh every 30 seconds
+        setInterval(updateSavings, 30000);
+    </script>
+</body>
+</html>

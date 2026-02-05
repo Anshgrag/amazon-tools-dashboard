@@ -1,0 +1,24 @@
+{
+  "id": "prt_be6e70bdc001QCGMY3qa1SD0z0",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6e6ed87001Z42rhbpFPJmZO6",
+  "type": "tool",
+  "callID": "call_function_61jwuxm83z6y_3",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/*.config.*"
+    },
+    "output": "No files found",
+    "title": "Desktop/GEMINI/Mini_project_test",
+    "metadata": {
+      "count": 0,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769105460189,
+      "end": 1769105460193
+    }
+  }
+}

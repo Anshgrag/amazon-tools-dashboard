@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead577f0001VJzbATrmD2ivYX",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead5681a001KND41sVvVbcvaf",
+  "type": "tool",
+  "callID": "call_8f75221e636f4ae1bdb986d5",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:5000/api/devices/1/toggle -H \"Content-Type: application/json\" -d '{\"state\": \"on\"}'",
+      "description": "Wait and test toggle"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    76  100    61  100    15     88     21 --:--:-- --:--:-- --:--:--   110\r100    76  100    61  100    15     88     21 --:--:-- --:--:-- --:--:--   110\n{\n  \"message\": \"Device 1 turned on\",\n  \"status\": \"success\"\n}\n",
+    "title": "Wait and test toggle",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    76  100    61  100    15     88     21 --:--:-- --:--:-- --:--:--   110\r100    76  100    61  100    15     88     21 --:--:-- --:--:-- --:--:--   110\n{\n  \"message\": \"Device 1 turned on\",\n  \"status\": \"success\"\n}\n",
+      "exit": 0,
+      "description": "Wait and test toggle",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171417082,
+      "end": 1769171420789
+    }
+  }
+}

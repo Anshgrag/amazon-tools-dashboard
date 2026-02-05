@@ -1,0 +1,25 @@
+{
+  "id": "prt_ba9abe5840016yM1O57vHfXAUp",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9abd8fe001EA0ehSUmdBfQXk",
+  "type": "tool",
+  "callID": "call_de85540f86c94a949d0abbb8",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+      "limit": 50
+    },
+    "output": "<file>\n00001| // ==================== CONFIGURATION ====================\n00002| \n00003| const API_BASE_URL = 'http://localhost:5000';\n00004| const REFRESH_INTERVAL = 30000;\n00005| \n00006| let costChart = null;\n00007| let usageChart = null;\n00008| let savingsChart = null;\n00009| \n00010| // ==================== UTILITY FUNCTIONS ====================\n00011| \n00012| function formatCurrency(value) {\n00013|     return `$${value.toFixed(0)}`;\n00014| }\n00015| \n00016| function formatDate() {\n00017|     const now = new Date();\n00018|     const options = { month: 'long', year: 'numeric' };\n00019|     return now.toLocaleDateString('en-US', options);\n00020| }\n00021| \n00022| \n00023| \n00024| // ==================== FETCH DATA FUNCTIONS ====================\n00025| \n00026| \n00027| \n00028| async function fetchElectricityData() {\n00029|     try {\n00030|         const response = await fetch(`${API_BASE_URL}/api/electricity/history?limit=100`);\n00031|         const result = await response.json();\n00032|         \n00033|         if (result.status === 'success') {\n00034|             updateAppliancesDisplay(result.data);\n00035|             updateCostPredicted(result.data);\n00036|             updateUsageEstimate(result.data);\n00037|             updateCarbonFootprint(result.data);\n00038|         }\n00039|     } catch (error) {\n00040|         console.error('Error fetching electricity data:', error);\n00041|     }\n00042| }\n00043| \n00044| async function fetchSavingsData() {\n00045|     try {\n00046|         const response = await fetch(`${API_BASE_URL}/api/savings`);\n00047|         const result = await response.json();\n00048|         \n00049|         if (result.status === 'success') {\n00050|             updateSavingsDisplay(result.data);\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+    "metadata": {
+      "preview": "// ==================== CONFIGURATION ====================\n\nconst API_BASE_URL = 'http://localhost:5000';\nconst REFRESH_INTERVAL = 30000;\n\nlet costChart = null;\nlet usageChart = null;\nlet savingsChart = null;\n\n// ==================== UTILITY FUNCTIONS ====================\n\nfunction formatCurrency(value) {\n    return `$${value.toFixed(0)}`;\n}\n\nfunction formatDate() {\n    const now = new Date();\n    const options = { month: 'long', year: 'numeric' };\n    return now.toLocaleDateString('en-US', options);\n}",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768078173580,
+      "end": 1768078173592
+    }
+  }
+}

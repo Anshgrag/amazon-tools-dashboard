@@ -1,0 +1,27 @@
+{
+  "id": "prt_bfea5e712001RWKGsRg6F9feRa",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "messageID": "msg_bfea5c5ab001CAlu73tfigufgg",
+  "type": "tool",
+  "callID": "chatcmpl-tool-c938eb64b5bd46e7b670867180102d4d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -s \"http://localhost:5000/api/savings?period=today\" | python3 -m json.tool",
+      "description": "Test savings API endpoint"
+    },
+    "output": "{\n    \"data\": {\n        \"calculation_method\": \"sleep_mode_detection\",\n        \"cost_per_kwh\": 0.12,\n        \"device_details\": [\n            {\n                \"active_power\": 720.0,\n                \"auto_controlled_hours\": 6,\n                \"device_name\": \"TV\",\n                \"device_type\": \"entertainment\",\n                \"efficiency_percentage\": 14.3,\n                \"rated_power\": 120.0,\n                \"sleep_hours_detected\": 6,\n                \"sleep_saved_cost\": 0.0,\n                \"sleep_waste_cost\": 0.02,\n                \"standby_power\": 144.0\n            }\n        ],\n        \"net_savings\": -0.01,\n        \"total_saved_cost\": 0.0,\n        \"total_waste_cost\": 0.02\n    },\n    \"status\": \"success\"\n}\n",
+    "title": "Test savings API endpoint",
+    "metadata": {
+      "output": "{\n    \"data\": {\n        \"calculation_method\": \"sleep_mode_detection\",\n        \"cost_per_kwh\": 0.12,\n        \"device_details\": [\n            {\n                \"active_power\": 720.0,\n                \"auto_controlled_hours\": 6,\n                \"device_name\": \"TV\",\n                \"device_type\": \"entertainment\",\n                \"efficiency_percentage\": 14.3,\n                \"rated_power\": 120.0,\n                \"sleep_hours_detected\": 6,\n                \"sleep_saved_cost\": 0.0,\n                \"sleep_waste_cost\": 0.02,\n                \"standby_power\": 144.0\n            }\n        ],\n        \"net_savings\": -0.01,\n        \"total_saved_cost\": 0.0,\n        \"total_waste_cost\": 0.02\n    },\n    \"status\": \"success\"\n}\n",
+      "exit": 0,
+      "description": "Test savings API endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769503844119,
+      "end": 1769503847200
+    }
+  }
+}

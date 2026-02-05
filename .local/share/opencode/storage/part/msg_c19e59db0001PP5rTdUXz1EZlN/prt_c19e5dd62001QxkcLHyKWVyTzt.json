@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e5dd62001QxkcLHyKWVyTzt",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e59db0001PP5rTdUXz1EZlN",
+  "type": "tool",
+  "callID": "call_634b4ac81a984237a8aa7260",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ps aux | grep \"python backend/main.py\" | grep -v grep",
+      "description": "Check if backend process is running"
+    },
+    "output": "bot4u      55456  0.0  0.0   9940  2316 ?        S    21:20   0:00 /bin/bash -c source venv/bin/activate && nohup python backend/main.py > backend.log 2>&1 &\nbot4u      55457 27.8  5.9 1616420 463536 ?      Sl   21:20   0:05 python backend/main.py\n",
+    "title": "Check if backend process is running",
+    "metadata": {
+      "output": "bot4u      55456  0.0  0.0   9940  2316 ?        S    21:20   0:00 /bin/bash -c source venv/bin/activate && nohup python backend/main.py > backend.log 2>&1 &\nbot4u      55457 27.8  5.9 1616420 463536 ?      Sl   21:20   0:05 python backend/main.py\n",
+      "exit": 0,
+      "description": "Check if backend process is running",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961020802,
+      "end": 1769961020937
+    }
+  }
+}

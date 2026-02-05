@@ -1,0 +1,25 @@
+{
+  "id": "prt_c0a81c160001uRa9n1vNwd2zXq",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a817915001EVGUV5KcddGV07",
+  "type": "tool",
+  "callID": "call_407d6aa5597c4534b4645623",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/eye project/docker/docker-compose.yml",
+      "limit": 20
+    },
+    "output": "<file>\n00001| version: '3.8'\n00002| \n00003| services:\n00004|   # PostgreSQL Database\n00005|   postgres:\n00006|     image: postgres:15-alpine\n00007|     container_name: eye_disease_db\n00008|     environment:\n00009|       POSTGRES_DB: eyedisease\n00010|       POSTGRES_USER: postgres\n00011|       POSTGRES_PASSWORD: postgres123\n00012|     volumes:\n00013|       - postgres_data:/var/lib/postgresql/data\n00014|       - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql\n00015|     ports:\n00016|       - \"5432:5432\"\n00017|     networks:\n00018|       - eye_disease_network\n00019|     restart: unless-stopped\n00020|     healthcheck:\n\n(File has more lines. Use 'offset' parameter to read beyond line 20)\n</file>",
+    "title": "Desktop/eye project/docker/docker-compose.yml",
+    "metadata": {
+      "preview": "version: '3.8'\n\nservices:\n  # PostgreSQL Database\n  postgres:\n    image: postgres:15-alpine\n    container_name: eye_disease_db\n    environment:\n      POSTGRES_DB: eyedisease\n      POSTGRES_USER: postgres\n      POSTGRES_PASSWORD: postgres123\n    volumes:\n      - postgres_data:/var/lib/postgresql/data\n      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql\n    ports:\n      - \"5432:5432\"\n    networks:\n      - eye_disease_network\n    restart: unless-stopped\n    healthcheck:",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769702801780,
+      "end": 1769702801787
+    }
+  }
+}

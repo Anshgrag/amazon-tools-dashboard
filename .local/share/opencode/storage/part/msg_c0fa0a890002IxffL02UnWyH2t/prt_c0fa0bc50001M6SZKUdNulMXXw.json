@@ -1,0 +1,22 @@
+{
+  "id": "prt_c0fa0bc50001M6SZKUdNulMXXw",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa0a890002IxffL02UnWyH2t",
+  "type": "tool",
+  "callID": "call_d24f10188baf47288ec635ca",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "oldString": "const colors = {\n        'TV': '#ff6b9d',\n        'Router': '#c77dff',\n        'Charger': '#4ecdc4',\n        'Refrigerator': '#ffd166'\n    };",
+      "newString": "const colors = {\n        'default': '#4ecdc4'\n    };",
+      "replaceAll": true
+    },
+    "error": "Error: File /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js has been modified since it was last read.\nLast modification: 2026-01-30T15:58:31.560Z\nLast read: 2026-01-30T15:58:14.075Z\n\nPlease read the file again before modifying it.",
+    "time": {
+      "start": 1769788718164,
+      "end": 1769788718196
+    }
+  }
+}

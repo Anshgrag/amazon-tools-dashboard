@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6f9aa93001xamGpg2760JKij",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f99d490023D9DRcien667V0",
+  "type": "reasoning",
+  "text": "I need to add a Devices tab to the sidebar. Let me do that first.",
+  "metadata": {
+    "anthropic": {
+      "signature": "dc46e3f109304d2f4c0889801cc438351d9e70e2d79b77a13fa4731fcdad637c"
+    }
+  },
+  "time": {
+    "start": 1769106680467,
+    "end": 1769106680766
+  }
+}

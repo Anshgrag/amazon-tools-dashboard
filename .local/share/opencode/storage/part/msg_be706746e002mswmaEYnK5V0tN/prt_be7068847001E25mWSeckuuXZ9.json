@@ -1,0 +1,26 @@
+{
+  "id": "prt_be7068847001E25mWSeckuuXZ9",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be706746e002mswmaEYnK5V0tN",
+  "type": "tool",
+  "callID": "call_function_yb9wk8l7do5p_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 80,
+      "offset": 1355
+    },
+    "output": "<file>\n01356|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01357|         btn.classList.toggle('active', btn.getAttribute('data-theme') === themeName);\n01358|     });\n01359|     \n01360|     document.querySelector('.logo h1').innerHTML = getLogoHTML(themeName);\n01361|     \n01362|     console.log(`Theme applied: ${theme.name}`);\n01363| }\n01364| \n01365| function getLogoHTML(themeName) {\n01366|     const logos = {\n01367|         dark: 'ECOTRACK',\n01368|         japan: 'エコトラック',\n01369|         germany: 'ECOTRACK',\n01370|         scandinavia: 'ECOTRACK',\n01371|         tropical: '🌴 ECOTRACK 🌴',\n01372|         nordic: '◆ ECOTRACK ◆'\n01373|     };\n01374|     return logos[themeName] || 'ECOTRACK';\n01375| }\n01376| \n01377| function setupThemeSwitching() {\n01378|     console.log('=== SETUP THEME SWITCHING ===');\n01379|     \n01380|     const savedTheme = localStorage.getItem('ecotrack-theme') || 'dark';\n01381|     applyTheme(savedTheme);\n01382|     \n01383|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01384|         btn.addEventListener('click', function() {\n01385|             const themeName = this.getAttribute('data-theme');\n01386|             applyTheme(themeName);\n01387|         });\n01388|     });\n01389|     \n01390|     console.log('Theme switching initialized');\n01391| }\n01392| \n01393| window.addEventListener('DOMContentLoaded', () => {\n01394|     console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n01395|     \n01396|     setupThemeSwitching();\n01397|     setupTabSwitching();\n01398|     setupTimeFilters();\n01399|     \n01400|     refreshDashboard();\n01401|     return logos[themeName] || 'ECOTRACK';\n01402| }\n01403| };\n01404| \n01405| function applyTheme(themeName) {\n01406|     const theme = themes[themeName];\n01407|     if (!theme) return;\n01408|     \n01409|     const root = document.documentElement;\n01410|     \n01411|     Object.entries(theme).forEach(([key, value]) => {\n01412|         root.style.setProperty(`--${key}`, value);\n01413|     });\n01414|     \n01415|     localStorage.setItem('ecotrack-theme', themeName);\n01416|     \n01417|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01418|         btn.classList.toggle('active', btn.getAttribute('data-theme') === themeName);\n01419|     });\n01420|     \n01421|     console.log(`Theme applied: ${themeName}`);\n01422| }\n01423| \n01424| function setupThemeSwitching() {\n01425|     console.log('=== SETUP THEME SWITCHING ===');\n01426|     \n01427|     const savedTheme = localStorage.getItem('ecotrack-theme') || 'dark';\n01428|     applyTheme(savedTheme);\n01429|     \n01430|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01431|         btn.addEventListener('click', function() {\n01432|             const themeName = this.getAttribute('data-theme');\n01433|             applyTheme(themeName);\n01434|         });\n01435|     });\n\n(File has more lines. Use 'offset' parameter to read beyond line 1435)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "    document.querySelectorAll('.theme-btn').forEach(btn => {\n        btn.classList.toggle('active', btn.getAttribute('data-theme') === themeName);\n    });\n    \n    document.querySelector('.logo h1').innerHTML = getLogoHTML(themeName);\n    \n    console.log(`Theme applied: ${theme.name}`);\n}\n\nfunction getLogoHTML(themeName) {\n    const logos = {\n        dark: 'ECOTRACK',\n        japan: 'エコトラック',\n        germany: 'ECOTRACK',\n        scandinavia: 'ECOTRACK',\n        tropical: '🌴 ECOTRACK 🌴',\n        nordic: '◆ ECOTRACK ◆'\n    };\n    return logos[themeName] || 'ECOTRACK';\n}",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769107524165,
+      "end": 1769107524176
+    }
+  }
+}

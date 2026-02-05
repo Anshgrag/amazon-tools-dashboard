@@ -1,0 +1,51 @@
+{
+  "id": "prt_beaa41944001GYNzyPG9WfefK3",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa4099d001c5KsPa6oK0ZKKq",
+  "type": "tool",
+  "callID": "call_21734805",
+  "tool": "question",
+  "state": {
+    "status": "error",
+    "input": {
+      "questions": [
+        {
+          "question": "What files do you consider unnecessary in this folder?",
+          "header": "Clarify unnecessary files",
+          "options": [
+            {
+              "label": "Debug/test files",
+              "description": "Remove files like debug_savings.html, test_*.sh, test.py"
+            },
+            {
+              "label": "Archives/backups",
+              "description": "Delete zip files and archives like mini project.zip, V1.2.zip"
+            },
+            {
+              "label": "Docs/reports",
+              "description": "Remove documentation, presentations, reports (*.md, *.docx, *.pdf)"
+            },
+            {
+              "label": "Data files",
+              "description": "Delete data files like *.json, *.db (except requirements.txt)"
+            },
+            {
+              "label": "Virtual env",
+              "description": "Remove the venv folder"
+            },
+            {
+              "label": "Other",
+              "description": "Custom selection - specify which files"
+            }
+          ],
+          "multiple": true
+        }
+      ]
+    },
+    "error": "Error: The user dismissed this question",
+    "time": {
+      "start": 1769168181580,
+      "end": 1769168223709
+    }
+  }
+}

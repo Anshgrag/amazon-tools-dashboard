@@ -1,0 +1,21 @@
+{
+  "id": "prt_bead86ac1001PYkt1rxJs6owRR",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead847d0001EN3xEWimIcxz5x",
+  "type": "tool",
+  "callID": "call_f97ad22f14344fc7a0c33a2f",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "frontend/script.js",
+      "oldString": "// ==================== INITIALIZATION ====================\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n    \n    // Set up periodic data refresh\n    setInterval(fetchAllData, REFRESH_INTERVAL);\n    \n    // Initialize device control\n    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)\n    setInterval(checkSchedules, 60000);\n    \n    // Initialize schedule list\n    updateScheduleList();\n});",
+      "newString": "// ==================== INITIALIZATION ====================\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n    \n    // Set up periodic data refresh\n    setInterval(fetchAllData, REFRESH_INTERVAL);\n    \n    // Initialize device control\n    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)\n    setInterval(checkSchedules, 60000);\n    \n    // Initialize schedule list\n    updateScheduleList();\n});"
+    },
+    "error": "Error: oldString and newString must be different",
+    "time": {
+      "start": 1769171610307,
+      "end": 1769171610321
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a7cd829001os9JssnAw389mV",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7b7708002j0y6LnDCBWDC6z",
+  "type": "tool",
+  "callID": "call_8e79906b9dcc4be7b1d7e754",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "which docker",
+      "description": "Check if Docker is installed"
+    },
+    "output": "/usr/bin/docker\n",
+    "title": "Check if Docker is installed",
+    "metadata": {
+      "output": "/usr/bin/docker\n",
+      "exit": 0,
+      "description": "Check if Docker is installed",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702479922,
+      "end": 1769702479938
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_be56e424f00170e0FEHjx056w3",
+  "sessionID": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "role": "user",
+  "time": {
+    "created": 1769080767062
+  },
+  "summary": {
+    "title": "Accessing the context file workflow",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "glm-4.7-free"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prt_be6f2127c001CkGX922uTz3zBe",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f2022c002I002jbf9YhgaLI",
+  "type": "tool",
+  "callID": "call_function_6a2kjnaqggic_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "fuser -k 8000/tcp 2>/dev/null; sleep 1; cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 &",
+      "description": "Kill port 8000 and restart frontend"
+    },
+    "output": "",
+    "title": "Kill port 8000 and restart frontend",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Kill port 8000 and restart frontend",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106183295,
+      "end": 1769106184341
+    }
+  }
+}

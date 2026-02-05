@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Energy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Regional Themes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=Poppins:wght@300;400;500&family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>ECOTRACK</h1>
+                <span class="beta-badge">BETA</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-tab="dashboard">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="cost">
+                    <span class="icon">💰</span>
+                    <span>Cost</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="appliances">
+                    <span class="icon">💡</span>
+                    <span>Appliances</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="rooms">
+                    <span class="icon">🏠</span>
+                    <span>Usage by Rooms</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="devices">
+                    <span class="icon">🔌</span>
+                    <span>Devices</span>
+                </a>
+            </nav>
+            
+            <div class="theme-section">
+                <div class="theme-label">THEMES</div>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="dark" title="Modern Dark">
+                        <span class="theme-preview dark"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="japan" title="Japan">
+                        <span class="theme-preview japan"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="germany" title="Germany">
+                        <span class="theme-preview germany"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="scandinavia" title="Scandinavia">
+                        <span class="theme-preview scandinavia"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="tropical" title="Tropical">
+                        <span class="theme-preview tropical"></span>
+                    </button>
+                    <button class="theme-btn" data-theme="nordic" title="Nordic Winter">
+                        <span class="theme-preview nordic"></span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- HEADER -->
+            <header class="header">
+                <h2>Energy Dashboard</h2>
+                <div class="header-right">
+                    <div class="time-filter">
+                        <button class="filter-btn">TODAY</button>
+                        <button class="filter-btn active">MONTH</button>
+                        <button class="filter-btn">YEAR</button>
+                    </div>
+                    <div class="date-display" id="currentDate">January 2026</div>
+                </div>
+            </header>
+
+            <!-- DASHBOARD GRID -->
+            <div class="dashboard-grid tab-pane active" id="tab-dashboard">
+                
+                <!-- COST PREDICTED -->
+                <div class="card">
+                    <h3 class="card-title">COST PREDICTED</h3>
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                        <div class="chart-center-text">
+                            <div class="total-label">Total</div>
+                            <div class="total-value" id="totalCost">$0</div>
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot electricity"></span>
+                            <span>Electricity</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot gas"></span>
+                            <span>Gas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHANGE IN COST -->
+                <div class="card">
+                    <h3 class="card-title">CHANGE IN COST</h3>
+                    <div class="cost-comparison">
+                        <div class="cost-bar-container">
+                            <div class="cost-bar" id="lastMonthBar">
+                                <div class="bar-value" id="lastMonthValue">$0</div>
+                                <div class="bar-label">Last Month</div>
+                            </div>
+                            <div class="cost-bar" id="currentMonthBar">
+                                <div class="bar-value" id="currentMonthValue">$0</div>
+                                <div class="bar-label">This Month</div>
+                            </div>
+                        </div>
+                        <div class="cost-change">
+                            <div class="change-icon">▲</div>
+                            <div class="change-percentage" id="changePercentage">0%</div>
+                            <div class="change-label">INCREASE IN COST</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USAGE ESTIMATE -->
+                <div class="card">
+                    <h3 class="card-title">USAGE ESTIMATE</h3>
+                    <div class="usage-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Till Now:</span>
+                            <span class="stat-value" id="usageTillNow">0 kWh</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Predicted:</span>
+                            <span class="stat-value" id="usagePredicted">0 kWh</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="usageChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- ACTIVE APPLIANCES -->
+                <div class="card">
+                    <h3 class="card-title">ACTIVE APPLIANCES</h3>
+                    <div class="appliances-list" id="appliancesList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- SMART SAVINGS MONITOR -->
+                <div class="card">
+                    <h3 class="card-title">SMART SAVINGS MONITOR</h3>
+                    <div class="savings-summary">
+                        <div class="savings-row">
+                            <div class="savings-item waste">
+                                <div class="savings-label">Wasted Today</div>
+                                <div class="savings-amount" id="wastedAmount">$0.00</div>
+                                <div class="savings-desc">Without automation</div>
+                            </div>
+                            <div class="savings-divider"></div>
+                            <div class="savings-item saved">
+                                <div class="savings-label">Saved Today</div>
+                                <div class="savings-amount" id="savedAmount">$0.00</div>
+                                <div class="savings-desc">With automation</div>
+                            </div>
+                        </div>
+                        <div class="net-savings">
+                            <div class="net-label">Net Savings</div>
+                            <div class="net-amount" id="netSavings">$0.00</div>
+                            <div class="net-percentage" id="savingsPercentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="savingsChart"></canvas>
+                    </div>
+                    <div class="device-savings-list" id="deviceSavingsList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COST TAB -->
+            <div class="dashboard-grid tab-pane" id="tab-cost">
+                <div class="card full-width">
+                    <h3 class="card-title">COST ANALYSIS</h3>
+                    <div class="cost-analysis">
+                        <div class="cost-summary">
+                            <div class="cost-card">
+                                <div class="cost-icon">⚡</div>
+                                <div class="cost-info">
+                                    <div class="cost-label">This Month</div>
+                                    <div class="cost-value" id="costThisMonth">$0.00</div>
+                                </div>
+                            </div>
+                            <div class="cost-card">
+                                <div class="cost-icon">📈</div>
+                                <div class="cost-info">
+                                    <div class="cost-label">Last Month</div>
+                                    <div class="cost-value" id="costLastMonth">$0.00</div>
+                                </div>
+                            </div>
+                            <div class="cost-card">
+                                <div class="cost-icon">📉</div>
+                                <div class="cost-info">
+                                    <div class="cost-label">Projected</div>
+                                    <div class="cost-value" id="costProjected">$0.00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container large">
+                            <canvas id="costAnalysisChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">COST BY DEVICE</h3>
+                    <div class="device-cost-list" id="deviceCostList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPLIANCES TAB -->
+            <div class="dashboard-grid tab-pane" id="tab-appliances">
+                <div class="card full-width">
+                    <h3 class="card-title">ALL APPLIANCES</h3>
+                    <div class="appliances-grid" id="allAppliancesGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">POWER CONSUMPTION</h3>
+                    <div class="chart-container">
+                        <canvas id="appliancePowerChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">APPLIANCE STATUS</h3>
+                    <div class="appliance-status-list" id="applianceStatusList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- USAGE BY ROOMS TAB -->
+            <div class="dashboard-grid tab-pane" id="tab-rooms">
+                <div class="card full-width">
+                    <h3 class="card-title">USAGE BY ROOM</h3>
+                    <div class="rooms-summary">
+                        <div class="room-card" data-room="living-room">
+                            <div class="room-icon">📺</div>
+                            <div class="room-name">Living Room</div>
+                            <div class="room-usage" id="roomLivingRoom">0 kWh</div>
+                        </div>
+                        <div class="room-card" data-room="kitchen">
+                            <div class="room-icon">🍳</div>
+                            <div class="room-name">Kitchen</div>
+                            <div class="room-usage" id="roomKitchen">0 kWh</div>
+                        </div>
+                        <div class="room-card" data-room="bedroom">
+                            <div class="room-icon">🛏️</div>
+                            <div class="room-name">Bedroom</div>
+                            <div class="room-usage" id="roomBedroom">0 kWh</div>
+                        </div>
+                        <div class="room-card" data-room="office">
+                            <div class="room-icon">💻</div>
+                            <div class="room-name">Office</div>
+                            <div class="room-usage" id="roomOffice">0 kWh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">ROOM COMPARISON</h3>
+                    <div class="chart-container">
+                        <canvas id="roomComparisonChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">ROOM DETAILS</h3>
+                    <div class="room-details-list" id="roomDetailsList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEVICES TAB -->
+            <div class="dashboard-grid tab-pane" id="tab-devices">
+                <div class="card full-width">
+                    <h3 class="card-title">DEVICE MANAGEMENT</h3>
+                    <div class="devices-header">
+                        <div class="devices-stats">
+                            <div class="device-stat">
+                                <span class="stat-number" id="totalDevices">0</span>
+                                <span class="stat-label">Total Devices</span>
+                            </div>
+                            <div class="device-stat">
+                                <span class="stat-number" id="activeDevices">0</span>
+                                <span class="stat-label">Active</span>
+                            </div>
+                            <div class="device-stat">
+                                <span class="stat-number" id="scheduledDevices">0</span>
+                                <span class="stat-label">Scheduled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card full-width">
+                    <h3 class="card-title">YOUR DEVICES</h3>
+                    <div class="devices-grid" id="devicesGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">DEVICE SCHEDULES</h3>
+                    <div class="schedules-list" id="schedulesList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">QUICK ACTIONS</h3>
+                    <div class="quick-actions">
+                        <button class="action-btn" id="turnAllOff">
+                            <span class="action-icon">🔴</span>
+                            <span>Turn All Off</span>
+                        </button>
+                        <button class="action-btn" id="turnAllOn">
+                            <span class="action-icon">🟢</span>
+                            <span>Turn All On</span>
+                        </button>
+                        <button class="action-btn" id="ecoMode">
+                            <span class="action-icon">🌱</span>
+                            <span>Eco Mode</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

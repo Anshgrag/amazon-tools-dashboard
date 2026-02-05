@@ -1,0 +1,109 @@
+✅ UNIVERSAL NANO BANANA PROMPT
+(Flat Stone Transfer • Natural Lighting • Direction-Locked)
+🔑 IMAGE INPUT ORDER (MANDATORY)
+
+Image 1 – Stone Reference
+(Reference ONLY for gemstone)
+
+Image 2 – Ring Model
+(BASE IMAGE – must remain unchanged)
+
+🎯 TASK
+
+Replace ONLY the gemstone in Image 2 (Ring Model) with the exact gemstone from Image 1 (Stone Reference).
+
+🟢 GEMSTONE RULES (TAKE ONLY FROM IMAGE 1)
+
+Use only the gemstone from Image 1
+
+Preserve exact gemstone depth
+
+Preserve exact surface structure
+
+STONE MUST BE COMPLETELY FLAT
+
+❌ No dome
+
+❌ No cabochon
+
+❌ No curvature or bulge
+
+❌ No added thickness or height
+
+❌ No faceting or reshaping
+
+Stone surface must visually match Image 1 exactly
+
+🔒 BASE IMAGE LOCK (IMAGE 2 – RING MODEL)
+
+Do NOT change ring design
+
+Do NOT change ring angle or perspective
+
+Do NOT change metal type, color, polish, or thickness
+
+Do NOT change camera position
+
+Do NOT change background
+
+Do NOT change props, fabric, table, bowl, or book
+
+Do NOT change original scene composition
+
+💡 LIGHTING & REALISM (VERY IMPORTANT)
+
+Lighting must look natural and photographic
+
+Match the original ambient light of Image 2
+
+Soft, realistic highlights on gemstone
+
+Natural contact shadows between stone and bezel
+
+No artificial glow, HDR look, or CGI shine
+
+Stone must look physically placed, not pasted or floating
+
+⚠️ EDITING CONSTRAINT
+
+Only allowed edit: gemstone replacement
+
+Everything else must remain pixel-consistent with Image 2
+
+🚫 STRICT NEGATIVE PROMPT
+
+No dome stones
+
+No rounded or raised surfaces
+
+No gemstone depth modification
+
+No lighting style change
+
+No background change
+
+No ring redesign
+
+No angle change
+
+No AI stylization or mockup look
+
+📸 OUTPUT REQUIREMENT
+
+Generate one ultra-realistic image where:
+
+Ring + background = 100% Image 2
+
+Gemstone = 100% Image 1
+
+Stone surface = FLAT
+
+Lighting = natural, realistic, scene-matched
+
+Aspect Ratio must be 100% 1:1
+
+Output image must be perfectly square
+
+No cropping, stretching, padding, or reframing
+
+Maintain original framing of Image 2 within a square canvas

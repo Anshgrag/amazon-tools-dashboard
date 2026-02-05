@@ -1,0 +1,27 @@
+{
+  "id": "prt_bfea518ae001zu5nsG83H14e73",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "messageID": "msg_bfea4ad10001muI50mD7H5tvQ0",
+  "type": "tool",
+  "callID": "call_ff3de1b9ac4d4f0ca994f98d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "source venv/bin/activate && python3 -c \"\nimport sqlite3\nimport json\n\n# Create test data directly in the database\nconn = sqlite3.connect('ecotrack.db')\ncursor = conn.cursor()\n\n# Insert device profiles\ndevices = [\n    ('TV', 'entertainment', 120, 15),\n    ('Computer', 'electronics', 200, 25),\n    ('Router', 'network', 15, 5)\n]\n\ncursor.executemany('INSERT OR REPLACE INTO device_profiles (device_name, device_type, rated_power, sleep_threshold, created_at) VALUES (?, ?, ?, ?, datetime(\\\"now\\\"))', devices)\n\n# Insert sample electricity data for TV over 24 hours\nfrom datetime import datetime, timedelta\nbase_time = datetime.now() - timedelta(hours=24)\n\nfor i in range(24):\n    timestamp = base_time + timedelta(hours=i)\n    \n    # TV usage pattern\n    if 18 <= i <= 23:  # Active evening usage\n        power_watts = 120\n        auto_controlled = 0\n        mode = 'active'\n    elif 0 <= i <= 5:  # Sleep mode at night - auto-controlled off\n        power_watts = 8\n        auto_controlled = 1\n        mode = 'sleep'\n    else:  # Standby during day\n        power_watts = 12\n        auto_controlled = 0\n        mode = 'standby'\n    \n    cursor.execute('''\n        INSERT INTO electricity_data \n        (device_name, mode, voltage, power_watts, timestamp, auto_controlled, manual_override, device_type, rated_power)\n        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)\n    ''', ('TV', mode, 220, power_watts, timestamp.isoformat(), auto_controlled, 0, 'entertainment', 120))\n\nconn.commit()\nconn.close()\nprint('Test data inserted successfully')\n\"",
+      "description": "Insert test data for savings logic"
+    },
+    "output": "Traceback (most recent call last):\n  File \"<string>\", line 39, in <module>\nsqlite3.OperationalError: table electricity_data has no column named device_type\n",
+    "title": "Insert test data for savings logic",
+    "metadata": {
+      "output": "Traceback (most recent call last):\n  File \"<string>\", line 39, in <module>\nsqlite3.OperationalError: table electricity_data has no column named device_type\n",
+      "exit": 1,
+      "description": "Insert test data for savings logic",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769503791294,
+      "end": 1769503791342
+    }
+  }
+}

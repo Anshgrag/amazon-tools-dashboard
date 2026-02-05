@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body style="background: var(--bg-primary);">
+    <div class="app-container">
+        <main class="main-content">
+            <div class="card">
+                <h3 class="card-title">SMART SAVINGS MONITOR</h3>
+                <div class="savings-summary">
+                    <div class="savings-row">
+                        <div class="savings-item waste">
+                            <div class="savings-label">Wasted Today</div>
+                            <div class="savings-amount" id="wastedAmount">Loading...</div>
+                            <div class="savings-desc">Without automation</div>
+                        </div>
+                        <div class="savings-divider"></div>
+                        <div class="savings-item saved">
+                            <div class="savings-label">Saved Today</div>
+                            <div class="savings-amount" id="savedAmount">Loading...</div>
+                            <div class="savings-desc">With automation</div>
+                        </div>
+                    </div>
+                    <div class="net-savings">
+                        <div class="net-label">Net Savings</div>
+                        <div class="net-amount" id="netSavings">Loading...</div>
+                        <div class="net-percentage" id="savingsPercentage">Loading...</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="savingsChart"></canvas>
+                </div>
+                <div class="device-savings-list" id="deviceSavingsList">
+                    <p>Loading devices...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Direct test script
+        console.log('=== DIRECT TEST START ===');
+        
+        function formatCurrency(value) {
+            return `$${parseFloat(value).toFixed(2)}`;
+        }
+        
+        async function loadData() {
+            try {
+                console.log('Fetching data...');
+                const response = await fetch('http://localhost:5000/api/savings');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const result = await response.json();
+                console.log('Data received:', result);
+                
+                if (result.status !== 'success') throw new Error('API error');
+                
+                const data = result.data;
+                
+                // Update display
+                document.getElementById('wastedAmount').textContent = formatCurrency(data.total_waste_cost);
+                document.getElementById('savedAmount').textContent = formatCurrency(data.total_saved_cost);
+                document.getElementById('netSavings').textContent = formatCurrency(data.net_savings);
+                
+                const percentage = ((data.total_saved_cost / (data.total_waste_cost + data.total_saved_cost)) * 100);
+                document.getElementById('savingsPercentage').textContent = percentage.toFixed(1) + '%';
+                
+                console.log('Display updated successfully');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('wastedAmount').textContent = 'ERROR';
+                document.getElementById('savedAmount').textContent = 'ERROR';
+                document.getElementById('netSavings').textContent = 'ERROR';
+            }
+        }
+        
+        // Load data immediately
+        loadData();
+        
+        // Refresh every 30 seconds
+        setInterval(loadData, 30000);
+        
+    </script>
+</body>
+</html>

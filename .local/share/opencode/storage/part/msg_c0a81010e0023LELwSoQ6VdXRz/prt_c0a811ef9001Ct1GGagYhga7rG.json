@@ -1,0 +1,28 @@
+{
+  "id": "prt_c0a811ef9001Ct1GGagYhga7rG",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a81010e0023LELwSoQ6VdXRz",
+  "type": "tool",
+  "callID": "call_287c83736b3042ffaaafc51f",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd \"/home/bot4u/Desktop/eye project/docker\" && docker compose up --build --no-daemon",
+      "description": "Run Docker compose in foreground to see issues",
+      "timeout": 120000
+    },
+    "output": "unknown flag: --no-daemon\n",
+    "title": "Run Docker compose in foreground to see issues",
+    "metadata": {
+      "output": "unknown flag: --no-daemon\n",
+      "exit": 16,
+      "description": "Run Docker compose in foreground to see issues",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702760193,
+      "end": 1769702760398
+    }
+  }
+}

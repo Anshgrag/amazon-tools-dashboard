@@ -1,0 +1,74 @@
+{
+  "id": "prt_be6fee8a5001IJ5ODttGX5WXL4",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6fec8ee002VIXBJf4HVfbDo4",
+  "type": "tool",
+  "callID": "call_function_5n5tdhglfuxs_1",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Add theme switcher UI in sidebar",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Create CSS variables for multiple themes",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add theme switching JavaScript logic",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add smooth theme transition animations",
+          "id": "4",
+          "priority": "medium",
+          "status": "pending"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Add theme switcher UI in sidebar\",\n    \"id\": \"1\",\n    \"priority\": \"high\",\n    \"status\": \"in_progress\"\n  },\n  {\n    \"content\": \"Create CSS variables for multiple themes\",\n    \"id\": \"2\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Add theme switching JavaScript logic\",\n    \"id\": \"3\",\n    \"priority\": \"high\",\n    \"status\": \"pending\"\n  },\n  {\n    \"content\": \"Add smooth theme transition animations\",\n    \"id\": \"4\",\n    \"priority\": \"medium\",\n    \"status\": \"pending\"\n  }\n]",
+    "title": "4 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Add theme switcher UI in sidebar",
+          "id": "1",
+          "priority": "high",
+          "status": "in_progress"
+        },
+        {
+          "content": "Create CSS variables for multiple themes",
+          "id": "2",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add theme switching JavaScript logic",
+          "id": "3",
+          "priority": "high",
+          "status": "pending"
+        },
+        {
+          "content": "Add smooth theme transition animations",
+          "id": "4",
+          "priority": "medium",
+          "status": "pending"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107025267,
+      "end": 1769107025286
+    }
+  }
+}

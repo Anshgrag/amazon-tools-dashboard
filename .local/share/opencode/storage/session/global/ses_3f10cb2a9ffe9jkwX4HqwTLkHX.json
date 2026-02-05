@@ -1,0 +1,17 @@
+{
+  "id": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "slug": "clever-planet",
+  "version": "1.1.42",
+  "projectID": "global",
+  "directory": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy",
+  "title": "Cleanup unnecessary files to run project",
+  "time": {
+    "created": 1769777352022,
+    "updated": 1769825732629
+  },
+  "summary": {
+    "additions": 29,
+    "deletions": 915253,
+    "files": 6378
+  }
+}

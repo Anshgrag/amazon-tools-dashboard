@@ -1,0 +1,25 @@
+{
+  "id": "prt_c0fa828080013vL6ZeJhNCuqt1",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa805e0002UFomGZawYQTmr8",
+  "type": "tool",
+  "callID": "call_ef838f382b8e4152bf9f1ceb",
+  "tool": "grep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "path": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend",
+      "pattern": "function.*refreshTab|function.*fetchAllData|function.*initializeCharts"
+    },
+    "output": "Found 1 matches\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js:\n  Line 74: function refreshTab(tabName) {",
+    "title": "function.*refreshTab|function.*fetchAllData|function.*initializeCharts",
+    "metadata": {
+      "matches": 1,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789204509,
+      "end": 1769789204595
+    }
+  }
+}

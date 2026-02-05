@@ -1,0 +1,36 @@
+{
+  "id": "prt_be6eacf38001uNl7J9KHUt2ot2",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6eac205001yg4hefnISmxR0T",
+  "type": "tool",
+  "callID": "call_function_4h4e0n0l451b_1",
+  "tool": "edit",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "newString": "// ==================== TAB SWITCHING ====================\n\nfunction setupTabSwitching() {\n    const navItems = document.querySelectorAll('.nav-item');\n    \n    navItems.forEach(item => {\n        item.addEventListener('click', function(e) {\n            e.preventDefault();\n            \n            const tabName = this.getAttribute('data-tab');\n            if (!tabName) return;\n            \n            // Don't do anything if clicking the already active tab\n            if (tabName === currentTab) {\n                return;\n            }\n            \n            // Update active nav item\n            navItems.forEach(nav => nav.classList.remove('active'));\n            this.classList.add('active');\n            \n            // Hide all tab panes\n            document.querySelectorAll('.tab-pane').forEach(pane => {\n                pane.classList.remove('active');\n            });\n            \n            // Show selected tab pane\n            const tabPane = document.getElementById(`tab-${tabName}`);\n            if (tabPane) {\n                tabPane.classList.add('active');\n            }\n            \n            // Update current tab\n            currentTab = tabName;\n            \n            // Refresh data for the new tab\n            refreshTab(tabName);\n        });\n    });\n}\n\nfunction refreshTab(tabName) {\n    switch(tabName) {\n        case 'dashboard':\n            refreshDashboard();\n            break;\n        case 'cost':\n            fetchCostData();\n            break;\n        case 'appliances':\n            fetchAppliancesData();\n            break;\n        case 'rooms':\n            fetchRoomsData();\n            break;\n    }\n}",
+      "oldString": ""
+    },
+    "output": "Edit applied successfully.",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/GEMINI/Mini_project_test/backend/app.py": []
+      },
+      "diff": "Index: /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js\n===================================================================\n--- /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js\n+++ /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js\n@@ -0,0 +1,57 @@\n+// ==================== TAB SWITCHING ====================\n+\n+function setupTabSwitching() {\n+    const navItems = document.querySelectorAll('.nav-item');\n+    \n+    navItems.forEach(item => {\n+        item.addEventListener('click', function(e) {\n+            e.preventDefault();\n+            \n+            const tabName = this.getAttribute('data-tab');\n+            if (!tabName) return;\n+            \n+            // Don't do anything if clicking the already active tab\n+            if (tabName === currentTab) {\n+                return;\n+            }\n+            \n+            // Update active nav item\n+            navItems.forEach(nav => nav.classList.remove('active'));\n+            this.classList.add('active');\n+            \n+            // Hide all tab panes\n+            document.querySelectorAll('.tab-pane').forEach(pane => {\n+                pane.classList.remove('active');\n+            });\n+            \n+            // Show selected tab pane\n+            const tabPane = document.getElementById(`tab-${tabName}`);\n+            if (tabPane) {\n+                tabPane.classList.add('active');\n+            }\n+            \n+            // Update current tab\n+            currentTab = tabName;\n+            \n+            // Refresh data for the new tab\n+            refreshTab(tabName);\n+        });\n+    });\n+}\n+\n+function refreshTab(tabName) {\n+    switch(tabName) {\n+        case 'dashboard':\n+            refreshDashboard();\n+            break;\n+        case 'cost':\n+            fetchCostData();\n+            break;\n+        case 'appliances':\n+            fetchAppliancesData();\n+            break;\n+        case 'rooms':\n+            fetchRoomsData();\n+            break;\n+    }\n+}\n\\ No newline at end of file\n",
+      "filediff": {
+        "file": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+        "before": "",
+        "after": "// ==================== TAB SWITCHING ====================\n\nfunction setupTabSwitching() {\n    const navItems = document.querySelectorAll('.nav-item');\n    \n    navItems.forEach(item => {\n        item.addEventListener('click', function(e) {\n            e.preventDefault();\n            \n            const tabName = this.getAttribute('data-tab');\n            if (!tabName) return;\n            \n            // Don't do anything if clicking the already active tab\n            if (tabName === currentTab) {\n                return;\n            }\n            \n            // Update active nav item\n            navItems.forEach(nav => nav.classList.remove('active'));\n            this.classList.add('active');\n            \n            // Hide all tab panes\n            document.querySelectorAll('.tab-pane').forEach(pane => {\n                pane.classList.remove('active');\n            });\n            \n            // Show selected tab pane\n            const tabPane = document.getElementById(`tab-${tabName}`);\n            if (tabPane) {\n                tabPane.classList.add('active');\n            }\n            \n            // Update current tab\n            currentTab = tabName;\n            \n            // Refresh data for the new tab\n            refreshTab(tabName);\n        });\n    });\n}\n\nfunction refreshTab(tabName) {\n    switch(tabName) {\n        case 'dashboard':\n            refreshDashboard();\n            break;\n        case 'cost':\n            fetchCostData();\n            break;\n        case 'appliances':\n            fetchAppliancesData();\n            break;\n        case 'rooms':\n            fetchRoomsData();\n            break;\n    }\n}",
+        "additions": 57,
+        "deletions": 0
+      },
+      "truncated": false
+    },
+    "time": {
+      "start": 1769105710606,
+      "end": 1769105710623
+    }
+  }
+}

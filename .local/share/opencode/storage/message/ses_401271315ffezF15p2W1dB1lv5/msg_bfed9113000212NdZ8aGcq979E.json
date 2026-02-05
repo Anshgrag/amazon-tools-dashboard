@@ -1,0 +1,29 @@
+{
+  "id": "msg_bfed9113000212NdZ8aGcq979E",
+  "sessionID": "ses_401271315ffezF15p2W1dB1lv5",
+  "role": "assistant",
+  "time": {
+    "created": 1769507197232,
+    "completed": 1769507200799
+  },
+  "parentID": "msg_bfed8ecf7001iJUfWjjD7mOcUD",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "plan",
+  "agent": "plan",
+  "path": {
+    "cwd": "/home/bot4u/Documents",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 11346,
+    "output": 20,
+    "reasoning": 0,
+    "cache": {
+      "read": 448,
+      "write": 0
+    }
+  },
+  "finish": "tool-calls"
+}

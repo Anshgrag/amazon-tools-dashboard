@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9ac96b4001j1g9w4xl0xwnZx",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9ac8967001P0CGqyBHpOvwxx",
+  "type": "tool",
+  "callID": "call_cf72d4c6bbed43758628784d",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project && chmod +x test_apis.sh && ./test_apis.sh",
+      "description": "Test all API endpoints"
+    },
+    "output": "=== Testing API Endpoints ===\n1. Backend Status:\n\"EcoTrack API is running!\"\n\n2. Savings API:\n\"success\"\n\n3. Electricity API:\n1\n\n4. Frontend Status:\n200\n5. Chart.js CDN:\n200\n=== Checking for JavaScript Errors ===\nOpen browser console and check for errors\nVisit: http://localhost:8000\n",
+    "title": "Test all API endpoints",
+    "metadata": {
+      "output": "=== Testing API Endpoints ===\n1. Backend Status:\n\"EcoTrack API is running!\"\n\n2. Savings API:\n\"success\"\n\n3. Electricity API:\n1\n\n4. Frontend Status:\n200\n5. Chart.js CDN:\n200\n=== Checking for JavaScript Errors ===\nOpen browser console and check for errors\nVisit: http://localhost:8000\n",
+      "exit": 0,
+      "description": "Test all API endpoints",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078218944,
+      "end": 1768078219315
+    }
+  }
+}

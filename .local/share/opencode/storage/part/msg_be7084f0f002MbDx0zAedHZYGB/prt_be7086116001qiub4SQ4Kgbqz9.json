@@ -1,0 +1,16 @@
+{
+  "id": "prt_be7086116001qiub4SQ4Kgbqz9",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be7084f0f002MbDx0zAedHZYGB",
+  "type": "reasoning",
+  "text": "Good. Now start the frontend.",
+  "metadata": {
+    "anthropic": {
+      "signature": "a5508870d83de4c44d04872ec2e5fd2a2fa5d91c9929046dcb0afce0a451e251"
+    }
+  },
+  "time": {
+    "start": 1769107644694,
+    "end": 1769107644992
+  }
+}

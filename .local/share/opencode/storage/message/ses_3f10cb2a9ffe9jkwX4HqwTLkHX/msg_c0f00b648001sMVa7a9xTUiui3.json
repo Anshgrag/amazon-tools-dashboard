@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0f00b648001sMVa7a9xTUiui3",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "role": "user",
+  "time": {
+    "created": 1769778230873
+  },
+  "summary": {
+    "title": "Paraphrase: deriving project idea from company under 50 words",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

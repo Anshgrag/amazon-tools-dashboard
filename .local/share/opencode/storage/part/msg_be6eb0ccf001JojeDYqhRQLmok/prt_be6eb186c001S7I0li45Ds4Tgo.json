@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6eb186c001S7I0li45Ds4Tgo",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6eb0ccf001JojeDYqhRQLmok",
+  "type": "tool",
+  "callID": "call_function_kml6lf7ew6d9_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 100,
+      "offset": 45
+    },
+    "output": "<file>\n00046|             break;\n00047|         case 'cost':\n00048|             fetchCostData();\n00049|             break;\n00050|         case 'appliances':\n00051|             fetchAppliancesData();\n00052|             break;\n00053|         case 'rooms':\n00054|             fetchRoomsData();\n00055|             break;\n00056|     }\n00057| }\n\n(End of file - total 57 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "            break;\n        case 'cost':\n            fetchCostData();\n            break;\n        case 'appliances':\n            fetchAppliancesData();\n            break;\n        case 'rooms':\n            fetchRoomsData();\n            break;\n    }\n}",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769105726195,
+      "end": 1769105726206
+    }
+  }
+}

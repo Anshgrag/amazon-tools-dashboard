@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9abbeb1001sTFH1gV84s67GK",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9abb163001q3u20ziPDEKJdG",
+  "type": "tool",
+  "callID": "call_66b39156599044d6bf2f2317",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl http://localhost:8000 2>/dev/null | head -10",
+      "description": "Check frontend server status"
+    },
+    "output": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>EcoTrack - Energy Dashboard</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Chart.js library -->\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n</head>\n",
+    "title": "Check frontend server status",
+    "metadata": {
+      "output": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>EcoTrack - Energy Dashboard</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Chart.js library -->\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n</head>\n",
+      "exit": 0,
+      "description": "Check frontend server status",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078163638,
+      "end": 1768078163662
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_bfee2e824001De76EmwYjxDfjT",
+  "sessionID": "ses_4011d17dfffernUMy6l8w6GL7V",
+  "role": "user",
+  "time": {
+    "created": 1769507842095
+  },
+  "summary": {
+    "title": "Wedding card Final_card.pdf improvement suggestions",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

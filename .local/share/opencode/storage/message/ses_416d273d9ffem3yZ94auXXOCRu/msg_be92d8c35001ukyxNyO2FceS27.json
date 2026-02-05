@@ -1,0 +1,17 @@
+{
+  "id": "msg_be92d8c35001ukyxNyO2FceS27",
+  "sessionID": "ses_416d273d9ffem3yZ94auXXOCRu",
+  "role": "user",
+  "time": {
+    "created": 1769143635035
+  },
+  "summary": {
+    "title": "Create light/dark theme toggle copy without device management, zip edited copy",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "minimax-m2.1-free"
+  }
+}

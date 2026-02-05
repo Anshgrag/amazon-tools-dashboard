@@ -1,0 +1,25 @@
+{
+  "id": "prt_ba988ae380017GiQa22bQt03g3",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba988a41d001BRg9EXwo9ICDOL",
+  "type": "tool",
+  "callID": "chatcmpl-tool-1760088a1c5b480d9a8f06df0f642e90",
+  "tool": "grep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "include": "*.js",
+      "pattern": "aqi|AQI"
+    },
+    "output": "Found 60 matches\n/home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js:\n  Line 8: let aqiGauge = null;\n  Line 22: function getAQICategory(aqiValue) {\n  Line 23:     if (aqiValue <= 50) return { category: 'Good', color: '#06ffa5' };\n  Line 24:     else if (aqiValue <= 100) return { category: 'Moderate', color: '#ffd166' };\n  Line 25:     else if (aqiValue <= 150) return { category: 'Unhealthy for Sensitive', color: '#ff9f40' };\n  Line 26:     else if (aqiValue <= 200) return { category: 'Unhealthy', color: '#ff6b9d' };\n  Line 27:     else if (aqiValue <= 300) return { category: 'Very Unhealthy', color: '#c77dff' };\n  Line 33: async function fetchLatestAQI() {\n  Line 35:         const response = await fetch(`${API_BASE_URL}/api/aqi/latest`);\n  Line 39:             updateAQIDisplay(result.data);\n  Line 42:         console.error('Error fetching AQI data:', error);\n  Line 64: function updateAQIDisplay(data) {\n  Line 65:     let avgAQI = 0;\n  Line 69:         document.getElementById('indoorAQI').textContent = data.indoor.aqi_value;\n  Line 70:         avgAQI += data.indoor.aqi_value;\n  Line 75:         document.getElementById('outdoorAQI').textContent = data.outdoor.aqi_value;\n  Line 76:         avgAQI += data.outdoor.aqi_value;\n  Line 81:         avgAQI = Math.round(avgAQI / count);\n  Line 82:         document.getElementById('aqiValue').textContent = avgAQI;\n  Line 83:         createAQIGauge(avgAQI);\n  Line 322: function createAQIGauge(aqiValue) {\n  Line 323:     const ctx = document.getElementById('aqiGauge');\n  Line 326:     if (aqiGauge) {\n  Line 327:         aqiGauge.destroy();\n  Line 330:     const aqiInfo = getAQICategory(aqiValue);\n  Line 331:     const maxAQI = 500;\n  Line 332:     const percentage = (aqiValue / maxAQI) * 100;\n  Line 334:     aqiGauge = new Chart(ctx, {\n  Line 339:                 backgroundColor: [aqiInfo.color, 'rgba(255, 255, 255, 0.1)'],\n  Line 368:         fetchLatestAQI(),\n\n/home/bot4u/Desktop/GEMINI/Mini_project/mini project/frontend/script.js:\n  Line 8: let aqiGauge = null;\n  Line 22: function getAQICategory(aqiValue) {\n  Line 23:     if (aqiValue <= 50) return { category: 'Good', color: '#06ffa5' };\n  Line 24:     else if (aqiValue <= 100) return { category: 'Moderate', color: '#ffd166' };\n  Line 25:     else if (aqiValue <= 150) return { category: 'Unhealthy for Sensitive', color: '#ff9f40' };\n  Line 26:     else if (aqiValue <= 200) return { category: 'Unhealthy', color: '#ff6b9d' };\n  Line 27:     else if (aqiValue <= 300) return { category: 'Very Unhealthy', color: '#c77dff' };\n  Line 33: async function fetchLatestAQI() {\n  Line 35:         const response = await fetch(`${API_BASE_URL}/api/aqi/latest`);\n  Line 39:             updateAQIDisplay(result.data);\n  Line 42:         console.error('Error fetching AQI data:', error);\n  Line 64: function updateAQIDisplay(data) {\n  Line 65:     let avgAQI = 0;\n  Line 69:         document.getElementById('indoorAQI').textContent = data.indoor.aqi_value;\n  Line 70:         avgAQI += data.indoor.aqi_value;\n  Line 75:         document.getElementById('outdoorAQI').textContent = data.outdoor.aqi_value;\n  Line 76:         avgAQI += data.outdoor.aqi_value;\n  Line 81:         avgAQI = Math.round(avgAQI / count);\n  Line 82:         document.getElementById('aqiValue').textContent = avgAQI;\n  Line 83:         createAQIGauge(avgAQI);\n  Line 322: function createAQIGauge(aqiValue) {\n  Line 323:     const ctx = document.getElementById('aqiGauge');\n  Line 326:     if (aqiGauge) {\n  Line 327:         aqiGauge.destroy();\n  Line 330:     const aqiInfo = getAQICategory(aqiValue);\n  Line 331:     const maxAQI = 500;\n  Line 332:     const percentage = (aqiValue / maxAQI) * 100;\n  Line 334:     aqiGauge = new Chart(ctx, {\n  Line 339:                 backgroundColor: [aqiInfo.color, 'rgba(255, 255, 255, 0.1)'],\n  Line 368:         fetchLatestAQI(),",
+    "title": "aqi|AQI",
+    "metadata": {
+      "matches": 60,
+      "truncated": false
+    },
+    "time": {
+      "start": 1768075865663,
+      "end": 1768075865723
+    }
+  }
+}

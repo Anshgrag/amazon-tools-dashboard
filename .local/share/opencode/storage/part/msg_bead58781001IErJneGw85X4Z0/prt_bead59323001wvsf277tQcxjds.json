@@ -1,0 +1,11 @@
+{
+  "id": "prt_bead59323001wvsf277tQcxjds",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead58781001IErJneGw85X4Z0",
+  "type": "text",
+  "text": "\nGreat! Now I've fixed the major issues:\n\n## Issues Fixed:\n\n### 1. **Device Selection & Controls**\n- Click on \"Smart Switch\" card to select it\n- Shows \"SELECTED DEVICE CONTROLS\" section only after clicking\n- Displays device details, instant control, and scheduler for selected device\n\n### 2. **Device Readings** \n- Backend is returning data (18.4W, 230.4V)\n- Frontend now properly displays device information when selected\n\n### 3. **Device Control**\n- API is working (tested successfully)\n- Added debug logging to track commands\n- Instant ON/OFF buttons now work\n\n## How to Use:\n\n1. **Go to Appliances tab**\n2. **Click \"Smart Switch\" card** → this shows the control panel\n3. **Device Details** shows: Power, Voltage, Current, Mode\n4. **Instant Control**: ON/OFF buttons work immediately\n5. **Scheduler**: Set times and actions\n\nThe system now works as intended—click the device first to see all controls. The toggle commands are working through the backend and should control your physical smart plug.",
+  "time": {
+    "start": 1769171429555,
+    "end": 1769171429555
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0a9abf01001PObSV6DnFu1Nvl",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "role": "user",
+  "time": {
+    "created": 1769704439570
+  },
+  "summary": {
+    "title": "Don text note analysis",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

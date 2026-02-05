@@ -1,0 +1,26 @@
+{
+  "id": "prt_ba9ac0461001isQt68pTjNkjxM",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9abf3e90013uC2I8tIAdg8KN",
+  "type": "tool",
+  "callID": "call_28021601154046cab96befe2",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+      "limit": 50,
+      "offset": 200
+    },
+    "output": "<file>\n00201|             }]\n00202|         },\n00203|         options: {\n00204|             responsive: true,\n00205|             maintainAspectRatio: false,\n00206|             cutout: '75%',\n00207|             plugins: {\n00208|                 legend: {\n00209|                     display: false\n00210|                 },\n00211|                 tooltip: {\n00212|                     callbacks: {\n00213|                         label: function(context) {\n00214|                             return context.label + ': $' + context.parsed.toFixed(2);\n00215|                         }\n00216|                     }\n00217|                 }\n00218|             }\n00219|         }\n00220|     });\n00221| }\n00222| \n00223| function createUsageChart(tillNow, predicted) {\n00224|     const ctx = document.getElementById('usageChart');\n00225|     if (!ctx) return;\n00226|     \n00227|     if (usageChart) {\n00228|         usageChart.destroy();\n00229|     }\n00230|     \n00231|     // Generate data for the month\n00232|     const currentDay = new Date().getDate();\n00233|     const labels = [];\n00234|     const data = [];\n00235|     \n00236|     for (let i = 1; i <= 30; i++) {\n00237|         labels.push(`Jun ${i}`);\n00238|         if (i <= currentDay) {\n00239|             data.push((tillNow / currentDay) * i);\n00240|         } else {\n00241|             data.push(null);\n00242|         }\n00243|     }\n00244|     \n00245|     usageChart = new Chart(ctx, {\n00246|         type: 'line',\n00247|         data: {\n00248|             labels: labels,\n00249|             datasets: [{\n00250|                 data: data,\n\n(File has more lines. Use 'offset' parameter to read beyond line 250)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+    "metadata": {
+      "preview": "            }]\n        },\n        options: {\n            responsive: true,\n            maintainAspectRatio: false,\n            cutout: '75%',\n            plugins: {\n                legend: {\n                    display: false\n                },\n                tooltip: {\n                    callbacks: {\n                        label: function(context) {\n                            return context.label + ': $' + context.parsed.toFixed(2);\n                        }\n                    }\n                }\n            }\n        }\n    });",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768078181478,
+      "end": 1768078181482
+    }
+  }
+}

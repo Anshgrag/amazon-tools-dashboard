@@ -1,0 +1,21 @@
+{
+  "id": "prt_c0fa878e0001CQUhWY5fxSsh0N",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa82ca2002m8kNRRY8gj8AVO",
+  "type": "tool",
+  "callID": "call_80a852181d324fa78e5e1122",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "oldString": "// ==================== INITIALIZATION ====================\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n    \n    // Set up periodic data refresh\n    setInterval(fetchAllData, REFRESH_INTERVAL);\n    \n    // Initialize device control\n    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)\n    setInterval(checkSchedules, 60000);\n    \n    // Initialize schedule list\n    updateScheduleList();\n});",
+      "newString": "// ==================== INITIALIZATION ====================\n\nfunction fetchAllData() {\n    console.log('=== FETCHING ALL DATA ===');\n    fetchElectricityData();\n    fetchSavingsData();\n    refreshDashboard();\n}\n\nfunction initializeCharts() {\n    console.log('=== INITIALIZING CHARTS ===');\n    // Charts are initialized when their respective functions are called\n    console.log('Charts ready');\n}\n\nfunction refreshDashboard() {\n    fetchElectricityData();\n    fetchSavingsData();\n    updateDateDisplay(currentPeriod);\n}\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n    \n    // Set up periodic data refresh\n    setInterval(fetchAllData, REFRESH_INTERVAL);\n    \n    // Initialize device control\n    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)\n    setInterval(checkSchedules, 60000);\n    \n    // Initialize schedule list\n    updateScheduleList();\n});"
+    },
+    "error": "Error: File /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js has been modified since it was last read.\nLast modification: 2026-01-30T16:02:34.265Z\nLast read: 2026-01-30T15:58:14.075Z\n\nPlease read the file again before modifying it.",
+    "time": {
+      "start": 1769789225188,
+      "end": 1769789225193
+    }
+  }
+}

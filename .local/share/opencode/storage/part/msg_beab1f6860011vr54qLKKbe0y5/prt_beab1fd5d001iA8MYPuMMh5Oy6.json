@@ -1,0 +1,11 @@
+{
+  "id": "prt_beab1fd5d001iA8MYPuMMh5Oy6",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab1f6860011vr54qLKKbe0y5",
+  "type": "text",
+  "text": "The smart plug control is now implemented. The API `/api/devices/1/toggle` can turn the plug on/off.\n\nFor the frontend showing \"off\": the plug is actually on (switch_1: true), but the charger may not draw power without a phone connected. Connect your phone to the charger and check the data again—it should show power consumption.\n\nTo add an on/off switch in the frontend:\n- In `frontend/index.html`, add a toggle button in the devices section.\n- In `frontend/script.js`, add a click handler that calls the toggle API.\n\nExample button: `<button onclick=\"toggleDevice(1)\">Toggle</button>`\n\nRun the integration to confirm power draw with the phone connected.",
+  "time": {
+    "start": 1769169092623,
+    "end": 1769169092623
+  }
+}

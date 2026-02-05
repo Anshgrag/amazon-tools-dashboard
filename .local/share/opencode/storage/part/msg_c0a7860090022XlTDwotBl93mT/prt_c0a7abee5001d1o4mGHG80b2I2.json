@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0a7abee5001d1o4mGHG80b2I2",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7860090022XlTDwotBl93mT",
+  "type": "tool",
+  "callID": "call_897e3b1099634e04bf25dfdb",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sudo sh get-docker.sh",
+      "description": "Install Docker"
+    },
+    "output": "sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: a password is required\n",
+    "title": "Install Docker",
+    "metadata": {
+      "output": "sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: a password is required\n",
+      "exit": 1,
+      "description": "Install Docker",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769702342389,
+      "end": 1769702342425
+    }
+  }
+}

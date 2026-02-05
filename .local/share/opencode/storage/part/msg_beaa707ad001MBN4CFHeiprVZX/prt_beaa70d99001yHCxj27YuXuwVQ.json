@@ -1,0 +1,26 @@
+{
+  "id": "prt_beaa70d99001yHCxj27YuXuwVQ",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa707ad001MBN4CFHeiprVZX",
+  "type": "tool",
+  "callID": "call_78882363",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "backend/tuya_integration.py",
+      "offset": 1,
+      "limit": 50
+    },
+    "output": "<file>\n00002| Tuya IoT Platform Integration\n00003| Fetches real-time data from Tuya smart switches using tinytuya\n00004| \"\"\"\n00005| \n00006| import tinytuya\n00007| import requests\n00008| import time\n00009| from datetime import datetime\n00010| import json\n00011| \n00012| # ==================== TUYA CREDENTIALS ====================\n00013| # Load credentials from tinytuya.json\n00014| try:\n00015|     with open('../tinytuya.json', 'r') as f:\n00016|         config = json.load(f)\n00017|     ACCESS_ID = config['apiKey']\n00018|     ACCESS_SECRET = config['apiSecret']\n00019|     API_REGION = config['apiRegion']\n00020|     DEVICE_ID = config['apiDeviceID']\n00021| except FileNotFoundError:\n00022|     print(\"❌ tinytuya.json not found. Please ensure it's in the project root.\")\n00023|     exit(1)\n00024| \n00025| # Device configuration\n00026| DEVICE_IDS = [DEVICE_ID]\n00027| DEVICE_NAMES = {\n00028|     DEVICE_ID: \"Smart Switch\"\n00029| }\n00030| \n00031| # Your Flask backend URL\n00032| BACKEND_URL = \"http://localhost:5000\"\n00033| \n00034| # ==================== TUYA API CONNECTION ====================\n00035| \n00036| def connect_to_tuya():\n00037|     \"\"\"\n00038|     Connect to Tuya IoT Platform using tinytuya\n00039|     \"\"\"\n00040|     try:\n00041|         cloud = tinytuya.Cloud(apiRegion=API_REGION, apiKey=ACCESS_ID, apiSecret=ACCESS_SECRET)\n00042|         print(\"✅ Connected to Tuya Cloud\")\n00043|         return cloud\n00044|     except Exception as e:\n00045|         print(f\"❌ Failed to connect to Tuya Cloud: {e}\")\n00046|         return None\n00047| \n00048| # ==================== FETCH DEVICE DATA ====================\n00049| \n00050| def get_device_status(cloud, device_id):\n00051|     \"\"\"\n\n(File has more lines. Use 'offset' parameter to read beyond line 51)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/backend/tuya_integration.py",
+    "metadata": {
+      "preview": "Tuya IoT Platform Integration\nFetches real-time data from Tuya smart switches using tinytuya\n\"\"\"\n\nimport tinytuya\nimport requests\nimport time\nfrom datetime import datetime\nimport json\n\n# ==================== TUYA CREDENTIALS ====================\n# Load credentials from tinytuya.json\ntry:\n    with open('../tinytuya.json', 'r') as f:\n        config = json.load(f)\n    ACCESS_ID = config['apiKey']\n    ACCESS_SECRET = config['apiSecret']\n    API_REGION = config['apiRegion']\n    DEVICE_ID = config['apiDeviceID']\nexcept FileNotFoundError:",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769168375201,
+      "end": 1769168375209
+    }
+  }
+}

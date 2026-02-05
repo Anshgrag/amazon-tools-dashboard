@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e038fb001qhE2LxJLfYNlma",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e02bb1001WCdVcxrnsjWGu8",
+  "type": "tool",
+  "callID": "call_92a671e6d75f42f3a751843b",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ls -la venv 2>/dev/null || echo \"No venv found\"",
+      "description": "Check if virtual environment exists"
+    },
+    "output": "No venv found\n",
+    "title": "Check if virtual environment exists",
+    "metadata": {
+      "output": "No venv found\n",
+      "exit": 0,
+      "description": "Check if virtual environment exists",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769960651017,
+      "end": 1769960651027
+    }
+  }
+}

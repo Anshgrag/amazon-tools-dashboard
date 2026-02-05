@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fd5816100102S0ua23naWiR1",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fd565fe00189tn5IcoKWapL1",
+  "type": "tool",
+  "callID": "call_ee9c781c858b42d0837f1c82",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "node -c /home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js 2>&1 && echo \"✅ JavaScript syntax valid\" || echo \"❌ JavaScript syntax error\"",
+      "description": "Check JavaScript syntax"
+    },
+    "output": "✅ JavaScript syntax valid\n",
+    "title": "Check JavaScript syntax",
+    "metadata": {
+      "output": "✅ JavaScript syntax valid\n",
+      "exit": 0,
+      "description": "Check JavaScript syntax",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769792176509,
+      "end": 1769792176779
+    }
+  }
+}

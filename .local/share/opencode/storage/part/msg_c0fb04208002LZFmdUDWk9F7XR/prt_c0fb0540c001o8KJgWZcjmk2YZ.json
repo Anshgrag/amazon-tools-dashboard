@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fb0540c001o8KJgWZcjmk2YZ",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fb04208002LZFmdUDWk9F7XR",
+  "type": "tool",
+  "callID": "call_a65694a5cd2b4b398ec68c2c",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "limit": 20,
+      "offset": 1140
+    },
+    "output": "<file>\n01141|         `;\n01142|     });\n01143|     \n01144|     grid.innerHTML = html;\n01145| }\n01146| \n01147| // ==================== INITIALIZATION ====================\n01148| \n01149| document.addEventListener('DOMContentLoaded', function() {\n01150|     console.log('=== DOMContentLoaded ===');\n01151|     setupTabSwitching();\n01152|     setupTimeFilters();\n01153|     setupThemeToggle();\n01154|     initializeCharts();\n01155|     fetchAllData();\n01156|     \n01157|     // Set up periodic data refresh\n01158|     setInterval(fetchAllData, REFRESH_INTERVAL);\n01159|     \n01160|     // Initialize device control\n\n(File has more lines. Use 'offset' parameter to read beyond line 1160)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "        `;\n    });\n    \n    grid.innerHTML = html;\n}\n\n// ==================== INITIALIZATION ====================\n\ndocument.addEventListener('DOMContentLoaded', function() {\n    console.log('=== DOMContentLoaded ===');\n    setupTabSwitching();\n    setupTimeFilters();\n    setupThemeToggle();\n    initializeCharts();\n    fetchAllData();\n    \n    // Set up periodic data refresh\n    setInterval(fetchAllData, REFRESH_INTERVAL);\n    \n    // Initialize device control",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769789740056,
+      "end": 1769789740137
+    }
+  }
+}

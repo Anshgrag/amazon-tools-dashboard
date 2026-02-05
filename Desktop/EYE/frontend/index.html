@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Infection Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Preliminary eye infection detection using AI">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Eye Infection Detection</h1>
+            <p class="subtitle">AI-Powered Preliminary Screening</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <h2>Upload Eye Image</h2>
+                    <p class="upload-hint">Select a clear, non-microscopic photograph of the eye</p>
+                    
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png" hidden>
+                        <div class="upload-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                        <p class="upload-text">Tap to select or drag & drop</p>
+                        <p class="upload-subtext">JPEG or PNG</p>
+                    </div>
+
+                    <!-- Image Preview -->
+                    <div class="preview-container" id="previewContainer" style="display: none;">
+                        <div class="preview-header">
+                            <h3>Image Preview</h3>
+                            <button class="btn-remove" id="removeBtn">Remove</button>
+                        </div>
+                        <img id="previewImage" alt="Eye image preview">
+                    </div>
+
+                    <!-- Analyze Button -->
+                    <button class="btn-analyze" id="analyzeBtn" disabled>
+                        <span class="btn-text">Analyze Image</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="spinner"></span>
+                            Analyzing...
+                        </span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <h2>Analysis Result</h2>
+                    <div class="result-content" id="resultContent">
+                        <div class="result-class" id="resultClass">Normal</div>
+                        <div class="result-confidence">
+                            <span>Confidence:</span>
+                            <span id="confidenceScore">95.4%</span>
+                        </div>
+                    </div>
+                    <div class="result-explanation">
+                        <p id="resultExplanation">
+                            The image appears to show a healthy eye with no visible signs of infection.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <div class="error-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Error</h3>
+                    <p id="errorMessage">Something went wrong. Please try again.</p>
+                    <button class="btn-retry" id="retryBtn">Try Again</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Disclaimer -->
+        <footer class="disclaimer">
+            <div class="disclaimer-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </div>
+            <p>
+                This tool is for preliminary screening only and not a medical diagnosis.
+                Always consult an ophthalmologist for proper diagnosis and treatment.
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

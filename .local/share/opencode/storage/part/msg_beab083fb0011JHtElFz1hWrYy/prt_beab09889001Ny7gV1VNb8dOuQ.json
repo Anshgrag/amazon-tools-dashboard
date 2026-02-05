@@ -1,0 +1,27 @@
+{
+  "id": "prt_beab09889001Ny7gV1VNb8dOuQ",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab083fb0011JHtElFz1hWrYy",
+  "type": "tool",
+  "callID": "call_92190386",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd backend && source venv/bin/activate && timeout 10 python tuya_integration.py",
+      "description": "Run Tuya integration to fetch updated data with the charger connected"
+    },
+    "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\n✅ Sent data for Smart Switch: 0.0W\n⏳ Waiting 60 seconds before next update...\n\n",
+    "title": "Run Tuya integration to fetch updated data with the charger connected",
+    "metadata": {
+      "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\n✅ Sent data for Smart Switch: 0.0W\n⏳ Waiting 60 seconds before next update...\n\n",
+      "exit": 124,
+      "description": "Run Tuya integration to fetch updated data with the charger connected",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769169000593,
+      "end": 1769169010619
+    }
+  }
+}

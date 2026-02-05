@@ -1,0 +1,17 @@
+{
+  "id": "msg_c19f3cc9b001VZ1gFhIX06J1qz",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "role": "user",
+  "time": {
+    "created": 1769961933994
+  },
+  "summary": {
+    "title": "Brief: \"clear\" text handling",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "glm-4.7-free"
+  }
+}

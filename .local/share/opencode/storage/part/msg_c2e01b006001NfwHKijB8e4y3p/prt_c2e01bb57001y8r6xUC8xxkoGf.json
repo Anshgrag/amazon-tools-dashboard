@@ -1,0 +1,27 @@
+{
+  "id": "prt_c2e01bb57001y8r6xUC8xxkoGf",
+  "sessionID": "ses_3d203296affeRwyJfJ6ZBdOCGT",
+  "messageID": "msg_c2e01b006001NfwHKijB8e4y3p",
+  "type": "tool",
+  "callID": "chatcmpl-tool-30ed2458330e498abadab13af788e74a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "git quickpush \"eye project initiation\"",
+      "description": "Run custom git quickpush command"
+    },
+    "output": "warning: in the working copy of '.bun/install/cache/fast-json-stringify@6.2.0@@@1/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of '.cache/opencode/node_modules/fast-json-stringify/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: adding embedded git repository: .local/bin/winapps-src\nhint: You've added another git repository inside your current repository.\nhint: Clones of the outer repository will not contain the contents of\nhint: the embedded repository and will not know how to obtain it.\nhint: If you meant to add a submodule, use:\nhint: \nhint: \tgit submodule add <url> .local/bin/winapps-src\nhint: \nhint: If you added this path by mistake, you can remove it from the\nhint: index with:\nhint: \nhint: \tgit rm --cached .local/bin/winapps-src\nhint: \nhint: See \"git help submodule\" for more information.\n\n\n<bash_metadata>\nbash tool terminated command after exceeding timeout 120000 ms\n</bash_metadata>",
+    "title": "Run custom git quickpush command",
+    "metadata": {
+      "output": "warning: in the working copy of '.bun/install/cache/fast-json-stringify@6.2.0@@@1/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of '.cache/opencode/node_modules/fast-json-stringify/test/json-add-comma.test.js', CRLF will be replaced by LF the next time Git touches it\nwarning: adding embedded git repository: .local/bin/winapps-src\nhint: You've added another git repository inside your current repository.\nhint: Clones of the outer repository will not contain the contents of\nhint: the embedded repository and will not know how to obtain it.\nhint: If you meant to add a submodule, use:\nhint: \nhint: \tgit submodule add <url> .local/bin/winapps-src\nhint: \nhint: If you added this path by mistake, you can remove it from the\nhint: index with:\nhint: \nhint: \tgit rm --cached .local/bin/winapps-src\nhint: \nhint: See \"git help submodule\" for more information.\n\n\n<bash_metadata>\nbash tool terminated command after exceeding timeout 120000 ms\n</bash_metadata>",
+      "exit": null,
+      "description": "Run custom git quickpush command",
+      "truncated": false
+    },
+    "time": {
+      "start": 1770298391398,
+      "end": 1770298511515
+    }
+  }
+}

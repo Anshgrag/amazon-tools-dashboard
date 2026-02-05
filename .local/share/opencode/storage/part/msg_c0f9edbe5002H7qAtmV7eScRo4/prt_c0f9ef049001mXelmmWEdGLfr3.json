@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0f9ef049001mXelmmWEdGLfr3",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0f9edbe5002H7qAtmV7eScRo4",
+  "type": "tool",
+  "callID": "call_bd68e71c569a439d9dfe19b3",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sqlite3 ecotrack.db \".tables\"",
+      "description": "Check database tables"
+    },
+    "output": "/bin/bash: line 1: sqlite3: command not found\n",
+    "title": "Check database tables",
+    "metadata": {
+      "output": "/bin/bash: line 1: sqlite3: command not found\n",
+      "exit": 127,
+      "description": "Check database tables",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769788600404,
+      "end": 1769788600410
+    }
+  }
+}

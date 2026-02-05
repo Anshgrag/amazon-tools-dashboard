@@ -1,0 +1,11 @@
+{
+  "id": "prt_beab16103001k8yjKKwRfw6JzF",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab15c36001PXZYEbQPp2kFNG",
+  "type": "reasoning",
+  "text": "Error: Tuya credentials not loaded.",
+  "time": {
+    "start": 1769169051908,
+    "end": 1769169053051
+  }
+}

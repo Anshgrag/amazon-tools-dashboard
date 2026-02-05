@@ -1,0 +1,17 @@
+{
+  "id": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "slug": "brave-cabin",
+  "version": "1.1.33",
+  "projectID": "global",
+  "directory": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy",
+  "title": "Delete unnecessary files from folder",
+  "time": {
+    "created": 1769168142646,
+    "updated": 1769172184821
+  },
+  "summary": {
+    "additions": 834,
+    "deletions": 111,
+    "files": 7
+  }
+}

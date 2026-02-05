@@ -1,0 +1,29 @@
+{
+  "id": "msg_be56f3fb60010v4eYkar78l8NO",
+  "sessionID": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "role": "assistant",
+  "time": {
+    "created": 1769080831926,
+    "completed": 1769080867051
+  },
+  "parentID": "msg_be56f3f9e001u3W5DBQNBy6WK5",
+  "modelID": "glm-4.7-free",
+  "providerID": "opencode",
+  "mode": "build",
+  "agent": "build",
+  "path": {
+    "cwd": "/home/bot4u/Downloads/IEC",
+    "root": "/"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 51504,
+    "output": 627,
+    "reasoning": 479,
+    "cache": {
+      "read": 11427,
+      "write": 0
+    }
+  },
+  "finish": "stop"
+}

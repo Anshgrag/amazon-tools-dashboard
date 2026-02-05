@@ -1,0 +1,29 @@
+{
+  "id": "prt_c19709927001d4X0XJgpbNse6r",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c197023ae0012iWzO7yxfM7Dh4",
+  "type": "tool",
+  "callID": "call_894144a270ba42c8a7147069",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "\"\"\"\nModel inference utilities for eye infection detection\n\"\"\"\nimport numpy as np\nimport tensorflow as tf\nfrom tensorflow.keras.models import load_model\nfrom typing import Dict, Tuple\nimport os\n\n\nclass EyeDiseaseModel:\n    \"\"\"Wrapper class for loading and running the eye disease detection model.\"\"\"\n    \n    def __init__(self, model_path: str = None):\n        \"\"\"\n        Initialize the model wrapper.\n        \n        Args:\n            model_path: Path to the saved .h5 or .keras model file\n        \"\"\"\n        self.model = None\n        self.class_names = [\n            'Normal',\n            'Conjunctivitis',\n            'Cataract',\n            'Glaucoma'\n        ]\n        \n        if model_path and os.path.exists(model_path):\n            self.load_model(model_path)\n    \n    def load_model(self, model_path: str) -> None:\n        \"\"\"\n        Load the trained model from disk.\n        \n        Args:\n            model_path: Path to the saved model file\n        \"\"\"\n        try:\n            # Load model with custom objects if needed\n            self.model = load_model(model_path)\n            print(f\"Model loaded successfully from {model_path}\")\n        except Exception as e:\n            raise RuntimeError(f\"Failed to load model: {str(e)}\")\n    \n    def predict(self, preprocessed_image: np.ndarray) -> Dict[str, float]:\n        \"\"\"\n        Run prediction on a preprocessed image.\n        \n        Args:\n            preprocessed_image: Preprocessed numpy array (1, 224, 224, 3)\n        \n        Returns:\n            Dictionary with 'predicted_class' and 'confidence_score'\n        \"\"\"\n        if self.model is None:\n            raise RuntimeError(\"Model not loaded. Call load_model() first.\")\n        \n        # Make prediction\n        predictions = self.model.predict(preprocessed_image, verbose=0)\n        \n        # Get the class with highest probability\n        predicted_index = np.argmax(predictions[0])\n        confidence = float(predictions[0][predicted_index])\n        \n        return {\n            'predicted_class': self.class_names[predicted_index],\n            'confidence_score': confidence\n        }\n    \n    def predict_batch(self, images: np.ndarray) -> list:\n        \"\"\"\n        Run prediction on a batch of images.\n        \n        Args:\n            images: Batch of preprocessed images (batch_size, 224, 224, 3)\n        \n        Returns:\n            List of prediction dictionaries\n        \"\"\"\n        if self.model is None:\n            raise RuntimeError(\"Model not loaded. Call load_model() first.\")\n        \n        predictions = self.model.predict(images, verbose=0)\n        \n        results = []\n        for pred in predictions:\n            predicted_index = np.argmax(pred)\n            confidence = float(pred[predicted_index])\n            results.append({\n                'predicted_class': self.class_names[predicted_index],\n                'confidence_score': confidence\n            })\n        \n        return results\n    \n    def get_model_summary(self) -> str:\n        \"\"\"\n        Get a summary of the loaded model architecture.\n        \n        Returns:\n            String containing model summary\n        \"\"\"\n        if self.model is None:\n            return \"Model not loaded\"\n        \n        import io\n        stream = io.StringIO()\n        self.model.summary(print_fn=lambda x: stream.write(x + '\\n'))\n        return stream.getvalue()\n\n\ndef create_model_placeholder():\n    \"\"\"\n    Create a simple placeholder model for testing API endpoints.\n    This returns random predictions and is only for development.\n    \n    Returns:\n        Simple Keras model (untrained)\n    \"\"\"\n    from tensorflow.keras.applications import MobileNetV2\n    from tensorflow.keras.layers import Dense, GlobalAveragePooling2D\n    from tensorflow.keras.models import Model\n    \n    # Load pre-trained MobileNetV2 without top layers\n    base_model = MobileNetV2(\n        weights='imagenet',\n        include_top=False,\n        input_shape=(224, 224, 3)\n    )\n    \n    # Add custom classification head\n    x = base_model.output\n    x = GlobalAveragePooling2D()(x)\n    x = Dense(128, activation='relu')(x)\n    predictions = Dense(4, activation='softmax')(x)\n    \n    model = Model(inputs=base_model.input, outputs=predictions)\n    \n    return model\n",
+      "filePath": "/home/bot4u/Desktop/EYE/backend/utils/inference.py"
+    },
+    "output": "Wrote file successfully.",
+    "title": "Desktop/EYE/backend/utils/inference.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/EYE/backend/utils/preprocessing.py": []
+      },
+      "filepath": "/home/bot4u/Desktop/EYE/backend/utils/inference.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769953335602,
+      "end": 1769953338628
+    }
+  }
+}

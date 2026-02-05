@@ -1,0 +1,18 @@
+{
+  "id": "prt_c19ec16b3001vuV6cY5slDKyxS",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19eaf7b6001huqOO8uc5IHsiF",
+  "type": "step-finish",
+  "reason": "unknown",
+  "snapshot": "61edb94b18d5a6e137e311c8aae4c115c5494a16",
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

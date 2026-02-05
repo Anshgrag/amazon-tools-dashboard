@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0fb0daeb001iRrljF4628S8FT",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fb0c9e40024gRf0HZo7Hy6Cq",
+  "type": "tool",
+  "callID": "call_edea0084eb9d46468571e07a",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "limit": 10,
+      "offset": 230
+    },
+    "output": "<file>\n00231|         const color = colors['default'];\n00232|         \n00233|         // Update device control status based on mode\n00234|             }\n00235|         }\n00236|         \n00237|         html += `\n00238|             <div class=\"appliance-item\">\n00239|                 <div class=\"appliance-name\">${device.device_name}</div>\n00240|                 <div class=\"appliance-bar\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 240)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "        const color = colors['default'];\n        \n        // Update device control status based on mode\n            }\n        }\n        \n        html += `\n            <div class=\"appliance-item\">\n                <div class=\"appliance-name\">${device.device_name}</div>\n                <div class=\"appliance-bar\">",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769789774585,
+      "end": 1769789774723
+    }
+  }
+}

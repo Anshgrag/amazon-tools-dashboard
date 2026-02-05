@@ -1,0 +1,17 @@
+{
+  "id": "msg_babb8b569001siL25PaGjV9lT5",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768112567680
+  },
+  "summary": {
+    "title": "Enable date tab navigation on website header",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

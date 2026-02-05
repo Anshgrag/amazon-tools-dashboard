@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70cb7fc001x28fl7Lda3joQg",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70ca542002nptjnd9G80hXM4",
+  "type": "reasoning",
+  "text": "The command with && is causing issues. Let me run the commands separately.",
+  "metadata": {
+    "anthropic": {
+      "signature": "cfb0cd83c0ee7eb3adf404736a9deb2b6cd0a4be61a4b270fad6918635861b12"
+    }
+  },
+  "time": {
+    "start": 1769107929085,
+    "end": 1769107929376
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_be7052f76001h4yeLpxcOio73m",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be7051cf2002SvXceFKLwW0yqX",
+  "type": "tool",
+  "callID": "call_function_lf7m6nsltkl0_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 100,
+      "offset": 1180
+    },
+    "output": "<file>\n01181|     });\n01182| }\n01183| \n01184| // ==================== THEME SWITCHING ====================\n01185| \n01186| const themes = {\n01187|     dark: {\n01188|         'bg-primary': '#1a2332',\n01189|         'bg-secondary': '#243447',\n01190|         'bg-card': '#2a3f5f',\n01191|         'text-primary': '#ffffff',\n01192|         'text-secondary': '#b0c4de',\n01193|         'accent-teal': '#4ecdc4',\n01194|         'accent-yellow': '#ffd166',\n01195|         'accent-pink': '#ff6b9d',\n01196|         'accent-purple': '#c77dff',\n01197|         'accent-green': '#06ffa5',\n01198|         'accent-red': '#ff4757',\n01199|         'border-color': '#3d5a80'\n01200|     },\n01201|     ocean: {\n01202|         'bg-primary': '#0c1929',\n01203|         'bg-secondary': '#132f4c',\n01204|         'bg-card': '#1e4d6b',\n01205|         'text-primary': '#e0f2fe',\n01206|         'text-secondary': '#94a3b8',\n01207|         'accent-teal': '#22d3ee',\n01208|         'accent-yellow': '#fbbf24',\n01209|         'accent-pink': '#f472b6',\n01210|         'accent-purple': '#a78bfa',\n01211|         'accent-green': '#34d399',\n01212|         'accent-red': '#f87171',\n01213|         'border-color': '#1e3a5f'\n01214|     },\n01215|     sunset: {\n01216|         'bg-primary': '#1a0a1a',\n01217|         'bg-secondary': '#2d1f3d',\n01218|         'bg-card': '#4a1942',\n01219|         'text-primary': '#fce7f3',\n01220|         'text-secondary': '#c9a0dc',\n01221|         'accent-teal': '#2dd4bf',\n01222|         'accent-yellow': '#fb923c',\n01223|         'accent-pink': '#f472b6',\n01224|         'accent-purple': '#c084fc',\n01225|         'accent-green': '#4ade80',\n01226|         'accent-red': '#fb7185',\n01227|         'border-color': '#5c2d5c'\n01228|     },\n01229|     forest: {\n01230|         'bg-primary': '#0a1a0f',\n01231|         'bg-secondary': '#143d25',\n01232|         'bg-card': '#1a3d1f',\n01233|         'text-primary': '#ecfccb',\n01234|         'text-secondary': '#a3e635',\n01235|         'accent-teal': '#5eead4',\n01236|         'accent-yellow': '#fde047',\n01237|         'accent-pink': '#f9a8d4',\n01238|         'accent-purple': '#c4b5fd',\n01239|         'accent-green': '#4ade80',\n01240|         'accent-red': '#f87171',\n01241|         'border-color': '#166534'\n01242|     },\n01243|     light: {\n01244|         'bg-primary': '#f5f5f5',\n01245|         'bg-secondary': '#e8e8e8',\n01246|         'bg-card': '#ffffff',\n01247|         'text-primary': '#1a1a1a',\n01248|         'text-secondary': '#666666',\n01249|         'accent-teal': '#0d9488',\n01250|         'accent-yellow': '#d97706',\n01251|         'accent-pink': '#db2777',\n01252|         'accent-purple': '#7c3aed',\n01253|         'accent-green': '#16a34a',\n01254|         'accent-red': '#dc2626',\n01255|         'border-color': '#d1d5db'\n01256|     },\n01257|     cyber: {\n01258|         'bg-primary': '#0a0a0f',\n01259|         'bg-secondary': '#12121f',\n01260|         'bg-card': '#1a0a2e',\n01261|         'text-primary': '#00ff88',\n01262|         'text-secondary': '#00ccff',\n01263|         'accent-teal': '#00ff88',\n01264|         'accent-yellow': '#ffff00',\n01265|         'accent-pink': '#ff00ff',\n01266|         'accent-purple': '#bf00ff',\n01267|         'accent-green': '#00ff88',\n01268|         'accent-red': '#ff3366',\n01269|         'border-color': '#2a0a4e'\n01270|     }\n01271| };\n01272| \n01273| function applyTheme(themeName) {\n01274|     const theme = themes[themeName];\n01275|     if (!theme) return;\n01276|     \n01277|     const root = document.documentElement;\n01278|     \n01279|     Object.entries(theme).forEach(([key, value]) => {\n01280|         root.style.setProperty(`--${key}`, value);\n\n(File has more lines. Use 'offset' parameter to read beyond line 1280)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "    });\n}\n\n// ==================== THEME SWITCHING ====================\n\nconst themes = {\n    dark: {\n        'bg-primary': '#1a2332',\n        'bg-secondary': '#243447',\n        'bg-card': '#2a3f5f',\n        'text-primary': '#ffffff',\n        'text-secondary': '#b0c4de',\n        'accent-teal': '#4ecdc4',\n        'accent-yellow': '#ffd166',\n        'accent-pink': '#ff6b9d',\n        'accent-purple': '#c77dff',\n        'accent-green': '#06ffa5',\n        'accent-red': '#ff4757',\n        'border-color': '#3d5a80'\n    },",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769107435388,
+      "end": 1769107435393
+    }
+  }
+}

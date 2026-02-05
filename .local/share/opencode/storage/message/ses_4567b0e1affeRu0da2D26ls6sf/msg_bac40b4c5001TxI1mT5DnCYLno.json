@@ -1,0 +1,17 @@
+{
+  "id": "msg_bac40b4c5001TxI1mT5DnCYLno",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768121480423
+  },
+  "summary": {
+    "title": "Backend-Frontend Stop Issue Discussion",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

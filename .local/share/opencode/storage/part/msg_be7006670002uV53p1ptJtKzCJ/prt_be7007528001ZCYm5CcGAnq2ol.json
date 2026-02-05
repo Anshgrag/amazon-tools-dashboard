@@ -1,0 +1,16 @@
+{
+  "id": "prt_be7007528001ZCYm5CcGAnq2ol",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be7006670002uV53p1ptJtKzCJ",
+  "type": "reasoning",
+  "text": "Let me read the end of the file",
+  "metadata": {
+    "anthropic": {
+      "signature": "bdc3ba2b5c2878867a4d0aff53e586b9a61b8d7cd44c687ba3431ed0597c5f14"
+    }
+  },
+  "time": {
+    "start": 1769107125544,
+    "end": 1769107125738
+  }
+}

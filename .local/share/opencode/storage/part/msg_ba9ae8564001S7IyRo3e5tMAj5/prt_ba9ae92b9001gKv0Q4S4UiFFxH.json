@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9ae92b9001gKv0Q4S4UiFFxH",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9ae8564001S7IyRo3e5tMAj5",
+  "type": "tool",
+  "callID": "call_ec47d2763f48453ba584180a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"python.*app.py\"",
+      "description": "Stop backend"
+    },
+    "output": "",
+    "title": "Stop backend",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Stop backend",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078348991,
+      "end": 1768078349082
+    }
+  }
+}

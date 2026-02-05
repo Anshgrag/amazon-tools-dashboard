@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead7a077001hHCwUWvX4CaWiD",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead76d38001s59jE7ooNgkc7Y",
+  "type": "tool",
+  "callID": "call_259e84f71d4b46f28a24c764",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000 | head -10",
+      "description": "Check if frontend is serving HTML"
+    },
+    "output": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>EcoTrack - Energy Dashboard</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Chart.js library -->\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n</head>\n",
+    "title": "Check if frontend is serving HTML",
+    "metadata": {
+      "output": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>EcoTrack - Energy Dashboard</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <!-- Chart.js library -->\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n</head>\n",
+      "exit": 0,
+      "description": "Check if frontend is serving HTML",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171558534,
+      "end": 1769171558573
+    }
+  }
+}

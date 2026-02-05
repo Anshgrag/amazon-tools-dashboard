@@ -1,0 +1,26 @@
+# Task List: Luxe Jewellery E-commerce
+
+- [/] Project Initialization <!-- id: 0 -->
+    - [/] Create project directories (client, server) <!-- id: 1 -->
+    - [/] Initialize NestJS backend <!-- id: 2 -->
+    - [/] Initialize Next.js frontend <!-- id: 3 -->
+- [ ] Backend Development (NestJS) <!-- id: 4 -->
+    - [ ] Database Setup (PostgreSQL + Prisma) <!-- id: 5 -->
+    - [ ] Authentication Module (Admin JWT) <!-- id: 6 -->
+    - [ ] Media Module (Cloudinary) <!-- id: 7 -->
+    - [ ] Product Management Module <!-- id: 8 -->
+    - [ ] Order Management Module <!-- id: 9 -->
+    - [ ] Payment Module (Razorpay) <!-- id: 10 -->
+- [ ] Frontend Development (Next.js) <!-- id: 11 -->
+    - [ ] Setup Tailwind & Theme (Ivory/Gold) <!-- id: 12 -->
+    - [ ] UI Components & Layouts <!-- id: 13 -->
+    - [ ] Home Page <!-- id: 14 -->
+    - [ ] Collections & Product Details <!-- id: 15 -->
+    - [ ] Cart & Checkout <!-- id: 16 -->
+    - [ ] Admin Dashboard <!-- id: 17 -->
+- [ ] Integration & Refinement <!-- id: 18 -->
+    - [ ] Connect Frontend to Backend <!-- id: 19 -->
+    - [ ] SEO Optimization <!-- id: 20 -->
+    - [ ] Animations (Framer Motion) <!-- id: 21 -->
+- [ ] Final Review & Deployment <!-- id: 22 -->
+    - [ ] Documentation (README) <!-- id: 23 -->

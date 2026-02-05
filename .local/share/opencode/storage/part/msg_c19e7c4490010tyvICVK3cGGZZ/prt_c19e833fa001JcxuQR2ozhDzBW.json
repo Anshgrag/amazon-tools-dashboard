@@ -1,0 +1,11 @@
+{
+  "id": "prt_c19e833fa001JcxuQR2ozhDzBW",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e7c4490010tyvICVK3cGGZZ",
+  "type": "text",
+  "text": "## Project Started Successfully!\n\nThe Eye Infection Detection application is now running.\n\n### Services Running:\n\n**Backend API:** http://localhost:8000\n- Status: ✅ Active\n- Model: ✅ Loaded (placeholder model)\n- Health Check: ✅ Healthy\n\n**Frontend:** http://localhost:8001\n- Status: ✅ Active\n\n### Access the Application:\n\n1. **Web Interface**: Open http://localhost:8001 in your browser\n2. **API Documentation**: http://localhost:8000/docs (Swagger UI)\n\n### How to Use:\n\n1. Open http://localhost:8001 in your web browser\n2. Click \"Upload Eye Image\" or drag & drop an image\n3. Preview the uploaded image\n4. Click \"Analyze Image\"\n5. View the prediction result\n\n### Test the API:\n\n```bash\n# Test with a sample image\nsource venv/bin/activate\npython backend/test_api.py path/to/your/image.jpg\n```\n\n### Monitor Logs:\n\n```bash\n# Backend logs\ntail -f backend.log\n\n# Frontend logs\ntail -f frontend.log\n```\n\n### Stop Services:\n\n```bash\n# Stop backend\npkill -f \"python backend/main.py\"\n\n# Stop frontend\npkill -f \"http.server 8001\"\n```\n\n### Note:\n\nThe current model is a placeholder model using pre-trained MobileNetV2. For accurate predictions, you need to:\n\n1. Train the model using the Google Colab notebook at `training/eye_detection_training.ipynb`\n2. Download the trained model files\n3. Replace `backend/model/eye_disease_model.keras` with your trained model\n4. Restart the backend: `pkill -f \"python backend/main.py\"` then `source venv/bin/activate && python backend/main.py`\n\nThe application is ready for testing and development!",
+  "time": {
+    "start": 1769961180784,
+    "end": 1769961180784
+  }
+}

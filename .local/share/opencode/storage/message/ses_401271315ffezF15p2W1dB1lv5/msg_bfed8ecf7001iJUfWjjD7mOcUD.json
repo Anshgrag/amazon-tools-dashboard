@@ -1,0 +1,17 @@
+{
+  "id": "msg_bfed8ecf7001iJUfWjjD7mOcUD",
+  "sessionID": "ses_401271315ffezF15p2W1dB1lv5",
+  "role": "user",
+  "time": {
+    "created": 1769507187974
+  },
+  "summary": {
+    "title": "Improvements for Indian wedding card final_card.pdf",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

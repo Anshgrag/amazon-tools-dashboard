@@ -1,0 +1,286 @@
+{
+  "id": "prt_c0a569ab0001bjlIzbIH1qx0to",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a55b94c002jr1jxEWPpIZBPT",
+  "type": "tool",
+  "callID": "call_a0ea9394725d4bdbb90bc501",
+  "tool": "write",
+  "state": {
+    "status": "completed",
+    "input": {
+      "content": "from fastapi import APIRouter, Depends, HTTPException, status\nfrom fastapi.security import HTTPBearer\nfrom sqlalchemy.ext.asyncio import AsyncSession\nfrom datetime import timedelta\n\nfrom app.core.database import get_db\nfrom app.core.security import create_access_token, create_refresh_token, verify_token\nfrom app.core.config import settings\nfrom app.schemas.auth import UserCreate, UserLogin, UserResponse, TokenResponse\nfrom app.models.auth import User\nfrom app.core.exceptions import AuthenticationError, ValidationError\n\nrouter = APIRouter()\nsecurity = HTTPBearer()\n\n\n@router.post(\"/register\", response_model=UserResponse, status_code=status.HTTP_201_CREATED)\nasync def register(\n    user_data: UserCreate,\n    db: AsyncSession = Depends(get_db)\n):\n    \"\"\"Register a new user\"\"\"\n    # Check if user already exists\n    existing_user = await User.get_by_email(db, user_data.email)\n    if existing_user:\n        raise ValidationError(\"Email already registered\")\n    \n    # Create new user\n    user = await User.create(db, user_data)\n    \n    return UserResponse.from_orm(user)\n\n\n@router.post(\"/login\", response_model=TokenResponse)\nasync def login(\n    user_data: UserLogin,\n    db: AsyncSession = Depends(get_db)\n):\n    \"\"\"Authenticate user and return tokens\"\"\"\n    # Authenticate user\n    user = await User.authenticate(db, user_data.email, user_data.password)\n    if not user:\n        raise AuthenticationError(\"Invalid credentials\")\n    \n    # Create tokens\n    access_token = create_access_token(\n        data={\"sub\": user.email},\n        expires_delta=timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)\n    )\n    \n    refresh_token = create_refresh_token(data={\"sub\": user.email})\n    \n    return TokenResponse(\n        access_token=access_token,\n        refresh_token=refresh_token,\n        token_type=\"bearer\",\n        expires_in=settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60\n    )\n\n\n@router.post(\"/refresh\", response_model=TokenResponse)\nasync def refresh_token(\n    refresh_token: str,\n    db: AsyncSession = Depends(get_db)\n):\n    \"\"\"Refresh access token using refresh token\"\"\"\n    # Verify refresh token\n    email = verify_token(refresh_token, token_type=\"refresh\")\n    \n    # Check if user still exists\n    user = await User.get_by_email(db, email)\n    if not user:\n        raise AuthenticationError(\"User not found\")\n    \n    # Create new access token\n    access_token = create_access_token(\n        data={\"sub\": user.email},\n        expires_delta=timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)\n    )\n    \n    return TokenResponse(\n        access_token=access_token,\n        refresh_token=refresh_token,  # Return same refresh token\n        token_type=\"bearer\",\n        expires_in=settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60\n    )\n\n\n@router.get(\"/me\", response_model=UserResponse)\nasync def get_current_user(\n    current_user: User = Depends(get_current_user)\n):\n    \"\"\"Get current user profile\"\"\"\n    return UserResponse.from_orm(current_user)\n\n\nasync def get_current_user(\n    credentials: str = Depends(security),\n    db: AsyncSession = Depends(get_db)\n) -> User:\n    \"\"\"Dependency to get current authenticated user\"\"\"\n    token = credentials.credentials\n    email = verify_token(token, token_type=\"access\")\n    \n    user = await User.get_by_email(db, email)\n    if not user:\n        raise AuthenticationError(\"User not found\")\n    \n    return user",
+      "filePath": "/home/bot4u/Desktop/eye project/backend/app/api/auth.py"
+    },
+    "output": "Wrote file successfully.\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/main.py\">\nERROR [10:21] \"auth\" is unknown import symbol\nERROR [10:27] \"analysis\" is unknown import symbol\nERROR [10:37] \"health\" is unknown import symbol\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/config.py\">\nERROR [1:6] Import \"pydantic_settings\" could not be resolved\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/database.py\">\nERROR [1:6] Import \"sqlalchemy.ext.asyncio\" could not be resolved\nERROR [2:6] Import \"sqlalchemy.ext.declarative\" could not be resolved\nERROR [3:6] Import \"sqlalchemy\" could not be resolved\n</diagnostics>\n\nLSP errors detected in other files:\n<diagnostics file=\"/home/bot4u/Desktop/eye project/backend/app/core/security.py\">\nERROR [37:22] Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\nERROR [38:20] Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"\nERROR [39:33] Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"\n</diagnostics>",
+    "title": "Desktop/eye project/backend/app/api/auth.py",
+    "metadata": {
+      "diagnostics": {
+        "/home/bot4u/Desktop/eye project/backend/app/main.py": [
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 20
+              },
+              "end": {
+                "line": 9,
+                "character": 24
+              }
+            },
+            "message": "\"auth\" is unknown import symbol",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 26
+              },
+              "end": {
+                "line": 9,
+                "character": 34
+              }
+            },
+            "message": "\"analysis\" is unknown import symbol",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 9,
+                "character": 36
+              },
+              "end": {
+                "line": 9,
+                "character": 42
+              }
+            },
+            "message": "\"health\" is unknown import symbol",
+            "severity": 1,
+            "code": "reportAttributeAccessIssue",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAttributeAccessIssue"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/config.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 22
+              }
+            },
+            "message": "Import \"pydantic_settings\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/database.py": [
+          {
+            "range": {
+              "start": {
+                "line": 0,
+                "character": 5
+              },
+              "end": {
+                "line": 0,
+                "character": 27
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.asyncio\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 1,
+                "character": 5
+              },
+              "end": {
+                "line": 1,
+                "character": 31
+              }
+            },
+            "message": "Import \"sqlalchemy.ext.declarative\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 15
+              }
+            },
+            "message": "Import \"sqlalchemy\" could not be resolved",
+            "severity": 1,
+            "code": "reportMissingImports",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingImports"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/security.py": [
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 5
+              },
+              "end": {
+                "line": 2,
+                "character": 9
+              }
+            },
+            "message": "Import \"jose\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 2,
+                "character": 27
+              },
+              "end": {
+                "line": 2,
+                "character": 30
+              }
+            },
+            "message": "Import \"jose.jwt\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 3,
+                "character": 5
+              },
+              "end": {
+                "line": 3,
+                "character": 20
+              }
+            },
+            "message": "Import \"passlib.context\" could not be resolved from source",
+            "severity": 2,
+            "code": "reportMissingModuleSource",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportMissingModuleSource"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 36,
+                "character": 21
+              },
+              "end": {
+                "line": 36,
+                "character": 39
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 37,
+                "character": 19
+              },
+              "end": {
+                "line": 37,
+                "character": 37
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"int\"\n  Type \"Any | None\" is not assignable to type \"int\"\n    \"None\" is not assignable to \"int\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          },
+          {
+            "range": {
+              "start": {
+                "line": 38,
+                "character": 32
+              },
+              "end": {
+                "line": 38,
+                "character": 51
+              }
+            },
+            "message": "Type \"Any | None\" is not assignable to declared type \"str\"\n  Type \"Any | None\" is not assignable to type \"str\"\n    \"None\" is not assignable to \"str\"",
+            "severity": 1,
+            "code": "reportAssignmentType",
+            "source": "Pyright",
+            "codeDescription": {
+              "href": "https://github.com/microsoft/pyright/blob/main/docs/configuration.md#reportAssignmentType"
+            }
+          }
+        ],
+        "/home/bot4u/Desktop/eye project/backend/app/core/exceptions.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/__init__.py": [],
+        "/home/bot4u/Desktop/eye project/backend/app/core/__init__.py": []
+      },
+      "filepath": "/home/bot4u/Desktop/eye project/backend/app/api/auth.py",
+      "exists": false,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769699973818,
+      "end": 1769699976839
+    }
+  }
+}

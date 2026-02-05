@@ -1,0 +1,18 @@
+{
+  "id": "prt_beaab2dbf0015cP0hR8UyySj30",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaab1d64001J3Jd5p555SMeUF",
+  "type": "step-finish",
+  "reason": "stop",
+  "snapshot": "68192e5989c7ba2153032c53a083c43868b2af5c",
+  "cost": 0,
+  "tokens": {
+    "input": 124,
+    "output": 105,
+    "reasoning": 87,
+    "cache": {
+      "read": 35328,
+      "write": 0
+    }
+  }
+}

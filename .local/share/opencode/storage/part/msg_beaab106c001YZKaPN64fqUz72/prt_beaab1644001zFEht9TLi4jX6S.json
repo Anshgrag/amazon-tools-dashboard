@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaab1644001zFEht9TLi4jX6S",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaab106c001YZKaPN64fqUz72",
+  "type": "reasoning",
+  "text": "The user says the plug is plugged in but no device is connected to it, so it should still show some voltage. They want to test it now.",
+  "time": {
+    "start": 1769168639556,
+    "end": 1769168640831
+  }
+}

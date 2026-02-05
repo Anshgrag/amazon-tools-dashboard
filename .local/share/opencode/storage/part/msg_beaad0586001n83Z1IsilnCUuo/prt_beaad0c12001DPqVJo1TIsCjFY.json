@@ -1,0 +1,27 @@
+{
+  "id": "prt_beaad0c12001DPqVJo1TIsCjFY",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaad0586001n83Z1IsilnCUuo",
+  "type": "tool",
+  "callID": "call_09965008",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd backend && source venv/bin/activate && timeout 10 python tuya_integration.py",
+      "description": "Run Tuya integration to fetch and send data to backend"
+    },
+    "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\n❌ Error sending data: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/electricity/add (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [Errno 111] Connection refused\"))\n⏳ Waiting 60 seconds before next update...\n\n",
+    "title": "Run Tuya integration to fetch and send data to backend",
+    "metadata": {
+      "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\n❌ Error sending data: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/electricity/add (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [Errno 111] Connection refused\"))\n⏳ Waiting 60 seconds before next update...\n\n",
+      "exit": 124,
+      "description": "Run Tuya integration to fetch and send data to backend",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168768030,
+      "end": 1769168778056
+    }
+  }
+}

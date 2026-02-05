@@ -1,0 +1,25 @@
+{
+  "id": "prt_bac4e56b4001wB2wb5qSoYIKD3",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac4c603e002wwoubCASWOzffK",
+  "type": "tool",
+  "callID": "call_3bcc0d9511b249b8a0bf117f",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+      "limit": 30
+    },
+    "output": "<file>\n00001| // ==================== CONFIGURATION ====================\n00002| \n00003| const API_BASE_URL = 'http://localhost:5000';\n00004| const REFRESH_INTERVAL = 30000;\n00005| let currentPeriod = 'month'; // Default period\n00006| \n00007| let costChart = null;\n00008| let usageChart = null;\n00009| let savingsChart = null;\n00010| \n00011| // ==================== UTILITY FUNCTIONS ====================\n00012| \n00013| function formatCurrency(value) {\n00014|     return `$${parseFloat(value).toFixed(2)}`;\n00015| }\n00016| \n00017| function formatDate() {\n00018|     const now = new Date();\n00019|     const options = { month: 'long', year: 'numeric' };\n00020|     return now.toLocaleDateString('en-US', options);\n00021| }\n00022| \n00023| // ==================== FETCH DATA FUNCTIONS ====================\n00024| \n00025| async function fetchElectricityData() {\n00026|     try {\n00027|         console.log('Fetching electricity data for period:', currentPeriod);\n00028|         const response = await fetch(`${API_BASE_URL}/api/electricity/history?period=${currentPeriod}`);\n00029|         \n00030|         if (!response.ok) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 30)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/frontend/script.js",
+    "metadata": {
+      "preview": "// ==================== CONFIGURATION ====================\n\nconst API_BASE_URL = 'http://localhost:5000';\nconst REFRESH_INTERVAL = 30000;\nlet currentPeriod = 'month'; // Default period\n\nlet costChart = null;\nlet usageChart = null;\nlet savingsChart = null;\n\n// ==================== UTILITY FUNCTIONS ====================\n\nfunction formatCurrency(value) {\n    return `$${parseFloat(value).toFixed(2)}`;\n}\n\nfunction formatDate() {\n    const now = new Date();\n    const options = { month: 'long', year: 'numeric' };\n    return now.toLocaleDateString('en-US', options);",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768122373817,
+      "end": 1768122373822
+    }
+  }
+}

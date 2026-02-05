@@ -1,0 +1,17 @@
+{
+  "id": "msg_beaa38143001SczyOTG6jXmrKk",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "role": "user",
+  "time": {
+    "created": 1769168142673
+  },
+  "summary": {
+    "title": "Clean up unnecessary files in folder",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "minimax-m2.1-free"
+  }
+}

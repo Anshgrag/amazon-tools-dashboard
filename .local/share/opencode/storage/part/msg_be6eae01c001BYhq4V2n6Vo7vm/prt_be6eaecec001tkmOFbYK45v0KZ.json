@@ -1,0 +1,21 @@
+{
+  "id": "prt_be6eaecec001tkmOFbYK45v0KZ",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6eae01c001BYhq4V2n6Vo7vm",
+  "type": "tool",
+  "callID": "call_function_99u9vup848m6_1",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "newString": "async function fetchSavingsData() {\n    try {\n        console.log('=== FETCHING SAVINGS DATA FOR PERIOD:', currentPeriod);\n        const response = await fetch(`${API_BASE_URL}/api/savings?period=${currentPeriod}`);\n        \n        console.log('Response status:', response.status);\n        \n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        \n        const result = await response.json();\n        console.log('Savings data received:', result);\n        \n        if (result.status === 'success') {\n            console.log('Calling updateSavingsDisplay with data:', result.data);\n            updateSavingsDisplay(result.data);\n        } else {\n            console.error('API returned error:', result);\n        }\n    } catch (error) {\n        console.error('Error fetching savings data:', error);\n    }\n}\n\nasync function fetchCostData() {\n    try {\n        console.log('=== FETCHING COST DATA FOR PERIOD:', currentPeriod);\n        const response = await fetch(`${API_BASE_URL}/api/savings?period=${currentPeriod}`);\n        \n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        \n        const result = await response.json();\n        \n        if (result.status === 'success') {\n            updateCostAnalysis(result.data);\n        }\n    } catch (error) {\n        console.error('Error fetching cost data:', error);\n    }\n}\n\nasync function fetchAppliancesData() {\n    try {\n        console.log('=== FETCHING APPLIANCES DATA FOR PERIOD:', currentPeriod);\n        const response = await fetch(`${API_BASE_URL}/api/electricity/history?period=${currentPeriod}`);\n        \n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        \n        const result = await response.json();\n        \n        if (result.status === 'success') {\n            updateAppliancesTab(result.data);\n        }\n    } catch (error) {\n        console.error('Error fetching appliances data:', error);\n    }\n}\n\nasync function fetchRoomsData() {\n    try {\n        console.log('=== FETCHING ROOMS DATA FOR PERIOD:', currentPeriod);\n        const response = await fetch(`${API_BASE_URL}/api/electricity/history?period=${currentPeriod}`);\n        \n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        \n        const result = await response.json();\n        \n        if (result.status === 'success') {\n            updateRoomsTab(result.data);\n        }\n    } catch (error) {\n        console.error('Error fetching rooms data:', error);\n    }\n}",
+      "oldString": "async function fetchSavingsData() {\n    try {\n        console.log('=== FETCHING SAVINGS DATA FOR PERIOD:', currentPeriod);\n        const response = await fetch(`${API_BASE_URL}/api/savings?period=${currentPeriod}`);\n        \n        console.log('Response status:', response.status);\n        \n        if (!response.ok) {\n            throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        \n        const result = await response.json();\n        console.log('Savings data received:', result);\n        \n        if (result.status === 'success') {\n            console.log('Calling updateSavingsDisplay with data:', result.data);\n            updateSavingsDisplay(result.data);\n        } else {\n            console.error('API returned error:', result);\n        }\n    } catch (error) {\n        console.error('Error fetching savings data:', error);\n    }\n}"
+    },
+    "error": "Error: oldString not found in content",
+    "time": {
+      "start": 1769105722120,
+      "end": 1769105722152
+    }
+  }
+}

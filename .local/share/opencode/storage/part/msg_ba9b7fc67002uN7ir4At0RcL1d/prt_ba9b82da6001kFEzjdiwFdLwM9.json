@@ -1,0 +1,21 @@
+{
+  "id": "prt_ba9b82da6001kFEzjdiwFdLwM9",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b7fc67002uN7ir4At0RcL1d",
+  "type": "tool",
+  "callID": "call_3bff9718d58e47cd97e02db8",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/frontend/index.html",
+      "oldString": "<!-- SMART SAVINGS MONITOR -->\n                <div class=\"card\">\n                    <h3 class=\"card-title\">SMART SAVINGS MONITOR</h3>\n                    <div class=\"savings-summary\">\n                        <div class=\"savings-row\">\n                            <div class=\"savings-item waste\">\n                                <div class=\"savings-label\">Wasted Today</div>\n                                <div class=\"savings-amount\" id=\"wastedAmount\">$0.00</div>\n                                <div class=\"savings-desc\">Without automation</div>\n                            </div>\n                            <div class=\"savings-divider\"></div>\n                            <div class=\"savings-item saved\">\n                                <div class=\"savings-label\">Saved Today</div>\n                                <div class=\"savings-amount\" id=\"savedAmount\">$0.00</div>\n                                <div class=\"savings-desc\">With automation</div>\n                            </div>\n                        </div>\n                        <div class=\"net-savings\">\n                            <div class=\"net-label\">Net Savings</div>\n                            <div class=\"net-amount\" id=\"netSavings\">$0.00</div>\n                            <div class=\"net-percentage\" id=\"savingsPercentage\">0%</div>\n                        </div>\n                    </div>\n                    <div class=\"chart-container\">\n                        <canvas id=\"savingsChart\"></canvas>\n                    </div>\n                    <div class=\"device-savings-list\" id=\"deviceSavingsList\">\n                        <!-- Dynamically populated -->\n                    </div>\n                </div>",
+      "newString": "<!-- SMART SAVINGS MONITOR -->\n                <div class=\"card\">\n                    <h3 class=\"card-title\">SMART SAVINGS MONITOR</h3>\n                    <div class=\"savings-summary\">\n                        <div class=\"savings-row\">\n                            <div class=\"savings-item waste\">\n                                <div class=\"savings-label\">Wasted Today</div>\n                                <div class=\"savings-amount\" id=\"wastedAmount\">$0.00</div>\n                                <div class=\"savings-desc\">Without automation</div>\n                            </div>\n                            <div class=\"savings-divider\"></div>\n                            <div class=\"savings-item saved\">\n                                <div class=\"savings-label\">Saved Today</div>\n                                <div class=\"savings-amount\" id=\"savedAmount\">$0.00</div>\n                                <div class=\"savings-desc\">With automation</div>\n                            </div>\n                        </div>\n                        <div class=\"net-savings\">\n                            <div class=\"net-label\">Net Savings</div>\n                            <div class=\"net-amount\" id=\"netSavings\">$0.00</div>\n                            <div class=\"net-percentage\" id=\"savingsPercentage\">0%</div>\n                        </div>\n                    </div>\n                    <div class=\"chart-container\">\n                        <canvas id=\"savingsChart\"></canvas>\n                    </div>\n                    <div class=\"device-savings-list\" id=\"deviceSavingsList\">\n                        <!-- Dynamically populated -->\n                    </div>\n                </div>"
+    },
+    "error": "Error: oldString and newString must be different",
+    "time": {
+      "start": 1768078978474,
+      "end": 1768078978479
+    }
+  }
+}

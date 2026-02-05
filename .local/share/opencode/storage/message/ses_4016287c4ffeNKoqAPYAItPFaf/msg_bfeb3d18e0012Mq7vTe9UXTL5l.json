@@ -1,0 +1,17 @@
+{
+  "id": "msg_bfeb3d18e0012Mq7vTe9UXTL5l",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "role": "user",
+  "time": {
+    "created": 1769504756126
+  },
+  "summary": {
+    "title": "Backend shutdown request",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

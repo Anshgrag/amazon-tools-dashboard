@@ -1,0 +1,17 @@
+{
+  "id": "msg_ba98ddb2a001h2Yi0PGXz4urAp",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768076204851
+  },
+  "summary": {
+    "title": "Energy waste and savings calculation feature discussion",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

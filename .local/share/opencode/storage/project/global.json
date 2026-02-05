@@ -1,0 +1,11 @@
+{
+  "id": "global",
+  "worktree": "/home/bot4u",
+  "sandboxes": [],
+  "time": {
+    "created": 1768075559660,
+    "updated": 1770298028043,
+    "initialized": 1768122671070
+  },
+  "vcs": "git"
+}

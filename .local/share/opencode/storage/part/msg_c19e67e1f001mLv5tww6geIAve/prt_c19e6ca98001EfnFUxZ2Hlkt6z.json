@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e6ca98001EfnFUxZ2Hlkt6z",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e67e1f001mLv5tww6geIAve",
+  "type": "tool",
+  "callID": "call_83437ed670e0446a9430ada2",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/health",
+      "description": "Test API health endpoint"
+    },
+    "output": "{\"status\":\"healthy\",\"model_loaded\":true}",
+    "title": "Test API health endpoint",
+    "metadata": {
+      "output": "{\"status\":\"healthy\",\"model_loaded\":true}",
+      "exit": 0,
+      "description": "Test API health endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961081508,
+      "end": 1769961081541
+    }
+  }
+}

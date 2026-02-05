@@ -1,0 +1,16 @@
+{
+  "id": "prt_be70d5b9c001P4ddYkoQk4otRe",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be70d4b5b002ak6GNtm2w4kigj",
+  "type": "reasoning",
+  "text": "The Japan theme has cherry blossom emojis (🌸, 🌺, 🍃, 💮) configured. Let me also verify the Germany theme has autumn leaves.",
+  "metadata": {
+    "anthropic": {
+      "signature": "95459a50ab838309ba3229d742cba1dec05123aea4e8c5af50b9c7646db72300"
+    }
+  },
+  "time": {
+    "start": 1769107970972,
+    "end": 1769107971671
+  }
+}

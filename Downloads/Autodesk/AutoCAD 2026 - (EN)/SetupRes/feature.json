@@ -1,0 +1,12 @@
+{
+    "features": [
+        {
+            "id": "com.autodesk.delivery.odis.im.adix.msiShareCount",
+            "state": "ENABLED"
+        },
+        {
+            "id": "com.autodesk.delivery.odis.core.lockAndCondition",
+            "state": "ENABLED"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "prt_c0a7e6498001RLnIa6Viv9tfyZ",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a7ddddb002V6Msl9cEantTwe",
+  "type": "patch",
+  "hash": "f01c23d64e7220a076b9bfa4a273eb017470fe17",
+  "files": [
+    "/home/bot4u/Desktop/eye project/backend/.env",
+    "/home/bot4u/Desktop/eye project/docker/grafana/datasources/prometheus.yml",
+    "/home/bot4u/Desktop/eye project/docker/nginx.conf",
+    "/home/bot4u/Desktop/eye project/docker/prometheus.yml",
+    "/home/bot4u/Desktop/eye project/frontend/.env.local"
+  ]
+}

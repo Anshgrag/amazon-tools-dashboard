@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9adbebf001KCm7onJkrxTLL1",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9ada6230010NjRhJpiSwzYup",
+  "type": "tool",
+  "callID": "call_d50be1138eb743c8832c6d70",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project/backend && source venv/bin/activate && python app.py &",
+      "description": "Restart backend with fixes"
+    },
+    "output": "",
+    "title": "Restart backend with fixes",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart backend with fixes",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078294726,
+      "end": 1768078294741
+    }
+  }
+}

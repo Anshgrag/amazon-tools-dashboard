@@ -1,0 +1,17 @@
+{
+  "id": "msg_c11e29157001gq2WPyYCRxbQF7",
+  "sessionID": "ses_3ee1d6ebaffeYfaGO7ikV0heMc",
+  "role": "user",
+  "time": {
+    "created": 1769826587009
+  },
+  "summary": {
+    "title": "Presentation script creation from EcoTrack_final.pdf",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

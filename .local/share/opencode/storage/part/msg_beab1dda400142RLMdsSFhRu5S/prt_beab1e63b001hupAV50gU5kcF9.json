@@ -1,0 +1,26 @@
+{
+  "id": "prt_beab1e63b001hupAV50gU5kcF9",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab1dda400142RLMdsSFhRu5S",
+  "type": "tool",
+  "callID": "call_34887659",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "frontend/script.js",
+      "offset": 1,
+      "limit": 50
+    },
+    "output": "<file>\n00002| \n00003| const API_BASE_URL = 'http://localhost:5000';\n00004| const REFRESH_INTERVAL = 30000;\n00005| let currentPeriod = 'month';\n00006| let currentTab = 'dashboard';\n00007| \n00008| let costChart = null;\n00009| let usageChart = null;\n00010| let savingsChart = null;\n00011| let costAnalysisChart = null;\n00012| let appliancePowerChart = null;\n00013| let roomComparisonChart = null;\n00014| \n00015| // ==================== UTILITY FUNCTIONS ====================\n00016| \n00017| function formatCurrency(value) {\n00018|     return `$${parseFloat(value).toFixed(2)}`;\n00019| }\n00020| \n00021| function formatDate() {\n00022|     const now = new Date();\n00023|     const options = { month: 'long', year: 'numeric' };\n00024|     return now.toLocaleDateString('en-US', options);\n00025| }\n00026| \n00027| // ==================== TAB SWITCHING ====================\n00028| \n00029| function setupTabSwitching() {\n00030|     console.log('=== SETUP TAB SWITCHING ===');\n00031|     const navItems = document.querySelectorAll('.nav-item');\n00032|     console.log('Found nav items:', navItems.length);\n00033|     \n00034|     navItems.forEach(item => {\n00035|         item.addEventListener('click', function(e) {\n00036|             e.preventDefault();\n00037|             \n00038|             const tabName = this.getAttribute('data-tab');\n00039|             console.log('=== CLICKED TAB:', tabName, '===');\n00040|             if (!tabName) return;\n00041|             \n00042|             if (tabName === currentTab) {\n00043|                 console.log('Tab already active:', tabName);\n00044|                 return;\n00045|             }\n00046|             \n00047|             navItems.forEach(nav => {\n00048|                 nav.classList.remove('active');\n00049|                 console.log('Removed active from:', nav.getAttribute('data-tab'));\n00050|             });\n00051|             this.classList.add('active');\n\n(File has more lines. Use 'offset' parameter to read beyond line 51)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "\nconst API_BASE_URL = 'http://localhost:5000';\nconst REFRESH_INTERVAL = 30000;\nlet currentPeriod = 'month';\nlet currentTab = 'dashboard';\n\nlet costChart = null;\nlet usageChart = null;\nlet savingsChart = null;\nlet costAnalysisChart = null;\nlet appliancePowerChart = null;\nlet roomComparisonChart = null;\n\n// ==================== UTILITY FUNCTIONS ====================\n\nfunction formatCurrency(value) {\n    return `$${parseFloat(value).toFixed(2)}`;\n}\n\nfunction formatDate() {",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769169086017,
+      "end": 1769169086031
+    }
+  }
+}

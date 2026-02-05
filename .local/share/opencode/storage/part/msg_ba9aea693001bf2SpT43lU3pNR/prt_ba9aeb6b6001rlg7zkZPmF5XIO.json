@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9aeb6b6001rlg7zkZPmF5XIO",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9aea693001bf2SpT43lU3pNR",
+  "type": "tool",
+  "callID": "call_460384e4ee6c45eb971a7149",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl http://localhost:5000/api/savings 2>/dev/null | jq .status",
+      "description": "Test savings API"
+    },
+    "output": "\"success\"\n",
+    "title": "Test savings API",
+    "metadata": {
+      "output": "\"success\"\n",
+      "exit": 0,
+      "description": "Test savings API",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768078358202,
+      "end": 1768078361243
+    }
+  }
+}

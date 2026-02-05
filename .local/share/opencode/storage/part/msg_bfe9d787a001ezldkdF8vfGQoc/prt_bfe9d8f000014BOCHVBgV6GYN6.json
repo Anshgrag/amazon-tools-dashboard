@@ -1,0 +1,24 @@
+{
+  "id": "prt_bfe9d8f000014BOCHVBgV6GYN6",
+  "sessionID": "ses_4016287c4ffeNKoqAPYAItPFaf",
+  "messageID": "msg_bfe9d787a001ezldkdF8vfGQoc",
+  "type": "tool",
+  "callID": "chatcmpl-tool-aeab8877ac22437d8b2fe31f67a94dae",
+  "tool": "glob",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/*.js"
+    },
+    "output": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/venv/lib64/python3.12/site-packages/werkzeug/debug/shared/debugger.js\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/venv/lib/python3.12/site-packages/werkzeug/debug/shared/debugger.js\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/venv/lib/python3.12/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/venv/lib64/python3.12/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/backend",
+    "metadata": {
+      "count": 4,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769503297306,
+      "end": 1769503297325
+    }
+  }
+}

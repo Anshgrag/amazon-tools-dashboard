@@ -1,0 +1,17 @@
+{
+  "id": "prt_c0ef49770001itFWfUu6jpP7sW",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0ef48a270016PG3sKvInr5x0k",
+  "type": "patch",
+  "hash": "d8ebf458f6a9c1fc4f5f55ef36f80e31dd2bb120",
+  "files": [
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/test_data.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/backend/test_savings_logic.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/debug_savings.html",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/simple_test.html",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/test.html",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/test.py",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/test_apis.sh",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/test_dashboard.html"
+  ]
+}

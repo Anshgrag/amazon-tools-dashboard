@@ -1,0 +1,17 @@
+{
+  "id": "msg_beaa3d13c001xV0d91tei3ln78",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "role": "user",
+  "time": {
+    "created": 1769168163150
+  },
+  "summary": {
+    "title": "Delete unnecessary files from folder\n",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "grok-code"
+  }
+}

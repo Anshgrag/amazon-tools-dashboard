@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6f1b48a001B8WY5A004WI8qj",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f1a72a002lK2dlDyO15Pggn",
+  "type": "reasoning",
+  "text": "Let me try a different approach to verify.",
+  "metadata": {
+    "anthropic": {
+      "signature": "055a8339b6b787b1ea26da484661b7de9696c35763ca2e2e0af8d771b8b2d8ec"
+    }
+  },
+  "time": {
+    "start": 1769106158730,
+    "end": 1769106159020
+  }
+}

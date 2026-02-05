@@ -1,0 +1,25 @@
+{
+  "id": "prt_bac4a0bbc001XupZDBl69XbpEL",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac49c5e00021GxETHat9HAEtL",
+  "type": "tool",
+  "callID": "call_0811e5082a604cabadd94a7d",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/backend/app.py",
+      "limit": 50
+    },
+    "output": "<file>\n00001| from flask import Flask, request, jsonify\n00002| from flask_cors import CORS\n00003| import sqlite3\n00004| from datetime import datetime\n00005| \n00006| app = Flask(__name__)\n00007| CORS(app, origins=['http://localhost:8000', 'http://127.0.0.1:8000'])\n00008| \n00009| DATABASE = 'ecotrack.db'\n00010| \n00011| def get_db_connection():\n00012|     conn = sqlite3.connect(DATABASE)\n00013|     conn.row_factory = sqlite3.Row\n00014|     return conn\n00015| \n00016| def init_database():\n00017|     conn = get_db_connection()\n00018|     cursor = conn.cursor()\n00019|     \n00020|     cursor.execute('''\n00021|         CREATE TABLE IF NOT EXISTS electricity_data (\n00022|             id INTEGER PRIMARY KEY AUTOINCREMENT,\n00023|             device_name TEXT NOT NULL,\n00024|             mode TEXT NOT NULL,\n00025|             voltage REAL NOT NULL,\n00026|             power_watts REAL NOT NULL,\n00027|             timestamp TEXT NOT NULL,\n00028|             auto_controlled BOOLEAN DEFAULT FALSE,\n00029|             manual_override BOOLEAN DEFAULT FALSE\n00030|         )\n00031|     ''')\n00032|     \n00033|     cursor.execute('''\n00034|         CREATE TABLE IF NOT EXISTS device_events (\n00035|             id INTEGER PRIMARY KEY AUTOINCREMENT,\n00036|             device_name TEXT NOT NULL,\n00037|             event_type TEXT NOT NULL,\n00038|             power_watts REAL NOT NULL,\n00039|             duration_minutes INTEGER NOT NULL,\n00040|             cost_wasted REAL NOT NULL,\n00041|             timestamp TEXT NOT NULL,\n00042|             auto_saved BOOLEAN DEFAULT FALSE\n00043|         )\n00044|     ''')\n00045|     \n00046|     conn.commit()\n00047|     conn.close()\n00048|     print(\"✅ Database initialized successfully!\")\n00049| \n00050| \n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "title": "home/bot4u/Desktop/GEMINI/Mini_project/backend/app.py",
+    "metadata": {
+      "preview": "from flask import Flask, request, jsonify\nfrom flask_cors import CORS\nimport sqlite3\nfrom datetime import datetime\n\napp = Flask(__name__)\nCORS(app, origins=['http://localhost:8000', 'http://127.0.0.1:8000'])\n\nDATABASE = 'ecotrack.db'\n\ndef get_db_connection():\n    conn = sqlite3.connect(DATABASE)\n    conn.row_factory = sqlite3.Row\n    return conn\n\ndef init_database():\n    conn = get_db_connection()\n    cursor = conn.cursor()\n    \n    cursor.execute('''",
+      "truncated": true
+    },
+    "time": {
+      "start": 1768122092487,
+      "end": 1768122092490
+    }
+  }
+}

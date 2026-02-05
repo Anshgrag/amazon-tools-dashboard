@@ -1,0 +1,122 @@
+✅ UNIVERSAL DETAILED NANO BANANA PROMPT
+
+(Gemstone Replacement ONLY – Maximum Accuracy, Zero Drift)
+
+🔢 IMAGE ORDER (MANDATORY — DO NOT CHANGE)
+
+Image 1 = Stone Reference (GEMSTONE SOURCE ONLY)
+Image 2 = Ring Model (BASE IMAGE)
+
+🎯 OBJECTIVE (STRICT)
+
+Replace ONLY the gemstone in Image 2 (Ring Model) using the gemstone from
+Image 1 (Stone Reference).
+
+🚫 NO other changes of any kind are allowed.
+
+🔒 CRITICAL IMMUTABLE RULES
+🖐️ IMAGE 2 – RING MODEL (BASE IMAGE)
+
+The following must remain PIXEL-IDENTICAL:
+
+Do NOT change ring design, setting, prongs, bezel, or metalwork
+
+Do NOT change ring angle, orientation, scale, or camera perspective
+
+Do NOT change model, hand pose, finger anatomy, skin tone, or skin texture
+
+Do NOT change background, environment, or depth of field
+
+Do NOT change lighting direction, intensity, or shadow softness
+
+✔ Ring must look naturally worn and physically real
+❌ Must NOT look pasted, composited, or mockup-style
+
+👉 Everything in Image 2 stays EXACTLY the same except the gemstone
+
+💎 IMAGE 1 – STONE REFERENCE (SOURCE GEMSTONE)
+
+Use ONLY this gemstone for replacement.
+
+Do NOT change or reinterpret:
+
+Exact gemstone COLOR (100% match required)
+
+Exact TRANSPARENCY / OPACITY
+
+DEPTH, internal structure, light behavior
+
+Natural matrix, veins, inclusions, polish
+
+Cabochon surface reflections exactly as seen
+
+❌ No enhancement, beautification, or cleanup
+❌ No color correction or stylization
+
+🔧 GEMSTONE FIT & REALISM RULES
+
+Replace ONLY the gemstone area in Image 2
+
+Adjust gemstone shape and size ONLY to fit the existing setting
+
+Preserve natural light refraction, surface glare, and contact shadows
+
+Stone must appear professionally set by a jeweler
+
+No floating edges, gaps, halos, or artificial outlines
+
+📸 PHOTOGRAPHY & QUALITY STANDARDS
+
+Ultra-realistic natural photography
+
+Real skin pores and micro-texture
+
+Natural highlight roll-off on gemstone surface
+
+Physically accurate reflections and shadows
+
+🚫 No CGI look
+🚫 No AI gloss
+🚫 No plastic or rendered appearance
+
+🚫 STRICT NEGATIVE PROMPT (MANDATORY)
+
+Do NOT modify Image 1 gemstone in any way
+
+Do NOT change ring metal color, finish, or texture
+
+Do NOT change ring size or proportions
+
+Do NOT generate a new or generic ring
+
+Do NOT alter model identity or anatomy
+
+Do NOT apply filters, HDR, sharpening, or artistic effects
+
+⬛ ASPECT RATIO & OUTPUT FORMAT (HARD-LOCK)
+
+Aspect Ratio: EXACTLY 1:1 (100% square)
+
+Output must be square only — no portrait, no landscape
+
+Do NOT crop, extend, pad, or resize the base image to change composition
+
+Maintain original framing from Image 2 within a perfect square canvas
+
+✅ FINAL OUTPUT REQUIREMENTS
+
+Single image only
+
+Square (1:1) output mandatory
+
+Output must be pixel-identical to Image 2 except:
+
+✔ Gemstone replaced from Image 1
+
+✔ Exact color, transparency, depth, and natural appearance preserved
+
+🔥 OPTIONAL HARD-OVERRIDE LINE (Highly Recommended)
+
+“Stone Reference (Image 1) is READ-ONLY.
+Base Image (Image 2) is editable ONLY within the gemstone region.
+Final output must be generated in a 1:1 square format only.”

@@ -1,0 +1,27 @@
+{
+  "id": "prt_beaa7c4d10011zXnUAcA6aBWOx",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa7c056001ojXO7rfq3ukVOw",
+  "type": "tool",
+  "callID": "call_79259576",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd backend && source venv/bin/activate && timeout 15 python tuya_integration.py",
+      "description": "Run the Tuya integration script again to see debug output"
+    },
+    "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\nDebug: getstatus result type: <class 'dict'>, value: {'result': [{'code': 'switch_1', 'value': True}, {'code': 'countdown_1', 'value': 0}, {'code': 'add_ele', 'value': 32}, {'code': 'cur_current', 'value': 0}, {'code': 'cur_power', 'value': 0}, {'code': 'cur_voltage', 'value': 2387}, {'code': 'voltage_coe', 'value': 573}, {'code': 'electric_coe', 'value': 24095}, {'code': 'power_coe', 'value': 13130}, {'code': 'electricity_coe', 'value': 3170}, {'code': 'fault', 'value': 0}, {'code': 'relay_status', 'value': 'last'}, {'code': 'overcharge_switch', 'value': False}, {'code': 'light_mode', 'value': 'relay'}, {'code': 'child_lock', 'value': False}, {'code': 'cycle_time', 'value': ''}, {'code': 'random_time', 'value': ''}, {'code': 'switch_inching', 'value': ''}], 'success': True, 't': 1769168424366, 'tid': '4e4dd76ef85011f08ed4b2901bcb1281'}\n❌ No status data for device d78fcea6e6c3b03d40zcwp\n⏳ Waiting 60 seconds before next update...\n\n",
+    "title": "Run the Tuya integration script again to see debug output",
+    "metadata": {
+      "output": "🚀 Starting Tuya IoT Integration...\n📡 Backend URL: http://localhost:5000\n🔌 Monitoring 1 devices\n\n✅ Connected to Tuya Cloud\n\n🔄 Fetching data from 1 devices...\nDebug: getstatus result type: <class 'dict'>, value: {'result': [{'code': 'switch_1', 'value': True}, {'code': 'countdown_1', 'value': 0}, {'code': 'add_ele', 'value': 32}, {'code': 'cur_current', 'value': 0}, {'code': 'cur_power', 'value': 0}, {'code': 'cur_voltage', 'value': 2387}, {'code': 'voltage_coe', 'value': 573}, {'code': 'electric_coe', 'value': 24095}, {'code': 'power_coe', 'value': 13130}, {'code': 'electricity_coe', 'value': 3170}, {'code': 'fault', 'value': 0}, {'code': 'relay_status', 'value': 'last'}, {'code': 'overcharge_switch', 'value': False}, {'code': 'light_mode', 'value': 'relay'}, {'code': 'child_lock', 'value': False}, {'code': 'cycle_time', 'value': ''}, {'code': 'random_time', 'value': ''}, {'code': 'switch_inching', 'value': ''}], 'success': True, 't': 1769168424366, 'tid': '4e4dd76ef85011f08ed4b2901bcb1281'}\n❌ No status data for device d78fcea6e6c3b03d40zcwp\n⏳ Waiting 60 seconds before next update...\n\n",
+      "exit": 124,
+      "description": "Run the Tuya integration script again to see debug output",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168422100,
+      "end": 1769168437117
+    }
+  }
+}

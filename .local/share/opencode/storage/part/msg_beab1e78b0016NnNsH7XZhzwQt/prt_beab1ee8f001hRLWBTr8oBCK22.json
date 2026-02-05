@@ -1,0 +1,25 @@
+{
+  "id": "prt_beab1ee8f001hRLWBTr8oBCK22",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beab1e78b0016NnNsH7XZhzwQt",
+  "type": "tool",
+  "callID": "call_31011652",
+  "tool": "grep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "toggle",
+      "path": "frontend"
+    },
+    "output": "Found 35 matches\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/style.css:\n  Line 139: .theme-toggle {\n  Line 153: .theme-toggle:hover {\n  Line 970: body[data-theme=\"light\"] .theme-toggle {\n  Line 974: body[data-theme=\"light\"] .theme-toggle:hover {\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/index.html:\n  Line 41:                 <button class=\"theme-toggle\" id=\"themeToggle\" title=\"Toggle Light/Dark Mode\">\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/venv/lib/python3.12/site-packages/pip/_vendor/rich/text.py:\n  Line 509:             >>> text.on(click=\"view.toggle('world')\")\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/venv/lib64/python3.12/site-packages/pip/_vendor/rich/text.py:\n  Line 509:             >>> text.on(click=\"view.toggle('world')\")\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/venv/lib64/python3.12/site-packages/pip/_vendor/rich/_spinners.py:\n  Line 160:     \"toggle\": {\"interval\": 250, \"frames\": \"⊶⊷\"},\n  Line 161:     \"toggle2\": {\"interval\": 80, \"frames\": \"▫▪\"},\n  Line 162:     \"toggle3\": {\"interval\": 120, \"frames\": \"□■\"},\n  Line 163:     \"toggle4\": {\"interval\": 100, \"frames\": \"■□▪▫\"},\n  Line 164:     \"toggle5\": {\"interval\": 100, \"frames\": \"▮▯\"},\n  Line 165:     \"toggle6\": {\"interval\": 300, \"frames\": \"ဝ၀\"},\n  Line 166:     \"toggle7\": {\"interval\": 80, \"frames\": \"⦾⦿\"},\n  Line 167:     \"toggle8\": {\"interval\": 100, \"frames\": \"◍◌\"},\n  Line 168:     \"toggle9\": {\"interval\": 100, \"frames\": \"◉◎\"},\n  Line 169:     \"toggle10\": {\"interval\": 100, \"frames\": \"㊂㊀㊁\"},\n  Line 170:     \"toggle11\": {\"interval\": 50, \"frames\": \"⧇⧆\"},\n  Line 171:     \"toggle12\": {\"interval\": 120, \"frames\": \"☗☖\"},\n  Line 172:     \"toggle13\": {\"interval\": 80, \"frames\": \"=*-\"},\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/venv/lib/python3.12/site-packages/pip/_vendor/rich/_spinners.py:\n  Line 160:     \"toggle\": {\"interval\": 250, \"frames\": \"⊶⊷\"},\n  Line 161:     \"toggle2\": {\"interval\": 80, \"frames\": \"▫▪\"},\n  Line 162:     \"toggle3\": {\"interval\": 120, \"frames\": \"□■\"},\n  Line 163:     \"toggle4\": {\"interval\": 100, \"frames\": \"■□▪▫\"},\n  Line 164:     \"toggle5\": {\"interval\": 100, \"frames\": \"▮▯\"},\n  Line 165:     \"toggle6\": {\"interval\": 300, \"frames\": \"ဝ၀\"},\n  Line 166:     \"toggle7\": {\"interval\": 80, \"frames\": \"⦾⦿\"},\n  Line 167:     \"toggle8\": {\"interval\": 100, \"frames\": \"◍◌\"},\n  Line 168:     \"toggle9\": {\"interval\": 100, \"frames\": \"◉◎\"},\n  Line 169:     \"toggle10\": {\"interval\": 100, \"frames\": \"㊂㊀㊁\"},\n  Line 170:     \"toggle11\": {\"interval\": 50, \"frames\": \"⧇⧆\"},\n  Line 171:     \"toggle12\": {\"interval\": 120, \"frames\": \"☗☖\"},\n  Line 172:     \"toggle13\": {\"interval\": 80, \"frames\": \"=*-\"},\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/venv/lib/python3.12/site-packages/pip/_vendor/pygments/formatters/html.py:\n  Line 128:           <td class=\"linenos\" title=\"click to toggle\"\n\n/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/venv/lib64/python3.12/site-packages/pip/_vendor/pygments/formatters/html.py:\n  Line 128:           <td class=\"linenos\" title=\"click to toggle\"",
+    "title": "toggle",
+    "metadata": {
+      "matches": 35,
+      "truncated": false
+    },
+    "time": {
+      "start": 1769169088163,
+      "end": 1769169088258
+    }
+  }
+}

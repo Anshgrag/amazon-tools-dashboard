@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0ef5ec96001ah0vLig990dOuN",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "role": "user",
+  "time": {
+    "created": 1769777523887
+  },
+  "summary": {
+    "title": "Shell listing: ls command usage",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

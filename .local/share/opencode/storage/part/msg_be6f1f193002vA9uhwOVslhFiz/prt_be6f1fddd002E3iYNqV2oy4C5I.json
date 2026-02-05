@@ -1,0 +1,16 @@
+{
+  "id": "prt_be6f1fddd002E3iYNqV2oy4C5I",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f1f193002vA9uhwOVslhFiz",
+  "type": "reasoning",
+  "text": "The server might not have started properly. Let me check the log and restart it.",
+  "metadata": {
+    "anthropic": {
+      "signature": "a41f1df395f11d1915673139d83413c7b070f09ec2e372a438e932d2f111ccc2"
+    }
+  },
+  "time": {
+    "start": 1769106177501,
+    "end": 1769106177761
+  }
+}

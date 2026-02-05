@@ -1,0 +1,11 @@
+{
+  "id": "prt_be6f46350001rb7BU4h4155haP",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f4296d002M2Vw32E4nd9NbT",
+  "type": "text",
+  "text": "You're right - the tab content should be completely separate views, not stacked together. Let me fix this properly.",
+  "time": {
+    "start": 1769106334744,
+    "end": 1769106334744
+  }
+}

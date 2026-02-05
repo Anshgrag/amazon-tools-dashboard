@@ -1,0 +1,27 @@
+{
+  "id": "prt_c19e6c9c60010LiC6CByb8cRZj",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e67e1f001mLv5tww6geIAve",
+  "type": "tool",
+  "callID": "call_e72814db8a5343f6b3c72f9f",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/",
+      "description": "Test API root endpoint"
+    },
+    "output": "{\"message\":\"Eye Infection Detection API\",\"version\":\"1.0.0\",\"status\":\"ready\",\"endpoints\":{\"predict\":\"/predict\",\"health\":\"/health\"}}",
+    "title": "Test API root endpoint",
+    "metadata": {
+      "output": "{\"message\":\"Eye Infection Detection API\",\"version\":\"1.0.0\",\"status\":\"ready\",\"endpoints\":{\"predict\":\"/predict\",\"health\":\"/health\"}}",
+      "exit": 0,
+      "description": "Test API root endpoint",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769961081309,
+      "end": 1769961081345
+    }
+  }
+}

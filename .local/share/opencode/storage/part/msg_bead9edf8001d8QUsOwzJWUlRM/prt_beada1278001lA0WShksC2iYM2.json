@@ -1,0 +1,27 @@
+{
+  "id": "prt_beada1278001lA0WShksC2iYM2",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead9edf8001d8QUsOwzJWUlRM",
+  "type": "tool",
+  "callID": "call_f97d00e1090844c39130f16e",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "python3 -m http.server 9000 &",
+      "description": "Start test server on port 9000"
+    },
+    "output": "",
+    "title": "Start test server on port 9000",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start test server on port 9000",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171718785,
+      "end": 1769171718795
+    }
+  }
+}

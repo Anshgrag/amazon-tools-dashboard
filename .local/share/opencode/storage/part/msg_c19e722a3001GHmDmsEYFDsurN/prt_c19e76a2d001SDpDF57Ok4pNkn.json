@@ -1,0 +1,25 @@
+{
+  "id": "prt_c19e76a2d001SDpDF57Ok4pNkn",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19e722a3001GHmDmsEYFDsurN",
+  "type": "tool",
+  "callID": "call_82e888e7367f41bcb7632848",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/EYE/frontend/script.js",
+      "limit": 10
+    },
+    "output": "<file>\n00001| const API_URL = 'http://localhost:8000/predict';\n00002| \n00003| const classExplanations = {\n00004|     'Normal': 'The image appears to show a healthy eye with no visible signs of infection or abnormalities.',\n00005|     'Conjunctivitis': 'The image shows possible signs of conjunctivitis (pink eye) including redness, swelling, or discharge. Consult an eye doctor for proper diagnosis and treatment.',\n00006|     'Cataract': 'The image may indicate cataract formation, characterized by cloudiness in the lens. This condition typically requires professional medical evaluation and treatment.',\n00007|     'Glaucoma': 'The image suggests potential signs of glaucoma, a serious eye condition that can damage the optic nerve. Immediate consultation with an ophthalmologist is recommended.'\n00008| };\n00009| \n00010| const fileInput = document.getElementById('fileInput');\n\n(File has more lines. Use 'offset' parameter to read beyond line 10)\n</file>",
+    "title": "Desktop/EYE/frontend/script.js",
+    "metadata": {
+      "preview": "const API_URL = 'http://localhost:8000/predict';\n\nconst classExplanations = {\n    'Normal': 'The image appears to show a healthy eye with no visible signs of infection or abnormalities.',\n    'Conjunctivitis': 'The image shows possible signs of conjunctivitis (pink eye) including redness, swelling, or discharge. Consult an eye doctor for proper diagnosis and treatment.',\n    'Cataract': 'The image may indicate cataract formation, characterized by cloudiness in the lens. This condition typically requires professional medical evaluation and treatment.',\n    'Glaucoma': 'The image suggests potential signs of glaucoma, a serious eye condition that can damage the optic nerve. Immediate consultation with an ophthalmologist is recommended.'\n};\n\nconst fileInput = document.getElementById('fileInput');",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769961122370,
+      "end": 1769961122383
+    }
+  }
+}

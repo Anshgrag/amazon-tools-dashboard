@@ -1,0 +1,38 @@
+{
+  "id": "prt_beaa8593b0011Y6xYPf8QNvDIG",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaa84ade001jJd1X3JOFSc5wT",
+  "type": "tool",
+  "callID": "call_07122034",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Test the Tuya integration to ensure it connects and fetches data properly",
+          "status": "completed",
+          "priority": "medium",
+          "id": "test_connection"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Test the Tuya integration to ensure it connects and fetches data properly\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"test_connection\"\n  }\n]",
+    "title": "0 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Test the Tuya integration to ensure it connects and fetches data properly",
+          "status": "completed",
+          "priority": "medium",
+          "id": "test_connection"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1769168460104,
+      "end": 1769168460110
+    }
+  }
+}

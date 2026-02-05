@@ -1,0 +1,26 @@
+{
+  "id": "prt_be7063e4a001ZntkFFO8kl3QiN",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be7062b1e002rE58qqEHXOhywC",
+  "type": "tool",
+  "callID": "call_function_cx1yvuwuubgb_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 80,
+      "offset": 1340
+    },
+    "output": "<file>\n01341|     const root = document.documentElement;\n01342|     const body = document.body;\n01343|     \n01344|     Object.entries(theme).forEach(([key, value]) => {\n01345|         root.style.setProperty(`--${key}`, value);\n01346|         if (key === 'font') {\n01347|             document.body.style.fontFamily = value;\n01348|         }\n01349|     });\n01350|     \n01351|     body.setAttribute('data-theme', themeName);\n01352|     body.setAttribute('data-card-style', theme['card-style']);\n01353|     \n01354|     localStorage.setItem('ecotrack-theme', themeName);\n01355|     \n01356|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01357|         btn.classList.toggle('active', btn.getAttribute('data-theme') === themeName);\n01358|     });\n01359|     \n01360|     document.querySelector('.logo h1').innerHTML = getLogoHTML(themeName);\n01361|     \n01362|     console.log(`Theme applied: ${theme.name}`);\n01363| }\n01364| \n01365| function getLogoHTML(themeName) {\n01366|     const logos = {\n01367|         dark: 'ECOTRACK',\n01368|         japan: 'エコトラック',\n01369|         germany: 'ECOTRACK',\n01370|         scandinavia: 'ECOTRACK',\n01371|         tropical: '🌴 ECOTRACK 🌴',\n01372|         nordic: '◆ ECOTRACK ◆'\n01373|     };\n01374|     return logos[themeName] || 'ECOTRACK';\n01375| }\n01376| };\n01377| \n01378| function applyTheme(themeName) {\n01379|     const theme = themes[themeName];\n01380|     if (!theme) return;\n01381|     \n01382|     const root = document.documentElement;\n01383|     \n01384|     Object.entries(theme).forEach(([key, value]) => {\n01385|         root.style.setProperty(`--${key}`, value);\n01386|     });\n01387|     \n01388|     localStorage.setItem('ecotrack-theme', themeName);\n01389|     \n01390|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01391|         btn.classList.toggle('active', btn.getAttribute('data-theme') === themeName);\n01392|     });\n01393|     \n01394|     console.log(`Theme applied: ${themeName}`);\n01395| }\n01396| \n01397| function setupThemeSwitching() {\n01398|     console.log('=== SETUP THEME SWITCHING ===');\n01399|     \n01400|     const savedTheme = localStorage.getItem('ecotrack-theme') || 'dark';\n01401|     applyTheme(savedTheme);\n01402|     \n01403|     document.querySelectorAll('.theme-btn').forEach(btn => {\n01404|         btn.addEventListener('click', function() {\n01405|             const themeName = this.getAttribute('data-theme');\n01406|             applyTheme(themeName);\n01407|         });\n01408|     });\n01409|     \n01410|     console.log('Theme switching initialized');\n01411| }\n01412| \n01413| window.addEventListener('DOMContentLoaded', () => {\n01414|     console.log('=== ECOTRACK DASHBOARD INITIALIZED ===');\n01415|     \n01416|     setupThemeSwitching();\n01417|     setupTabSwitching();\n01418|     setupTimeFilters();\n01419|     \n01420|     refreshDashboard();\n\n(File has more lines. Use 'offset' parameter to read beyond line 1420)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "    const root = document.documentElement;\n    const body = document.body;\n    \n    Object.entries(theme).forEach(([key, value]) => {\n        root.style.setProperty(`--${key}`, value);\n        if (key === 'font') {\n            document.body.style.fontFamily = value;\n        }\n    });\n    \n    body.setAttribute('data-theme', themeName);\n    body.setAttribute('data-card-style', theme['card-style']);\n    \n    localStorage.setItem('ecotrack-theme', themeName);\n    \n    document.querySelectorAll('.theme-btn').forEach(btn => {\n        btn.classList.toggle('active', btn.getAttribute('data-theme') === themeName);\n    });\n    \n    document.querySelector('.logo h1').innerHTML = getLogoHTML(themeName);",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769107505223,
+      "end": 1769107505237
+    }
+  }
+}

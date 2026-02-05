@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0fab7e40001L58S2D1E9oRoH1",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fab6c9a0028Rja5DA2MGWLyu",
+  "type": "tool",
+  "callID": "call_a4ff26e5cd2644f49f651f1a",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && echo \"=== Testing frontend-backend connection ===\" && curl -s http://localhost:8000 > /dev/null && echo \"Frontend accessible\" || echo \"Frontend not accessible\" && curl -s http://localhost:5000/api/devices > /dev/null && echo \"Backend accessible\" || echo \"Backend not accessible\"",
+      "description": "Test frontend-backend connectivity"
+    },
+    "output": "=== Testing frontend-backend connection ===\nFrontend accessible\nBackend accessible\n",
+    "title": "Test frontend-backend connectivity",
+    "metadata": {
+      "output": "=== Testing frontend-backend connection ===\nFrontend accessible\nBackend accessible\n",
+      "exit": 0,
+      "description": "Test frontend-backend connectivity",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789423181,
+      "end": 1769789425262
+    }
+  }
+}

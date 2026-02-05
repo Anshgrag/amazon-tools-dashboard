@@ -1,0 +1,25 @@
+{
+  "id": "prt_c19efe90b001Y0iw0nV2V8YPpi",
+  "sessionID": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "messageID": "msg_c19ef6b57002Dq4BoRfBsPbuPp",
+  "type": "tool",
+  "callID": "call_3246b5d820104e61b7ea27e0",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/EYE/training/eye_detection_training.ipynb",
+      "limit": 50
+    },
+    "output": "<file>\n00001| {\n00002|  \"cells\": [\n00003|   {\n00004|    \"cell_type\": \"markdown\",\n00005|    \"metadata\": {},\n00006|    \"source\": [\n00007|     \"# Eye Disease Detection - Training Notebook\\n\",\n00008|     \"\\n\",\n00009|     \"This notebook trains a CNN model for eye disease detection using transfer learning.\\n\",\n00010|     \"\\n\",\n00011|     \"## Classes:\\n\",\n00012|     \"- Normal\\n\",\n00013|     \"- Conjunctivitis\\n\",\n00014|     \"- Cataract\\n\",\n00015|     \"- Glaucoma\"\n00016|    ]\n00017|   },\n00018|   {\n00019|    \"cell_type\": \"markdown\",\n00020|    \"metadata\": {},\n00021|    \"source\": [\n00022|     \"## 1. Setup and Imports\"\n00023|    ]\n00024|   },\n00025|   {\n00026|    \"cell_type\": \"code\",\n00027|    \"execution_count\": null,\n00028|    \"metadata\": {},\n00029|    \"outputs\": [],\n00030|    \"source\": [\n00031|     \"# Mount Google Drive\\n\",\n00032|     \"from google.colab import drive\\n\",\n00033|     \"drive.mount('/content/drive')\"\n00034|    ]\n00035|   },\n00036|   {\n00037|    \"cell_type\": \"code\",\n00038|    \"execution_count\": null,\n00039|    \"metadata\": {},\n00040|    \"outputs\": [],\n00041|    \"source\": [\n00042|     \"import tensorflow as tf\\n\",\n00043|     \"from tensorflow import keras\\n\",\n00044|     \"from tensorflow.keras import layers, Model\\n\",\n00045|     \"from tensorflow.keras.applications import MobileNetV2, EfficientNetB0\\n\",\n00046|     \"from tensorflow.keras.applications.mobilenet_v2 import preprocess_input\\n\",\n00047|     \"from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau\\n\",\n00048|     \"from tensorflow.keras.preprocessing.image import ImageDataGenerator\\n\",\n00049|     \"import numpy as np\\n\",\n00050|     \"import matplotlib.pyplot as plt\\n\",\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "title": "Desktop/EYE/training/eye_detection_training.ipynb",
+    "metadata": {
+      "preview": "{\n \"cells\": [\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},\n   \"source\": [\n    \"# Eye Disease Detection - Training Notebook\\n\",\n    \"\\n\",\n    \"This notebook trains a CNN model for eye disease detection using transfer learning.\\n\",\n    \"\\n\",\n    \"## Classes:\\n\",\n    \"- Normal\\n\",\n    \"- Conjunctivitis\\n\",\n    \"- Cataract\\n\",\n    \"- Glaucoma\"\n   ]\n  },\n  {\n   \"cell_type\": \"markdown\",\n   \"metadata\": {},",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769961679123,
+      "end": 1769961679140
+    }
+  }
+}

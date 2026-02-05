@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead769c2001OQD2DxJG2RGrsl",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead74c14001ikivznZddFXD4e",
+  "type": "tool",
+  "callID": "call_99f3f6976b5643898e2e105f",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "netstat -tlnp | grep :5000",
+      "description": "Check if backend is running"
+    },
+    "output": "(Not all processes could be identified, non-owned process info\n will not be shown, you would have to be root to see it all.)\ntcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      45115/python        \n",
+    "title": "Check if backend is running",
+    "metadata": {
+      "output": "(Not all processes could be identified, non-owned process info\n will not be shown, you would have to be root to see it all.)\ntcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      45115/python        \n",
+      "exit": 0,
+      "description": "Check if backend is running",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171544524,
+      "end": 1769171544596
+    }
+  }
+}

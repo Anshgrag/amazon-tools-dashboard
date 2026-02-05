@@ -1,0 +1,17 @@
+{
+  "id": "msg_be6f7e23d0017fxWSzihxDNXKu",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "role": "user",
+  "time": {
+    "created": 1769106563666
+  },
+  "summary": {
+    "title": "Add-ons ideas discussion",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "minimax-m2.1-free"
+  }
+}

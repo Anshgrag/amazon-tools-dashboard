@@ -1,0 +1,11 @@
+{
+  "id": "prt_c0fb03941001Jtfq90er6r4B3w",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fb01029002ZqQetPksL8Zeff",
+  "type": "text",
+  "text": "\nI see there might be duplicate DOMContentLoaded events. Let me check if there are two of them:",
+  "time": {
+    "start": 1769789735059,
+    "end": 1769789735059
+  }
+}

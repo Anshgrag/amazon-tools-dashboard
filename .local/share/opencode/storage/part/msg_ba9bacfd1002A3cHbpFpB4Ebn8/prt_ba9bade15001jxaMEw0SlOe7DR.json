@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9bade15001jxaMEw0SlOe7DR",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9bacfd1002A3cHbpFpB4Ebn8",
+  "type": "tool",
+  "callID": "call_1f0b53aa2506498b9c11221f",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s \"http://localhost:8000\" | grep -A5 \"SMART SAVINGS\"",
+      "description": "Test if savings section is in the HTML"
+    },
+    "output": "                <!-- SMART SAVINGS MONITOR -->\n                <div class=\"card\">\n                    <h3 class=\"card-title\">SMART SAVINGS MONITOR</h3>\n                    <div class=\"savings-summary\">\n                        <div class=\"savings-row\">\n                            <div class=\"savings-item waste\">\n                                <div class=\"savings-label\">Wasted Today</div>\n                                <div class=\"savings-amount\" id=\"wastedAmount\">$0.00</div>\n",
+    "title": "Test if savings section is in the HTML",
+    "metadata": {
+      "output": "                <!-- SMART SAVINGS MONITOR -->\n                <div class=\"card\">\n                    <h3 class=\"card-title\">SMART SAVINGS MONITOR</h3>\n                    <div class=\"savings-summary\">\n                        <div class=\"savings-row\">\n                            <div class=\"savings-item waste\">\n                                <div class=\"savings-label\">Wasted Today</div>\n                                <div class=\"savings-amount\" id=\"wastedAmount\">$0.00</div>\n",
+      "exit": 0,
+      "description": "Test if savings section is in the HTML",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079154724,
+      "end": 1768079156761
+    }
+  }
+}

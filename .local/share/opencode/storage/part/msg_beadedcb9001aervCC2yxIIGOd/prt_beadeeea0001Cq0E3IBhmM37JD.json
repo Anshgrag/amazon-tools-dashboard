@@ -1,0 +1,26 @@
+{
+  "id": "prt_beadeeea0001Cq0E3IBhmM37JD",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beadedcb9001aervCC2yxIIGOd",
+  "type": "tool",
+  "callID": "call_ef6c378dce8e4aae81338569",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "frontend/script.js",
+      "offset": 1175,
+      "limit": 20
+    },
+    "output": "<file>\n01176|     \n01177|     // Initialize device control\n01178|     updateDeviceStatus('on'); // Default to on\n01179|     \n01180|     // Initialize schedule checker (every minute)\n01181|     setInterval(checkSchedules, 60000);\n01182|     \n01183|     // Initialize schedule list\n01184|     updateScheduleList();\n01185| });\n01186|     \n01187|     const loadingElements = ['wastedAmount', 'savedAmount', 'netSavings', 'totalCost', 'usageTillNow', 'usagePredicted'];\n01188|     loadingElements.forEach(id => {\n01189|         const element = document.getElementById(id);\n01190|         if (element) element.textContent = 'Loading...';\n01191|     });\n01192| }\n01193| \n01194| function hideLoadingStates() {\n01195|     document.querySelectorAll('.filter-btn').forEach(btn => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 1195)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "    \n    // Initialize device control\n    updateDeviceStatus('on'); // Default to on\n    \n    // Initialize schedule checker (every minute)\n    setInterval(checkSchedules, 60000);\n    \n    // Initialize schedule list\n    updateScheduleList();\n});\n    \n    const loadingElements = ['wastedAmount', 'savedAmount', 'netSavings', 'totalCost', 'usageTillNow', 'usagePredicted'];\n    loadingElements.forEach(id => {\n        const element = document.getElementById(id);\n        if (element) element.textContent = 'Loading...';\n    });\n}\n\nfunction hideLoadingStates() {\n    document.querySelectorAll('.filter-btn').forEach(btn => {",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769172037281,
+      "end": 1769172037287
+    }
+  }
+}

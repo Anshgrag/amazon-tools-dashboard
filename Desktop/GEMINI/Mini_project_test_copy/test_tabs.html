@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Tabs</title>
+    <style>
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
+        .nav-item { cursor: pointer; padding: 10px; margin: 5px; background: #eee; }
+        .nav-item.active { background: #4ecdc4; color: white; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-item active" data-tab="dashboard">Dashboard</div>
+        <div class="nav-item" data-tab="cost">Cost</div>
+        <div class="nav-item" data-tab="appliances">Appliances</div>
+        <div class="nav-item" data-tab="rooms">Rooms</div>
+    </nav>
+    
+    <div class="tab-pane active" id="tab-dashboard">Dashboard Content</div>
+    <div class="tab-pane" id="tab-cost">Cost Content</div>
+    <div class="tab-pane" id="tab-appliances">Appliances Content</div>
+    <div class="tab-pane" id="tab-rooms">Rooms Content</div>
+
+    <script>
+        let currentTab = 'dashboard';
+        
+        function setupTabSwitching() {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const tabName = this.getAttribute('data-tab');
+                    if (!tabName) return;
+                    
+                    if (tabName === currentTab) return;
+                    
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    document.querySelectorAll('.tab-pane').forEach(pane => {
+                        pane.classList.remove('active');
+                    });
+                    
+                    const tabPane = document.getElementById(`tab-${tabName}`);
+                    if (tabPane) {
+                        tabPane.classList.add('active');
+                    }
+                    
+                    currentTab = tabName;
+                    console.log('Switched to tab:', tabName);
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            setupTabSwitching();
+        });
+    </script>
+</body>
+</html>

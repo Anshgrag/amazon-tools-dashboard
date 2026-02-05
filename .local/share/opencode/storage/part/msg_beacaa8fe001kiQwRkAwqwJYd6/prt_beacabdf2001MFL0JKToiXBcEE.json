@@ -1,0 +1,12 @@
+{
+  "id": "prt_beacabdf2001MFL0JKToiXBcEE",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beacaa8fe001kiQwRkAwqwJYd6",
+  "type": "patch",
+  "hash": "e9cf39d65f8662c64c4c23e3018523e2da20c50d",
+  "files": [
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/API_CODE/requirements.txt",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/API_CODE/tinytuya.json",
+    "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/API_CODE/tuya.py"
+  ]
+}

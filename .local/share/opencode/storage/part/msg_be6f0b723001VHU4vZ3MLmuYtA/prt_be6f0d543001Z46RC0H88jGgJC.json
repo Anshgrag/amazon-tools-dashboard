@@ -1,0 +1,25 @@
+{
+  "id": "prt_be6f0d543001Z46RC0H88jGgJC",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f0b723001VHU4vZ3MLmuYtA",
+  "type": "tool",
+  "callID": "call_function_9g559ovvcarr_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/script.js",
+      "limit": 100
+    },
+    "output": "<file>\n00001| // ==================== CONFIGURATION ====================\n00002| \n00003| const API_BASE_URL = 'http://localhost:5000';\n00004| const REFRESH_INTERVAL = 30000;\n00005| let currentPeriod = 'month';\n00006| let currentTab = 'dashboard';\n00007| \n00008| let costChart = null;\n00009| let usageChart = null;\n00010| let savingsChart = null;\n00011| let costAnalysisChart = null;\n00012| let appliancePowerChart = null;\n00013| let roomComparisonChart = null;\n00014| \n00015| // ==================== UTILITY FUNCTIONS ====================\n00016| \n00017| function formatCurrency(value) {\n00018|     return `$${parseFloat(value).toFixed(2)}`;\n00019| }\n00020| \n00021| function formatDate() {\n00022|     const now = new Date();\n00023|     const options = { month: 'long', year: 'numeric' };\n00024|     return now.toLocaleDateString('en-US', options);\n00025| }\n00026| \n00027| // ==================== TAB SWITCHING ====================\n00028| \n00029| function setupTabSwitching() {\n00030|     const navItems = document.querySelectorAll('.nav-item');\n00031|     \n00032|     navItems.forEach(item => {\n00033|         item.addEventListener('click', function(e) {\n00034|             e.preventDefault();\n00035|             \n00036|             const tabName = this.getAttribute('data-tab');\n00037|             if (!tabName) return;\n00038|             \n00039|             if (tabName === currentTab) {\n00040|                 return;\n00041|             }\n00042|             \n00043|             navItems.forEach(nav => nav.classList.remove('active'));\n00044|             this.classList.add('active');\n00045|             \n00046|             document.querySelectorAll('.tab-pane').forEach(pane => {\n00047|                 pane.classList.remove('active');\n00048|             });\n00049|             \n00050|             const tabPane = document.getElementById(`tab-${tabName}`);\n00051|             if (tabPane) {\n00052|                 tabPane.classList.add('active');\n00053|             }\n00054|             \n00055|             currentTab = tabName;\n00056|             \n00057|             refreshTab(tabName);\n00058|         });\n00059|     });\n00060| }\n00061| \n00062| function refreshTab(tabName) {\n00063|     switch(tabName) {\n00064|         case 'dashboard':\n00065|             refreshDashboard();\n00066|             break;\n00067|         case 'cost':\n00068|             fetchCostData();\n00069|             break;\n00070|         case 'appliances':\n00071|             fetchAppliancesData();\n00072|             break;\n00073|         case 'rooms':\n00074|             fetchRoomsData();\n00075|             break;\n00076|     }\n00077| }\n00078| \n00079| // ==================== FETCH DATA FUNCTIONS ====================\n00080| \n00081| async function fetchElectricityData() {\n00082|     try {\n00083|         console.log('Fetching electricity data for period:', currentPeriod);\n00084|         const response = await fetch(`${API_BASE_URL}/api/electricity/history?period=${currentPeriod}`);\n00085|         \n00086|         if (!response.ok) {\n00087|             throw new Error(`HTTP error! status: ${response.status}`);\n00088|         }\n00089|         \n00090|         const result = await response.json();\n00091|         console.log('Electricity data received:', result);\n00092|         \n00093|         if (result.status === 'success') {\n00094|             updateAppliancesDisplay(result.data);\n00095|             updateCostPredicted(result.data);\n00096|             updateUsageEstimate(result.data);\n00097|         } else {\n00098|             console.error('API returned error:', result);\n00099|         }\n00100|     } catch (error) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 100)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/script.js",
+    "metadata": {
+      "preview": "// ==================== CONFIGURATION ====================\n\nconst API_BASE_URL = 'http://localhost:5000';\nconst REFRESH_INTERVAL = 30000;\nlet currentPeriod = 'month';\nlet currentTab = 'dashboard';\n\nlet costChart = null;\nlet usageChart = null;\nlet savingsChart = null;\nlet costAnalysisChart = null;\nlet appliancePowerChart = null;\nlet roomComparisonChart = null;\n\n// ==================== UTILITY FUNCTIONS ====================\n\nfunction formatCurrency(value) {\n    return `$${parseFloat(value).toFixed(2)}`;\n}\n",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769106101634,
+      "end": 1769106101649
+    }
+  }
+}

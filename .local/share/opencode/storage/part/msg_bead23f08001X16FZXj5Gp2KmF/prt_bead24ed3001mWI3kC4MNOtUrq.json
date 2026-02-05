@@ -1,0 +1,27 @@
+{
+  "id": "prt_bead24ed3001mWI3kC4MNOtUrq",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_bead23f08001X16FZXj5Gp2KmF",
+  "type": "tool",
+  "callID": "call_9f45125dd9604a73a9f9e0d4",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:5000/api/devices/1/toggle -H \"Content-Type: application/json\" -d '{\"state\": \"off\"}'",
+      "description": "Test the device toggle API directly"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    78  100    62  100    16     94     24 --:--:-- --:--:-- --:--:--   118\r100    78  100    62  100    16     94     24 --:--:-- --:--:-- --:--:--   118\n{\n  \"message\": \"Device 1 turned off\",\n  \"status\": \"success\"\n}\n",
+    "title": "Test the device toggle API directly",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    78  100    62  100    16     94     24 --:--:-- --:--:-- --:--:--   118\r100    78  100    62  100    16     94     24 --:--:-- --:--:-- --:--:--   118\n{\n  \"message\": \"Device 1 turned off\",\n  \"status\": \"success\"\n}\n",
+      "exit": 0,
+      "description": "Test the device toggle API directly",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769171209946,
+      "end": 1769171210633
+    }
+  }
+}

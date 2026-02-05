@@ -1,0 +1,86 @@
+{
+  "id": "prt_ba99b036c001pF6HeEIvcFfuSF",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba99af556001whwQQumdkmh1NE",
+  "type": "tool",
+  "callID": "call_2444c88f95e84b4b9aea578d",
+  "tool": "todowrite",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Add device control tracking to database schema",
+          "id": "1",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Create savings calculation logic in backend",
+          "id": "2",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add Smart Savings Monitor card to frontend",
+          "id": "3",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Implement savings visualization charts",
+          "id": "4",
+          "priority": "medium",
+          "status": "completed"
+        },
+        {
+          "content": "Add cost per kWh configuration",
+          "id": "5",
+          "priority": "medium",
+          "status": "in_progress"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Add device control tracking to database schema\",\n    \"id\": \"1\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Create savings calculation logic in backend\",\n    \"id\": \"2\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add Smart Savings Monitor card to frontend\",\n    \"id\": \"3\",\n    \"priority\": \"high\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Implement savings visualization charts\",\n    \"id\": \"4\",\n    \"priority\": \"medium\",\n    \"status\": \"completed\"\n  },\n  {\n    \"content\": \"Add cost per kWh configuration\",\n    \"id\": \"5\",\n    \"priority\": \"medium\",\n    \"status\": \"in_progress\"\n  }\n]",
+    "title": "1 todos",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Add device control tracking to database schema",
+          "id": "1",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Create savings calculation logic in backend",
+          "id": "2",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Add Smart Savings Monitor card to frontend",
+          "id": "3",
+          "priority": "high",
+          "status": "completed"
+        },
+        {
+          "content": "Implement savings visualization charts",
+          "id": "4",
+          "priority": "medium",
+          "status": "completed"
+        },
+        {
+          "content": "Add cost per kWh configuration",
+          "id": "5",
+          "priority": "medium",
+          "status": "in_progress"
+        }
+      ],
+      "truncated": false
+    },
+    "time": {
+      "start": 1768077067121,
+      "end": 1768077067122
+    }
+  }
+}

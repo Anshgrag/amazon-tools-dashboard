@@ -1,0 +1,17 @@
+{
+  "id": "msg_c0efb2d3a0015yy89893xZrTDD",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "role": "user",
+  "time": {
+    "created": 1769777868105
+  },
+  "summary": {
+    "title": "Home Assistant company literature related to project integration",
+    "diffs": []
+  },
+  "agent": "plan",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

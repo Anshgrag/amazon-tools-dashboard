@@ -1,0 +1,26 @@
+{
+  "id": "prt_be6f9df56001Qpn5cj6fMuq1EK",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be6f9d03d0027ftHkIgOxunzm6",
+  "type": "tool",
+  "callID": "call_function_qvp05r5eb3ki_1",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test/frontend/index.html",
+      "limit": 80,
+      "offset": 225
+    },
+    "output": "<file>\n00226|                     </div>\n00227|                 </div>\n00228|             </div>\n00229| \n00230|             <!-- USAGE BY ROOMS TAB -->\n00231|             <div class=\"dashboard-grid tab-pane\" id=\"tab-rooms\">\n00232|                 <div class=\"card full-width\">\n00233|                     <h3 class=\"card-title\">USAGE BY ROOM</h3>\n00234|                     <div class=\"rooms-summary\">\n00235|                         <div class=\"room-card\" data-room=\"living-room\">\n00236|                             <div class=\"room-icon\">📺</div>\n00237|                             <div class=\"room-name\">Living Room</div>\n00238|                             <div class=\"room-usage\" id=\"roomLivingRoom\">0 kWh</div>\n00239|                         </div>\n00240|                         <div class=\"room-card\" data-room=\"kitchen\">\n00241|                             <div class=\"room-icon\">🍳</div>\n00242|                             <div class=\"room-name\">Kitchen</div>\n00243|                             <div class=\"room-usage\" id=\"roomKitchen\">0 kWh</div>\n00244|                         </div>\n00245|                         <div class=\"room-card\" data-room=\"bedroom\">\n00246|                             <div class=\"room-icon\">🛏️</div>\n00247|                             <div class=\"room-name\">Bedroom</div>\n00248|                             <div class=\"room-usage\" id=\"roomBedroom\">0 kWh</div>\n00249|                         </div>\n00250|                         <div class=\"room-card\" data-room=\"office\">\n00251|                             <div class=\"room-icon\">💻</div>\n00252|                             <div class=\"room-name\">Office</div>\n00253|                             <div class=\"room-usage\" id=\"roomOffice\">0 kWh</div>\n00254|                         </div>\n00255|                     </div>\n00256|                 </div>\n00257|                 <div class=\"card\">\n00258|                     <h3 class=\"card-title\">ROOM COMPARISON</h3>\n00259|                     <div class=\"chart-container\">\n00260|                         <canvas id=\"roomComparisonChart\"></canvas>\n00261|                     </div>\n00262|                 </div>\n00263|                 <div class=\"card\">\n00264|                     <h3 class=\"card-title\">ROOM DETAILS</h3>\n00265|                     <div class=\"room-details-list\" id=\"roomDetailsList\">\n00266|                         <!-- Dynamically populated -->\n00267|                     </div>\n00268|                 </div>\n00269|             </div>\n00270|         </main>\n00271|     </div>\n00272| \n00273|     <script src=\"script.js\"></script>\n00274| </body>\n00275| </html>\n\n(End of file - total 275 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test/frontend/index.html",
+    "metadata": {
+      "preview": "                    </div>\n                </div>\n            </div>\n\n            <!-- USAGE BY ROOMS TAB -->\n            <div class=\"dashboard-grid tab-pane\" id=\"tab-rooms\">\n                <div class=\"card full-width\">\n                    <h3 class=\"card-title\">USAGE BY ROOM</h3>\n                    <div class=\"rooms-summary\">\n                        <div class=\"room-card\" data-room=\"living-room\">\n                            <div class=\"room-icon\">📺</div>\n                            <div class=\"room-name\">Living Room</div>\n                            <div class=\"room-usage\" id=\"roomLivingRoom\">0 kWh</div>\n                        </div>\n                        <div class=\"room-card\" data-room=\"kitchen\">\n                            <div class=\"room-icon\">🍳</div>\n                            <div class=\"room-name\">Kitchen</div>\n                            <div class=\"room-usage\" id=\"roomKitchen\">0 kWh</div>\n                        </div>\n                        <div class=\"room-card\" data-room=\"bedroom\">",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769106694180,
+      "end": 1769106694185
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "msg_bfed91f22002v005VCuAZ01lTd",
+  "sessionID": "ses_401271315ffezF15p2W1dB1lv5",
+  "role": "assistant",
+  "time": {
+    "created": 1769507200802,
+    "completed": 1769507257694
+  },
+  "error": {
+    "name": "MessageAbortedError",
+    "data": {
+      "message": "The operation was aborted."
+    }
+  },
+  "parentID": "msg_bfed8ecf7001iJUfWjjD7mOcUD",
+  "modelID": "big-pickle",
+  "providerID": "opencode",
+  "mode": "plan",
+  "agent": "plan",
+  "path": {
+    "cwd": "/home/bot4u/Documents",
+    "root": "/home/bot4u"
+  },
+  "cost": 0,
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  }
+}

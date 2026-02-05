@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9b8d0d3001VKiRrKMPzojNms",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9b8c423002x1jl27cIWThZZJ",
+  "type": "tool",
+  "callID": "call_4865e7c7ecbd4be99429fd26",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "python3 -m http.server 8001 &",
+      "description": "Start debug server on different port"
+    },
+    "output": "",
+    "title": "Start debug server on different port",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Start debug server on different port",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079020253,
+      "end": 1768079020258
+    }
+  }
+}

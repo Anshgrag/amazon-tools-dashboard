@@ -1,0 +1,11 @@
+{
+  "id": "prt_beaad3a30001w4E21QamzZJN2k",
+  "sessionID": "ses_4155c7ec9ffesZU9MKyN0KfiF3",
+  "messageID": "msg_beaad345a001DQjN6W4Xswbf2H",
+  "type": "reasoning",
+  "text": "Still connection refused. Perhaps the backend didn't start properly, or it's not on localhost.",
+  "time": {
+    "start": 1769168779824,
+    "end": 1769168782167
+  }
+}

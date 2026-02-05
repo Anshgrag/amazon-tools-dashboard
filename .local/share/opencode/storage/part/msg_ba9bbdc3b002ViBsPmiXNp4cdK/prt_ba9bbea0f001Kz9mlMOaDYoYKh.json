@@ -1,0 +1,27 @@
+{
+  "id": "prt_ba9bbea0f001Kz9mlMOaDYoYKh",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_ba9bbdc3b002ViBsPmiXNp4cdK",
+  "type": "tool",
+  "callID": "call_0aa90ce0644c4403b5540546",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:8000/simple_test.html | head -5",
+      "description": "Check if simple test is accessible"
+    },
+    "output": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n",
+    "title": "Check if simple test is accessible",
+    "metadata": {
+      "output": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n",
+      "exit": 0,
+      "description": "Check if simple test is accessible",
+      "truncated": false
+    },
+    "time": {
+      "start": 1768079223317,
+      "end": 1768079223351
+    }
+  }
+}

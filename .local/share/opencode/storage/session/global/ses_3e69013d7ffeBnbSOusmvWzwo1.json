@@ -1,0 +1,17 @@
+{
+  "id": "ses_3e69013d7ffeBnbSOusmvWzwo1",
+  "slug": "eager-rocket",
+  "version": "1.1.48",
+  "projectID": "global",
+  "directory": "/home/bot4u/Desktop/EYE",
+  "title": "Eye Infection Detection Web App: Full-Stack Plan and Code Snippets",
+  "time": {
+    "created": 1769953291304,
+    "updated": 1769961934649
+  },
+  "summary": {
+    "additions": 2530,
+    "deletions": 0,
+    "files": 14
+  }
+}

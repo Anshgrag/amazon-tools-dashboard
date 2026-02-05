@@ -1,0 +1,26 @@
+{
+  "id": "prt_c0a822dc6001X24KkNYHkXx5vQ",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a81c2cd002PefZkbZ53D24r5",
+  "type": "tool",
+  "callID": "chatcmpl-tool-8d216f46fb1a4c9a9067c628e99c596a",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/eye project/docker/docker-compose.yml",
+      "limit": 20,
+      "offset": 30
+    },
+    "output": "<file>\n00031|       - \"6379:6379\"\n00032|     volumes:\n00033|       - redis_data:/data\n00034|     networks:\n00035|       - eye_disease_network\n00036|     restart: unless-stopped\n00037|     healthcheck:\n00038|       test: [\"CMD\", \"redis-cli\", \"ping\"]\n00039|       interval: 30s\n00040|       timeout: 10s\n00041|       retries: 3\n00042| \n00043|   # Backend API\n00044|   backend:\n00045|     build:\n00046|       context: ./backend\n00047|       dockerfile: Dockerfile\n00048|     container_name: eye_disease_backend\n00049|     environment:\n00050|       - DATABASE_URL=postgresql://postgres:postgres123@postgres:5432/eyedisease\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "title": "Desktop/eye project/docker/docker-compose.yml",
+    "metadata": {
+      "preview": "      - \"6379:6379\"\n    volumes:\n      - redis_data:/data\n    networks:\n      - eye_disease_network\n    restart: unless-stopped\n    healthcheck:\n      test: [\"CMD\", \"redis-cli\", \"ping\"]\n      interval: 30s\n      timeout: 10s\n      retries: 3\n\n  # Backend API\n  backend:\n    build:\n      context: ./backend\n      dockerfile: Dockerfile\n    container_name: eye_disease_backend\n    environment:\n      - DATABASE_URL=postgresql://postgres:postgres123@postgres:5432/eyedisease",
+      "truncated": true
+    },
+    "time": {
+      "start": 1769702829514,
+      "end": 1769702829521
+    }
+  }
+}

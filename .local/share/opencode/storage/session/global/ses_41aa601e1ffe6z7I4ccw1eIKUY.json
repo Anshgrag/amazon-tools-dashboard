@@ -1,0 +1,17 @@
+{
+  "id": "ses_41aa601e1ffe6z7I4ccw1eIKUY",
+  "slug": "mighty-garden",
+  "version": "1.1.31",
+  "projectID": "global",
+  "directory": "/home/bot4u/Downloads/IEC",
+  "title": "Create IEC context file from electronics study materials folder",
+  "time": {
+    "created": 1769079438878,
+    "updated": 1769081210470
+  },
+  "summary": {
+    "additions": 0,
+    "deletions": 0,
+    "files": 0
+  }
+}

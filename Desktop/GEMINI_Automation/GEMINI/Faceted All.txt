@@ -1,0 +1,162 @@
+🟣 UNIVERSAL DETAILED NANO BANANA PROMPT
+
+(Faceted Gemstone Transfer with Shape Adaptation + Reduced Facets | Stone Reference → Ring Model)
+
+🔹 IMAGE ROLE DEFINITION (ABSOLUTE)
+
+Image 1 = STONE REFERENCE (SOURCE ONLY)
+
+Used ONLY to copy gemstone optical properties
+
+Image 2 = RING MODEL (BASE IMAGE)
+
+Used for ring design, gemstone seat, gemstone shape, scale, and orientation
+
+⚠️ Gemstone properties flow ONLY from Image 1 → Image 2
+⚠️ Ring geometry flows ONLY from Image 2
+
+🔹 OBJECTIVE
+
+Replace the gemstone(s) in Image 2 (Ring Model) with the gemstone from Image 1 (Stone Reference), adapting gemstone shape and facet density to match the small size and setting of the Ring Model.
+
+🔹 GEMSTONE PROPERTY LOCK (STRICT)
+
+From Image 1 (Stone Reference) preserve 100% exactly:
+
+Gemstone color
+
+Hue, saturation, tone
+
+Transparency level
+
+Optical depth
+
+Internal light behavior
+
+Material appearance (colored faceted gemstone)
+
+❌ Do NOT recolor
+❌ Do NOT brighten or darken
+❌ Do NOT change transparency
+❌ Do NOT add glow or bloom
+
+🔹 SHAPE ADAPTATION RULE (ALLOWED)
+
+Gemstone shape MUST match Image 2
+
+Fit perfectly inside:
+
+Bezel or prong outline
+
+Existing stone seat
+
+Shape adaptation must NOT affect gemstone optics
+
+🔹 FACETING CONTROL (VERY IMPORTANT)
+
+Gemstone must remain FACETED
+
+Because gemstone is small:
+
+Use fewer, larger, clean facets
+
+Avoid dense or micro-faceting
+
+Facets should be clearly visible and realistic at small scale
+
+Faceting style must stay consistent with Image 1 but simplified for size
+
+❌ No cabochon
+
+❌ No dome polish
+
+❌ No flat glass look
+
+🔹 RING MODEL PROTECTION (MANDATORY)
+
+From Image 2 (Ring Model):
+
+Do NOT change ring design
+
+Do NOT change metal texture or finish
+
+Do NOT change ring angle or camera perspective
+
+Do NOT change background
+
+Do NOT change lighting direction
+
+Do NOT alter prongs, bezel thickness, or band shape
+
+Only the gemstone surface is replaced.
+
+🔹 MULTI-STONE CONSISTENCY RULE
+
+If multiple gemstones exist:
+
+Replace ALL gemstones
+
+Each gemstone must be identical in:
+
+Color
+
+Transparency
+
+Facet style (simplified)
+
+No variation between stones
+
+🔹 REALISM & PHYSICS RULES
+
+Gemstone must look:
+
+Naturally seated
+
+Correctly scaled
+
+Optically realistic
+
+Facet reflections must align with lighting
+
+Shadows and highlights must be physically correct
+
+Final image must look like real jewelry photography, not CGI or mockup
+
+🔹 NEGATIVE PROMPT (CRITICAL)
+
+❌ Do NOT modify Image 1
+❌ Do NOT swap gemstone direction
+❌ Do NOT keep original orange stone texture
+❌ Do NOT over-facet small stones
+❌ Do NOT add artificial shine
+❌ Do NOT change ring angle or background
+
+🔹 OUTPUT FORMAT & ASPECT RATIO (STRICT)
+
+Aspect ratio must be exactly 1:1
+
+Output image must be perfectly square
+
+Width and height must be equal
+
+No cropping, stretching, padding, or letterboxing
+
+Composition must be centered and balanced within a square frame
+
+❌ Do NOT generate rectangular images
+❌ Do NOT auto-crop after generation
+❌ Do NOT add borders or margins
+
+🔹 FINAL OUTPUT REQUIREMENT (UPDATED)
+
+Produce an image that looks like:
+
+“The original Ring Model image, completely unchanged in every way, except the gemstone is replaced with a simplified-facet, optically identical version of the Stone Reference gemstone, perfectly fitted to the ring setting.”
+
+Aspect ratio: 100% square (1:1 only)
+
+Ultra-realistic
+
+Clean
+
+Product-ready (Amazon / e-commerce quality)

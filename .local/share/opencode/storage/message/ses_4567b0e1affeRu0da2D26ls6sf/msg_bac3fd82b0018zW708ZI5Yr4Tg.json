@@ -1,0 +1,17 @@
+{
+  "id": "msg_bac3fd82b0018zW708ZI5Yr4Tg",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "role": "user",
+  "time": {
+    "created": 1768121423922
+  },
+  "summary": {
+    "title": "Chat save request: summarize conversation context",
+    "diffs": []
+  },
+  "agent": "build",
+  "model": {
+    "providerID": "opencode",
+    "modelID": "big-pickle"
+  }
+}

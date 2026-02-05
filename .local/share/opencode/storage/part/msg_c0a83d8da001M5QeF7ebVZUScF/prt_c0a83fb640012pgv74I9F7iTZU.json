@@ -1,0 +1,21 @@
+{
+  "id": "prt_c0a83fb640012pgv74I9F7iTZU",
+  "sessionID": "ses_3f5beb1bbffeofuXBKIpji4ZGz",
+  "messageID": "msg_c0a83d8da001M5QeF7ebVZUScF",
+  "type": "tool",
+  "callID": "call_ec3b78a69dc041e3ba5cbba1",
+  "tool": "edit",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/eye project/docker/docker-compose.yml",
+      "oldString": "volumes:\n      - ./backend:/app\n      - ./ml/models:/app/ml/models\n      - uploads_data:/app/uploads",
+      "newString": "volumes:\n      - ../backend:/app\n      - ../ml/models:/app/ml/models\n      - uploads_data:/app/uploads"
+    },
+    "error": "Error: Found multiple matches for oldString. Provide more surrounding lines in oldString to identify the correct match.",
+    "time": {
+      "start": 1769702947691,
+      "end": 1769702947729
+    }
+  }
+}

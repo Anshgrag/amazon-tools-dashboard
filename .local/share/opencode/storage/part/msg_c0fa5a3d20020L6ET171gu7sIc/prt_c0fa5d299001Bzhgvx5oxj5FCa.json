@@ -1,0 +1,11 @@
+{
+  "id": "prt_c0fa5d299001Bzhgvx5oxj5FCa",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa5a3d20020L6ET171gu7sIc",
+  "type": "text",
+  "text": "\nPerfect! The cleanup is complete. Here's what was accomplished:\n\n## Garbage Data Removal Summary\n\n✅ **Backend Cleanup:**\n- Removed hardcoded device lists from `/api/devices` endpoint\n- Devices now pulled dynamically from actual database records\n- Fixed database connection issue in rooms endpoint\n- Removed hardcoded room-device mappings\n\n✅ **Frontend Cleanup:**\n- Removed hardcoded device color mappings\n- Cleaned up references to non-existent devices like \"Smart Switch\", \"Office Light\", \"AC Unit\"\n- Replaced static color assignments with dynamic default colors\n\n✅ **Results:**\n- System now shows **only actual devices** from database (8 real devices found)\n- No more \"garbage values\" for unconfigured appliances\n- Clean API responses with real device data only\n- Proper handling of empty/unknown device types\n\nThe system now displays only devices that actually exist in your database: Router, TV, Air Conditioner, Charger, Laptop, Microwave, Refrigerator, and Washing Machine - all with their actual power readings and status.",
+  "time": {
+    "start": 1769789066667,
+    "end": 1769789066667
+  }
+}

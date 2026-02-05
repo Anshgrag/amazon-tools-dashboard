@@ -1,0 +1,27 @@
+{
+  "id": "prt_c0f9f74f30015HvJPxTxI0Wg8l",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0f9f4fdd002obRZx42tPeqKuU",
+  "type": "tool",
+  "callID": "call_0b811246bfcc4bfaa9194c06",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "python3 -c \"\nimport sqlite3\nconn = sqlite3.connect('ecotrack.db')\ncursor = conn.cursor()\n\n# Get all tables\ncursor.execute(\\\"SELECT name FROM sqlite_master WHERE type='table'\\\")\ntables = cursor.fetchall()\nprint('Tables in database:')\nfor table in tables:\n    print(f'  - {table[0]}')\n\n# Get all distinct device names from electricity_data\ncursor.execute('SELECT DISTINCT device_name FROM electricity_data')\ndevices = cursor.fetchall()\nprint('\\\\nDevices in electricity_data:')\nfor device in devices:\n    print(f'  - {device[0]}')\n\n# Show sample data for each device\nfor device in devices:\n    cursor.execute('SELECT COUNT(*) FROM electricity_data WHERE device_name = ?', (device[0],))\n    count = cursor.fetchone()[0]\n    print(f'\\\\n{device[0]}: {count} records')\n    if count > 0:\n        cursor.execute('SELECT power_watts, mode, timestamp FROM electricity_data WHERE device_name = ? ORDER BY timestamp DESC LIMIT 3', (device[0],))\n        samples = cursor.fetchall()\n        for sample in samples:\n            print(f'  - {sample[0]}W, {sample[1]}, {sample[2]}')\n\nconn.close()\n\"",
+      "description": "Check database tables and device data"
+    },
+    "output": "Tables in database:\n  - aqi_data\n  - sqlite_sequence\n  - electricity_data\n\nDevices in electricity_data:\n",
+    "title": "Check database tables and device data",
+    "metadata": {
+      "output": "Tables in database:\n  - aqi_data\n  - sqlite_sequence\n  - electricity_data\n\nDevices in electricity_data:\n",
+      "exit": 0,
+      "description": "Check database tables and device data",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769788634365,
+      "end": 1769788634406
+    }
+  }
+}

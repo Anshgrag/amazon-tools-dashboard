@@ -1,0 +1,27 @@
+{
+  "id": "prt_be700f58b0016kEONGPomQcKI4",
+  "sessionID": "ses_419191304ffeNvkbTrxHjP7Uoc",
+  "messageID": "msg_be700e470002Y4U06310LI9a83",
+  "type": "tool",
+  "callID": "call_function_x7m444v2vl5r_1",
+  "tool": "bash",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/bot4u/Desktop/GEMINI/Mini_project_test/backend && source venv/bin/activate && nohup python app.py > /tmp/backend.log 2>&1 & && cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 & && sleep 2 && echo \"Servers started\"",
+      "description": "Start both servers"
+    },
+    "output": "/bin/bash: -c: line 1: syntax error near unexpected token `&&'\n/bin/bash: -c: line 1: `cd /home/bot4u/Desktop/GEMINI/Mini_project_test/backend && source venv/bin/activate && nohup python app.py > /tmp/backend.log 2>&1 & && cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 & && sleep 2 && echo \"Servers started\"'\n",
+    "title": "Start both servers",
+    "metadata": {
+      "output": "/bin/bash: -c: line 1: syntax error near unexpected token `&&'\n/bin/bash: -c: line 1: `cd /home/bot4u/Desktop/GEMINI/Mini_project_test/backend && source venv/bin/activate && nohup python app.py > /tmp/backend.log 2>&1 & && cd /home/bot4u/Desktop/GEMINI/Mini_project_test/frontend && nohup python3 -m http.server 8000 > /tmp/frontend.log 2>&1 & && sleep 2 && echo \"Servers started\"'\n",
+      "exit": 2,
+      "description": "Start both servers",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769107159238,
+      "end": 1769107159269
+    }
+  }
+}

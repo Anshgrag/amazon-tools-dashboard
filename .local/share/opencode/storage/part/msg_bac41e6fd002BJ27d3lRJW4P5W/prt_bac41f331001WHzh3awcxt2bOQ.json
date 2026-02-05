@@ -1,0 +1,19 @@
+{
+  "id": "prt_bac41f331001WHzh3awcxt2bOQ",
+  "sessionID": "ses_4567b0e1affeRu0da2D26ls6sf",
+  "messageID": "msg_bac41e6fd002BJ27d3lRJW4P5W",
+  "type": "tool",
+  "callID": "call_f1019d2f75684edf89c033d0",
+  "tool": "read",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project/AGENTS.md"
+    },
+    "error": "Error: File not found: /home/bot4u/Desktop/GEMINI/Mini_project/AGENTS.md",
+    "time": {
+      "start": 1768121561922,
+      "end": 1768121561933
+    }
+  }
+}

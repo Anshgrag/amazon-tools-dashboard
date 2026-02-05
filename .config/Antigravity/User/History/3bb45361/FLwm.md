@@ -1,0 +1,19 @@
+# Tasks
+
+- [x] Assess current project state <!-- id: 0 -->
+- [x] Create Implementation Plan <!-- id: 1 -->
+- [/] UI/UX Overhaul (Premium Design) <!-- id: 2 -->
+    - [x] Design System & Global Styles <!-- id: 3 -->
+    - [ ] Homepage (Hero, Featured, Categories) <!-- id: 4 -->
+    - [ ] Product Listing Page (Filters, Grid) <!-- id: 5 -->
+    - [ ] Product Detail Page (Gallery, Info, Reviews) <!-- id: 6 -->
+    - [ ] Cart & Checkout Flow <!-- id: 7 -->
+- [/] Backend & Data Seeding <!-- id: 8 -->
+    - [x] Create Database Seed Script (Sample Products) <!-- id: 9 -->
+    - [/] Ensure API Endpoints for Products/Orders exist <!-- id: 10 -->
+- [ ] Functionality & Polish <!-- id: 11 -->
+    - [ ] User Authentication Flow (Login/Register) <!-- id: 12 -->
+    - [ ] Admin Dashboard (Basic placeholder or functional) <!-- id: 13 -->
+- [ ] Verification & Build <!-- id: 14 -->
+    - [ ] Verify Build <!-- id: 15 -->
+    - [ ] Walkthrough Creation <!-- id: 16 -->

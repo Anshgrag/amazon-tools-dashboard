@@ -1,0 +1,25 @@
+{
+  "id": "prt_c0fa8a3430014thV4WawoFDdL6",
+  "sessionID": "ses_3f10cb2a9ffe9jkwX4HqwTLkHX",
+  "messageID": "msg_c0fa87d2d002lfP31Bhvc07HAv",
+  "type": "tool",
+  "callID": "call_7430dfdd9307491b8de36ddc",
+  "tool": "read",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/bot4u/Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+      "offset": 1160
+    },
+    "output": "<file>\n01161| \n01162| function setupThemeToggle() {\n01163|     const themeToggle = document.getElementById('themeToggle');\n01164|     if (!themeToggle) return;\n01165|     \n01166|     const isDark = localStorage.getItem('theme') !== 'light';\n01167|     updateTheme(isDark);\n01168|     \n01169|     themeToggle.addEventListener('click', function() {\n01170|         const isCurrentlyDark = document.body.getAttribute('data-theme') === 'dark';\n01171|         const newIsDark = !isCurrentlyDark;\n01172|         updateTheme(newIsDark);\n01173|         localStorage.setItem('theme', newIsDark ? 'dark' : 'light');\n01174|     });\n01175| }\n01176| \n01177| function updateTheme(isDark) {\n01178|     const root = document.documentElement;\n01179|     const body = document.body;\n01180|     const themeIcon = document.querySelector('.theme-icon');\n01181|     \n01182|     if (isDark) {\n01183|         root.style.setProperty('--bg-primary', '#1a2332');\n01184|         root.style.setProperty('--bg-secondary', '#243447');\n01185|         root.style.setProperty('--bg-card', '#2a3f5f');\n01186|         root.style.setProperty('--text-primary', '#ffffff');\n01187|         root.style.setProperty('--text-secondary', '#b0c4de');\n01188|         root.style.setProperty('--accent-teal', '#4ecdc4');\n01189|         root.style.setProperty('--accent-yellow', '#ffd166');\n01190|         root.style.setProperty('--accent-pink', '#ff6b9d');\n01191|         root.style.setProperty('--accent-purple', '#c77dff');\n01192|         root.style.setProperty('--accent-green', '#06ffa5');\n01193|         root.style.setProperty('--accent-red', '#ff4757');\n01194|         root.style.setProperty('--border-color', '#3d5a80');\n01195|         body.setAttribute('data-theme', 'dark');\n01196|         if (themeIcon) themeIcon.textContent = '🌙';\n01197|     } else {\n01198|         root.style.setProperty('--bg-primary', '#f5f7fa');\n01199|         root.style.setProperty('--bg-secondary', '#e8ecf1');\n01200|         root.style.setProperty('--bg-card', '#ffffff');\n01201|         root.style.setProperty('--text-primary', '#1a2332');\n01202|         root.style.setProperty('--text-secondary', '#5a6a7a');\n01203|         root.style.setProperty('--accent-teal', '#20b2aa');\n01204|         root.style.setProperty('--accent-yellow', '#f0c040');\n01205|         root.style.setProperty('--accent-pink', '#e85a7d');\n01206|         root.style.setProperty('--accent-purple', '#9b59b6');\n01207|         root.style.setProperty('--accent-green', '#2ecc71');\n01208|         root.style.setProperty('--accent-red', '#e74c3c');\n01209|         root.style.setProperty('--border-color', '#d0d7de');\n01210|         body.setAttribute('data-theme', 'light');\n01211|         if (themeIcon) themeIcon.textContent = '☀️';\n01212|     }\n01213| }\n01214| \n01215| // Remove duplicate initialization\n01216| \n\n(End of file - total 1216 lines)\n</file>",
+    "title": "Desktop/GEMINI/Mini_project_test_copy/frontend/script.js",
+    "metadata": {
+      "preview": "\nfunction setupThemeToggle() {\n    const themeToggle = document.getElementById('themeToggle');\n    if (!themeToggle) return;\n    \n    const isDark = localStorage.getItem('theme') !== 'light';\n    updateTheme(isDark);\n    \n    themeToggle.addEventListener('click', function() {\n        const isCurrentlyDark = document.body.getAttribute('data-theme') === 'dark';\n        const newIsDark = !isCurrentlyDark;\n        updateTheme(newIsDark);\n        localStorage.setItem('theme', newIsDark ? 'dark' : 'light');\n    });\n}\n\nfunction updateTheme(isDark) {\n    const root = document.documentElement;\n    const body = document.body;\n    const themeIcon = document.querySelector('.theme-icon');",
+      "truncated": false
+    },
+    "time": {
+      "start": 1769789236040,
+      "end": 1769789236077
+    }
+  }
+}
