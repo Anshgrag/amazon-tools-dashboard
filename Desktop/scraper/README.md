@@ -2,8 +2,6 @@
 
 A powerful desktop application for scraping Amazon product data using ASINs. Extract product titles, brands, prices, ratings, and images from multiple Amazon regions with a beautiful modern GUI.
 
-![Amazon ASIN Scraper Pro](screenshot-main.png)
-
 ## Features
 
 ### Core Functionality
@@ -75,19 +73,19 @@ python amazon_asin_scraper_enhanced.py
 ## Screenshots
 
 ### Main Interface
-![Main Interface](screenshot-main.png)
+![Main Interface](https://raw.githubusercontent.com/Anshgrag/amazon-tools-dashboard/master/screenshot-main.png)
 
 ### Input Tab
-![Input Tab](screenshot-input.png)
+![Input Tab](https://raw.githubusercontent.com/Anshgrag/amazon-tools-dashboard/master/screenshot-input.png)
 
 ### Scraping Tab - Field Selection
-![Field Selection](screenshot-fields.png)
+![Field Selection](https://raw.githubusercontent.com/Anshgrag/amazon-tools-dashboard/master/screenshot-fields.png)
 
 ### Scraping Tab - Configuration
-![Configuration](screenshot-config.png)
+![Configuration](https://raw.githubusercontent.com/Anshgrag/amazon-tools-dashboard/master/screenshot-config.png)
 
 ### Results Tab
-![Results](screenshot-results.png)
+![Results](https://raw.githubusercontent.com/Anshgrag/amazon-tools-dashboard/master/screenshot-results.png)
 
 ## Technical Details
 
