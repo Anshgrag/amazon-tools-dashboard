@@ -21,6 +21,42 @@ Downloads product images from Amazon.co.uk
 - Saves images to `asin_images/` folder
 - Tracks successful/failed ASINs in separate files
 
+### 4. Amazon ASIN Scraper Pro (`amazon_asin_scraper_enhanced.py`)
+A powerful desktop application for scraping Amazon product data using ASINs with a beautiful modern GUI.
+
+#### Features
+- **Multi-Region Support**: Scrape from 10 Amazon regions (US, UK, Germany, France, Italy, Spain, Canada, Japan, India, Australia)
+- **Flexible Input**: Load ASINs from Excel (.xlsx, .xls) or TXT files, or enter manually
+- **Multi-threading**: Configure 1-10 threads for parallel scraping
+- **Real-time Progress**: Live progress tracking and logging
+- **Selectable Data Fields**: Choose Title, Brand, Price, Rating, Images or any combination
+- **Quick Select Buttons**: Select All, Only Images, Only Prices, Only Brands, Brand + Price, Price + Images
+- **Export Options**: Export to Excel, download images (organized by brand), create ZIP archive
+
+#### Installation
+```bash
+pip install pandas requests beautifulsoup4 pillow openpyxl lxml
+```
+
+#### Running the Application
+```bash
+python amazon_asin_scraper_enhanced.py
+```
+
+#### Screenshots
+
+**Input Tab**
+![Input Tab](screenshots/input_tab.png)
+
+**Scraping Tab - Field Selection**
+![Field Selection](screenshots/scraping_fields.png)
+
+**Results Tab**
+![Results Tab](screenshots/results_tab.png)
+
+**Settings Tab**
+![Settings Tab](screenshots/settings_tab.png)
+
 ## Setup
 
 ```bash
